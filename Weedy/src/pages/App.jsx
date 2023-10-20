@@ -25,6 +25,7 @@ export default function App() {
         </div>
       </header>
 
+      {/* Features Section */}
       <section className="bg-[#9E7676] flex font-[Outfit]">
         <div className="w-1/2 py-20 ps-28">
           <h2 className="text-white text-5xl font-semibold max-w-md">
@@ -36,22 +37,22 @@ export default function App() {
           </h2>
 
           <div className="flex flex-wrap mt-5 gap-5 max-w-lg">
-            <div className="flex items-center bg-[#F8F0E5] text-[#472A08] border border-black rounded-xl px-7 py-2 gap-5 max-w-[15rem]">
+            <div className="flex items-center bg-[#F8F0E5] text-[#472A08] border border-black rounded-xl px-7 py-2 gap-5 max-w-[15rem] hover:ring-2 hover:ring-white">
               <p className="font-extrabold">1</p>
               <p>
                 Confused about how to invite guests who live outside of your
                 city?
               </p>
             </div>
-            <div className="flex items-center bg-[#F8F0E5] text-[#472A08] border border-black rounded-xl px-7 py-2 gap-5 max-w-[12rem]">
+            <div className="flex items-center bg-[#F8F0E5] text-[#472A08] border border-black rounded-xl px-7 py-2 gap-5 max-w-[12rem] hover:ring-2 hover:ring-white">
               <p className="font-extrabold">2</p>
               <p>Don't know how many guests will come to your wedding?</p>
             </div>
-            <div className="flex items-center bg-[#F8F0E5] text-[#472A08] border border-black rounded-xl px-7 py-2 gap-5 max-w-[12rem]">
+            <div className="flex items-center bg-[#F8F0E5] text-[#472A08] border border-black rounded-xl px-7 py-2 gap-5 max-w-[12rem] hover:ring-2 hover:ring-white">
               <p className="font-extrabold">3</p>
               <p>Don't have time to send invitations to guests' homes?</p>
             </div>
-            <div className="flex items-center bg-[#F8F0E5] text-[#472A08] border border-black rounded-xl px-7 py-2 gap-5 max-w-[15rem]">
+            <div className="flex items-center bg-[#F8F0E5] text-[#472A08] border border-black rounded-xl px-7 py-2 gap-5 max-w-[15rem] hover:ring-2 hover:ring-white">
               <p className="font-extrabold">4</p>
               <p>
                 Budget is tight but want to invite thousands of guests to your
@@ -75,6 +76,55 @@ export default function App() {
             Digital Invitations | RSVP | Wedding Gift | Photo Gallery |
             Countdown Date | Quotes | Design Revision
           </p>
+        </div>
+      </section>
+
+      {/* Reason Section */}
+      <section className="bg-[#F8F0E5] flex font-[Outfit]">
+        <div className="flex flex-col justify-center w-1/2 ps-20">
+          <h2 className="text-[#472A08] text-5xl font-semibold">
+            <span className="underline decoration-2	underline-offset-4">
+              Why
+            </span>{" "}
+            <span className="font-[Niconne] text-7xl font-medium">weddy</span>
+          </h2>
+          <p className="text-[#472A08] max-w-lg pt-2 text-2xl">
+          We offer high-quality products and services that will wow your guests and make your day memorable.
+          </p>
+        </div>
+
+        <div className="w-1/2 py-10">
+          <div className="flex flex-wrap mt-5 gap-5 max-w-xl">
+            <div className="flex flex-col bg-[#9E7676] text-[#F8F0E5] border border-black rounded-xl px-7 py-10 gap-2 max-w-[18rem] hover:ring-2 hover:ring-[#482A08]">
+              <p className="font-extrabold text-3xl text-white">High Quality</p>
+              <p>
+                we offer high quality wedding invitations that reflect your
+                personality and style.
+              </p>
+            </div>
+            <div className="flex flex-col bg-[#9E7676] text-[#F8F0E5] border border-black rounded-xl px-7 py-5 gap-2 max-w-[16rem] hover:ring-2 hover:ring-[#482A08]">
+              <p className="font-extrabold text-2xl text-white">Memorable</p>
+              <p>
+                Our invitations are not just cards, they are keepsakes that you
+                and your loved ones will cherish for years to come.
+              </p>
+            </div>
+            <div className="flex flex-col bg-[#9E7676] text-[#F8F0E5] border border-black rounded-xl px-7 py-5 gap-2 max-w-[16rem] hover:ring-2 hover:ring-[#482A08]">
+              <p className="font-extrabold text-2xl text-white">Innovation</p>
+              <p>
+                We are always looking for new ways to make your wedding
+                invitations unique and exciting.
+              </p>
+            </div>
+            <div className="flex flex-col bg-[#9E7676] text-[#F8F0E5] border border-black rounded-xl px-7 py-10 gap-2 max-w-[18rem] hover:ring-2 hover:ring-[#482A08]">
+              <p className="font-extrabold text-3xl text-white">
+                Budget Friendly
+              </p>
+              <p>
+                we offer budget friendly options for your wedding invitations
+              </p>
+            </div>
+          </div>
         </div>
       </section>
     </>
