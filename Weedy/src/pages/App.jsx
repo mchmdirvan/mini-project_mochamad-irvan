@@ -1,4 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
+import ContactImage from "../assets/contact-section.webp"
 import HeroImage from "../assets/hero-section.webp";
 import Navbar from "../components/navbar";
 import Button from "../components/button";
@@ -137,9 +138,8 @@ export default function App() {
         </p>
 
         <div className="flex gap-2 mt-5">
-
           <div className="flex flex-col items-end max-w-md">
-            <div className="flex  flex-col bg-[#F8F0E5] border border-[#594545] rounded-xl items-center text-[#472A08] px-20 py-10 h-[25rem]">
+            <div className="flex  flex-col bg-[#F8F0E5] border border-[#594545] rounded-xl items-center text-[#472A08] px-20 py-10 h-[25rem] hover:ring-white hover:ring">
               <p className="line-through font-light pt-5">350.000 IDR</p>
               <h2 className="font-bold text-5xl">99.000 IDR</h2>
               <p className="mt-5 self-start">Our Features: </p>
@@ -157,7 +157,7 @@ export default function App() {
           </div>
 
           <div className="flex flex-col items-end max-w-md">
-            <div className="flex  flex-col bg-[#F8F0E5] border border-[#594545] rounded-xl items-center text-[#472A08] px-20 py-10 h-[25rem]">
+            <div className="flex  flex-col  bg-[#F8F0E5] border border-[#594545] rounded-xl items-center text-[#472A08] px-20 py-10 h-[25rem] hover:ring hover:ring-white">
               <p className="text-center">
                 Get a digital wedding invitation for free by supporting us on
                 social media.{" "}
@@ -173,9 +173,43 @@ export default function App() {
                 </li>
               </ul>
             </div>
-            <Button label="Order Now" />
+            <Button label="Try For Free" />
           </div>
-          
+        </div>
+      </section>
+
+      {/* Plan Section */}
+      <section className="flex flex-col items-center justify-center bg-[#F8F0E5] text-[#472A08] font-[Outfit] py-12">
+        <h2 className="font-bold text-4xl">
+          Your{" "}
+          <span className="underline decoration-2	underline-offset-4">Plan</span>{" "}
+          Your{" "}
+          <span className="underline decoration-2	underline-offset-4">
+            Choice
+          </span>
+        </h2>
+        <p className="text-xl">
+          Make your wedding even more special with our website invitations
+        </p>
+      </section>
+
+      {/* Contact Section */}
+      <section>
+        <div className="flex bg-[#9E7676] items-center justify-center px-24 py-20 gap-5">
+          <div className="flex flex-col">
+            <h2 className="font-bold text-5xl text-white">
+              <span className="underline decoration-2	underline-offset-4">
+                Meeting
+              </span>{" "}
+              and have a chit-chat with us!
+            </h2>
+            <p className="text-[#F8F0E5] text-2xl max-w-2xl mt-2">
+              Let’s consult with our team to help you find the perfect match for
+              your digital wedding invitations.
+            </p>
+            <Button label="Consultation"/>
+          </div>
+          <div><img src={ContactImage} alt="contact image" className=" w-[19rem] rounded-lg" /></div>
         </div>
       </section>
     </>
