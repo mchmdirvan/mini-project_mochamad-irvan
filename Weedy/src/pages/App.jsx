@@ -1,8 +1,9 @@
 /* eslint-disable react/no-unescaped-entities */
 import ContactImage from "../assets/contact-section.webp"
 import HeroImage from "../assets/hero-section.webp";
-import Navbar from "../components/navbar";
-import Button from "../components/button";
+import Navbar from "../components/Navbar";
+import Button from "../components/Button";
+import Footer from "../components/footer";
 
 export default function App() {
   return (
@@ -212,6 +213,7 @@ export default function App() {
           <div><img src={ContactImage} alt="contact image" className=" w-[19rem] rounded-lg" /></div>
         </div>
       </section>
+     <Footer/>
     </>
   );
 }
