@@ -1,5 +1,6 @@
-import Navbar from "../components/navbar";
 import HeroImage from "../assets/hero-section.webp";
+import Navbar from "../components/navbar";
+import Button from "../components/button";
 
 export default function App() {
   return (
@@ -19,6 +20,8 @@ export default function App() {
             <p className="text-2xl font-[Outfit] text-white">
               A Modern Way to Invite Your Guests to Your Wedding
             </p>
+            <Button
+            label="let's go!" className="font-[Niconne] text-2xl"/>
           </div>
         </header>
         <Navbar />
