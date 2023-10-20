@@ -33,7 +33,7 @@ export default function Example() {
   }, []);
 
   return (
-    <div className={`${scrolling ? "fixed top-0 left-0 w-full z-50" : ""}`}>
+    <div className={`${scrolling ? "fixed top-0 left-0 w-full z-50" : "absolute top-0 left-0 w-full z-50"}`}>
       <Disclosure
         as="nav"
         className={`${scrolling ? "bg-white transition-all duration-500" : "py-5"}`}
