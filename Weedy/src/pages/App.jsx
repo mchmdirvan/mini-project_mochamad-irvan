@@ -89,7 +89,8 @@ export default function App() {
             <span className="font-[Niconne] text-7xl font-medium">weddy</span>
           </h2>
           <p className="text-[#472A08] max-w-lg pt-2 text-2xl">
-          We offer high-quality products and services that will wow your guests and make your day memorable.
+            We offer high-quality products and services that will wow your
+            guests and make your day memorable.
           </p>
         </div>
 
@@ -125,6 +126,56 @@ export default function App() {
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Pricelist section */}
+      <section className="bg-[#9E7676] flex flex-col font-[Outfit] justify-center items-center py-10">
+        <p className=" text-2xl text-white">
+          Price list of Digital Wedding Invitations by{" "}
+          <span className="font-[Niconne] text-4xl font-normal">weedy</span>
+        </p>
+
+        <div className="flex gap-2 mt-5">
+
+          <div className="flex flex-col items-end max-w-md">
+            <div className="flex  flex-col bg-[#F8F0E5] border border-[#594545] rounded-xl items-center text-[#472A08] px-20 py-10 h-[25rem]">
+              <p className="line-through font-light pt-5">350.000 IDR</p>
+              <h2 className="font-bold text-5xl">99.000 IDR</h2>
+              <p className="mt-5 self-start">Our Features: </p>
+              <ul className="list-disc">
+                <li>Bride and Groom name</li>
+                <li>Quote </li>
+                <li>Countdown Date </li>
+                <li>Photo Gallery </li>
+                <li>RSVP & Wish </li>
+                <li>Wedding Gift (QR Code) </li>
+                <li>Two Revisions Included</li>
+              </ul>
+            </div>
+            <Button label="Order Now" />
+          </div>
+
+          <div className="flex flex-col items-end max-w-md">
+            <div className="flex  flex-col bg-[#F8F0E5] border border-[#594545] rounded-xl items-center text-[#472A08] px-20 py-10 h-[25rem]">
+              <p className="text-center">
+                Get a digital wedding invitation for free by supporting us on
+                social media.{" "}
+              </p>
+              <h2 className="font-bold text-5xl">0 IDR</h2>
+              <p className="mt-5 self-start">All You Have To-Do is: </p>
+              <ul className="list-disc ps-7">
+                <li>Follow our Instagram account @weedyidn</li>
+                <li>Share our service in your Instagram stories and tag us </li>
+                <li>
+                  Tag three of your friends who are getting married soon or who
+                  might be interested in our service{" "}
+                </li>
+              </ul>
+            </div>
+            <Button label="Order Now" />
+          </div>
+          
         </div>
       </section>
     </>
