@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 
 import Logo from "../assets/logo.webp";
 
-export default function Example() {
+export default function Navbar() {
   const [scrolling, setScrolling] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
