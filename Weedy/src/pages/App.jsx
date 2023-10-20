@@ -10,7 +10,7 @@ export default function App() {
         <img
           src={HeroImage}
           alt="Wedding Cover"
-          className="absolute w-[100vw] h-[100vh] brightness-50 object-cover object-bottom"
+          className="w-[100vw] h-[100vh] brightness-50 object-cover object-bottom"
         />
         <div className="absolute flex flex-col items-center mt-40">
           <h1 className="text-5xl font-bold font-[Outfit] text-white">
@@ -22,11 +22,10 @@ export default function App() {
           </p>
           <Button label="let's go!" className="font-[Niconne] text-2xl" />
         </div>
-        <section className="absolute">
+      </header>
+      <section>
         <p>abcd</p>
       </section>
-      </header>
-      
     </>
   );
 }
