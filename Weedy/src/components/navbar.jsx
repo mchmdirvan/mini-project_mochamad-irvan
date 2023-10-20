@@ -4,18 +4,6 @@ import { useState, useEffect } from "react";
 
 import Logo from "../assets/logo.webp";
 
-const navigation = [
-  { name: "Home", href: "#" },
-  { name: "Features", href: "#" },
-  { name: "Pricing", href: "#" },
-  { name: "Contact", href: "#" },
-  { name: "Sign In", href: "#" },
-];
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
-
 export default function Example() {
   const [scrolling, setScrolling] = useState(false);
   useEffect(() => {
@@ -33,10 +21,18 @@ export default function Example() {
   }, []);
 
   return (
-    <div className={`${scrolling ? "fixed top-0 left-0 w-full z-50" : "absolute top-0 left-0 w-full z-50"}`}>
+    <div
+      className={`${
+        scrolling
+          ? "fixed top-0 left-0 w-full z-50"
+          : "absolute top-0 left-0 w-full z-50"
+      }`}
+    >
       <Disclosure
         as="nav"
-        className={`${scrolling ? "bg-white transition-all duration-500" : "py-5"}`}
+        className={`${
+          scrolling ? "bg-white transition-all duration-500" : "py-5"
+        }`}
       >
         {({ open }) => (
           <>
@@ -77,22 +73,68 @@ export default function Example() {
                     className="relative ml-3 flex flex-1 items-center justify-center sm:items-stretch sm:justify-start"
                   >
                     <div className="hidden sm:ml-6 sm:block">
-                      <div className="flex space-x-4">
-                        {navigation.map((item) => (
+                      <ul className="flex space-x-4">
+                        <li>
                           <a
-                            key={item.name}
-                            href={item.href}
+                            href="#"
                             className={`${
                               scrolling
                                 ? " text-[#472A08] hover:text-[#9E7676 font-semibold"
                                 : "text-white hover:text-gray-400"
                             } font-[Outfit]  block rounded-md px-3 py-2 text-base`}
-                            aria-current={item.current ? "page" : undefined}
                           >
-                            {item.name}
+                            Home
                           </a>
-                        ))}
-                      </div>
+                        </li>
+                        <li>
+                          <a
+                            href="#"
+                            className={`${
+                              scrolling
+                                ? " text-[#472A08] hover:text-[#9E7676 font-semibold"
+                                : "text-white hover:text-gray-400"
+                            } font-[Outfit]  block rounded-md px-3 py-2 text-base`}
+                          >
+                            Features
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="#"
+                            className={`${
+                              scrolling
+                                ? " text-[#472A08] hover:text-[#9E7676 font-semibold"
+                                : "text-white hover:text-gray-400"
+                            } font-[Outfit]  block rounded-md px-3 py-2 text-base`}
+                          >
+                            Pricing
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="#"
+                            className={`${
+                              scrolling
+                                ? " text-[#472A08] hover:text-[#9E7676 font-semibold"
+                                : "text-white hover:text-gray-400"
+                            } font-[Outfit]  block rounded-md px-3 py-2 text-base`}
+                          >
+                            Contact
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="#"
+                            className={`${
+                              scrolling
+                                ? " text-[#472A08] hover:text-[#9E7676 font-semibold"
+                                : "text-white hover:text-gray-400"
+                            } font-[Outfit]  block rounded-md px-3 py-2 text-base`}
+                          >
+                            Sign In
+                          </a>
+                        </li>
+                      </ul>
                     </div>
                   </Menu>
                 </div>
@@ -101,22 +143,68 @@ export default function Example() {
 
             <Disclosure.Panel className="sm:hidden">
               <div className="space-y-1 px-2 pb-3 pt-2">
-                {navigation.map((item) => (
-                  <Disclosure.Button
-                    key={item.name}
-                    as="a"
-                    href={item.href}
-                    className={classNames(
-                      item.current
-                        ? "bg-gray-900 text-white"
-                        : " text-[#472A08] hover:text-[#9E7676]",
-                      "font-[Outfit] font-semibold block rounded-md px-3 py-2 text-base"
-                    )}
-                    aria-current={item.current ? "page" : undefined}
-                  >
-                    {item.name}
-                  </Disclosure.Button>
-                ))}
+                <ul>
+                  <li>
+                    <a
+                      href="#"
+                      className={`${
+                        scrolling
+                          ? " text-[#472A08] hover:text-[#9E7676 font-semibold"
+                          : "text-white hover:text-gray-400"
+                      } font-[Outfit] font-semibold block rounded-md px-3 py-2 text-base`}
+                    >
+                      Home
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      className={`${
+                        scrolling
+                          ? " text-[#472A08] hover:text-[#9E7676 font-semibold"
+                          : "text-white hover:text-gray-400"
+                      } font-[Outfit] font-semibold block rounded-md px-3 py-2 text-base`}
+                    >
+                      Features
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      className={`${
+                        scrolling
+                          ? " text-[#472A08] hover:text-[#9E7676 font-semibold"
+                          : "text-white hover:text-gray-400"
+                      } font-[Outfit] font-semibold block rounded-md px-3 py-2 text-base`}
+                    >
+                      Pricing
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      className={`${
+                        scrolling
+                          ? " text-[#472A08] hover:text-[#9E7676 font-semibold"
+                          : "text-white hover:text-gray-400"
+                      } font-[Outfit] font-semibold block rounded-md px-3 py-2 text-base`}
+                    >
+                      Contact
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      className={`${
+                        scrolling
+                          ? " text-[#472A08] hover:text-[#9E7676 font-semibold"
+                          : "text-white hover:text-gray-400"
+                      } font-[Outfit] font-semibold block rounded-md px-3 py-2 text-base`}
+                    >
+                      Sign In
+                    </a>
+                  </li>
+                </ul>
               </div>
             </Disclosure.Panel>
           </>
