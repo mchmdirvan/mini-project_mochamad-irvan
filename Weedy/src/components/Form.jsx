@@ -31,14 +31,12 @@ function Input({
 }) {
   return (
     <>
-      <div className="mt-5">
-        <label htmlFor="block">{label}</label>
+      <div>
+        <label className="mt-5">{label}</label>
         <input
           className={`${className} ${
-            error
-              ? "focus:ring-[0.3rem] focus:ring-offset-0 focus:ring-red-200 ring-red-500 "
-              : "focus:ring-[0.3rem] focus:ring-offset-0 focus:ring-blue-200 ring-gray-300 "
-          } mt-2 py-2 pl-2 text-gray-900 ring-1 transition duration-300 ease-in-out"`}
+            error ? "" : " "
+          } mt-2 py-2 pl-2 text-[#472A08] transition duration-300 ease-in-out"`}
           type={type}
           name={name}
           id={id}
