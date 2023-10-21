@@ -10,7 +10,8 @@ export default function Footer() {
   return (
     <>
       <footer className="flex flex-col lg:flex-row bg-[#594545] justify-center items-center gap-10 lg:gap-20 py-20">
-        <div className="flex flex-col text-white font-[Outfit]  max-w-sm px-12 ">
+        
+        <div className="flex flex-col text-white font-[Outfit]  max-w-sm px-12 ">    
           <div className="flex flex-row flex-shrink-0 items-center justify-center ">
             <img src={Logo} alt="logo" className="h-20" />
             <h3 className="font-[Niconne] text-5xl">weedy</h3>
@@ -28,7 +29,7 @@ export default function Footer() {
 
         <div>
           <div className="flex flex-col text-[#F8F0E5] font-[Outfit] gap-10">
-            <div className="flex flex-col lg:flex-row gap-10 lg:gap-20 px-12 ">
+            <div className="flex flex-col sm:flex-row gap-10 lg:gap-20 px-12 ">
               <div className="flex flex-col ">
                 <h3 className="text-4xl mb-5 font-semibold">Contact Us</h3>
                 <ul className="flex flex-col gap-2">

@@ -38,9 +38,10 @@ export default function LandingPage() {
       </header>
 
       {/* Features Section */}
-      <section className="bg-[#9E7676] flex flex-col lg:flex-row font-[Outfit]">
-        <div className="flex flex-col lg:flex-row lg:w-1/2 py-10 lg:py-20 ps-5 lg:ps-28 items-center">
-          <h2 className="text-white text-xl lg:text-5xl font-semibold max-w-md">
+      <section className="bg-[#9E7676] flex flex-col sm:flex-row font-[Outfit]">
+        
+        <div className="flex flex-col lg:flex-row lg:w-1/2 py-10 lg:py-20 ps-5 sm:ps-20 lg:ps-28 items-center sm:items-start">
+          <h2 className="text-white text-xl sm:text-2xl lg:text-5xl font-semibold max-w-md">
             Do You Have a{" "}
             <span className="underline decoration-2	underline-offset-4">
               Problem
@@ -74,9 +75,9 @@ export default function LandingPage() {
           </div>
         </div>
 
-        <div className="lg:border-x-2 lg:border-white"></div>
+        <div className="sm:border-x-2 sm:border-white"></div>
 
-        <div className="flex flex-col justify-center  lg:w-1/2 lg:ps-20 py-10 items-center px-5 text-center">
+        <div className="flex flex-col justify-center  lg:w-1/2 lg:ps-20 py-10 items-center px-5 sm:text-start sm:max-w-[16rem] text-center">
           <h2 className="text-white  lg:text-4xl font-semibold text-2xl mb-2">
             We Have{" "}
             <span className="underline decoration-2	underline-offset-4">
@@ -92,9 +93,10 @@ export default function LandingPage() {
       </section>
 
       {/* Reason Section */}
-      <section className="bg-[#F8F0E5] flex flex-col lg:flex-row font-[Outfit]">
-        <div className="flex flex-col justify-center items-center py-5 px-10 lg:w-1/2 lg:ps-20">
-          <h2 className="text-[#472A08] text-xl lg:text-5xl font-semibold">
+      <section className="bg-[#F8F0E5] flex flex-col sm:flex-row font-[Outfit]">
+
+        <div className="flex flex-col justify-center items-center sm:items-start py-5 px-10 sm:w-1/2 lg:ps-20">
+          <h2 className="text-[#472A08] text-xl sm:text-2xl lg:text-5xl font-semibold">
             <span className="underline decoration-2	underline-offset-4">
               Why
             </span>{" "}
@@ -156,10 +158,9 @@ export default function LandingPage() {
           <span className="font-[Niconne] text-4xl font-normal">weedy</span>
         </p>
 
-        <div className="flex flex-col lg:flex-row gap-2 mt-5 items-center">
-
+        <div className="flex flex-col sm:flex-row gap-2 mt-5 items-center">
           <div className="flex flex-col items-end lg:max-w-md py-10 ">
-            <div className="flex flex-col bg-[#F8F0E5] border border-[#594545] rounded-xl items-center text-[#472A08] px-10 lg:px-20 py-10 h-[25rem] hover:ring-white hover:ring ">
+            <div className="flex flex-col bg-[#F8F0E5] border border-[#594545] rounded-xl items-center text-[#472A08] px-10 lg:px-20 py-10 sm:h-[27rem] h-[25rem] hover:ring-white hover:ring ">
               <p className="line-through font-light pt-5">350.000 IDR</p>
               <h2 className="font-bold text-5xl">99.000 IDR</h2>
               <p className="mt-5 self-start">Our Features: </p>
@@ -233,7 +234,7 @@ export default function LandingPage() {
             <img
               src={ContactImage}
               alt="contact image"
-              className=" w-[19rem] rounded-lg hidden"
+              className=" w-[19rem] rounded-lg hidden sm:block"
             />
           </div>
         </div>
