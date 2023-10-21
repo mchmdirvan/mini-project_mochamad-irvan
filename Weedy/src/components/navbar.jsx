@@ -6,6 +6,7 @@ import Logo from "../assets/logo.webp";
 
 export default function Navbar() {
   const [scrolling, setScrolling] = useState(false);
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 0) {
@@ -15,6 +16,7 @@ export default function Navbar() {
       }
     };
     window.addEventListener("scroll", handleScroll);
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -24,16 +26,11 @@ export default function Navbar() {
     <div
       className={`${
         scrolling
-          ? "fixed top-0 left-0 w-full z-50"
-          : "absolute top-0 left-0 w-full z-50"
+          ? "fixed w-full z-10  transition-all duration-500 bg-white"
+          : "absolute w-full z-10 transition-all duration-500"
       }`}
     >
-      <Disclosure
-        as="nav"
-        className={`${
-          scrolling ? "bg-white transition-all duration-500" : "py-5"
-        }`}
-      >
+      <Disclosure as="nav">
         {({ open }) => (
           <>
             <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
