@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-vars */
+import { SiYoutube, SiInstagram, SiTiktok } from "react-icons/si";
 import React from "react";
 
 import Logo from "../assets/logo.webp";
@@ -45,9 +46,16 @@ export default function Footer() {
               </div>
               <div className="flex flex-col">
                 <h3 className="text-4xl mb-5 font-semibold">Support Us</h3>
-                <ul className="flex flex-col gap-2">
-                  <li>abc</li>
-                  <li>def</li>
+                <ul className="flex gap-4">
+                  <li className="px-4 py-4 rounded-full bg-[#F8F0E5]">
+                    <SiYoutube className="text-[#594545]" />
+                  </li>
+                  <li className="px-4 py-4 rounded-full bg-[#F8F0E5]">
+                    <SiInstagram className="text-[#594545]" />
+                  </li>
+                  <li className="px-4 py-4 rounded-full bg-[#F8F0E5]">
+                    <SiTiktok  className="text-[#594545]"/>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -58,7 +66,7 @@ export default function Footer() {
                 placeholder="Drop Your Mail Here"
               />
               <button className=" m-0 px-7 py-3 w-1/4 bg-[#9E7676] hover:bg-[#472A08] hover:ring hover:ring-white text-white rounded-r-full">
-                Submit
+                Subscribe
               </button>
             </div>
           </div>
