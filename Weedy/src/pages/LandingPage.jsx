@@ -28,7 +28,7 @@ export default function LandingPage() {
           <p className="text-2xl font-[Outfit] text-white">
             A Modern Way to Invite Your Guests to Your Wedding
           </p>
-          <Button label="let's go!" className="font-[Niconne] text-2xl" />
+          <Button label="let's go!" className="font-[Niconne] text-2xl text-[#F8F0E5]" />
         </div>
       </header>
 
@@ -159,7 +159,7 @@ export default function LandingPage() {
                 <li>Two Revisions Included</li>
               </ul>
             </div>
-            <Button label="Order Now" />
+            <Button label="Order Now" className="text-[#F8F0E5]"/>
           </div>
 
           <div className="flex flex-col items-end max-w-md">
@@ -179,7 +179,7 @@ export default function LandingPage() {
                 </li>
               </ul>
             </div>
-            <Button label="Try For Free" />
+            <Button label="Try For Free" className="text-[#F8F0E5]" />
           </div>
         </div>
       </section>
@@ -213,7 +213,7 @@ export default function LandingPage() {
               Let’s consult with our team to help you find the perfect match for
               your digital wedding invitations.
             </p>
-            <Button label="Consultation" />
+            <Button label="Consultation" className="text-[#F8F0E5]" />
           </div>
           <div>
             <img
