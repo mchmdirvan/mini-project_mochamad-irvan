@@ -1,11 +1,16 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/no-unescaped-entities */
-import ContactImage from "../assets/contact-section.webp"
+import React from "react";
+
+import ContactImage from "../assets/contact-section.webp";
+import { useTitle } from "../utils/hooks/customHooks";
 import HeroImage from "../assets/hero-section.webp";
 import Navbar from "../components/Navbar";
 import Button from "../components/Button";
 import Footer from "../components/footer";
 
 export default function LandingPage() {
+  useTitle("Weedy: Digital Wedding Invitation")
   return (
     <>
       <Navbar />
@@ -208,12 +213,18 @@ export default function LandingPage() {
               Let’s consult with our team to help you find the perfect match for
               your digital wedding invitations.
             </p>
-            <Button label="Consultation"/>
+            <Button label="Consultation" />
           </div>
-          <div><img src={ContactImage} alt="contact image" className=" w-[19rem] rounded-lg" /></div>
+          <div>
+            <img
+              src={ContactImage}
+              alt="contact image"
+              className=" w-[19rem] rounded-lg"
+            />
+          </div>
         </div>
       </section>
-     <Footer/>
+      <Footer />
     </>
   );
 }
