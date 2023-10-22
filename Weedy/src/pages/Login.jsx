@@ -5,8 +5,10 @@ import React from "react";
 import LoginImage from "../assets/login.webp";
 import { Input } from "../components/Form";
 import Button from "../components/Button";
+import { useTitle } from "../utils/hooks/customHooks";
 
 export default function Login() {
+  useTitle("Sign In | Weedy")
   return (
     <>
       <div className="flex font-[Outfit]">
