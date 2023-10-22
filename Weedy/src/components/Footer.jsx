@@ -67,7 +67,7 @@ export default function Footer() {
                 className=" py-3 px-10 w-3/4 rounded-l-full bg-[#F8F0E5] text-[#472A08]"
                 placeholder="Drop Your Mail Here"
               />
-              <button className=" m-0 px-7 py-3 w-1/4 bg-[#9E7676] hover:bg-[#472A08] hover:ring hover:ring-white text-white rounded-r-full">
+              <button className=" m-0 px-7 py-3 md:w-1/4 bg-[#9E7676] hover:bg-[#472A08] hover:ring hover:ring-white text-white rounded-r-full">
                 Subscribe
               </button>
             </div>
