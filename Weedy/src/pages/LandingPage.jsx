@@ -8,7 +8,7 @@ import { useTitle } from "../utils/hooks/customHooks";
 import HeroImage from "../assets/hero-section.webp";
 import Navbar from "../components/Navbar"
 import Button from "../components/Button";
-import Footer from "../components/footer";
+import Footer from "../components/Footer";
 
 export default function LandingPage() {
   useTitle("Weedy: Digital Wedding Invitation");
