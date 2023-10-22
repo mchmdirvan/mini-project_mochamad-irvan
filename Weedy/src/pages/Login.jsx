@@ -5,10 +5,10 @@ import React from "react";
 import { useTitle } from "../utils/hooks/customHooks";
 import LoginImage from "../assets/login.webp";
 import { Input } from "../components/Form";
-import Button from "../components/Button"
+import Button from "../components/Button";
 
-export default function Login() {
-  useTitle("Sign In | Weedy")
+function Login() {
+  useTitle("Sign In | Weedy");
   return (
     <>
       <div className="flex font-[Outfit]">
@@ -47,10 +47,17 @@ export default function Login() {
               label="Sign in"
               className="text-[#472A08] w-[28rem] border border-[#472A08] font-bold text-xl"
             />
-            <p>Don't have an account yet? <a href="#" className="underline">Sign Up</a></p>
+            <p>
+              Don't have an account yet?{" "}
+              <a href="#" className="underline">
+                Sign Up
+              </a>
+            </p>
           </div>
         </div>
       </div>
     </>
   );
 }
+
+export default Login;
