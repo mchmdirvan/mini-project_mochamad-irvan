@@ -39,7 +39,7 @@ export default function LandingPage() {
 
       {/* Features Section */}
       <section className="bg-[#9E7676] flex flex-col sm:flex-row font-[Outfit]">
-        <div className="flex flex-col md:w-1/2 py-10 md:py-20 ps-5 sm:ps-20 lg:ps-10 items-center sm:items-start">
+        <div className="flex flex-col md:w-1/2 py-10 md:py-20 ps-5 sm:ps-20 lg:ps-10 items-center sm:items-start xl:px-32">
           <h2 className="text-white text-xl sm:text-2xl md:text-4xl lg:text-5xl font-semibold max-w-md md:max-w-[20rem] lg:max-w-[30rem]">
             Do You Have a{" "}
             <span className="underline decoration-2	underline-offset-4">
@@ -76,7 +76,7 @@ export default function LandingPage() {
 
         <div className="sm:border-x-2 sm:border-white"></div>
 
-        <div className="flex flex-col justify-center md:w-1/2 md:px-10 py-10 items-center md:items-start px-5 sm:text-start sm:max-w-[16rem] md:max-w-lg text-center">
+        <div className="flex flex-col justify-center md:w-1/2 md:px-10 py-10 items-center md:items-start px-5 sm:text-start sm:max-w-[16rem] md:max-w-lg text-center xl:px-32 xl:max-w-3xl">
           <h2 className="text-white md:text-3xl  lg:text-4xl font-semibold text-2xl mb-2 ">
             We Have{" "}
             <span className="underline decoration-2	underline-offset-4">
