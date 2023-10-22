@@ -8,8 +8,8 @@ import { useState, useEffect } from "react";
 
 import Logo from "../assets/logo.webp";
 
-export default function Navbar() {
-  const navigate = useNavigate()
+function Navbar() {
+  const navigate = useNavigate();
   const [scrolling, setScrolling] = useState(false);
 
   useEffect(() => {
@@ -110,7 +110,7 @@ export default function Navbar() {
                                 ? " text-white bg-[#472A08] font-normal hover:bg-white hover:text-[#472A08] hover:border hover:border-[#472A08]"
                                 : "text-white border border-white hover:bg-[#472A08] "
                             } font-[Outfit] items-center rounded-md px-5 py-1`}
-                            onClick={()=> navigate("/login")}
+                            onClick={() => navigate("/login")}
                           >
                             Sign in
                           </a>
@@ -194,3 +194,5 @@ export default function Navbar() {
     </div>
   );
 }
+
+export default Navbar;
