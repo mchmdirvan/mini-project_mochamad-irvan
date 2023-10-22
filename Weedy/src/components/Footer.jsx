@@ -9,7 +9,7 @@ import Button from "./Button";
 export default function Footer() {
   return (
     <>
-      <footer className="flex flex-col lg:flex-row bg-[#594545] justify-center items-center gap-10 lg:gap-20 py-20">
+      <footer className="flex flex-col md:flex-row bg-[#594545] justify-center items-center gap-10 md:gap-1 md:px-2 lg:gap-20 py-20">
         
         <div className="flex flex-col text-white font-[Outfit]  max-w-sm px-12 ">    
           <div className="flex flex-row flex-shrink-0 items-center justify-center ">
@@ -31,14 +31,14 @@ export default function Footer() {
           <div className="flex flex-col text-[#F8F0E5] font-[Outfit] gap-10">
             <div className="flex flex-col sm:flex-row gap-10 lg:gap-20 px-12 ">
               <div className="flex flex-col ">
-                <h3 className="text-4xl mb-5 font-semibold">Contact Us</h3>
+                <h3 className="md:text-2xl text-4xl mb-5 font-semibold">Contact Us</h3>
                 <ul className="flex flex-col gap-2">
                   <li>+ 62 881 0800 70700</li>
                   <li>weedyidn@gmail.com</li>
                 </ul>
               </div>
               <div className="flex flex-col">
-                <h3 className="text-4xl mb-5 font-semibold">About Us</h3>
+                <h3 className="md:text-2xl text-4xl mb-5 font-semibold">About Us</h3>
                 <ul className="flex flex-col gap-2 list-disc ps-5">
                   <li>Location</li>
                   <li>Partnership</li>
@@ -46,7 +46,7 @@ export default function Footer() {
                 </ul>
               </div>
               <div className="flex flex-col">
-                <h3 className="text-4xl mb-5 font-semibold">Support Us</h3>
+                <h3 className="md:text-2xl text-4xl mb-5 font-semibold">Support Us</h3>
                 <ul className="flex gap-4">
                   <li className="px-4 py-4 rounded-full bg-[#F8F0E5]">
                     <SiYoutube className="text-[#594545]" />
