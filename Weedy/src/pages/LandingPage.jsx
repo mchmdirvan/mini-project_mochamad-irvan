@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/no-unescaped-entities */
+import { TypeAnimation } from "react-type-animation";
 import React from "react";
 
 import ContactImage from "../assets/contact-section.webp";
@@ -20,15 +21,28 @@ export default function LandingPage() {
           alt="Wedding Cover"
           className="w-[100vw] h-[100vh] brightness-50 object-cover object-bottom"
         />
-        <div className="absolute flex flex-col items-center mt-60  md:mt-80">
+        <div className="absolute flex flex-col items-center mt-60  md:mt-70 lg:mt-40">
           <h1 className=" md:text-4xl lg:text-5xl font-bold font-[Outfit] text-white">
             Make Your Wedding Unforgettable with{" "}
             <span className="font-[Niconne] md:text-6xl lg:text-8xl font-normal">
               weedy
             </span>
           </h1>
-          <p className="md:text-xl lg:text-2xl font-[Outfit] text-white">
-            A Modern Way to Invite Your Guests to Your Wedding
+          <p className="text-white">
+            <TypeAnimation
+              sequence={[
+                "A Modern Way to Invite Your Guests to Your Wedding",
+                2000,
+                "A Modern Way to Customize Every Detail of Your Invitations",
+                2000,
+                "A Modern Way to Express Your Love with Weedy",
+                2000,
+              ]}
+              wrapper="span"
+              speed={75}
+              repeat={Infinity}
+              className="md:text-xl lg:text-2xl font-[Outfit] text-white"
+            />
           </p>
           <Button
             label="let's go!"
@@ -157,7 +171,6 @@ export default function LandingPage() {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-2 mt-5 items-center">
-
           <div className="flex flex-col items-end md:max-w-[26rem] lg:max-w-[27rem] py-10 ">
             <div className="flex flex-col bg-[#F8F0E5] border border-[#594545] rounded-xl items-center text-[#472A08] px-10 md:px-20 py-10 sm:h-[27rem] h-[25rem] hover:ring-white hover:ring ">
               <p className="line-through font-light pt-5">350.000 IDR</p>
@@ -216,7 +229,6 @@ export default function LandingPage() {
       {/* Contact Section */}
       <section>
         <div className="flex bg-[#9E7676] items-center justify-center  px-12 md:px-24 py-20 gap-5">
-
           <div className="flex flex-col">
             <h2 className="font-bold text-2xl md:text-3xl lg:text-5xl text-white">
               <span className="underline decoration-2	underline-offset-4">
