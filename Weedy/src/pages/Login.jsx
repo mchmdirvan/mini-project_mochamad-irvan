@@ -10,7 +10,7 @@ export default function Login() {
   return (
     <>
       <div className="flex font-[Outfit]">
-        <div className="relative hidden">
+        <div className="relative hidden md:flex md:block">
           <img
             src={LoginImage}
             alt="Login Image"
