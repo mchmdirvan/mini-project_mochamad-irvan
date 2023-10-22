@@ -28,7 +28,7 @@ export default function LandingPage() {
               weedy
             </span>
           </h1>
-          <p className="text-white">
+          <p className="text-white items-center text-center">
             <TypeAnimation
               sequence={[
                 "A Modern Way to Invite Your Guests to Your Wedding",
@@ -41,7 +41,7 @@ export default function LandingPage() {
               wrapper="span"
               speed={75}
               repeat={Infinity}
-              className="md:text-xl lg:text-2xl font-[Outfit] text-white"
+              className="md:text-xl lg:text-2xl font-[Outfit]  text-white"
             />
           </p>
           <Button
@@ -189,7 +189,7 @@ export default function LandingPage() {
             <Button label="Order Now" className="text-[#F8F0E5]" />
           </div>
 
-          <div className="flex flex-col items-end lg:max-w-[27rem] py-10 md:max-w-[26rem]">
+          <div className="flex flex-col items-end max-w-[21rem] lg:max-w-[27rem] py-10 md:max-w-[26rem]">
             <div className="flex  flex-col  bg-[#F8F0E5] border border-[#594545] rounded-xl items-center text-[#472A08] px-10 md:px-20 py-10 lg:h-[27rem] hover:ring hover:ring-white">
               <p className="text-center">
                 Get a digital wedding invitation for free by supporting us on
