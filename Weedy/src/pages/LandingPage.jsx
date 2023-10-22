@@ -63,22 +63,22 @@ export default function LandingPage() {
           </h2>
 
           <div className="flex flex-wrap mt-5 md:gap-1 gap-2 md:max-w-lg ">
-            <div className="flex items-center bg-[#F8F0E5] text-[#472A08] border border-black rounded-xl px-3 md:px-6 py-2 gap-5 md:max-w-[12rem] max-w-[12rem] lg:max-w-[15rem] hover:ring-2 hover:ring-white">
+            <div className="flex items-center bg-[#F8F0E5] text-[#472A08] border border-black rounded-xl px-3 md:px-6 py-2 gap-5 md:max-w-[12rem] max-w-[12rem] lg:max-w-[12rem] hover:ring-2 hover:ring-white">
               <p className="font-extrabold">1</p>
               <p>
                 Confused about how to invite guests who live outside of your
                 city?
               </p>
             </div>
-            <div className="flex items-center bg-[#F8F0E5] text-[#472A08] border border-black rounded-xl px-3 md:px-7 py-2 gap-5 max-w-[10rem] lg:max-w-[12rem] hover:ring-2 hover:ring-white">
+            <div className="flex items-center bg-[#F8F0E5] text-[#472A08] border border-black rounded-xl px-3 md:px-7 py-2 gap-5 max-w-[10rem] lg:max-w-[10rem] hover:ring-2 hover:ring-white">
               <p className="font-extrabold">2</p>
               <p>Don't know how many guests will come to your wedding?</p>
             </div>
-            <div className="flex items-center bg-[#F8F0E5] text-[#472A08] border border-black rounded-xl px-3 md:px-7 py-2 gap-5 max-w-[10rem] lg:max-w-[12rem] hover:ring-2 hover:ring-white">
+            <div className="flex items-center bg-[#F8F0E5] text-[#472A08] border border-black rounded-xl px-3 md:px-7 py-2 gap-5 max-w-[10rem] lg:max-w-[10rem] hover:ring-2 hover:ring-white">
               <p className="font-extrabold">3</p>
               <p>Don't have time to send invitations to guests' homes?</p>
             </div>
-            <div className="flex items-center bg-[#F8F0E5] text-[#472A08] border border-black rounded-xl px-3 md:px-7 py-2 gap-5 max-w-[12rem] lg:max-w-[15rem] hover:ring-2 hover:ring-white">
+            <div className="flex items-center bg-[#F8F0E5] text-[#472A08] border border-black rounded-xl px-3 md:px-7 py-2 gap-5 max-w-[12rem] lg:max-w-[12rem] hover:ring-2 hover:ring-white">
               <p className="font-extrabold">4</p>
               <p>
                 Budget is tight but want to invite thousands of guests to your
