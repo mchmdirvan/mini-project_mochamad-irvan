@@ -70,52 +70,30 @@ export default function Navbar() {
                     className="relative ml-3 flex flex-1 items-center justify-center sm:items-stretch sm:justify-start"
                   >
                     <div className="hidden md:ml-6 sm:block">
-                      <ul className="flex space-x-4">
+                      <ul
+                        className={`${
+                          scrolling
+                            ? " text-[#472A08]  font-semibold"
+                            : "text-white"
+                        } font-[Outfit] items-center rounded-md px-3 py-2 text-base flex gap-10`}
+                      >
                         <li>
-                          <a
-                            href="#"
-                            className={`${
-                              scrolling
-                                ? " text-[#472A08] hover:text-[#9E7676 font-semibold"
-                                : "text-white hover:text-gray-400"
-                            } font-[Outfit]  block rounded-md px-3 py-2 text-base`}
-                          >
+                          <a href="#" className="hover:text-[#9E7676]">
                             Home
                           </a>
                         </li>
                         <li>
-                          <a
-                            href="#"
-                            className={`${
-                              scrolling
-                                ? " text-[#472A08] hover:text-[#9E7676 font-semibold"
-                                : "text-white hover:text-gray-400"
-                            } font-[Outfit]  block rounded-md px-3 py-2 text-base`}
-                          >
+                          <a href="#" className="hover:text-[#9E7676]">
                             Features
                           </a>
                         </li>
                         <li>
-                          <a
-                            href="#"
-                            className={`${
-                              scrolling
-                                ? " text-[#472A08] hover:text-[#9E7676 font-semibold"
-                                : "text-white hover:text-gray-400"
-                            } font-[Outfit]  block rounded-md px-3 py-2 text-base`}
-                          >
+                          <a href="#" className="hover:text-[#9E7676]">
                             Pricing
                           </a>
                         </li>
                         <li>
-                          <a
-                            href="#"
-                            className={`${
-                              scrolling
-                                ? " text-[#472A08] hover:text-[#9E7676 font-semibold"
-                                : "text-white hover:text-gray-400"
-                            } font-[Outfit]  block rounded-md px-3 py-2 text-base`}
-                          >
+                          <a href="#" className="hover:text-[#9E7676]">
                             Contact
                           </a>
                         </li>
@@ -124,11 +102,11 @@ export default function Navbar() {
                             href="#"
                             className={`${
                               scrolling
-                                ? " text-[#472A08] hover:text-[#9E7676 font-semibold"
-                                : "text-white hover:text-gray-400"
-                            } font-[Outfit]  block rounded-md px-3 py-2 text-base`}
+                                ? " text-white bg-[#472A08] font-normal hover:bg-white hover:text-[#472A08] hover:border hover:border-[#472A08]"
+                                : "text-white border border-white hover:bg-[#472A08] "
+                            } font-[Outfit] items-center rounded-md px-5 py-1`}
                           >
-                            Sign In
+                            Sign in
                           </a>
                         </li>
                       </ul>
