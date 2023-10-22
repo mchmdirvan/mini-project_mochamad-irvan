@@ -2,6 +2,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import LandingPage from "../pages/LandingPage"
+import NotFound from "../pages/NotFound";
 import Login from "../pages/Login"
 
 function Router() {
@@ -16,7 +17,7 @@ function Router() {
     },
     {
       path: "*",
-      element: <div>404</div>,
+      element: <NotFound/>,
     },
   ]);
   return <RouterProvider router={router} />;
