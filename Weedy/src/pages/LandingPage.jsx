@@ -63,7 +63,7 @@ export default function LandingPage() {
           </h2>
 
           <div className="flex flex-wrap mt-5 md:gap-1 gap-2 md:max-w-lg ">
-            <div className="flex items-center bg-[#F8F0E5] text-[#472A08] border border-black rounded-xl px-3 md:px-6 py-2 gap-5 md:max-w-[12rem] max-w-[12rem] lg:max-w-[12rem] hover:ring-2 hover:ring-white">
+            <div className="flex items-center bg-[#F8F0E5] text-[#472A08] border border-black rounded-xl px-3 md:px-6 py-2 gap-5 md:max-w-[12rem] max-w-[9rem] lg:max-w-[12rem] hover:ring-2 hover:ring-white">
               <p className="font-extrabold">1</p>
               <p>
                 Confused about how to invite guests who live outside of your
@@ -78,7 +78,7 @@ export default function LandingPage() {
               <p className="font-extrabold">3</p>
               <p>Don't have time to send invitations to guests' homes?</p>
             </div>
-            <div className="flex items-center bg-[#F8F0E5] text-[#472A08] border border-black rounded-xl px-3 md:px-7 py-2 gap-5 max-w-[12rem] lg:max-w-[12rem] hover:ring-2 hover:ring-white">
+            <div className="flex items-center bg-[#F8F0E5] text-[#472A08] border border-black rounded-xl px-3 md:px-7 py-2 gap-5 max-w-[9rem] lg:max-w-[12rem] hover:ring-2 hover:ring-white">
               <p className="font-extrabold">4</p>
               <p>
                 Budget is tight but want to invite thousands of guests to your
@@ -117,7 +117,7 @@ export default function LandingPage() {
               weddy
             </span>
           </h2>
-          <p className="text-[#472A08] max-w-lg pt-2 text-xl lg:text-2xl">
+          <p className="text-[#472A08] max-w-lg pt-2 text-xl lg:text-2xl text-center md:text-start">
             We offer high-quality products and services that will wow your
             guests and make your day memorable.
           </p>
@@ -134,7 +134,7 @@ export default function LandingPage() {
                 personality and style.
               </p>
             </div>
-            <div className="flex flex-col bg-[#9E7676] text-[#F8F0E5] border border-black rounded-xl px-7 py-5 gap-2 max-w-[11rem] lg:max-w-[14rem] md:max-w-[12rem]  hover:ring-2 hover:ring-[#482A08]">
+            <div className="flex flex-col bg-[#9E7676] text-[#F8F0E5] border border-black rounded-xl px-7 py-5 gap-2 max-w-[10rem] lg:max-w-[14rem] md:max-w-[12rem]  hover:ring-2 hover:ring-[#482A08]">
               <p className="font-extrabold text-xl lg:text-2xl text-white">
                 Memorable
               </p>
@@ -143,7 +143,7 @@ export default function LandingPage() {
                 and your loved ones will cherish for years to come.
               </p>
             </div>
-            <div className="flex flex-col bg-[#9E7676] text-[#F8F0E5] border border-black rounded-xl px-7 py-5 gap-2 max-w-[11rem] lg:max-w-[14rem] md:max-w-[11rem] hover:ring-2 hover:ring-[#482A08]">
+            <div className="flex flex-col bg-[#9E7676] text-[#F8F0E5] border border-black rounded-xl px-7 py-5 gap-2 max-w-[10rem] lg:max-w-[14rem] md:max-w-[11rem] hover:ring-2 hover:ring-[#482A08]">
               <p className="font-extrabold text-xl lg:text-2xl text-white">
                 Innovation
               </p>
