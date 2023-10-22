@@ -44,7 +44,7 @@ export default function Login() {
 
           <div className="flex flex-col gap-2 items-center">
             <Button
-              label="Sign In"
+              label="Sign in"
               className="text-[#472A08] w-[28rem] border border-[#472A08] font-bold text-xl"
             />
             <p>Don't have an account yet? <a href="#" className="underline">Sign Up</a></p>
