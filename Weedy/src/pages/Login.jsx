@@ -2,10 +2,10 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 
+import { useTitle } from "../utils/hooks/customHooks";
 import LoginImage from "../assets/login.webp";
 import { Input } from "../components/Form";
-import Button from "../components/Button";
-import { useTitle } from "../utils/hooks/customHooks";
+import Button from "../components/Button"
 
 export default function Login() {
   useTitle("Sign In | Weedy")
