@@ -21,7 +21,7 @@ export default function LandingPage() {
           alt="Wedding Cover"
           className="w-[100vw] h-[100vh] brightness-50 object-cover object-bottom"
         />
-        <div className="absolute flex flex-col items-center mt-60  md:mt-70 lg:mt-40">
+        <div className="absolute flex flex-col items-center mt-60  md:mt-60 lg:mt-40">
           <h1 className=" md:text-4xl lg:text-5xl font-bold font-[Outfit] text-white">
             Make Your Wedding Unforgettable with{" "}
             <span className="font-[Niconne] md:text-6xl lg:text-8xl font-normal">
@@ -53,7 +53,7 @@ export default function LandingPage() {
 
       {/* Features Section */}
       <section className="bg-[#9E7676] flex flex-col sm:flex-row font-[Outfit]">
-        <div className="flex flex-col md:w-1/2 py-10 md:py-20 ps-5 sm:ps-20 lg:ps-10 items-center sm:items-start xl:px-32">
+        <div className="flex flex-col md:w-1/2 py-10 md:py-20 md:px-5 ps-5 sm:ps-20 lg:ps-10 items-center sm:items-start xl:px-32">
           <h2 className="text-white text-xl sm:text-2xl md:text-4xl lg:text-5xl font-semibold max-w-md md:max-w-[20rem] lg:max-w-[30rem]">
             Do You Have a{" "}
             <span className="underline decoration-2	underline-offset-4">
@@ -62,8 +62,8 @@ export default function LandingPage() {
             Like This?
           </h2>
 
-          <div className="flex flex-wrap mt-5 md:gap-5 gap-2 md:max-w-lg ">
-            <div className="flex items-center bg-[#F8F0E5] text-[#472A08] border border-black rounded-xl px-3 md:px-7 py-2 gap-5 max-w-[12rem] lg:max-w-[15rem] hover:ring-2 hover:ring-white">
+          <div className="flex flex-wrap mt-5 md:gap-1 gap-2 md:max-w-lg ">
+            <div className="flex items-center bg-[#F8F0E5] text-[#472A08] border border-black rounded-xl px-3 md:px-6 py-2 gap-5 md:max-w-[12rem] max-w-[12rem] lg:max-w-[15rem] hover:ring-2 hover:ring-white">
               <p className="font-extrabold">1</p>
               <p>
                 Confused about how to invite guests who live outside of your
@@ -107,6 +107,7 @@ export default function LandingPage() {
 
       {/* Reason Section */}
       <section className="bg-[#F8F0E5] flex flex-col sm:flex-row font-[Outfit]">
+        
         <div className="flex flex-col justify-center items-center sm:items-start py-5 px-10 sm:w-1/2 md:ps-20">
           <h2 className="text-[#472A08] text-xl sm:text-2xl md:text-4xl lg:text-5xl font-semibold">
             <span className="underline decoration-2	underline-offset-4">
@@ -124,7 +125,7 @@ export default function LandingPage() {
 
         <div className="md:w-1/2 pb-10">
           <div className="flex flex-wrap mt-5 gap-5 px-5 lg:max-w-xl">
-            <div className="flex flex-col bg-[#9E7676] text-[#F8F0E5] border border-black rounded-xl px-7 py-5 lg:py-10 gap-2 max-w-[9rem] md:max-w-[12rem] lg:max-w-[17rem]  hover:ring-2 hover:ring-[#482A08]">
+            <div className="flex flex-col bg-[#9E7676] text-[#F8F0E5] border border-black rounded-xl px-7 py-5 lg:py-10 gap-2 max-w-[9rem] md:max-w-[9rem] lg:max-w-[17rem]  hover:ring-2 hover:ring-[#482A08]">
               <p className="font-extrabold text-xl lg:text-3xl text-white">
                 High Quality
               </p>
@@ -133,7 +134,7 @@ export default function LandingPage() {
                 personality and style.
               </p>
             </div>
-            <div className="flex flex-col bg-[#9E7676] text-[#F8F0E5] border border-black rounded-xl px-7 py-5 gap-2 max-w-[11rem] lg:max-w-[14rem] md:max-w-[14rem]  hover:ring-2 hover:ring-[#482A08]">
+            <div className="flex flex-col bg-[#9E7676] text-[#F8F0E5] border border-black rounded-xl px-7 py-5 gap-2 max-w-[11rem] lg:max-w-[14rem] md:max-w-[12rem]  hover:ring-2 hover:ring-[#482A08]">
               <p className="font-extrabold text-xl lg:text-2xl text-white">
                 Memorable
               </p>
@@ -142,7 +143,7 @@ export default function LandingPage() {
                 and your loved ones will cherish for years to come.
               </p>
             </div>
-            <div className="flex flex-col bg-[#9E7676] text-[#F8F0E5] border border-black rounded-xl px-7 py-5 gap-2 max-w-[11rem] lg:max-w-[14rem] md:max-w-[14rem] hover:ring-2 hover:ring-[#482A08]">
+            <div className="flex flex-col bg-[#9E7676] text-[#F8F0E5] border border-black rounded-xl px-7 py-5 gap-2 max-w-[11rem] lg:max-w-[14rem] md:max-w-[11rem] hover:ring-2 hover:ring-[#482A08]">
               <p className="font-extrabold text-xl lg:text-2xl text-white">
                 Innovation
               </p>
@@ -151,7 +152,7 @@ export default function LandingPage() {
                 invitations unique and exciting.
               </p>
             </div>
-            <div className="flex flex-col bg-[#9E7676] text-[#F8F0E5] border border-black rounded-xl px-7 py-5 lg:py-10 gap-2 max-w-[9rem] lg:max-w-[18rem] md:max-w-[12rem] hover:ring-2 hover:ring-[#482A08]">
+            <div className="flex flex-col bg-[#9E7676] text-[#F8F0E5] border border-black rounded-xl px-7 py-5 lg:py-10 gap-2 max-w-[9rem] lg:max-w-[18rem] md:max-w-[9rem] hover:ring-2 hover:ring-[#482A08]">
               <p className="font-extrabold text-xl lg:text-3xl text-white">
                 Budget Friendly
               </p>
@@ -170,7 +171,7 @@ export default function LandingPage() {
           <span className="font-[Niconne] text-4xl font-normal">weedy</span>
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-2 mt-5 items-center">
+        <div className="flex flex-col sm:flex-row gap-2 mt-5 items-center md:px-5">
           <div className="flex flex-col items-end md:max-w-[26rem] lg:max-w-[27rem] py-10 ">
             <div className="flex flex-col bg-[#F8F0E5] border border-[#594545] rounded-xl items-center text-[#472A08] px-10 md:px-20 py-10 sm:h-[27rem] h-[25rem] hover:ring-white hover:ring ">
               <p className="line-through font-light pt-5">350.000 IDR</p>

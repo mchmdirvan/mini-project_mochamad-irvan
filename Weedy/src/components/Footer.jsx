@@ -9,9 +9,9 @@ import Button from "./Button";
 export default function Footer() {
   return (
     <>
-      <footer className="flex flex-col md:flex-row bg-[#594545] justify-center items-center gap-10 md:gap-1 md:px-2 lg:gap-20 py-20">
+      <footer className="flex flex-col md:flex-col lg:flex-row bg-[#594545] justify-center items-center gap-10 md:gap-1 md:px-2 lg:gap-20 py-20">
         
-        <div className="flex flex-col text-white font-[Outfit]  max-w-sm px-12 ">    
+        <div className="flex flex-col text-white font-[Outfit]  max-w-sm px-12 pb-10 ">    
           <div className="flex flex-row flex-shrink-0 items-center justify-center ">
             <img src={Logo} alt="logo" className="h-20" />
             <h3 className="font-[Niconne] text-5xl">weedy</h3>
