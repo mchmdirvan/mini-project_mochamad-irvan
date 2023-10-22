@@ -46,6 +46,7 @@ function Login() {
             <Button
               label="Sign in"
               className="text-[#472A08] w-[28rem] border border-[#472A08] font-bold text-xl"
+              id="btn-submit"
             />
             <p>
               Don't have an account yet?{" "}
