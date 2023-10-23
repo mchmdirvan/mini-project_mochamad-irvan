@@ -121,63 +121,32 @@ function Navbar() {
 
             <Disclosure.Panel className=" md:hidden">
               <div className="space-y-1 px-2 pb-3 pt-2">
-                <ul>
+                <ul className="bg-white text-[#472A08] font-[Outfit] font-semibold block rounded-md px-3 py-2 text-base">
                   <li>
-                    <a
-                      href="#"
-                      className={`${
-                        scrolling
-                          ? " text-[#472A08] hover:text-[#9E7676 font-semibold"
-                          : "text-white hover:text-gray-400"
-                      } font-[Outfit] font-semibold block rounded-md px-3 py-2 text-base`}
-                    >
+                    <a href="#" className="hover:text-[#9E7676]">
                       Home
                     </a>
                   </li>
                   <li>
-                    <a
-                      href="#"
-                      className={`${
-                        scrolling
-                          ? " text-[#472A08] hover:text-[#9E7676 font-semibold"
-                          : "text-white hover:text-gray-400"
-                      } font-[Outfit] font-semibold block rounded-md px-3 py-2 text-base`}
-                    >
+                    <a href="#" className="hover:text-[#9E7676]">
                       Features
                     </a>
                   </li>
                   <li>
-                    <a
-                      href="#"
-                      className={`${
-                        scrolling
-                          ? " text-[#472A08] hover:text-[#9E7676 font-semibold"
-                          : "text-white hover:text-gray-400"
-                      } font-[Outfit] font-semibold block rounded-md px-3 py-2 text-base`}
-                    >
+                    <a href="#" className="hover:text-[#9E7676]">
                       Pricing
                     </a>
                   </li>
                   <li>
-                    <a
-                      href="#"
-                      className={`${
-                        scrolling
-                          ? " text-[#472A08] hover:text-[#9E7676 font-semibold"
-                          : "text-white hover:text-gray-400"
-                      } font-[Outfit] font-semibold block rounded-md px-3 py-2 text-base`}
-                    >
+                    <a href="#" className="hover:text-[#9E7676]">
                       Contact
                     </a>
                   </li>
                   <li>
                     <a
                       href="#"
-                      className={`${
-                        scrolling
-                          ? " text-[#472A08] hover:text-[#9E7676 font-semibold"
-                          : "text-white hover:text-gray-400"
-                      } font-[Outfit] font-semibold block rounded-md px-3 py-2 text-base`}
+                      className="hover:text-[#9E7676]"
+                      onClick={() => navigate("/login")}
                     >
                       Sign In
                     </a>
