@@ -17,7 +17,7 @@ function Router() {
     },
     {
       path: "/login",
-      element: token === "" ? <Login /> : <Navigate to="/"/> 
+      element:  <Login /> 
     },
     {
       path: "/dashboard",
