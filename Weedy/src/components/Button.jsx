@@ -9,10 +9,11 @@ import React from "react";
  * id : string
  * label : string
  * ariaLabel: string
+ * onClick: function
  * }}
  */
 
-function Button({ type, id, label, ariaLabel, className }) {
+function Button({ type, id, label, ariaLabel, className, onClick }) {
   return (
     <div className="mt-5">
       <button
@@ -20,6 +21,7 @@ function Button({ type, id, label, ariaLabel, className }) {
         type={type}
         id={id}
         aria-label={ariaLabel}
+        onClick={onClick}
       >
         {label}
       </button>
