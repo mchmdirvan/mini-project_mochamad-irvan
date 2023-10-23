@@ -1,11 +1,15 @@
 /* eslint-disable no-unused-vars */
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Navigate } from "react-router-dom";
 
-import LandingPage from "../pages/LandingPage"
+import { useToken } from "../utils/context/token-context";
+import LandingPage from "../pages/LandingPage";
 import NotFound from "../pages/NotFound";
-import Login from "../pages/Login"
+import Login from "../pages/Login";
+import Dashboard from "../pages/Dashboard"
 
 function Router() {
+  const { token } = useToken();
+
   const router = createBrowserRouter([
     {
       path: "/",
@@ -13,11 +17,15 @@ function Router() {
     },
     {
       path: "/login",
-      element: <Login />,
+      element: token === "" ? <Login /> : <Navigate to="/"/> 
+    },
+    {
+      path: "/dashboard",
+      element: token === "" ? <Navigate to="/login"/> : <Dashboard /> 
     },
     {
       path: "*",
-      element: <NotFound/>,
+      element: <NotFound />,
     },
   ]);
   return <RouterProvider router={router} />;
