@@ -21,10 +21,10 @@ export default function LandingPage() {
           alt="Wedding Cover"
           className="w-[100vw] h-[100vh] brightness-50 object-cover object-bottom"
         />
-        <div className="absolute flex flex-col items-center mt-60  md:mt-60 lg:mt-40">
-          <h1 className=" md:text-4xl lg:text-5xl font-bold font-[Outfit] text-white">
+        <div className="absolute flex flex-col items-center mt-60 md:mt-80 lg:mt-40">
+          <h1 className=" text-sm sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold font-[Outfit] text-white">
             Make Your Wedding Unforgettable with{" "}
-            <span className="font-[Niconne] md:text-6xl lg:text-8xl font-normal">
+            <span className="font-[Niconne] text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-normal">
               weedy
             </span>
           </h1>
@@ -41,19 +41,19 @@ export default function LandingPage() {
               wrapper="span"
               speed={75}
               repeat={Infinity}
-              className="md:text-xl lg:text-2xl font-[Outfit]  text-white"
+              className="text-sm sm:text-md px-5 md:text-2xl font-[Outfit]  text-white"
             />
           </p>
           <Button
             label="let's go!"
-            className="font-[Niconne] text-2xl text-[#F8F0E5]"
+            className="font-[Niconne] text-md sm:text-xl md:text-2xl text-[#F8F0E5]"
           />
         </div>
       </header>
 
       {/* Features Section */}
       <section className="bg-[#9E7676] flex flex-col sm:flex-row font-[Outfit]">
-        <div className="flex flex-col md:w-1/2 py-10 md:py-20 md:px-5 ps-5 sm:ps-20 lg:ps-10 items-center sm:items-start xl:px-32">
+        <div className="flex flex-col md:w-1/2 py-10 md:py-20 md:px-5 lg:ps-10 items-center md:items-start xl:px-32">
           <h2 className="text-white text-xl sm:text-2xl md:text-4xl lg:text-5xl font-semibold max-w-md md:max-w-[20rem] lg:max-w-[30rem]">
             Do You Have a{" "}
             <span className="underline decoration-2	underline-offset-4">
@@ -62,7 +62,7 @@ export default function LandingPage() {
             Like This?
           </h2>
 
-          <div className="flex flex-wrap mt-5 md:gap-1 gap-2 md:max-w-lg ">
+          <div className="flex flex-wrap mt-5 md:gap-1 gap-2 md:max-w-lg font-medium justify-center lg:justify-start ">
             <div className="flex items-center bg-[#F8F0E5] text-[#472A08] border border-black rounded-xl px-3 md:px-6 py-2 gap-5 md:max-w-[12rem] max-w-[9rem] lg:max-w-[12rem] hover:ring-2 hover:ring-white">
               <p className="font-extrabold">1</p>
               <p>
@@ -90,15 +90,16 @@ export default function LandingPage() {
 
         <div className="sm:border-x-2 sm:border-white"></div>
 
-        <div className="flex flex-col justify-center md:w-1/2 md:px-10 py-10 items-center md:items-start px-5 sm:text-start sm:max-w-[16rem] md:max-w-lg text-center xl:px-32 xl:max-w-3xl">
-          <h2 className="text-white md:text-3xl  lg:text-4xl font-semibold text-2xl mb-2 ">
+        <div className="flex flex-col justify-center md:w-1/2 md:px-10 pb-10 items-center md:items-start px-5 sm:text-start sm:max-w-[16rem] md:max-w-lg text-center xl:px-32 xl:max-w-3xl">
+          <h2 className="text-white sm:text-lg
+          md:text-3xl  lg:text-4xl font-semibold text-xl mb-2 ">
             We Have{" "}
             <span className="underline decoration-2	underline-offset-4">
               Solutions
             </span>{" "}
             for you
           </h2>
-          <p className="text-[#F8F0E5] max-w-md pt-2">
+          <p className="text-[#F8F0E5] text-sm max-w-md pt-2">
             Digital Invitations | RSVP | Wedding Gift | Photo Gallery |
             Countdown Date | Quotes | Design Revision
           </p>
@@ -108,23 +109,23 @@ export default function LandingPage() {
       {/* Reason Section */}
       <section className="bg-[#F8F0E5] flex flex-col sm:flex-row font-[Outfit]">
         
-        <div className="flex flex-col justify-center items-center sm:items-start py-5 px-10 sm:w-1/2 md:ps-20">
-          <h2 className="text-[#472A08] text-xl sm:text-2xl md:text-4xl lg:text-5xl font-semibold">
+        <div className="flex flex-col justify-center items-center md:items-start py-5 px-10 sm:w-1/2 md:ps-20">
+          <h2 className="text-[#472A08] text-3xl sm:text-xl md:text-4xl lg:text-5xl font-semibold">
             <span className="underline decoration-2	underline-offset-4">
               Why
             </span>{" "}
-            <span className="font-[Niconne] text-5xl md:text-6xl lg:text-7xl font-medium">
+            <span className="font-[Niconne] text-5xl sm:text-4xl md:text-6xl lg:text-7xl font-medium">
               weddy
             </span>
           </h2>
-          <p className="text-[#472A08] max-w-lg pt-2 text-xl lg:text-2xl text-center md:text-start">
+          <p className="text-[#472A08] max-w-lg pt-2  text-md md:text-xl lg:text-2xl text-center md:text-start">
             We offer high-quality products and services that will wow your
             guests and make your day memorable.
           </p>
         </div>
 
         <div className="md:w-1/2 pb-10">
-          <div className="flex flex-wrap mt-5 gap-5 px-5 lg:max-w-xl">
+          <div className="flex flex-wrap mt-5 gap-5 justify-center lg:max-w-xl">
             <div className="flex flex-col bg-[#9E7676] text-[#F8F0E5] border border-black rounded-xl px-7 py-5 lg:py-10 gap-2 max-w-[9rem] md:max-w-[9rem] lg:max-w-[17rem]  hover:ring-2 hover:ring-[#482A08]">
               <p className="font-extrabold text-xl lg:text-3xl text-white">
                 High Quality
@@ -143,7 +144,7 @@ export default function LandingPage() {
                 and your loved ones will cherish for years to come.
               </p>
             </div>
-            <div className="flex flex-col bg-[#9E7676] text-[#F8F0E5] border border-black rounded-xl px-7 py-5 gap-2 max-w-[10rem] lg:max-w-[14rem] md:max-w-[11rem] hover:ring-2 hover:ring-[#482A08]">
+            <div className="flex flex-col bg-[#9E7676] text-[#F8F0E5] border border-black rounded-xl px-7 py-5 gap-2 max-w-[10rem] lg:max-w-[14rem] md:max-w-[12rem] hover:ring-2 hover:ring-[#482A08]">
               <p className="font-extrabold text-xl lg:text-2xl text-white">
                 Innovation
               </p>
@@ -166,17 +167,17 @@ export default function LandingPage() {
 
       {/* Pricelist section */}
       <section className="bg-[#9E7676] flex flex-col font-[Outfit] justify-center items-center py-10">
-        <p className=" text-2xl text-white text-center">
+        <p className=" px-5 text-sm font-semibold md:text-2xl text-white text-center">
           Price list of Digital Wedding Invitations by{" "}
-          <span className="font-[Niconne] text-4xl font-normal">weedy</span>
+          <span className="font-[Niconne] text-2xl md:text-4xl font-normal">weedy</span>
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-2 mt-5 items-center md:px-5">
-          <div className="flex flex-col items-end md:max-w-[26rem] lg:max-w-[27rem] py-10 ">
-            <div className="flex flex-col bg-[#F8F0E5] border border-[#594545] rounded-xl items-center text-[#472A08] px-10 md:px-20 py-10 sm:h-[27rem] h-[25rem] hover:ring-white hover:ring ">
+        <div className="flex flex-col sm:flex-row gap-2 lg:gap-20 items-center sm:px-3 md:px-5">
+          <div className="flex flex-col items-end py-10 ">
+            <div className="flex flex-col bg-[#F8F0E5] border border-[#594545] rounded-xl items-center text-[#472A08] px-10 md:px-10 py-10 w-[21rem] lg:w-[25rem] sm:w-[18rem] sm:h-[29rem] h-[25rem] hover:ring-white hover:ring ">
               <p className="line-through font-light pt-5">350.000 IDR</p>
-              <h2 className="font-bold text-5xl">99.000 IDR</h2>
-              <p className="mt-5 self-start">Our Features: </p>
+              <h2 className="font-bold text-3xl lg:text-4xl  xl:text-5xl">99.000 IDR</h2>
+              <p className="mt-5 self-start font-bold">Our Features: </p>
               <ul className="list-disc">
                 <li>Bride and Groom name</li>
                 <li>Quote </li>
@@ -190,14 +191,14 @@ export default function LandingPage() {
             <Button label="Order Now" className="text-[#F8F0E5]" />
           </div>
 
-          <div className="flex flex-col items-end max-w-[21rem] lg:max-w-[27rem] py-10 md:max-w-[26rem]">
-            <div className="flex  flex-col  bg-[#F8F0E5] border border-[#594545] rounded-xl items-center text-[#472A08] px-10 md:px-20 py-10 lg:h-[27rem] hover:ring hover:ring-white">
-              <p className="text-center">
+          <div className="flex flex-col items-end max-w-[21rem] py-10">
+            <div className="flex  flex-col  bg-[#F8F0E5] border border-[#594545] rounded-xl items-center text-[#472A08] px-10 md:px-10 py-10 lg:h-[29rem] hover:ring hover:ring-white sm:w-[18rem] sm:h-[29rem] lg:w-[25rem]">
+              <p className="text-center text-sm sm:text-[0.7rem] lg:text-md pb-2">
                 Get a digital wedding invitation for free by supporting us on
                 social media.{" "}
               </p>
-              <h2 className="font-bold text-5xl">0 IDR</h2>
-              <p className="mt-5 self-start">All You Have To-Do is: </p>
+              <h2 className="font-bold text-3xl lg:text-4xl  xl:text-5xl">0 IDR</h2>
+              <p className="mt-5 self-start font-bold">All You Have To-Do is: </p>
               <ul className="list-disc ps-7">
                 <li>Follow our Instagram account @weedyidn</li>
                 <li>Share our service in your Instagram stories and tag us </li>
