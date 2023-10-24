@@ -2,7 +2,7 @@
 import { useNavigate } from "react-router-dom";
 import React from "react";
 
-import NotFoundImage from "../assets/NotFound.webp";
+import NotFoundImage from "../assets/not-found.webp";
 import Button from "../components/Button";
 
 export default function NotFound() {
