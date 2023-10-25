@@ -25,6 +25,7 @@ export default function Dashboard() {
     <div className="drawer">
       <Sidebar />
 
+      {/* Drawer */}
       <div className=" drawer-content">
         <div className="flex justify-between px-5 py-5 font-[Outfit] lg:hidden items-center">
           <p className="lg:hidden text-xl">
@@ -46,6 +47,7 @@ export default function Dashboard() {
           </label>
         </div>
 
+        {/* Pages */}
         <div className="flex flex-col my-2 font-[Outfit] items-center">
           <div className="flex flex-col px-10">
             <div className="flex flex-row ">
