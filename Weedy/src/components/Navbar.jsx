@@ -56,15 +56,16 @@ function Navbar() {
                 <div className="flex flex-1 items-center justify-center sm:items-stretch md:justify-start ">
                   <div className="flex flex-shrink-0 items-center">
                     <img className=" h-20" src={Logo} alt="Your Company" />
-                    <h1
+                    <a
+                      href="#home"
                       className={`${
                         scrolling
                           ? "text-[#472A08] hover:text-[#9E7676]"
-                          : "text-white hover:text-gray-400"
+                          : "text-white hover:text-gray-100"
                       } font-[Niconne] text-5xl`}
                     >
                       weedy
-                    </h1>
+                    </a>
                   </div>
                 </div>
 
