@@ -63,7 +63,10 @@ export default function Sidebar() {
               <li>
                 <a>View Invitation</a>
               </li>
-              <Button label="Sign out" className="text-xl border-black hover:text-white ms-2 " />
+              <Button
+                label="Sign out"
+                className="text-xl border-black hover:text-white ms-2 "
+              />
             </div>
           </ul>
         </div>
