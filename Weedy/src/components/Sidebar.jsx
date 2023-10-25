@@ -29,7 +29,6 @@ export default function Sidebar() {
       text: "Successfully logout",
       showCancelButton: false,
     });
-    navigate("/");
   }
 
   return (
