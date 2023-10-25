@@ -3,7 +3,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import React from "react";
+import React, { useState } from "react";
 import * as z from "zod";
 
 import { useToken } from "../utils/context/token-context";
@@ -18,6 +18,7 @@ function Login() {
   useTitle("Sign In | Weedy");
 
   const { changeToken } = useToken();
+  const [username, setUsername] = useState("");
   const navigate = useNavigate();
 
   const schema = z.object({
@@ -33,11 +34,19 @@ function Login() {
     resolver: zodResolver(schema),
   });
 
+  function saveDataToLocalStorage(key, data) {
+    localStorage.setItem(key, JSON.stringify(data));
+  }
+
   async function handleLogin(data) {
     try {
       const result = await login(data);
       changeToken(JSON.stringify(result));
+
       const { username } = data;
+      setUsername(username);
+      saveDataToLocalStorage("user", username);
+
       navigate(`/dashboard/${username}`);
     } catch (error) {
       Swal.fire({
@@ -104,9 +113,7 @@ function Login() {
             </p>
           </form>
 
-          <div className="flex flex-col gap-2 items-center">
-            
-          </div>
+          <div className="flex flex-col gap-2 items-center"></div>
         </div>
       </div>
     </>
