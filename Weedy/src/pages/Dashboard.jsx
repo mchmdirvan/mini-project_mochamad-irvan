@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 import DashboardCreate from "../assets/dashboard-create.webp";
 import DashboardImage from "../assets/dashboard-image.webp";
@@ -25,10 +26,12 @@ export default function Dashboard() {
       <Sidebar />
 
       <div className=" drawer-content">
-        <div className="flex justify-between px-5 py-5 border font-[Outfit] lg:hidden">
+        <div className="flex justify-between px-5 py-5 font-[Outfit] lg:hidden items-center">
           <p className="lg:hidden text-xl">
             Dashboard |{" "}
-            <span className="font-[Niconne] text-4xl font-normal">weedy</span>
+            <Link className="font-[Niconne] text-4xl font-normal" to="/">
+              weedy
+            </Link>
           </p>
           <label
             htmlFor="my-drawer-2"
