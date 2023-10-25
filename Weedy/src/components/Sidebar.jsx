@@ -22,12 +22,14 @@ export default function Sidebar() {
   const user = getDataFromLocalStorage("user") || "";
 
   function handleLogout() {
+    localStorage.removeItem("user");
     changeToken();
     Swal.fire({
       title: "Success",
       text: "Successfully logout",
       showCancelButton: false,
     });
+    navigate("/");
   }
 
   return (
