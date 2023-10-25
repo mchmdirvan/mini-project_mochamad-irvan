@@ -123,7 +123,7 @@ function Navbar() {
                                   ? " text-white bg-[#472A08] font-normal hover:bg-white hover:text-[#472A08] hover:border hover:border-[#472A08]"
                                   : "text-white border border-white hover:bg-[#472A08] "
                               } font-[Outfit] items-center rounded-md px-5 py-1`}
-                              onClick={() => navigate("/dashboard")}
+                              onClick={() => navigate("/dashboard/:username")}
                             >
                               Dashboard
                             </a>
@@ -180,7 +180,7 @@ function Navbar() {
                             ? " text-white bg-[#472A08] font-normal hover:bg-white hover:text-[#472A08] hover:border hover:border-[#472A08]"
                             : "border border-[#472A08] hover:bg-[#472A08]  "
                         } font-[Outfit] items-center rounded-md px-5 py-1`}
-                        onClick={() => navigate("/dashboard")}
+                        onClick={() => navigate("/dashboard/:username")}
                       >
                         Dashboard
                       </a>
