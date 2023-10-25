@@ -24,7 +24,15 @@ export default function Dashboard() {
 
   function getDataFromLocalStorage(key) {
     const data = localStorage.getItem(key);
-    return JSON.parse(data);
+    if (data) {
+      try {
+        return JSON.parse(data);
+      } catch (error) {
+        console.error("Error parsing JSON data from local storage:", error);
+        return null;
+      }
+    }
+    return null;
   }
 
   const user = getDataFromLocalStorage("user") || "";
