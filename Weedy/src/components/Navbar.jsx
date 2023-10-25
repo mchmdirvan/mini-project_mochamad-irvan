@@ -12,6 +12,13 @@ function Navbar() {
   const { token, changeToken } = useToken();
   const navigate = useNavigate();
 
+  function getDataFromLocalStorage(key) {
+    const data = localStorage.getItem(key);
+    return JSON.parse(data);
+  }
+
+  const user = getDataFromLocalStorage("user") || "";
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 0) {
@@ -123,7 +130,7 @@ function Navbar() {
                                   ? " text-white bg-[#472A08] font-normal hover:bg-white hover:text-[#472A08] hover:border hover:border-[#472A08]"
                                   : "text-white border border-white hover:bg-[#472A08] "
                               } font-[Outfit] items-center rounded-md px-5 py-1`}
-                              onClick={() => navigate("/dashboard/:username")}
+                              onClick={() => navigate(`/dashboard/${user}`)}
                             >
                               Dashboard
                             </a>
@@ -180,7 +187,7 @@ function Navbar() {
                             ? " text-white bg-[#472A08] font-normal hover:bg-white hover:text-[#472A08] hover:border hover:border-[#472A08]"
                             : "border border-[#472A08] hover:bg-[#472A08]  "
                         } font-[Outfit] items-center rounded-md px-5 py-1`}
-                        onClick={() => navigate("/dashboard/:username")}
+                        onClick={() => navigate(`/dashboard/${user}`)}
                       >
                         Dashboard
                       </a>
