@@ -37,7 +37,8 @@ function Login() {
     try {
       const result = await login(data);
       changeToken(JSON.stringify(result));
-      navigate("/dashboard");
+      const { username } = data;
+      navigate(`/dashboard/${username}`);
     } catch (error) {
       Swal.fire({
         title: "Error",
