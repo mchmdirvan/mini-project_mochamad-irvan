@@ -16,11 +16,18 @@ import Button from "../components/Button";
 export default function Dashboard() {
   useTitle("Dashboard | Weedy");
   const { username } = useParams();
-  
+
   const [isDrawerOpen, setDrawerOpen] = useState(false);
   const toggleDrawer = () => {
     setDrawerOpen(!isDrawerOpen);
   };
+
+  function getDataFromLocalStorage(key) {
+    const data = localStorage.getItem(key);
+    return JSON.parse(data);
+  }
+
+  const user = getDataFromLocalStorage("user") || "";
 
   return (
     <div className="drawer">
@@ -41,9 +48,15 @@ export default function Dashboard() {
             onClick={toggleDrawer}
           >
             {isDrawerOpen ? (
-              <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
+              <XMarkIcon
+                className="block h-8 w-8 hover:bg-blue-300 bg-white z-10"
+                aria-hidden="true"
+              />
             ) : (
-              <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
+              <Bars3Icon
+                className="block h-8 w-8 hover:bg-blue-300  bg-white z-10"
+                aria-hidden="true"
+              />
             )}
           </label>
         </div>
@@ -53,7 +66,7 @@ export default function Dashboard() {
           <div className="flex flex-col px-10">
             <div className="flex flex-row ">
               <div className="flex flex-col justify-center">
-                <p className="text-sm lg:text-xl">Hi, Admin!</p>
+                <p className="text-sm lg:text-xl capitalize">Hi, {user}!</p>
                 <h1 className="text-lg lg:text-4xl mt-5 font-bold max-w-lg lg:leading-normal leading-7">
                   It’s time to craft your amazing digital wedding invitation.{" "}
                 </h1>
@@ -92,7 +105,7 @@ export default function Dashboard() {
                   <img
                     src={DashboardCreate}
                     alt="Dashboard Image"
-                    className=" rounded-xl w-[12rem] max-h-[7rem] sm:w-[20rem] sm:max-h-[10rem] lg:w-[29rem] lg:max-h-[12rem] object-cover object-top border border-black"
+                    className=" rounded-xl w-[14rem] max-h-[7rem] sm:w-[20rem] sm:max-h-[10rem] lg:w-[29rem] lg:max-h-[12rem] object-cover object-top border border-black"
                   />
                   <Button
                     className="absolute bottom-[1rem] left-2  bg-white p-2 rounded-md border-black hover:text-white px-2 lg:px-10 lg:text-sm text-[0.7rem]"
@@ -106,7 +119,7 @@ export default function Dashboard() {
                     <img
                       src={DashboradEdit}
                       alt="Dashboard Image"
-                      className=" rounded-xl max-w-[6rem] h-[10rem] sm:max-w-[10rem] lg:max-w-[20rem] lg:w-[18rem] lg:h-[10rem] object-cover border border-black"
+                      className=" rounded-xl max-w-[7rem] h-[10rem] sm:max-w-[10rem] lg:max-w-[20rem] lg:w-[18rem] lg:h-[10rem] object-cover border border-black"
                     />
                     <Button
                       className="absolute bottom-[1rem] left-2  bg-white p-2 rounded-md border-black hover:text-white px-2 lg:px-10 lg:text-sm text-[0.7rem]"
@@ -119,7 +132,7 @@ export default function Dashboard() {
                     <img
                       src={DashboardAI}
                       alt="Dashboard Image"
-                      className=" rounded-xl max-w-[5rem] h-[10rem] sm:max-w-[9rem] lg:max-w-[10rem] lg:h-[10rem] object-cover border border-black"
+                      className=" rounded-xl max-w-[7rem] h-[10rem] sm:max-w-[9rem] lg:max-w-[10rem] lg:h-[10rem] object-cover border border-black"
                     />
                     <Button
                       className="absolute bottom-[1rem] left-2  bg-white p-2 rounded-md border-black hover:text-white text-sm px-2 lg:px-10 lg:text-sm text-[0.7rem]"
