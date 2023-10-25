@@ -14,6 +14,13 @@ export default function Sidebar() {
   const { token, changeToken } = useToken();
   const navigate = useNavigate();
 
+  function getDataFromLocalStorage(key) {
+    const data = localStorage.getItem(key);
+    return JSON.parse(data);
+  }
+
+  const user = getDataFromLocalStorage("user") || "";
+
   function handleLogout() {
     changeToken();
     Swal.fire({
@@ -51,7 +58,7 @@ export default function Sidebar() {
 
             <div className="flex flex-col justify-center items-center my-10 ">
               <img src={ProfileImage} alt="photo profile" className="w-20" />
-              <p className="font-semibold my-2 text-2xl">Admin</p>
+              <p className="font-semibold my-2 text-2xl capitalize">{user}</p>
             </div>
             <ul className="flex flex-col mx-auto gap-5 text-lg">
               <li>
