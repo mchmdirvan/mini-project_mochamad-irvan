@@ -6,7 +6,7 @@ import React from "react";
 import ContactImage from "../assets/contact-section.webp";
 import { useTitle } from "../utils/hooks/customHooks";
 import HeroImage from "../assets/hero-section.webp";
-import Navbar from "../components/Navbar"
+import Navbar from "../components/Navbar";
 import Button from "../components/Button";
 import Footer from "../components/Footer";
 
@@ -15,7 +15,7 @@ export default function LandingPage() {
   return (
     <>
       <Navbar />
-      <header className="relative flex justify-center">
+      <header id="home" className="relative flex justify-center">
         <img
           src={HeroImage}
           alt="Wedding Cover"
@@ -52,7 +52,10 @@ export default function LandingPage() {
       </header>
 
       {/* Features Section */}
-      <section className="bg-[#9E7676] flex flex-col sm:flex-row font-[Outfit]">
+      <section
+        id="features"
+        className="bg-[#9E7676] flex flex-col sm:flex-row font-[Outfit]"
+      >
         <div className="flex flex-col md:w-1/2 py-10 md:py-20 md:px-5 lg:ps-10 items-center md:items-start xl:px-32">
           <h2 className="text-white text-xl sm:text-2xl md:text-4xl lg:text-5xl font-semibold max-w-md md:max-w-[20rem] lg:max-w-[30rem]">
             Do You Have a{" "}
@@ -91,8 +94,10 @@ export default function LandingPage() {
         <div className="sm:border-x-2 sm:border-white"></div>
 
         <div className="flex flex-col justify-center md:w-1/2 md:px-10 pb-10 items-center md:items-start px-5 sm:text-start sm:max-w-[16rem] md:max-w-lg text-center xl:px-32 xl:max-w-3xl">
-          <h2 className="text-white sm:text-lg
-          md:text-3xl  lg:text-4xl font-semibold text-xl mb-2 ">
+          <h2
+            className="text-white sm:text-lg
+          md:text-3xl  lg:text-4xl font-semibold text-xl mb-2 "
+          >
             We Have{" "}
             <span className="underline decoration-2	underline-offset-4">
               Solutions
@@ -108,7 +113,6 @@ export default function LandingPage() {
 
       {/* Reason Section */}
       <section className="bg-[#F8F0E5] flex flex-col sm:flex-row font-[Outfit]">
-        
         <div className="flex flex-col justify-center items-center md:items-start py-5 px-10 sm:w-1/2 md:ps-20">
           <h2 className="text-[#472A08] text-3xl sm:text-xl md:text-4xl lg:text-5xl font-semibold">
             <span className="underline decoration-2	underline-offset-4">
@@ -166,17 +170,24 @@ export default function LandingPage() {
       </section>
 
       {/* Pricelist section */}
-      <section className="bg-[#9E7676] flex flex-col font-[Outfit] justify-center items-center py-10">
+      <section
+        id="pricing"
+        className="bg-[#9E7676] flex flex-col font-[Outfit] justify-center items-center py-10"
+      >
         <p className=" px-5 text-sm font-semibold md:text-2xl text-white text-center">
           Price list of Digital Wedding Invitations by{" "}
-          <span className="font-[Niconne] text-2xl md:text-4xl font-normal">weedy</span>
+          <span className="font-[Niconne] text-2xl md:text-4xl font-normal">
+            weedy
+          </span>
         </p>
 
         <div className="flex flex-col sm:flex-row gap-2 lg:gap-20 items-center sm:px-3 md:px-5">
           <div className="flex flex-col items-end py-10 ">
             <div className="flex flex-col bg-[#F8F0E5] border border-[#594545] rounded-xl items-center text-[#472A08] px-10 md:px-10 py-10 w-[21rem] lg:w-[25rem] sm:w-[18rem] sm:h-[29rem] h-[25rem] hover:ring-white hover:ring ">
               <p className="line-through font-light pt-5">350.000 IDR</p>
-              <h2 className="font-bold text-3xl lg:text-4xl  xl:text-5xl">99.000 IDR</h2>
+              <h2 className="font-bold text-3xl lg:text-4xl  xl:text-5xl">
+                99.000 IDR
+              </h2>
               <p className="mt-5 self-start font-bold">Our Features: </p>
               <ul className="list-disc">
                 <li>Bride and Groom name</li>
@@ -197,8 +208,12 @@ export default function LandingPage() {
                 Get a digital wedding invitation for free by supporting us on
                 social media.{" "}
               </p>
-              <h2 className="font-bold text-3xl lg:text-4xl  xl:text-5xl">0 IDR</h2>
-              <p className="mt-5 self-start font-bold">All You Have To-Do is: </p>
+              <h2 className="font-bold text-3xl lg:text-4xl  xl:text-5xl">
+                0 IDR
+              </h2>
+              <p className="mt-5 self-start font-bold">
+                All You Have To-Do is:{" "}
+              </p>
               <ul className="list-disc ps-7">
                 <li>Follow our Instagram account @weedyidn</li>
                 <li>Share our service in your Instagram stories and tag us </li>
@@ -229,7 +244,7 @@ export default function LandingPage() {
       </section>
 
       {/* Contact Section */}
-      <section>
+      <section id="contact">
         <div className="flex bg-[#9E7676] items-center justify-center  px-12 md:px-24 py-20 gap-5">
           <div className="flex flex-col">
             <h2 className="font-bold text-2xl md:text-3xl lg:text-5xl text-white">
