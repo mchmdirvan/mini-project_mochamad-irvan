@@ -61,7 +61,7 @@ function Navbar() {
                       className={`${
                         scrolling
                           ? "text-[#472A08] hover:text-[#9E7676]"
-                          : "text-white hover:text-gray-100"
+                          : "text-white hover:text-g"
                       } font-[Niconne] text-5xl`}
                     >
                       weedy
@@ -109,7 +109,7 @@ function Navbar() {
                               className={`${
                                 scrolling
                                   ? " text-white bg-[#472A08] font-normal hover:bg-white hover:text-[#472A08] hover:border hover:border-[#472A08]"
-                                  : "text-white border border-white hover:bg-[#472A08] "
+                                  : "text-white border border-white hover:bg-[#472A08]  "
                               } font-[Outfit] items-center rounded-md px-5 py-1`}
                               onClick={() => navigate("/login")}
                             >
@@ -137,8 +137,8 @@ function Navbar() {
             </div>
 
             <Disclosure.Panel className=" md:hidden">
-              <div className="space-y-1 px-2 pb-3 pt-2">
-                <ul className="bg-white text-[#472A08] font-[Outfit] font-semibold block rounded-md px-3 py-2 text-base">
+              <div className="px-2">
+                <ul className="flex flex-col gap-2 bg-white text-[#472A08] font-[Outfit] font-semibold rounded-md px-3 py-5">
                   <li>
                     <a href="#home" className="hover:text-[#9E7676]">
                       Home
@@ -166,7 +166,7 @@ function Navbar() {
                         className={`${
                           scrolling
                             ? " text-white bg-[#472A08] font-normal hover:bg-white hover:text-[#472A08] hover:border hover:border-[#472A08]"
-                            : "text-white border border-white hover:bg-[#472A08] "
+                            : "border border-[#472A08] hover:bg-[#472A08] "
                         } font-[Outfit] items-center rounded-md px-5 py-1`}
                         onClick={() => navigate("/login")}
                       >
@@ -178,7 +178,7 @@ function Navbar() {
                         className={`${
                           scrolling
                             ? " text-white bg-[#472A08] font-normal hover:bg-white hover:text-[#472A08] hover:border hover:border-[#472A08]"
-                            : "text-white border border-white hover:bg-[#472A08] "
+                            : "border border-[#472A08] hover:bg-[#472A08]  "
                         } font-[Outfit] items-center rounded-md px-5 py-1`}
                         onClick={() => navigate("/dashboard")}
                       >
