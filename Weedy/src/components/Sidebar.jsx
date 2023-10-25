@@ -71,9 +71,7 @@ export default function Sidebar() {
             </div>
             <ul className="flex flex-col mx-auto gap-5 text-lg">
               <li>
-                <Link to="/dashboard">
-                  <a>Dashboard</a>
-                </Link>
+                <Link to="/dashboard">Dashboard</Link>
               </li>
               <li>
                 <a>Create Invitation</a>
