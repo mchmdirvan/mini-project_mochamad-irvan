@@ -4,11 +4,13 @@ import { Disclosure, Menu } from "@headlessui/react";
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
+import { useToken } from "../utils/context/token-context";
 import Logo from "../assets/logo.webp";
 
 function Navbar() {
-  const navigate = useNavigate();
   const [scrolling, setScrolling] = useState(false);
+  const { token, changeToken } = useToken();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -80,37 +82,51 @@ function Navbar() {
                         } font-[Outfit] items-center rounded-md px-3 py-2 text-base flex gap-10`}
                       >
                         <li>
-                          <a href="#" className="hover:text-[#9E7676]">
+                          <a href="#home" className="hover:text-[#9E7676]">
                             Home
                           </a>
                         </li>
                         <li>
-                          <a href="#" className="hover:text-[#9E7676]">
+                          <a href="#features" className="hover:text-[#9E7676]">
                             Features
                           </a>
                         </li>
                         <li>
-                          <a href="#" className="hover:text-[#9E7676]">
+                          <a href="#pricing" className="hover:text-[#9E7676]">
                             Pricing
                           </a>
                         </li>
                         <li>
-                          <a href="#" className="hover:text-[#9E7676]">
+                          <a href="#contact" className="hover:text-[#9E7676]">
                             Contact
                           </a>
                         </li>
                         <li>
-                          <a
-                            href=""
-                            className={`${
-                              scrolling
-                                ? " text-white bg-[#472A08] font-normal hover:bg-white hover:text-[#472A08] hover:border hover:border-[#472A08]"
-                                : "text-white border border-white hover:bg-[#472A08] "
-                            } font-[Outfit] items-center rounded-md px-5 py-1`}
-                            onClick={() => navigate("/login")}
-                          >
-                            Sign in
-                          </a>
+                          {token === "" ? (
+                            <a
+                              href=""
+                              className={`${
+                                scrolling
+                                  ? " text-white bg-[#472A08] font-normal hover:bg-white hover:text-[#472A08] hover:border hover:border-[#472A08]"
+                                  : "text-white border border-white hover:bg-[#472A08] "
+                              } font-[Outfit] items-center rounded-md px-5 py-1`}
+                              onClick={() => navigate("/login")}
+                            >
+                              Sign in
+                            </a>
+                          ) : (
+                            <a
+                              href=""
+                              className={`${
+                                scrolling
+                                  ? " text-white bg-[#472A08] font-normal hover:bg-white hover:text-[#472A08] hover:border hover:border-[#472A08]"
+                                  : "text-white border border-white hover:bg-[#472A08] "
+                              } font-[Outfit] items-center rounded-md px-5 py-1`}
+                              onClick={() => navigate("/dashboard")}
+                            >
+                              Dashboard
+                            </a>
+                          )}
                         </li>
                       </ul>
                     </div>
@@ -123,33 +139,51 @@ function Navbar() {
               <div className="space-y-1 px-2 pb-3 pt-2">
                 <ul className="bg-white text-[#472A08] font-[Outfit] font-semibold block rounded-md px-3 py-2 text-base">
                   <li>
-                    <a href="#" className="hover:text-[#9E7676]">
+                    <a href="#home" className="hover:text-[#9E7676]">
                       Home
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="hover:text-[#9E7676]">
+                    <a href="#features" className="hover:text-[#9E7676]">
                       Features
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="hover:text-[#9E7676]">
+                    <a href="#pricing" className="hover:text-[#9E7676]">
                       Pricing
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="hover:text-[#9E7676]">
+                    <a href="#contact" className="hover:text-[#9E7676]">
                       Contact
                     </a>
                   </li>
                   <li>
-                    <a
-                      href="#"
-                      className="hover:text-[#9E7676]"
-                      onClick={() => navigate("/login")}
-                    >
-                      Sign In
-                    </a>
+                    {token === "" ? (
+                      <a
+                        href=""
+                        className={`${
+                          scrolling
+                            ? " text-white bg-[#472A08] font-normal hover:bg-white hover:text-[#472A08] hover:border hover:border-[#472A08]"
+                            : "text-white border border-white hover:bg-[#472A08] "
+                        } font-[Outfit] items-center rounded-md px-5 py-1`}
+                        onClick={() => navigate("/login")}
+                      >
+                        Sign in
+                      </a>
+                    ) : (
+                      <a
+                        href=""
+                        className={`${
+                          scrolling
+                            ? " text-white bg-[#472A08] font-normal hover:bg-white hover:text-[#472A08] hover:border hover:border-[#472A08]"
+                            : "text-white border border-white hover:bg-[#472A08] "
+                        } font-[Outfit] items-center rounded-md px-5 py-1`}
+                        onClick={() => navigate("/dashboard")}
+                      >
+                        Dashboard
+                      </a>
+                    )}
                   </li>
                 </ul>
               </div>
