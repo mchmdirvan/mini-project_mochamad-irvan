@@ -20,14 +20,14 @@ export default function Dashboard() {
       <div className=" drawer-content">
         <div className="flex flex-col my-10 font-[Outfit] items-center">
           <div className="flex flex-row  ">
-            <div className="flex flex-col gap-5">
+            <div className="flex flex-col">
               <p className="text-xl">Hi, Admin!</p>
-              <h1 className="text-4xl font-bold max-w-lg leading-normal">
+              <h1 className="text-4xl mt-5 font-bold max-w-lg leading-normal">
                 It’s time to craft your amazing digital wedding invitation.{" "}
               </h1>
               <Button
                 label="Let’s get started!"
-                className="mt-0 border-black hover:text-white"
+                className=" border-black hover:text-white"
               />
             </div>
             <div>
@@ -39,7 +39,7 @@ export default function Dashboard() {
             </div>
           </div>
 
-          <div className="flex gap-5">
+          <div className="flex gap-5 mt-5">
             <div className="relative">
               <img
                 src={DashboardView}
