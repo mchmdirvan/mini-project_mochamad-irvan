@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 import DashboardCreate from "../assets/dashboard-create.webp";
 import DashboardImage from "../assets/dashboard-image.webp";
@@ -15,7 +15,8 @@ import Button from "../components/Button";
 
 export default function Dashboard() {
   useTitle("Dashboard | Weedy");
-
+  const { username } = useParams();
+  
   const [isDrawerOpen, setDrawerOpen] = useState(false);
   const toggleDrawer = () => {
     setDrawerOpen(!isDrawerOpen);
