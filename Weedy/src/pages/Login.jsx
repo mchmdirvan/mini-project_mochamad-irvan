@@ -88,7 +88,7 @@ function Login() {
               name="username"
               type="text"
               error={errors.username?.message}
-              className="border-b border-[#472A08] text-[#472A08] placeholder:text-[#472A08] w-[28rem] placeholder:text-xl focus:outline-none"
+              className="border-b border-[#472A08] text-[#472A08] placeholder:text-[#472A08] w-full md:w-[28rem] placeholder:text-xl focus:outline-none"
               placeholder="Enter your Username"
             />
             <Input
@@ -96,13 +96,13 @@ function Login() {
               name="password"
               type="password"
               error={errors.password?.message}
-              className="border-b border-[#472A08] text-[#472A08] placeholder:text-[#472A08] w-[28rem] placeholder:text-xl focus:outline-none"
+              className="border-b border-[#472A08] text-[#472A08] placeholder:text-[#472A08] w-full md:w-[28rem] placeholder:text-xl focus:outline-none"
               placeholder="Enter your Password"
             />
             <Button
               label="Sign in"
               type="submit"
-              className="text-[#472A08] w-[28rem] border border-[#472A08] font-bold text-xl hover:text-white"
+              className="text-[#472A08] w-full md:w-[28rem] border border-[#472A08] font-bold text-xl hover:text-white"
               id="btn-submit"
             />
             <p className="self-center">
