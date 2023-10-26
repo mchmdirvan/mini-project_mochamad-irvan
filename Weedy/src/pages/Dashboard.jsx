@@ -44,7 +44,7 @@ export default function Dashboard() {
 
       {/* Drawer */}
       <div className=" drawer-content">
-        <div className="flex justify-between px-5 py-5 font-[Outfit] lg:hidden items-center">
+        <div className="flex justify-between px-10 py-5 font-[Outfit] lg:hidden items-center">
           <p className="lg:hidden text-xl">
             Dashboard |{" "}
             <Link className="font-[Niconne] text-4xl font-normal" to="/">
@@ -53,20 +53,13 @@ export default function Dashboard() {
           </p>
           <label
             htmlFor="my-drawer-2"
-            className=" drawer-button lg:hidden z-50"
+            className=" drawer-button lg:hidden"
             onClick={toggleDrawer}
           >
-            {isDrawerOpen ? (
-              <XMarkIcon
-                className="block h-8 w-8 hover:bg-blue-300 bg-white  border"
-                aria-hidden="true"
-              />
-            ) : (
-              <Bars3Icon
-                className="block h-8 w-8 hover:bg-blue-300  bg-white border"
-                aria-hidden="true"
-              />
-            )}
+            <Bars3Icon
+              className="block h-8 w-8 bg-white border"
+              aria-hidden="true"
+            />
           </label>
         </div>
 
