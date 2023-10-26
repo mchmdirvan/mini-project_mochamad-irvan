@@ -6,10 +6,12 @@ import {
 } from "react-router-dom";
 
 import { useToken } from "../utils/context/token-context";
+
+import CreateInvitation from "../pages/CreateInvitation";
 import LandingPage from "../pages/LandingPage";
+import Dashboard from "../pages/Dashboard";
 import NotFound from "../pages/NotFound";
 import Login from "../pages/Login";
-import Dashboard from "../pages/Dashboard";
 
 function Router() {
   const { token } = useToken();
@@ -26,6 +28,10 @@ function Router() {
     {
       path: "/dashboard/:username",
       element: token === "" ? <Navigate to="/login" /> : <Dashboard />,
+    },
+    {
+      path: "/create",
+      element: token === "" ? <Navigate to="/login" /> : <CreateInvitation />,
     },
     {
       path: "*",
