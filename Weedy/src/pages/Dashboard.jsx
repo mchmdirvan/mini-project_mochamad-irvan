@@ -146,68 +146,6 @@ export default function Dashboard() {
               </div>
             </div>
           </div>
-
-          {/* Navigation Section
-          <div className="px-10 flex gap-2 lg:gap-5 mt-5">
-            <div className={`${isDrawerOpen ? "hidden" : "relative"}`}>
-              <img
-                src={DashboardView}
-                alt="Dashboard Image"
-                className="rounded-xl h-[18rem] max-w-[7rem] sm:max-w-[14rem] sm:h-[21rem] lg:max-w-[16rem] lg:h-[23rem] object-cover border border-black"
-              />
-              <Button
-                className="absolute bottom-[1rem] lg:bottom-[2rem] left-2  bg-white p-2 rounded-md border-black hover:text-white px-2 lg:px-10 lg:text-sm text-[0.7rem]"
-                label="View Invitation"
-              />
-            </div>
-
-            <div className="flex flex-col gap-3">
-              <div>
-                <div className={`${isDrawerOpen ? "hidden" : "relative"}`}>
-                  <img
-                    src={DashboardCreate}
-                    alt="Dashboard Image"
-                    className=" rounded-xl w-[14rem] max-h-[7rem] sm:w-[20rem] sm:max-h-[10rem] lg:w-[29rem] lg:max-h-[12rem] object-cover object-top border border-black"
-                  />
-                  <Button
-                    className="absolute bottom-[1rem] left-2  bg-white p-2 rounded-md border-black hover:text-white px-2 lg:px-10 lg:text-sm text-[0.7rem]"
-                    label="Create Invitation"
-                  />
-                </div>
-              </div>
-
-
-
-              <div className="flex lg:gap-5 gap-2">
-                <div>
-                  <div className={`${isDrawerOpen ? "hidden" : "relative"}`}>
-                    <img
-                      src={DashboradEdit}
-                      alt="Dashboard Image"
-                      className=" rounded-xl max-w-[7rem] h-[10rem] sm:max-w-[10rem] lg:max-w-[20rem] lg:w-[18rem] lg:h-[10rem] object-cover border border-black"
-                    />
-                    <Button
-                      className="absolute bottom-[1rem] left-2  bg-white p-2 rounded-md border-black hover:text-white px-2 lg:px-10 lg:text-sm text-[0.7rem]"
-                      label="Edit Invitation"
-                    />
-                  </div>
-                </div>
-                <div>
-                  <div className={`${isDrawerOpen ? "hidden" : "relative"}`}>
-                    <img
-                      src={DashboardAI}
-                      alt="Dashboard Image"
-                      className=" rounded-xl max-w-[7rem] h-[10rem] sm:max-w-[9rem] lg:max-w-[10rem] lg:h-[10rem] object-cover border border-black"
-                    />
-                    <Button
-                      className="absolute bottom-[1rem] left-2  bg-white p-2 rounded-md border-black hover:text-white text-sm px-2 lg:px-10 lg:text-sm text-[0.7rem]"
-                      label="AI Services"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> */}
         </div>
       </div>
     </div>
