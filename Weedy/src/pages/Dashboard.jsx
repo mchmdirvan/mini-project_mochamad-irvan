@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import React, { useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 
 import DashboardCreate from "../assets/dashboard-create.webp";
 import DashboardImage from "../assets/dashboard-image.webp";
@@ -16,6 +16,7 @@ import Button from "../components/Button";
 export default function Dashboard() {
   useTitle("Dashboard | Weedy");
   const { username } = useParams();
+  const navigate = useNavigate();
 
   const [isDrawerOpen, setDrawerOpen] = useState(false);
   const toggleDrawer = () => {
@@ -71,8 +72,8 @@ export default function Dashboard() {
 
         {/* Pages */}
         <div className="flex flex-col py-10 font-[Outfit] items-center">
-          <div className="flex flex-col">
-            <div className="flex flex-row ">
+          <div className="flex flex-col px-10">
+            <div className="flex flex-row  ">
               <div className="flex flex-col justify-center">
                 <p className="text-sm lg:text-xl capitalize">Hi, {user}!</p>
                 <h1 className="text-lg lg:text-4xl mt-5 font-bold max-w-lg lg:max-w-xl lg:leading-normal leading-7">
@@ -90,17 +91,18 @@ export default function Dashboard() {
             <Button
               label="Let’s get started!"
               className=" border-black hover:text-white w-full"
+              onClick={() => navigate(`/create`)}
             />
           </div>
 
           {/* Navigation */}
 
-          <div className="flex gap-2 mt-5 -z-50">
+          <div className={`flex gap-2 mt-5 ${isDrawerOpen ? "-z-10" : "z-0"}`}>
             <div className="relative">
               <img
                 src={DashboardView}
                 alt=""
-                className="rounded-xl h-[17rem] max-w-[7rem] object-cover object-left border border-black sm:max-w-[14rem] sm:h-[20rem] sm:object-center lg:max-w-[13rem] lg:h-[22rem]"
+                className="rounded-xl h-[17rem] max-w-[7rem] object-cover object-left border border-black sm:max-w-[14rem] sm:h-[20rem] sm:object-center lg:max-w-[13rem] lg:h-[22rem] hover:border-blue-400 hover:scale-105 transition-all"
               />
               <Button
                 label="View Invitation"
@@ -113,11 +115,13 @@ export default function Dashboard() {
                 <img
                   src={DashboardCreate}
                   alt=""
-                  className="rounded-xl max-h-[7rem] w-[14rem] object-cover object-top border border-black sm:w-[19rem] sm:max-h-[10rem] lg:w-[27rem] lg:max-h-[11rem]"
+                  className="rounded-xl max-h-[7rem] w-[14rem] object-cover object-top border border-black sm:w-[19rem] sm:max-h-[10rem] lg:w-[27rem] lg:max-h-[11rem] hover:border-blue-400 hover:scale-105 transition-all"
+                  onClick={() => navigate(`/create`)}
                 />
                 <Button
                   label="Create Invitation"
                   className="absolute bottom-[1rem] left-2  bg-white rounded-md border-black hover:text-white px-2 text-[0.7rem] lg:bottom-[2rem] lg:text-sm lg:px-10]"
+                  onClick={() => navigate(`/create`)}
                 />
               </div>
               <div className="flex gap-2">
@@ -125,7 +129,7 @@ export default function Dashboard() {
                   <img
                     src={DashboradEdit}
                     alt=""
-                    className="rounded-xl h-[9rem] max-w-[7rem] object-cover border border-black sm:max-w-[10rem] lg:max-w-[20rem] lg:w-[16rem] lg:h-[10rem]"
+                    className="rounded-xl h-[9rem] max-w-[7rem] object-cover border border-black sm:max-w-[10rem] lg:max-w-[20rem] lg:w-[16rem] lg:h-[10rem] hover:border-blue-400 hover:scale-105 transition-all"
                   />
                   <Button
                     label="Edit Invitation"
@@ -136,7 +140,7 @@ export default function Dashboard() {
                   <img
                     src={DashboardAI}
                     alt=""
-                    className="rounded-xl h-[9rem] max-w-[7rem] object-cover border border-black sm:max-w-[9rem] lg:max-w-[10rem] lg:h-[10rem]"
+                    className="rounded-xl h-[9rem] max-w-[7rem] object-cover border border-black sm:max-w-[9rem] lg:max-w-[10rem] lg:h-[10rem] hover:border-blue-400 hover:scale-105 transition-all"
                   />
                   <Button
                     label="AI Services"
