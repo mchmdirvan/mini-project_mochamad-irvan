@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { Bars3Icon } from "@heroicons/react/24/outline";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 
