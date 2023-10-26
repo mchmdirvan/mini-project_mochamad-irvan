@@ -56,7 +56,7 @@ export default function Sidebar() {
 
           <div className="menu p-4 w-80 min-h-full bg-[#F8F7FC] ">
             {/* Sidebar content here */}
-            <div className="  flex justify-center items-center ">
+            <div className="  flex justify-center items-center z-50 ">
               <img className=" h-20" src={Logo} alt="Your Company" />
               <Link
                 className=" text-black hover:text-[#594545] font-[Niconne] text-5xl"
