@@ -97,7 +97,7 @@ export default function Dashboard() {
 
           {/* Navigation */}
 
-          <div className={`flex gap-2 mt-5 ${isDrawerOpen ? "-z-10" : "z-0"}`}>
+          <div className={`flex gap-2 mt-5`}>
             <div className="relative">
               <img
                 src={DashboardView}
