@@ -53,17 +53,17 @@ export default function Dashboard() {
           </p>
           <label
             htmlFor="my-drawer-2"
-            className=" drawer-button lg:hidden z-10"
+            className=" drawer-button lg:hidden z-50"
             onClick={toggleDrawer}
           >
             {isDrawerOpen ? (
               <XMarkIcon
-                className="block h-8 w-8 hover:bg-blue-300 bg-white z-10"
+                className="block h-8 w-8 hover:bg-blue-300 bg-white  border"
                 aria-hidden="true"
               />
             ) : (
               <Bars3Icon
-                className="block h-8 w-8 hover:bg-blue-300  bg-white z-10"
+                className="block h-8 w-8 hover:bg-blue-300  bg-white border"
                 aria-hidden="true"
               />
             )}
