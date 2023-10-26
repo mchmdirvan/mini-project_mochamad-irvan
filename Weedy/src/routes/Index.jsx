@@ -30,7 +30,7 @@ function Router() {
       element: token === "" ? <Navigate to="/login" /> : <Dashboard />,
     },
     {
-      path: "/create",
+      path: "/CreateInvitation",
       element: token === "" ? <Navigate to="/login" /> : <CreateInvitation />,
     },
     {

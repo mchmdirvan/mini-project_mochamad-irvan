@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import React, { useState } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
+import React, { useState } from "react";
 
 import DashboardCreate from "../assets/dashboard-create.webp";
 import DashboardImage from "../assets/dashboard-image.webp";
@@ -91,7 +91,7 @@ export default function Dashboard() {
             <Button
               label="Let’s get started!"
               className=" border-black hover:text-white w-full"
-              onClick={() => navigate(`/create`)}
+              onClick={() => navigate(`/CreateInvitation`)}
             />
           </div>
 
@@ -116,12 +116,12 @@ export default function Dashboard() {
                   src={DashboardCreate}
                   alt=""
                   className="rounded-xl max-h-[7rem] w-[14rem] object-cover object-top border border-black sm:w-[19rem] sm:max-h-[10rem] lg:w-[27rem] lg:max-h-[11rem] hover:border-blue-400 hover:scale-105 transition-all"
-                  onClick={() => navigate(`/create`)}
+                  onClick={() => navigate(`/CreateInvitation`)}
                 />
                 <Button
                   label="Create Invitation"
                   className="absolute bottom-[1rem] left-2  bg-white rounded-md border-black hover:text-white px-2 text-[0.7rem] lg:bottom-[2rem] lg:text-sm lg:px-10]"
-                  onClick={() => navigate(`/create`)}
+                  onClick={() => navigate(`/CreateInvitation`)}
                 />
               </div>
               <div className="flex gap-2">
