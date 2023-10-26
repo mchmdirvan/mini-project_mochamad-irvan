@@ -15,13 +15,13 @@ import Button from "../components/Button";
 
 export default function Dashboard() {
   useTitle("Dashboard | Weedy");
-  const { username } = useParams();
-  const navigate = useNavigate();
-
   const [isDrawerOpen, setDrawerOpen] = useState(false);
   const toggleDrawer = () => {
     setDrawerOpen(!isDrawerOpen);
   };
+
+  const { username } = useParams();
+  const navigate = useNavigate();
 
   function getDataFromLocalStorage(key) {
     const data = localStorage.getItem(key);
