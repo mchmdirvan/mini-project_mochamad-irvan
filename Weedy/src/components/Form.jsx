@@ -57,4 +57,58 @@ function Input({
   );
 }
 
-export { Input };
+/**
+ * TextArea component for forms
+ *
+ * @param {{
+ * label : string
+ * className : string
+ * name : string
+ * id : string
+ * cols : number
+ * rows : number
+ * error : string
+ * placeholder : string
+ * register: function
+ * }}  props
+ */
+
+function TextArea({
+  label,
+  className,
+  name,
+  id,
+  error,
+  placeholder,
+  register,
+  ariaLabel,
+  onChange,
+  cols,
+  rows,
+}) {
+  return (
+    <>
+      <div>
+        <label className="mt-5">{label}</label>
+        <textarea
+          className={`${className} ${
+            error
+              ? "border border-[#C70039] text-[#C70039] placeholder:text-[#C70039]"
+              : "border border-[#472A08] text-[#472A08] placeholder:text-[#472A08]"
+          } mt-2 py-2 pl-2 text-[#472A08] transition duration-300 ease-in-out"`}
+          name={name}
+          id={id}
+          placeholder={placeholder}
+          {...(register ? register(name) : {})}
+          aria-label={ariaLabel}
+          onChange={onChange}
+          cols={cols}
+          rows={rows}
+        ></textarea>
+        {error && <div className=" text-red-500">{error}</div>}
+      </div>
+    </>
+  );
+}
+
+export { Input, TextArea };
