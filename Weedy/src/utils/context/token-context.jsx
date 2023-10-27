@@ -22,7 +22,11 @@ function TokenProvider({ children }) {
   const changeToken = useCallback(
     (data) => {
       const newData = data ?? "";
-      localStorage.setItem("user", newData);
+      if (data) {
+        localStorage.setItem("user", newData);
+      } else {
+        localStorage.removeItem("user");
+      }
       setToken(newData);
     },
     [token]
@@ -33,7 +37,7 @@ function TokenProvider({ children }) {
       token,
       changeToken,
     }),
-    [token]
+    [token, changeToken]
   );
 
   return (
