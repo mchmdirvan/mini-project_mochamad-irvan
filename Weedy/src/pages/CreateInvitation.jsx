@@ -169,7 +169,7 @@ function CreateInvitation() {
                     />
                   </div>
                 </div>
-                <Button type="submit" label="Next" onClick={onSubmit} />
+                <Button type="submit" label="Next" onClick={handleSubmit} />
               </div>
             )}
 
