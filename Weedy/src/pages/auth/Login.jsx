@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import React, { useState } from "react";
 import * as z from "zod";
 
+import { userLogin, loginSchema } from "../../utils/apis/auth";
 import { useToken } from "../../utils/context/token-context";
 import { useTitle } from "../../utils/hooks/customHooks";
 import { login } from "../../utils/apis/auth/api";
@@ -17,21 +18,16 @@ import Swal from "../../utils/swal";
 function Login() {
   useTitle("Sign In | Weedy");
 
-  const { changeToken } = useToken();
   const [username, setUsername] = useState("");
+  const { changeToken } = useToken();
   const navigate = useNavigate();
-
-  const schema = z.object({
-    username: z.string().min(1, { message: "Username is required" }),
-    password: z.string().min(1, { message: "Password is required" }),
-  });
 
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors , isSubmitting },
   } = useForm({
-    resolver: zodResolver(schema),
+    resolver: zodResolver(loginSchema),
   });
 
   function saveDataToLocalStorage(key, data) {
@@ -40,8 +36,8 @@ function Login() {
 
   async function handleLogin(data) {
     try {
-      const result = await login(data);
-      changeToken(JSON.stringify(result));
+      const result = await userLogin(data);
+      changeToken(JSON.stringify(result.payload));
 
       const { username } = data;
       setUsername(username);
@@ -104,6 +100,7 @@ function Login() {
               type="submit"
               className="text-[#472A08] w-full border border-[#472A08] font-bold text-xl hover:text-white"
               id="btn-submit"
+              disabled={isSubmitting}
             />
             <p className="self-center">
               Don't have an account yet?{" "}
