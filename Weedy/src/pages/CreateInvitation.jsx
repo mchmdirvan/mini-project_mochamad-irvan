@@ -5,6 +5,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import dayjs from "dayjs";
 import * as z from "zod";
 
 import { createWedding, getWeddings } from "../utils/apis/wedding-detail/api";
@@ -18,6 +19,7 @@ import Button from "../components/Button";
 
 function CreateInvitation() {
   useTitle("Create Invitation | Weedy");
+
   const [isDrawerOpen, setDrawerOpen] = useState(false);
   const toggleDrawer = () => {
     setDrawerOpen(!isDrawerOpen);
@@ -43,11 +45,11 @@ function CreateInvitation() {
       receptionHall: z.string().min(1, { message: "Hall is Required" }),
       agreementCity: z.string().min(1, { message: "City is Required" }),
       receptionCity: z.string().min(1, { message: "City is Required" }),
-      agreementDate: z.date().refine((date) => date !== null, {
-        message: "Agreement Date is Required",
+      agreementDate: z.string().refine((value) => dayjs(value).isValid, {
+        message: "'Invalid date and time",
       }),
-      receptionDate: z.date().refine((date) => date !== null, {
-        message: "Reception Date is Required",
+      receptionDate: z.string().refine((value) => dayjs(value).isValid, {
+        message: "'Invalid date and time",
       }),
     });
   } else if (currentStep === 3) {
@@ -86,6 +88,8 @@ function CreateInvitation() {
       setCurrentStep(currentStep + 1);
     } else {
       try {
+        data.agreementDate = dayjs(data.agreementDate).unix();
+        data.receptionDate = dayjs(data.receptionDate).unix();
         await createWedding(data);
         Swal.fire({
           title: "Success",
