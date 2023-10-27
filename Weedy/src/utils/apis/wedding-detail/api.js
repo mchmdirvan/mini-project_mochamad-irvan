@@ -1,6 +1,6 @@
 import axiosWithConfig from "../axiosWithConfig";
 
-export const getWedding = async () => {
+export const getWeddings = async () => {
   try {
     const response = await axiosWithConfig.get("/wedding-detail");
     return response.data;

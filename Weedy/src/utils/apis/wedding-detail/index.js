@@ -1,4 +1,4 @@
-import { getWedding, createWedding, getDetailWedding } from "./api";
-import { productSchema } from "./types";
+import { getWeddings, createWedding, getDetailWedding } from "./api";
+import { weddingSchema } from "./types";
 
-export { getWedding, createWedding, getDetailWedding, productSchema };
+export { getWeddings, createWedding, getDetailWedding, weddingSchema };
