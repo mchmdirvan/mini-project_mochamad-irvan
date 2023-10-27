@@ -5,9 +5,9 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import * as z from "zod";
 
 import { createWedding, getWeddings } from "../utils/apis/wedding-detail/api";
-import { weddingSchema } from "../utils/apis/wedding-detail/";
 import { useTitle } from "../utils/hooks/customHooks";
 import Swal from "../utils/swal";
 
@@ -24,6 +24,38 @@ function CreateInvitation() {
 
   const [currentStep, setCurrentStep] = useState(1);
   const [weddings, setWeddings] = useState([]);
+
+  let weddingSchema;
+  if (currentStep === 1) {
+    weddingSchema = z.object({
+      id: z.number().optional(),
+      brideName: z.string().min(1, { message: "Bride's Name is Required" }),
+      groomName: z.string().min(1, { message: "Groom's Name is Required" }),
+      brideBio: z.string().min(1, { message: "Bride's Bio is Required" }),
+      groomBio: z.string().min(1, { message: "Groom's Bio is Required" }),
+    });
+  } else if (currentStep === 2) {
+    weddingSchema = z.object({
+      agreementAddress: z.number().min(1, { message: "Address is Required" }),
+      receptionAddress: z.number().min(1, { message: "Address is Required" }),
+      agreementHall: z.number().min(1, { message: "Hall is Required" }),
+      receptionHall: z.number().min(1, { message: "Hall is Required" }),
+      agreementCity: z.number().min(1, { message: "City is Required" }),
+      receptionCity: z.number().min(1, { message: "City is Required" }),
+      agreementDate: z.date().refine((date) => date !== null, {
+        message: "Agreement Date is Required",
+      }),
+      receptionDate: z.date().refine((date) => date !== null, {
+        message: "Reception Date is Required",
+      }),
+    });
+  } else if (currentStep === 3) {
+    weddingSchema = z.object({
+      scriptureQuotes: z
+        .number()
+        .min(1, { message: "Scripture Quotes is Required" }),
+    });
+  }
 
   const {
     formState: { errors },
