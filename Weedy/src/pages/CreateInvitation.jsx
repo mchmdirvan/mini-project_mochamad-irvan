@@ -132,17 +132,17 @@ function CreateInvitation() {
                     <Input
                       placeholder="Bride's Name"
                       register={register}
-                      name="bridesName"
+                      name="brideName"
                       type="text"
-                      error={errors.bridesName?.message}
+                      error={errors.brideName?.message}
                       className="border-b border-[#472A08] text-[#472A08] placeholder:text-md focus:outline-none w-[20rem]"
                     />
                     <Input
                       placeholder="Groom's Name"
                       register={register}
-                      name="groomsName"
+                      name="groomName"
                       type="text"
-                      error={errors.groomsName?.message}
+                      error={errors.groomName?.message}
                       className="border-b border-[#472A08] text-[#472A08] placeholder:text-md focus:outline-none w-[20rem]"
                     />
                   </div>
@@ -154,17 +154,17 @@ function CreateInvitation() {
                     <Input
                       placeholder="e.g. 1st son of Mr.John & Ms.Putri"
                       register={register}
-                      name="bridesName"
+                      name="brideBio"
                       type="text"
-                      error={errors.bridesName?.message}
+                      error={errors.brideBio?.message}
                       className="border-b border-[#472A08] text-[#472A08] placeholder:text-md focus:outline-none w-[20rem]"
                     />
                     <Input
                       placeholder="e.g. 3rd son of Mr.Doe & Ms.Putri"
                       register={register}
-                      name="groomsName"
+                      name="groomBio"
                       type="text"
-                      error={errors.groomsName?.message}
+                      error={errors.groomBio?.message}
                       className="border-b border-[#472A08] text-[#472A08] placeholder:text-md focus:outline-none w-[20rem]"
                     />
                   </div>
