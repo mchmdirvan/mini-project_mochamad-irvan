@@ -9,9 +9,9 @@ import DashboradEdit from "../assets/dashboard-edit.webp";
 import DashboardView from "../assets/dashboard-view.webp";
 import DashboardAI from "../assets/dashboard-ai.webp";
 
-import { useTitle } from "../utils/hooks/customHooks";
-import Sidebar from "../components/Sidebar";
-import Button from "../components/Button";
+import { useTitle } from "../../utils/hooks/customHooks";
+import Sidebar from "../../components/Sidebar";
+import Button from "../../components/Button";
 
 export default function Dashboard() {
   useTitle("Dashboard | Weedy");

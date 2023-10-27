@@ -6,13 +6,13 @@ import { useForm } from "react-hook-form";
 import React, { useState } from "react";
 import * as z from "zod";
 
-import { useToken } from "../utils/context/token-context";
-import { useTitle } from "../utils/hooks/customHooks";
-import { login } from "../utils/apis/auth/api";
+import { useToken } from "../../utils/context/token-context";
+import { useTitle } from "../../utils/hooks/customHooks";
+import { login } from "../../utils/apis/auth/api";
 import LoginImage from "../assets/login.webp";
-import { Input } from "../components/Form";
-import Button from "../components/Button";
-import Swal from "../utils/swal";
+import { Input } from "../../components/Form";
+import Button from "../../components/Button";
+import Swal from "../../utils/swal";
 
 function Login() {
   useTitle("Sign In | Weedy");
