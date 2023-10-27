@@ -4,7 +4,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import React, { useState } from "react";
-import * as z from "zod";
 
 import { userLogin, loginSchema } from "../../utils/apis/auth";
 import { useToken } from "../../utils/context/token-context";
