@@ -84,7 +84,7 @@ export default function Dashboard() {
             <Button
               label="Let’s get started!"
               className=" border-black hover:text-white w-full"
-              onClick={() => navigate(`/CreateInvitation`)}
+              onClick={() => navigate(`/create-invitation`)}
             />
           </div>
 
@@ -109,12 +109,12 @@ export default function Dashboard() {
                   src={DashboardCreate}
                   alt=""
                   className="rounded-xl max-h-[7rem] w-[14rem] object-cover object-top border border-black sm:w-[19rem] sm:max-h-[10rem] lg:w-[27rem] lg:max-h-[11rem] hover:border-blue-400 hover:scale-105 transition-all"
-                  onClick={() => navigate(`/CreateInvitation`)}
+                  onClick={() => navigate(`/create-invitation`)}
                 />
                 <Button
                   label="Create Invitation"
                   className="absolute bottom-[1rem] left-2  bg-white rounded-md border-black hover:text-white px-2 text-[0.7rem] lg:bottom-[2rem] lg:text-sm lg:px-10]"
-                  onClick={() => navigate(`/CreateInvitation`)}
+                  onClick={() => navigate(`/create-invitation`)}
                 />
               </div>
               <div className="flex gap-2">

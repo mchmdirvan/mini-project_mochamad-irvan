@@ -1,7 +1,6 @@
 /* eslint-disable no-unused-vars */
-
 import { useNavigate, Link } from "react-router-dom";
-import React, { useState } from "react";
+import React from "react";
 
 import ProfileImage from "../assets/profile-image.webp";
 import Logo from "../assets/logo-bw.webp";
@@ -37,7 +36,7 @@ export default function Sidebar() {
       text: "Successfully logout",
       showCancelButton: false,
     });
-    navigate("/")
+    navigate("/");
   }
 
   return (
@@ -72,10 +71,12 @@ export default function Sidebar() {
             </div>
             <ul className="flex flex-col mx-auto gap-5 text-lg">
               <li>
-                <Link to="/dashboard">Dashboard</Link>
+                <a onClick={() => navigate(`/dashboard/${user}`)}>Dashboard</a>
               </li>
               <li>
-                <a>Create Invitation</a>
+                <a onClick={() => navigate(`/create-invitation`)}>
+                  Create Invitation
+                </a>
               </li>
               <li>
                 <a>Edit Invitation</a>
