@@ -13,7 +13,7 @@ import CreateInvitation from "../pages/CreateInvitation";
 import LandingPage from "../pages/LandingPage";
 import Dashboard from "../pages/Dashboard";
 import NotFound from "../pages/NotFound";
-import Login from "../pages/Login";
+import Login from "../pages/auth/Login";
 
 function Router() {
   const { token } = useToken();
