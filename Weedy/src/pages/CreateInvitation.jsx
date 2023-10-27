@@ -14,7 +14,7 @@ import Swal from "../utils/swal";
 import FormImage from "../assets/dashboard-image.webp";
 
 import Sidebar from "../components/Sidebar";
-import { Input } from "../components/Form";
+import { Input, TextArea } from "../components/Form";
 import Button from "../components/Button";
 
 function CreateInvitation() {
@@ -351,16 +351,42 @@ function CreateInvitation() {
                     />
                   </div>
                 </div>
-                <div>
-                  <img src={FormImage} alt="" className="h-full object-cover" />
-                </div>
               </div>
             )}
 
             {currentStep === 3 && (
-              <div>
-                <h2>Step 3: Purchase</h2>
-                <Button type="submit" label="Submit" />
+              <div className="flex flex-col max-w-md ">
+                <div className="flex flex-col gap-2">
+                  <h2 className="text-4xl font-bold">Quotes Message</h2>
+                  <p className="text-sm max-w-sm">
+                    You can add a meaningful message from your holy book,
+                    whether it's from the Quran or other religious texts.
+                  </p>
+                  <TextArea
+                    register={register}
+                    className=" rounded-xl"
+                    name="scriptureQuotes"
+                    id="scriptureQuotes"
+                    cols={50}
+                    rows={5}
+                    error={errors.scriptureQuotes?.message}
+                  />
+                </div>
+
+                <div className="flex gap-5 self-end">
+                  <Button
+                    type="button"
+                    label="Back"
+                    className="border-black hover:text-white "
+                    onClick={onBack}
+                  />
+
+                  <Button
+                    type="submit"
+                    label="Next"
+                    className="border-black hover:text-white "
+                  />
+                </div>
               </div>
             )}
 
