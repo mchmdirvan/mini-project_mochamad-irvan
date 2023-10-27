@@ -35,7 +35,9 @@ function Input({
         <label className="mt-5">{label}</label>
         <input
           className={`${className} ${
-            error ? "border-b border-[#C70039] text-[#C70039] placeholder:text-[#C70039]" : ""
+            error
+              ? "border-b border-[#C70039] text-[#C70039] placeholder:text-[#C70039]"
+              : "border-b border-[#472A08] text-[#472A08] placeholder:text-[#472A08]"
           } mt-2 py-2 pl-2 text-[#472A08] transition duration-300 ease-in-out"`}
           type={type}
           name={name}
