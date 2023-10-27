@@ -4,8 +4,10 @@ import {
   RouterProvider,
   Navigate,
 } from "react-router-dom";
+import { useEffect } from "react";
 
 import { useToken } from "../utils/context/token-context";
+import { setAxiosConfig } from "../utils/apis/axiosWithConfig";
 
 import CreateInvitation from "../pages/CreateInvitation";
 import LandingPage from "../pages/LandingPage";
@@ -15,6 +17,10 @@ import Login from "../pages/Login";
 
 function Router() {
   const { token } = useToken();
+
+  useEffect(() => {
+    setAxiosConfig("", import.meta.env.VITE_BASE_URL);
+  }, []);
 
   const router = createBrowserRouter([
     {
