@@ -45,12 +45,28 @@ function CreateInvitation() {
       receptionHall: z.string().min(1, { message: "Hall is Required" }),
       agreementCity: z.string().min(1, { message: "City is Required" }),
       receptionCity: z.string().min(1, { message: "City is Required" }),
-      agreementDate: z.string().refine((value) => dayjs(value).isValid, {
-        message: "'Invalid date and time",
-      }),
-      receptionDate: z.string().refine((value) => dayjs(value).isValid, {
-        message: "'Invalid date and time",
-      }),
+      agreementDate: z
+        .string()
+        .min(1)
+        .refine(
+          (value) => {
+            return dayjs(value).isValid() && dayjs(value).isAfter(dayjs());
+          },
+          {
+            message: "Invalid date and time, or it should be in the future",
+          }
+        ),
+      receptionDate: z
+        .string()
+        .min(1)
+        .refine(
+          (value) => {
+            return dayjs(value).isValid() && dayjs(value).isAfter(dayjs());
+          },
+          {
+            message: "Invalid date and time, or it should be in the future",
+          }
+        ),
     });
   } else if (currentStep === 3) {
     weddingSchema = z.object({
@@ -211,7 +227,7 @@ function CreateInvitation() {
                     <Button
                       type="submit"
                       label="Next"
-                      className="border-black "
+                      className="border-black hover:text-white "
                     />
                   </div>
                 </div>
@@ -320,11 +336,18 @@ function CreateInvitation() {
                     </div>
                   </div>
 
-                  <div className="self-end">
+                  <div className="flex gap-5 self-end">
+                    <Button
+                      type="button"
+                      label="Back"
+                      className="border-black hover:text-white "
+                      onClick={onBack}
+                    />
+
                     <Button
                       type="submit"
                       label="Next"
-                      className="border-black "
+                      className="border-black hover:text-white "
                     />
                   </div>
                 </div>
