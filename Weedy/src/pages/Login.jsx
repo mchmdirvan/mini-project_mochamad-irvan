@@ -74,7 +74,7 @@ function Login() {
         <div className="flex flex-col text-[#472A08] gap-10 justify-center px-10 py-20 w-3/2 mx-auto">
           <div className="flex flex-col gap-2">
             <h1 className="font-bold text-5xl">Sign In</h1>
-            <p className="text-xl font-light">
+            <p className="text-sm md:text-xl font-light">
               Welcome back! Please login to your account
             </p>
           </div>
