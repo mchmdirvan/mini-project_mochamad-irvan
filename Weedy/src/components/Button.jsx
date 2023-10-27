@@ -10,6 +10,7 @@ import React from "react";
  * label : string
  * ariaLabel: string
  * onClick: function
+ * className : string
  * }}
  */
 
