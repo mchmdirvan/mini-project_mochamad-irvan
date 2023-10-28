@@ -15,13 +15,11 @@ import Button from "../components/Button";
 
 export default function Dashboard() {
   useTitle("Dashboard | Weedy");
+  const navigate = useNavigate();
   const [isDrawerOpen, setDrawerOpen] = useState(false);
   const toggleDrawer = () => {
     setDrawerOpen(!isDrawerOpen);
   };
-
-  const { username } = useParams();
-  const navigate = useNavigate();
 
   function getDataFromLocalStorage(key) {
     const data = localStorage.getItem(key);
@@ -37,12 +35,12 @@ export default function Dashboard() {
   }
 
   const user = getDataFromLocalStorage("user") || "";
+  const userID = getDataFromLocalStorage("userID") || "";
 
   return (
     <div className="drawer">
+      {/* Drawer and Sidebar*/}
       <Sidebar />
-
-      {/* Drawer */}
       <div className=" drawer-content">
         <div className="flex justify-between px-10 py-5 font-[Outfit] lg:hidden items-center">
           <p className="lg:hidden text-xl">
@@ -123,10 +121,20 @@ export default function Dashboard() {
                     src={DashboradEdit}
                     alt=""
                     className="rounded-xl h-[9rem] max-w-[7rem] object-cover border border-black sm:max-w-[10rem] lg:max-w-[20rem] lg:w-[16rem] lg:h-[10rem] hover:border-blue-400 hover:scale-105 transition-all"
+                    onClick={() =>
+                      navigate(`/create-invitation/${userID}`, {
+                        state: { data: userID },
+                      })
+                    }
                   />
                   <Button
                     label="Edit Invitation"
                     className="absolute bottom-[1rem] left-2  bg-white rounded-md border-black hover:text-white px-2 text-[0.7rem] lg:bottom-[2rem] lg:text-sm lg:px-10]"
+                    onClick={() =>
+                      navigate(`/create-invitation/${userID}`, {
+                        state: { data: userID },
+                      })
+                    }
                   />
                 </div>
                 <div className="relative">
