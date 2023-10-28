@@ -25,9 +25,10 @@ function CreateInvitation() {
     setDrawerOpen(!isDrawerOpen);
   };
   const [isDrawerOpen, setDrawerOpen] = useState(false);
+
   const [currentStep, setCurrentStep] = useState(1);
-  const [weddings, setWeddings] = useState([]);
   const [formData, setFormData] = useState(null);
+  const [weddings, setWeddings] = useState([]);
 
   const user = getDataFromLocalStorage("user") || "";
   function getDataFromLocalStorage(key) {
@@ -42,19 +43,6 @@ function CreateInvitation() {
     }
     return null;
   }
-
-  const {
-    formState: { errors, isSubmitting },
-    handleSubmit,
-    getValues,
-    register,
-    reset,
-  } = useForm({
-    resolver: zodResolver(weddingSchema),
-    defaultValues: {
-      username: user,
-    },
-  });
 
   let weddingSchema;
   if (currentStep === 1) {
@@ -105,6 +93,19 @@ function CreateInvitation() {
   } else if (currentStep === 4) {
     weddingSchema = z.object({});
   }
+
+  const {
+    formState: { errors, isSubmitted },
+    handleSubmit,
+    getValues,
+    register,
+    reset,
+  } = useForm({
+    resolver: zodResolver(weddingSchema),
+    defaultValues: {
+      username: user,
+    },
+  });
 
   useEffect(() => {
     fetchData();
@@ -442,7 +443,7 @@ function CreateInvitation() {
                     type="submit"
                     label="Submit"
                     className="border-black hover:text-white "
-                    disabled={isSubmitting}
+                    disabled={isSubmitted}
                   />
                 </div>
               </div>
