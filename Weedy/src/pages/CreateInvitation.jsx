@@ -16,6 +16,7 @@ import FormImage from "../assets/dashboard-image.webp";
 import { Input, TextArea } from "../components/Form";
 import Sidebar from "../components/Sidebar";
 import Button from "../components/Button";
+import Table from "../components/Table";
 
 function CreateInvitation() {
   useTitle("Create Invitation | Weedy");
@@ -42,6 +43,7 @@ function CreateInvitation() {
 
   const [currentStep, setCurrentStep] = useState(1);
   const [weddings, setWeddings] = useState([]);
+  const [formData, setFormData] = useState(null);
 
   let weddingSchema;
   if (currentStep === 1) {
@@ -89,10 +91,12 @@ function CreateInvitation() {
         .string()
         .min(1, { message: "Scripture Quotes is Required" }),
     });
+  } else if (currentStep === 4) {
+    weddingSchema = z.object({});
   }
 
   const {
-    formState: { errors },
+    formState: { errors, isSubmitting },
     handleSubmit,
     getValues,
     register,
@@ -119,6 +123,7 @@ function CreateInvitation() {
 
   async function onSubmit(data) {
     const formData = getValues();
+    setFormData(formData);
     if (currentStep < 4) {
       setCurrentStep(currentStep + 1);
     } else {
@@ -422,15 +427,16 @@ function CreateInvitation() {
               <div className="flex flex-col max-w-md ">
                 <div className="flex flex-col gap-2">
                   <h2 className="text-4xl font-bold">Review Your Input</h2>
-                  <p className="text-sm max-w-sm">
+                  <p className="text-lg mb-5">
                     Please review the data you've entered
                   </p>
+                  <Table formValues={formData} />
                 </div>
 
                 <div className="flex gap-5 self-end">
                   <Button
                     type="button"
-                    label="Back"
+                    label="Edit"
                     className="border-black hover:text-white "
                     onClick={onBack}
                   />
@@ -439,6 +445,7 @@ function CreateInvitation() {
                     type="submit"
                     label="Submit"
                     className="border-black hover:text-white "
+                    disabled={isSubmitting}
                   />
                 </div>
               </div>
