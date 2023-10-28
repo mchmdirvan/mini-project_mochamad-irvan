@@ -13,8 +13,8 @@ import { useTitle } from "../utils/hooks/customHooks";
 import Swal from "../utils/swal";
 import FormImage from "../assets/dashboard-image.webp";
 
-import Sidebar from "../components/Sidebar";
 import { Input, TextArea } from "../components/Form";
+import Sidebar from "../components/Sidebar";
 import Button from "../components/Button";
 
 function CreateInvitation() {
@@ -24,6 +24,21 @@ function CreateInvitation() {
   const toggleDrawer = () => {
     setDrawerOpen(!isDrawerOpen);
   };
+
+  function getDataFromLocalStorage(key) {
+    const data = localStorage.getItem(key);
+    if (data) {
+      try {
+        return JSON.parse(data);
+      } catch (error) {
+        console.error("Error parsing JSON data from local storage:", error);
+        return null;
+      }
+    }
+    return null;
+  }
+
+  const user = getDataFromLocalStorage("user") || "";
 
   const [currentStep, setCurrentStep] = useState(1);
   const [weddings, setWeddings] = useState([]);
@@ -71,7 +86,7 @@ function CreateInvitation() {
   } else if (currentStep === 3) {
     weddingSchema = z.object({
       scriptureQuotes: z
-        .number()
+        .string()
         .min(1, { message: "Scripture Quotes is Required" }),
     });
   }
@@ -84,6 +99,9 @@ function CreateInvitation() {
     reset,
   } = useForm({
     resolver: zodResolver(weddingSchema),
+    defaultValues: {
+      username: user,
+    },
   });
 
   useEffect(() => {
@@ -100,13 +118,12 @@ function CreateInvitation() {
   }
 
   async function onSubmit(data) {
+    const formData = getValues();
     if (currentStep < 4) {
       setCurrentStep(currentStep + 1);
     } else {
       try {
-        data.agreementDate = dayjs(data.agreementDate).unix();
-        data.receptionDate = dayjs(data.receptionDate).unix();
-        await createWedding(data);
+        await createWedding(formData);
         Swal.fire({
           title: "Success",
           text: "Berhasil menambahkan data",
@@ -172,6 +189,7 @@ function CreateInvitation() {
             className="form font-[Outfit] px-32"
             onSubmit={handleSubmit(onSubmit)}
           >
+            {/* STEP 1 */}
             {currentStep === 1 && (
               <div className="flex">
                 <div className="flex flex-col gap-2 mt-10 items-start">
@@ -179,6 +197,13 @@ function CreateInvitation() {
                   <p className="text-xl">
                     Fill out the form to continue your order.
                   </p>
+                  <Input
+                    register={register}
+                    name="username"
+                    type="text"
+                    error={errors.username?.message}
+                    className=" hidden disabled"
+                  />
 
                   <div className="flex flex-col mt-2">
                     <p>Couple Information</p>
@@ -237,6 +262,7 @@ function CreateInvitation() {
               </div>
             )}
 
+            {/* STEP 2 */}
             {currentStep === 2 && (
               <div className="flex">
                 <div className="flex flex-col gap-2">
@@ -354,6 +380,7 @@ function CreateInvitation() {
               </div>
             )}
 
+            {/* STEP 3 */}
             {currentStep === 3 && (
               <div className="flex flex-col max-w-md ">
                 <div className="flex flex-col gap-2">
@@ -390,9 +417,30 @@ function CreateInvitation() {
               </div>
             )}
 
+            {/* STEP 4 */}
             {currentStep === 4 && (
-              <div>
-                <h2>Step 4: Receive Product</h2>
+              <div className="flex flex-col max-w-md ">
+                <div className="flex flex-col gap-2">
+                  <h2 className="text-4xl font-bold">Review Your Input</h2>
+                  <p className="text-sm max-w-sm">
+                    Please review the data you've entered
+                  </p>
+                </div>
+
+                <div className="flex gap-5 self-end">
+                  <Button
+                    type="button"
+                    label="Back"
+                    className="border-black hover:text-white "
+                    onClick={onBack}
+                  />
+
+                  <Button
+                    type="submit"
+                    label="Submit"
+                    className="border-black hover:text-white "
+                  />
+                </div>
               </div>
             )}
           </form>
