@@ -1,32 +1,36 @@
 import axiosWithConfig from "../axiosWithConfig";
 
-export const getWeddings = async () => {
-  try {
-    const response = await axiosWithConfig.get("/wedding-detail");
-    return response.data;
-  } catch (error) {
-    throw Error("Failed to get wedding data");
+function getDataFromLocalStorage(key) {
+  const data = localStorage.getItem(key);
+  if (data) {
+    try {
+      return JSON.parse(data);
+    } catch (error) {
+      console.error("Error parsing JSON data from local storage:", error);
+      return null;
+    }
   }
-};
+  return null;
+}
 
 export const createWedding = async (data) => {
   try {
     const newData = {
       ...data,
     };
-    const response = await axiosWithConfig.post("/wedding-detail", newData);
+    const response = await axiosWithConfig.post("/weddings", newData);
     return response.data;
   } catch (error) {
     throw Error("Failed to create a new wedding data");
   }
 };
 
-export const getDetailWedding = async (weddingId) => {
+export const getWeddings = async () => {
+  const user = getDataFromLocalStorage("user") || "";
   try {
-    const response = await axiosWithConfig.get(`/wedding-detail/${weddingId}`);
-
+    const response = await axiosWithConfig.get(`/wedding-detail?username=${user}`);
     return response.data;
   } catch (error) {
-    throw Error("Failed to get a wedding data");
+    throw Error("Failed to get wedding data");
   }
 };
