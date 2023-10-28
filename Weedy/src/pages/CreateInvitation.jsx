@@ -9,9 +9,9 @@ import dayjs from "dayjs";
 import * as z from "zod";
 
 import { createWedding, getWeddings } from "../utils/apis/wedding-detail/api";
+import FormImage from "../assets/dashboard-image.webp";
 import { useTitle } from "../utils/hooks/customHooks";
 import Swal from "../utils/swal";
-import FormImage from "../assets/dashboard-image.webp";
 
 import { Input, TextArea } from "../components/Form";
 import Sidebar from "../components/Sidebar";
