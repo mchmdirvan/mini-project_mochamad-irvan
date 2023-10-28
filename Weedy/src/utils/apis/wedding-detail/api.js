@@ -28,7 +28,7 @@ export const createWedding = async (data) => {
 export const getWeddings = async () => {
   const user = getDataFromLocalStorage("user") || "";
   try {
-    const response = await axiosWithConfig.get(`/wedding-detail?username=${user}`);
+    const response = await axiosWithConfig.get(`/weddings?username=${user}`);
     return response.data;
   } catch (error) {
     throw Error("Failed to get wedding data");
