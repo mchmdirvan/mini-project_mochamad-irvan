@@ -11,10 +11,11 @@ import React from "react";
  * ariaLabel: string
  * onClick: function
  * className : string
+ * disabled : {}
  * }}
  */
 
-function Button({ type, id, label, ariaLabel, className, onClick }) {
+function Button({ type, id, label, ariaLabel, className, onClick,disabled }) {
   return (
     <div>
       <button
@@ -23,6 +24,7 @@ function Button({ type, id, label, ariaLabel, className, onClick }) {
         id={id}
         aria-label={ariaLabel}
         onClick={onClick}
+        disabled={disabled}
       >
         {label}
       </button>
