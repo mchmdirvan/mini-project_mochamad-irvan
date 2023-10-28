@@ -40,6 +40,10 @@ function Router() {
       element: token === "" ? <Navigate to="/login" /> : <CreateInvitation />,
     },
     {
+      path: "/create-invitation/:id",
+      element: token === "" ? <Navigate to="/login" /> : <CreateInvitation />,
+    },
+    {
       path: "*",
       element: <NotFound />,
     },
