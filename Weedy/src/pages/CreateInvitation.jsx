@@ -31,6 +31,7 @@ function CreateInvitation() {
   const navigate = useNavigate();
 
   const user = getDataFromLocalStorage("user") || "";
+
   function getDataFromLocalStorage(key) {
     const data = localStorage.getItem(key);
     if (data) {
@@ -42,6 +43,10 @@ function CreateInvitation() {
       }
     }
     return null;
+  }
+
+  function saveDataToLocalStorage(key, data) {
+    localStorage.setItem(key, JSON.stringify(data));
   }
 
   let weddingSchema;
@@ -129,8 +134,9 @@ function CreateInvitation() {
       setCurrentStep(currentStep + 1);
     } else {
       try {
-        await createWedding(weddings);
-        setWeddings([]);
+        const { id } = await createWedding(weddings);
+        saveDataToLocalStorage("userID", id );
+
         Swal.fire({
           title: "Success",
           text: "Well Done! Your Invitation is Set",
@@ -138,6 +144,7 @@ function CreateInvitation() {
         });
         reset();
         fetchData();
+        setWeddings([]);
         navigate(`/dashboard/${user}`);
       } catch (error) {
         console.log(error.toString());
