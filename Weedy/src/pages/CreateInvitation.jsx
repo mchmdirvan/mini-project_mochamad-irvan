@@ -21,11 +21,15 @@ import Table from "../components/Table";
 function CreateInvitation() {
   useTitle("Create Invitation | Weedy");
 
-  const [isDrawerOpen, setDrawerOpen] = useState(false);
   const toggleDrawer = () => {
     setDrawerOpen(!isDrawerOpen);
   };
+  const [isDrawerOpen, setDrawerOpen] = useState(false);
+  const [currentStep, setCurrentStep] = useState(1);
+  const [weddings, setWeddings] = useState([]);
+  const [formData, setFormData] = useState(null);
 
+  const user = getDataFromLocalStorage("user") || "";
   function getDataFromLocalStorage(key) {
     const data = localStorage.getItem(key);
     if (data) {
@@ -39,11 +43,18 @@ function CreateInvitation() {
     return null;
   }
 
-  const user = getDataFromLocalStorage("user") || "";
-
-  const [currentStep, setCurrentStep] = useState(1);
-  const [weddings, setWeddings] = useState([]);
-  const [formData, setFormData] = useState(null);
+  const {
+    formState: { errors, isSubmitting },
+    handleSubmit,
+    getValues,
+    register,
+    reset,
+  } = useForm({
+    resolver: zodResolver(weddingSchema),
+    defaultValues: {
+      username: user,
+    },
+  });
 
   let weddingSchema;
   if (currentStep === 1) {
@@ -95,19 +106,6 @@ function CreateInvitation() {
     weddingSchema = z.object({});
   }
 
-  const {
-    formState: { errors, isSubmitting },
-    handleSubmit,
-    getValues,
-    register,
-    reset,
-  } = useForm({
-    resolver: zodResolver(weddingSchema),
-    defaultValues: {
-      username: user,
-    },
-  });
-
   useEffect(() => {
     fetchData();
   }, []);
@@ -152,7 +150,6 @@ function CreateInvitation() {
     <>
       <div className="drawer">
         {/* Sidebar and Drawer */}
-
         <Sidebar />
         <div className=" drawer-content">
           <div className="flex justify-between px-10 py-5 font-[Outfit] lg:hidden items-center">
