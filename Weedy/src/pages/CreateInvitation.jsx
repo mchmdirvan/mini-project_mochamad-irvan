@@ -2,9 +2,9 @@
 /* eslint-disable no-unused-vars */
 import { Bars3Icon } from "@heroicons/react/24/outline";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useNavigate, Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
 import dayjs from "dayjs";
 import * as z from "zod";
 
@@ -27,8 +27,8 @@ function CreateInvitation() {
   const [isDrawerOpen, setDrawerOpen] = useState(false);
 
   const [currentStep, setCurrentStep] = useState(1);
-  const [formData, setFormData] = useState(null);
   const [weddings, setWeddings] = useState([]);
+  const navigate = useNavigate();
 
   const user = getDataFromLocalStorage("user") || "";
   function getDataFromLocalStorage(key) {
@@ -95,7 +95,7 @@ function CreateInvitation() {
   }
 
   const {
-    formState: { errors, isSubmitted },
+    formState: { errors, isSubmitting },
     handleSubmit,
     getValues,
     register,
@@ -108,12 +108,14 @@ function CreateInvitation() {
   });
 
   useEffect(() => {
-    fetchData();
-  }, []);
+    if (user && user.username) {
+      fetchData();
+    }
+  }, [user]);
 
   async function fetchData() {
     try {
-      const result = await getWeddings();
+      const result = await getWeddings(user.username);
       setWeddings(result);
     } catch (error) {
       console.log(error.toString());
@@ -121,20 +123,22 @@ function CreateInvitation() {
   }
 
   async function onSubmit(data) {
-    const formData = getValues();
-    setFormData(formData);
+    const weddings = getValues();
+    setWeddings(weddings);
     if (currentStep < 4) {
       setCurrentStep(currentStep + 1);
     } else {
       try {
-        await createWedding(formData);
+        await createWedding(weddings);
+        setWeddings([]);
         Swal.fire({
           title: "Success",
-          text: "Berhasil menambahkan data",
+          text: "Well Done! Your Invitation is Set",
           showCancelButton: false,
         });
         reset();
         fetchData();
+        navigate(`/dashboard/${user}`);
       } catch (error) {
         console.log(error.toString());
       }
@@ -428,7 +432,7 @@ function CreateInvitation() {
                   <p className="text-lg mb-5">
                     Please review the data you've entered
                   </p>
-                  <Table formValues={formData} />
+                  <Table formValues={weddings} />
                 </div>
 
                 <div className="flex gap-5 self-end">
@@ -443,7 +447,7 @@ function CreateInvitation() {
                     type="submit"
                     label="Submit"
                     className="border-black hover:text-white "
-                    disabled={isSubmitted}
+                    disabled={isSubmitting}
                   />
                 </div>
               </div>
