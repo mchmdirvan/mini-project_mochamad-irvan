@@ -12,7 +12,12 @@ import {
   saveDataToLocalStorage,
   getDataFromLocalStorage,
 } from "../utils/localStorageFunction";
-import { createWedding, getWeddings } from "../utils/apis/weddings/api";
+import {
+  createWedding,
+  getWeddings,
+  updateWeddings,
+} from "../utils/apis/weddings/api";
+
 import FormImage from "../assets/dashboard-image.webp";
 import { useTitle } from "../utils/hooks/customHooks";
 import Swal from "../utils/swal";
@@ -31,6 +36,7 @@ function CreateInvitation() {
   };
 
   const user = getDataFromLocalStorage("user") || "";
+  const userID = getDataFromLocalStorage("userID") || "";
   const [currentStep, setCurrentStep] = useState(1);
   const [weddings, setWeddings] = useState([]);
   const navigate = useNavigate();
@@ -139,7 +145,8 @@ function CreateInvitation() {
     } else {
       try {
         const { id } = await createWedding(weddings);
-        saveDataToLocalStorage("userID", id);
+        const numericId = parseInt(id);
+        saveDataToLocalStorage("userID", numericId);
         Swal.fire({
           title: "Success",
           text: "Well Done! Your Invitation is Set",
@@ -148,6 +155,28 @@ function CreateInvitation() {
         reset();
         fetchData();
         setWeddings([]);
+        navigate(`/dashboard/${user}`);
+      } catch (error) {
+        console.log(error.toString());
+      }
+    }
+  }
+
+  async function onSubmitEdit(data) {
+    const weddings = getValues();
+    setWeddings(weddings);
+    if (currentStep < 4) {
+      setCurrentStep(currentStep + 1);
+    } else {
+      try {
+        await updateWeddings({ ...data, userID });
+        Swal.fire({
+          title: "Success",
+          text: "Well Done! Your Invitation is Updated",
+          showCancelButton: false,
+        });
+        reset();
+        fetchData();
         navigate(`/dashboard/${user}`);
       } catch (error) {
         console.log(error.toString());
@@ -204,7 +233,7 @@ function CreateInvitation() {
 
           <form
             className="form font-[Outfit] px-32"
-            onSubmit={handleSubmit(onSubmit)}
+            onSubmit={handleSubmit(userID === "" ? onSubmit : onSubmitEdit)}
           >
             {/* STEP 1 */}
             {currentStep === 1 && (

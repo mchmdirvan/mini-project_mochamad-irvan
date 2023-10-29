@@ -1,17 +1,5 @@
 import axiosWithConfig from "../axiosWithConfig";
-
-function getDataFromLocalStorage(key) {
-  const data = localStorage.getItem(key);
-  if (data) {
-    try {
-      return JSON.parse(data);
-    } catch (error) {
-      console.error("Error parsing JSON data from local storage:", error);
-      return null;
-    }
-  }
-  return null;
-}
+import { getDataFromLocalStorage } from "../../localStorageFunction";
 
 export const createWedding = async (data) => {
   try {
@@ -32,5 +20,19 @@ export const getWeddings = async () => {
     return response.data;
   } catch (error) {
     throw Error("Failed to get wedding data");
+  }
+};
+
+export const updateWeddings = async (data) => {
+  const userID = getDataFromLocalStorage("userID") || "";
+  try {
+    const newData = {
+      ...data,
+    };
+    const response = await axiosWithConfig.put(`/weddings/${userID}`, newData);
+
+    return response.data;
+  } catch (error) {
+    throw Error("Failed to update wedding data");
   }
 };
