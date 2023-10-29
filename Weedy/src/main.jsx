@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import ReactDOM from "react-dom/client";
 import React from "react";
 
@@ -6,9 +7,7 @@ import App from "./routes/Index";
 import "./styles/index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <TokenProvider>
-      <App />
-    </TokenProvider>
-  </React.StrictMode>
+  <TokenProvider>
+    <App />
+  </TokenProvider>
 );
