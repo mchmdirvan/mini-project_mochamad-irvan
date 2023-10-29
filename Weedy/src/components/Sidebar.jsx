@@ -15,6 +15,7 @@ export default function Sidebar() {
   const navigate = useNavigate();
 
   const user = getDataFromLocalStorage("user") || "";
+  const userID = getDataFromLocalStorage("userID") || "";
 
   function handleLogout() {
     localStorage.removeItem("user");
@@ -67,7 +68,9 @@ export default function Sidebar() {
                 </a>
               </li>
               <li>
-                <a>Edit Invitation</a>
+                <a onClick={() => navigate(`edit-invitation/${userID}`)}>
+                  Edit Invitation
+                </a>
               </li>
               <li>
                 <a>View Invitation</a>
