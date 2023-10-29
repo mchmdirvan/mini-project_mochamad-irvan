@@ -74,22 +74,27 @@ function Login() {
             className="flex flex-col gap-10"
             onSubmit={handleSubmit(handleLogin)}
           >
-            <Input
-              register={register}
-              name="username"
-              type="text"
-              error={errors.username?.message}
-              className="border-b border-[#472A08] text-[#472A08] placeholder:text-[#472A08] w-full placeholder:text-xl focus:outline-none"
-              placeholder="Enter your Username"
-            />
-            <Input
-              register={register}
-              name="password"
-              type="password"
-              error={errors.password?.message}
-              className="border-b border-[#472A08] text-[#472A08] placeholder:text-[#472A08] w-full placeholder:text-xl focus:outline-none"
-              placeholder="Enter your Password"
-            />
+            <div>
+              <Input
+                register={register}
+                name="username"
+                type="text"
+                error={errors.username?.message}
+                className="border-b border-[#472A08] text-[#472A08] placeholder:text-[#472A08] w-full placeholder:text-xl focus:outline-none"
+                placeholder="Enter your Username"
+              />
+            </div>
+            <div>
+              <Input
+                register={register}
+                name="password"
+                type="password"
+                error={errors.password?.message}
+                className="border-b border-[#472A08] text-[#472A08] placeholder:text-[#472A08] w-full placeholder:text-xl focus:outline-none"
+                placeholder="Enter your Password"
+              />
+            </div>
+
             <Button
               label="Sign in"
               type="submit"
