@@ -9,6 +9,7 @@ import { useEffect } from "react";
 import { useToken } from "../utils/context/token-context";
 import { setAxiosConfig } from "../utils/apis/axiosWithConfig";
 
+import ViewInvitation from "../pages/ViewInvitation";
 import CreateInvitation from "../pages/CreateInvitation";
 import LandingPage from "../pages/LandingPage";
 import Dashboard from "../pages/Dashboard";
@@ -42,6 +43,10 @@ function Router() {
     {
       path: "/edit-invitation/:id",
       element: token === "" ? <Navigate to="/login" /> : <CreateInvitation />,
+    },
+    {
+      path: "/weedy-invitation/:username",
+      element: <ViewInvitation />,
     },
     {
       path: "*",
