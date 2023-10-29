@@ -36,3 +36,14 @@ export const updateWeddings = async (data) => {
     throw Error("Failed to update wedding data");
   }
 };
+
+export const deleteWeddings = async () => {
+  const userID = getDataFromLocalStorage("userID") || "";
+  try {
+    const response = await axiosWithConfig.delete(`/weddings/${userID}`);
+
+    return response.data;
+  } catch (error) {
+    throw Error("Failed to delete a product");
+  }
+};

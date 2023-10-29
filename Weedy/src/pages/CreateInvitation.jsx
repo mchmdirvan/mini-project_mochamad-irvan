@@ -16,6 +16,7 @@ import {
   createWedding,
   getWeddings,
   updateWeddings,
+  deleteWeddings,
 } from "../utils/apis/weddings/api";
 
 import FormImage from "../assets/dashboard-image.webp";
@@ -181,6 +182,21 @@ function CreateInvitation() {
       } catch (error) {
         console.log(error.toString());
       }
+    }
+  }
+
+  async function onClickDelete() {
+    try {
+      await deleteWeddings(userID);
+      localStorage.removeItem("userID");
+      Swal.fire({
+        title: "Success",
+        text: "Well Done! Your Invitation is Deleted",
+        showCancelButton: false,
+      });
+      fetchData();
+    } catch (error) {
+      console.log(error.toString());
     }
   }
 
@@ -474,20 +490,32 @@ function CreateInvitation() {
                   <Table formValues={weddings} />
                 </div>
 
-                <div className="flex gap-5 self-end">
-                  <Button
-                    type="button"
-                    label="Edit"
-                    className="border-black hover:text-white "
-                    onClick={onBack}
-                  />
-
+                <div className="flex flex-col gap-1 ">
                   <Button
                     type="submit"
                     label="Submit"
                     className="border-black hover:text-white "
                     disabled={isSubmitting}
                   />
+                  <div className="flex flex-row gap-2">
+                    <Button
+                      type="button"
+                      label="Edit"
+                      className="border-black hover:text-white w-full "
+                      onClick={onBack}
+                    />
+
+                    {userID === "" ? (
+                      ""
+                    ) : (
+                      <Button
+                        type="button"
+                        label="Delete"
+                        className="border-black hover:text-white w-full "
+                        onClick={onClickDelete}
+                      />
+                    )}
+                  </div>
                 </div>
               </div>
             )}
