@@ -1,8 +1,10 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/no-unescaped-entities */
 import { TypeAnimation } from "react-type-animation";
+import { useNavigate } from "react-router-dom";
 import React from "react";
 
+import { getDataFromLocalStorage } from "../utils/localStorageFunction";
 import ContactImage from "../assets/contact-section.webp";
 import { useTitle } from "../utils/hooks/customHooks";
 import HeroImage from "../assets/hero-section.webp";
@@ -12,6 +14,9 @@ import Footer from "../components/Footer";
 
 export default function LandingPage() {
   useTitle("Weedy: Digital Wedding Invitation");
+  
+  const user = getDataFromLocalStorage("user") || "";
+  const navigate = useNavigate()
   return (
     <>
       <Navbar />
@@ -47,6 +52,7 @@ export default function LandingPage() {
           <Button
             label="let's go!"
             className="font-[Niconne] text-md sm:text-xl md:text-2xl text-[#F8F0E5]"
+            onClick={()=> navigate(`/dashboard/${user}`)}
           />
         </div>
       </header>
@@ -257,7 +263,7 @@ export default function LandingPage() {
               Let’s consult with our team to help you find the perfect match for
               your digital wedding invitations.
             </p>
-            <Button label="Consultation" className="text-[#F8F0E5]" />
+            <Button label="Consultation" className="text-[#F8F0E5] w-40" />
           </div>
           <div>
             <img
