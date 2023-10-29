@@ -1,8 +1,8 @@
-/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
+/* eslint-disable react/no-unescaped-entities */
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { Bars3Icon } from "@heroicons/react/24/outline";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useNavigate, Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import dayjs from "dayjs";
@@ -20,17 +20,19 @@ import Table from "../components/Table";
 
 function CreateInvitation() {
   useTitle("Create Invitation | Weedy");
+  const navigate = useNavigate();
+  // const location = useLocation();
 
+  const [isDrawerOpen, setDrawerOpen] = useState(false);
   const toggleDrawer = () => {
     setDrawerOpen(!isDrawerOpen);
   };
-  const [isDrawerOpen, setDrawerOpen] = useState(false);
-
-  const [currentStep, setCurrentStep] = useState(1);
-  const [weddings, setWeddings] = useState([]);
-  const navigate = useNavigate();
 
   const user = getDataFromLocalStorage("user") || "";
+  const [currentStep, setCurrentStep] = useState(1);
+  const [weddings, setWeddings] = useState([]);
+
+  // const { data } = location.state || {};
 
   function getDataFromLocalStorage(key) {
     const data = localStorage.getItem(key);
@@ -44,7 +46,6 @@ function CreateInvitation() {
     }
     return null;
   }
-
   function saveDataToLocalStorage(key, data) {
     localStorage.setItem(key, JSON.stringify(data));
   }
@@ -103,6 +104,7 @@ function CreateInvitation() {
     formState: { errors, isSubmitting },
     handleSubmit,
     getValues,
+    // setValue,
     register,
     reset,
   } = useForm({
@@ -112,22 +114,41 @@ function CreateInvitation() {
     },
   });
 
+  // useEffect(() => {
+  //   if (data) {
+  //     fetchData();
+  //     setValue("brideName", data.brideName);
+  //     setValue("groomName", data.groomName);
+  //     setValue("brideBio", data.brideBio);
+  //     setValue("groomBio", data.groomBio);
+  //     setValue("agreementAddress", data.agreementAddress);
+  //     setValue("receptionAddress", data.receptionAddress);
+  //     setValue("agreementHall", data.agreementHall);
+  //     setValue("receptionHall", data.receptionHall);
+  //     setValue("agreementCity", data.agreementCity);
+  //     setValue("receptionCity", data.receptionCity);
+  //     setValue("agreementDate", data.agreementDate);
+  //     setValue("receptionDate", data.receptionDate);
+  //     setValue("scriptureQuotes", data.scriptureQuotes);
+  //   }
+  // }, [data, setValue]);
+
   useEffect(() => {
-    if (user && user.username) {
-      fetchData();
-    }
-  }, [user]);
+    fetchData();
+  }, []);
 
   async function fetchData() {
     try {
-      const result = await getWeddings(user.username);
+      console.log("fetchData called");
+      const result = await getWeddings();
       setWeddings(result);
+      console.log(result);
     } catch (error) {
       console.log(error.toString());
     }
   }
 
-  async function onSubmit(data) {
+  async function onSubmit() {
     const weddings = getValues();
     setWeddings(weddings);
     if (currentStep < 4) {
@@ -135,8 +156,7 @@ function CreateInvitation() {
     } else {
       try {
         const { id } = await createWedding(weddings);
-        saveDataToLocalStorage("userID", id );
-
+        saveDataToLocalStorage("userID", id);
         Swal.fire({
           title: "Success",
           text: "Well Done! Your Invitation is Set",
