@@ -8,7 +8,7 @@ import { useForm } from "react-hook-form";
 import dayjs from "dayjs";
 import * as z from "zod";
 
-import { createWedding, getWeddings } from "../utils/apis/wedding-detail/api";
+import { createWedding, getWeddings } from "../utils/apis/weddings/api";
 import FormImage from "../assets/dashboard-image.webp";
 import { useTitle } from "../utils/hooks/customHooks";
 import Swal from "../utils/swal";
