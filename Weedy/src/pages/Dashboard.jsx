@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
-import { Bars3Icon } from "@heroicons/react/24/outline";
 import { Link, useParams, useNavigate } from "react-router-dom";
+import { Bars3Icon } from "@heroicons/react/24/outline";
 import React, { useState } from "react";
 
 import DashboardCreate from "../assets/dashboard-create.webp";
@@ -87,7 +87,7 @@ export default function Dashboard() {
           </div>
 
           {/* Navigation */}
-
+          {/* Navigation to View */}
           <div className={`flex gap-2 mt-5`}>
             <div className="relative">
               <img
@@ -100,8 +100,9 @@ export default function Dashboard() {
                 className="absolute bottom-[1rem] left-2  bg-white rounded-md border-black hover:text-white px-2 text-[0.7rem] lg:bottom-[2rem] lg:text-sm lg:px-10"
               />
             </div>
-
             <div className="flex flex-col gap-3">
+              
+              {/* Navigation to Create */}
               <div className="relative">
                 <img
                   src={DashboardCreate}
@@ -116,6 +117,8 @@ export default function Dashboard() {
                 />
               </div>
               <div className="flex gap-2">
+
+                {/* Navigation to Edit */}
                 <div className="relative">
                   <img
                     src={DashboradEdit}
@@ -137,6 +140,8 @@ export default function Dashboard() {
                     }
                   />
                 </div>
+
+                {/* Navigation to AI */}
                 <div className="relative">
                   <img
                     src={DashboardAI}
