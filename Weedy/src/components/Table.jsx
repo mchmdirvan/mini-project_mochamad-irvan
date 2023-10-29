@@ -20,7 +20,7 @@ function Table({ formValues=[] }) {
   ];
 
   return (
-    <table>
+    <table className="table table-zebra">
       <tbody>
         {reviewData.map((item) => (
           <tr key={item.label}>
