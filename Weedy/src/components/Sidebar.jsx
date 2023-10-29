@@ -68,12 +68,12 @@ export default function Sidebar() {
                 </a>
               </li>
               <li>
-                <a onClick={() => navigate(`edit-invitation/${userID}`)}>
+                <a onClick={() => navigate(`/edit-invitation/${userID}`)}>
                   Edit Invitation
                 </a>
               </li>
               <li>
-                <a onClick={() => navigate(`weedy-invitation/${user}`)}>View Invitation</a>
+                <a onClick={() => navigate(`/weedy-invitation/${user}`)}>View Invitation</a>
               </li>
               <Button
                 label="Sign out"
