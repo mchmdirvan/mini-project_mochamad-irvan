@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import React, { useState } from "react";
 
+import { saveDataToLocalStorage } from "../../utils/localStorageFunction";
 import { userLogin, loginSchema } from "../../utils/apis/auth";
 import { useToken } from "../../utils/context/token-context";
 import { useTitle } from "../../utils/hooks/customHooks";
@@ -23,14 +24,10 @@ function Login() {
   const {
     register,
     handleSubmit,
-    formState: { errors , isSubmitting },
+    formState: { errors, isSubmitting },
   } = useForm({
     resolver: zodResolver(loginSchema),
   });
-
-  function saveDataToLocalStorage(key, data) {
-    localStorage.setItem(key, JSON.stringify(data));
-  }
 
   async function handleLogin(data) {
     try {

@@ -4,6 +4,7 @@ import { Disclosure, Menu } from "@headlessui/react";
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
+import { getDataFromLocalStorage } from "../utils/localStorageFunction";
 import { useToken } from "../utils/context/token-context";
 import Logo from "../assets/logo.webp";
 
@@ -11,19 +12,6 @@ function Navbar() {
   const [scrolling, setScrolling] = useState(false);
   const { token, changeToken } = useToken();
   const navigate = useNavigate();
-
-  function getDataFromLocalStorage(key) {
-    const data = localStorage.getItem(key);
-    if (data) {
-      try {
-        return JSON.parse(data);
-      } catch (error) {
-        console.error("Error parsing JSON data from local storage:", error);
-        return null;
-      }
-    }
-    return null;
-  }
 
   const user = getDataFromLocalStorage("user") || "";
 

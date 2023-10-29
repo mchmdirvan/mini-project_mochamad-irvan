@@ -8,6 +8,10 @@ import { useForm } from "react-hook-form";
 import dayjs from "dayjs";
 import * as z from "zod";
 
+import {
+  saveDataToLocalStorage,
+  getDataFromLocalStorage,
+} from "../utils/localStorageFunction";
 import { createWedding, getWeddings } from "../utils/apis/weddings/api";
 import FormImage from "../assets/dashboard-image.webp";
 import { useTitle } from "../utils/hooks/customHooks";
@@ -30,22 +34,6 @@ function CreateInvitation() {
   const [currentStep, setCurrentStep] = useState(1);
   const [weddings, setWeddings] = useState([]);
   const navigate = useNavigate();
-
-  function getDataFromLocalStorage(key) {
-    const data = localStorage.getItem(key);
-    if (data) {
-      try {
-        return JSON.parse(data);
-      } catch (error) {
-        console.error("Error parsing JSON data from local storage:", error);
-        return null;
-      }
-    }
-    return null;
-  }
-  function saveDataToLocalStorage(key, data) {
-    localStorage.setItem(key, JSON.stringify(data));
-  }
 
   let weddingSchema;
   if (currentStep === 1) {

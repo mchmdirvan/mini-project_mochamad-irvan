@@ -5,6 +5,7 @@ import React from "react";
 import ProfileImage from "../assets/profile-image.webp";
 import Logo from "../assets/logo-bw.webp";
 
+import { getDataFromLocalStorage } from "../utils/localStorageFunction";
 import { useToken } from "../utils/context/token-context";
 import Button from "../components/Button";
 import Swal from "../utils/swal";
@@ -12,19 +13,6 @@ import Swal from "../utils/swal";
 export default function Sidebar() {
   const { token, changeToken } = useToken();
   const navigate = useNavigate();
-
-  function getDataFromLocalStorage(key) {
-    const data = localStorage.getItem(key);
-    if (data) {
-      try {
-        return JSON.parse(data);
-      } catch (error) {
-        console.error("Error parsing JSON data from local storage:", error);
-        return null;
-      }
-    }
-    return null;
-  }
 
   const user = getDataFromLocalStorage("user") || "";
 

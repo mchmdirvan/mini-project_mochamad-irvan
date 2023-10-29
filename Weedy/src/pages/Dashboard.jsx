@@ -9,6 +9,7 @@ import DashboradEdit from "../assets/dashboard-edit.webp";
 import DashboardView from "../assets/dashboard-view.webp";
 import DashboardAI from "../assets/dashboard-ai.webp";
 
+import { getDataFromLocalStorage } from "../utils/localStorageFunction";
 import { useTitle } from "../utils/hooks/customHooks";
 import Sidebar from "../components/Sidebar";
 import Button from "../components/Button";
@@ -20,19 +21,6 @@ export default function Dashboard() {
   const toggleDrawer = () => {
     setDrawerOpen(!isDrawerOpen);
   };
-
-  function getDataFromLocalStorage(key) {
-    const data = localStorage.getItem(key);
-    if (data) {
-      try {
-        return JSON.parse(data);
-      } catch (error) {
-        console.error("Error parsing JSON data from local storage:", error);
-        return null;
-      }
-    }
-    return null;
-  }
 
   const user = getDataFromLocalStorage("user") || "";
   const userID = getDataFromLocalStorage("userID") || "";
@@ -101,7 +89,6 @@ export default function Dashboard() {
               />
             </div>
             <div className="flex flex-col gap-3">
-              
               {/* Navigation to Create */}
               <div className="relative">
                 <img
@@ -117,7 +104,6 @@ export default function Dashboard() {
                 />
               </div>
               <div className="flex gap-2">
-
                 {/* Navigation to Edit */}
                 <div className="relative">
                   <img
