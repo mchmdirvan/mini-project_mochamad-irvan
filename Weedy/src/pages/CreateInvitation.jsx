@@ -227,14 +227,14 @@ function CreateInvitation() {
               onClick={toggleDrawer}
             >
               <Bars3Icon
-                className="block h-8 w-8 bg-white border"
+                className="block h-8 w-8 bg-white"
                 aria-hidden="true"
               />
             </label>
           </div>
 
           {/* Pages Content */}
-          <ul className="steps steps-vertical lg:steps-horizontal lg:w-full lg:py-10 font-[Outfit] font-semibold">
+          <ul className="steps w-full py-5 lg:py-10 px-10 font-[Outfit] font-semibold">
             <li className={`step ${currentStep >= 1 ? "step-primary" : ""}`}>
               Start
             </li>
@@ -250,15 +250,17 @@ function CreateInvitation() {
           </ul>
 
           <form
-            className="form font-[Outfit] px-32"
+            className="form font-[Outfit] px-10 lg:px-32"
             onSubmit={handleSubmit(userID === "" ? onSubmit : onSubmitEdit)}
           >
             {/* STEP 1 */}
             {currentStep === 1 && (
               <div className="flex">
-                <div className="flex flex-col gap-2 mt-10 items-start">
-                  <h2 className="text-4xl font-bold">Let's Get Started</h2>
-                  <p className="text-xl">
+                <div className="flex flex-col lg:gap-2 mt-5 lg:mt-10 items-start">
+                  <h2 className=" text-2xl lg:text-4xl font-bold">
+                    Let's Get Started
+                  </h2>
+                  <p className="lg:text-xl">
                     Fill out the form to continue your order.
                   </p>
                   <Input
@@ -269,46 +271,52 @@ function CreateInvitation() {
                     className=" hidden disabled"
                   />
 
-                  <div className="flex flex-col mt-2">
+                  <div className="flex flex-col lg:lg:mt-2">
                     <p>Couple Information</p>
-                    <div className="flex gap-10 ">
-                      <Input
-                        placeholder="Bride's Name"
-                        register={register}
-                        name="brideName"
-                        type="text"
-                        error={errors.brideName?.message}
-                        className="border-b border-[#472A08] text-[#472A08] placeholder:text-md focus:outline-none w-[20rem]"
-                      />
-                      <Input
-                        placeholder="Groom's Name"
-                        register={register}
-                        name="groomName"
-                        type="text"
-                        error={errors.groomName?.message}
-                        className="border-b border-[#472A08] text-[#472A08] placeholder:text-md focus:outline-none w-[20rem]"
-                      />
+                    <div className="flex gap-10">
+                      <div>
+                        <Input
+                          placeholder="Bride's Name"
+                          register={register}
+                          name="brideName"
+                          type="text"
+                          error={errors.brideName?.message}
+                          className="border-b border-[#472A08] text-[#472A08] placeholder:text-md focus:outline-none lg:w-[20rem] max-w-[8rem] lg:max-w-[18rem]"
+                        />
+                      </div>
+                      <div>
+                        <Input
+                          placeholder="Groom's Name"
+                          register={register}
+                          name="groomName"
+                          type="text"
+                          error={errors.groomName?.message}
+                          className="border-b border-[#472A08] text-[#472A08] placeholder:text-md focus:outline-none lg:w-[20rem] max-w-[8rem] lg:max-w-[18rem]"
+                        />
+                      </div>
                     </div>
                   </div>
 
                   <div className="flex flex-col mt-5 ">
                     <p>Couple Bio</p>
                     <div className="flex gap-10  ">
-                      <Input
+                      <TextArea
+                        rows={3}
                         placeholder="e.g. 1st son of Mr.John & Ms.Putri"
                         register={register}
                         name="brideBio"
                         type="text"
                         error={errors.brideBio?.message}
-                        className="border-b border-[#472A08] text-[#472A08] placeholder:text-md focus:outline-none w-[20rem] "
+                        className=" border rounded-md  text-[#472A08] placeholder:text-sm lg:placeholder:text-md focus:outline-none lg:w-[20rem] max-w-[8rem] lg:max-w-[18rem] "
                       />
-                      <Input
+                      <TextArea
+                        rows={3}
                         placeholder="e.g. 3rd son of Mr.Doe & Ms.Putri"
                         register={register}
                         name="groomBio"
                         type="text"
                         error={errors.groomBio?.message}
-                        className="border-b border-[#472A08] text-[#472A08] placeholder:text-md focus:outline-none w-[20rem] "
+                        className="border rounded-md text-[#472A08] placeholder:text-sm lg:placeholder:text-md focus:outline-none lg:w-[20rem] max-w-[8rem] lg:max-w-[18rem] "
                       />
                     </div>
                   </div>
@@ -321,7 +329,11 @@ function CreateInvitation() {
                   </div>
                 </div>
                 <div>
-                  <img src={FormImage} alt="" className="h-full object-cover" />
+                  <img
+                    src={FormImage}
+                    alt=""
+                    className="h-full object-cover hidden xl:block"
+                  />
                 </div>
               </div>
             )}
@@ -329,18 +341,20 @@ function CreateInvitation() {
             {/* STEP 2 */}
             {currentStep === 2 && (
               <div className="flex">
-                <div className="flex flex-col gap-2">
-                  <h2 className="text-4xl font-bold">The Schedule Details</h2>
-                  <p className="text-xl">
+                <div className="flex flex-col lg:gap-2 lg:mt-10">
+                  <h2 className="text-xl lg:text-4xl font-bold">
+                    The Schedule Details
+                  </h2>
+                  <p className="text-sm lg:text-xl">
                     Totally OK if you're still deciding—just go with your best
                     guess.
                   </p>
 
-                  <div className="flex flex-col mt-2 ">
-                    <p className="text-lg font-semibold mb-2">
+                  <div className="flex flex-col mt-5 ">
+                    <p className="lg:text-lg font-semibold mb-2">
                       When are you getting married?
                     </p>
-                    <div className="flex gap-10">
+                    <div className="flex flex-col lg:flex-row  gap-2 lg:gap-10">
                       <div>
                         <p>Agreement date</p>
                         <Input
@@ -348,7 +362,7 @@ function CreateInvitation() {
                           name="agreementDate"
                           type="datetime-local"
                           error={errors.agreementDate?.message}
-                          className="border rounded-full px-5 border-[#472A08] text-[#472A08] placeholder:text-md focus:outline-none w-[20rem]"
+                          className="border rounded-full px-5 border-[#472A08] text-[#472A08] placeholder:text-md focus:outline-none lg:w-[20rem] max-w-full lg:max-w-[18rem]"
                         />
                       </div>
                       <div>
@@ -358,70 +372,82 @@ function CreateInvitation() {
                           name="receptionDate"
                           type="datetime-local"
                           error={errors.receptionDate?.message}
-                          className="border rounded-full px-5 border-[#472A08] text-[#472A08] placeholder:text-md focus:outline-none w-[20rem]"
+                          className="border rounded-full px-5 border-[#472A08] text-[#472A08] placeholder:text-md focus:outline-none lg:w-[20rem] max-w-full lg:max-w-[18rem]"
                         />
                       </div>
                     </div>
                   </div>
-                  <div className="flex flex-col mt-2 ">
+                  <div className="flex flex-col mt-5 ">
                     <p className="text-lg font-semibold mb-2">
                       Where are you getting married?
                     </p>
-                    <div className="flex gap-10">
-                      <div>
+                    <div className="flex flex-col lg:flex-row lg:gap-10">
+                      <div className="flex flex-col">
                         <p>Agreement Place</p>
-                        <Input
-                          placeholder="Street Name, Building, No. House"
-                          register={register}
-                          name="agreementAddress"
-                          type="text"
-                          error={errors.agreementAddress?.message}
-                          className="border-b px-5 border-[#472A08] text-[#472A08] placeholder:text-md focus:outline-none w-[20rem]"
-                        />
-                        <Input
-                          placeholder="Hall"
-                          register={register}
-                          name="agreementHall"
-                          type="text"
-                          error={errors.agreementHall?.message}
-                          className="border-b px-5 border-[#472A08] text-[#472A08] placeholder:text-md focus:outline-none w-[20rem]"
-                        />
-                        <Input
-                          placeholder="City"
-                          register={register}
-                          name="agreementCity"
-                          type="text"
-                          error={errors.agreementCity?.message}
-                          className="border-b px-5 border-[#472A08] text-[#472A08] placeholder:text-md focus:outline-none w-[20rem]"
-                        />
+                        <div>
+                          <Input
+                            placeholder="Street Name, Building, No. House"
+                            register={register}
+                            name="agreementAddress"
+                            type="text"
+                            error={errors.agreementAddress?.message}
+                            className="border-b  border-[#472A08] text-[#472A08] placeholder:text-md focus:outline-none lg:w-[20rem] max-w-full lg:max-w-[18rem]"
+                          />
+                        </div>
+                        <div>
+                          <Input
+                            placeholder="Hall"
+                            register={register}
+                            name="agreementHall"
+                            type="text"
+                            error={errors.agreementHall?.message}
+                            className="border-b  border-[#472A08] text-[#472A08] placeholder:text-md focus:outline-none lg:w-[20rem] max-w-full lg:max-w-[18rem]"
+                          />
+                        </div>
+                        <div>
+                          <Input
+                            placeholder="City"
+                            register={register}
+                            name="agreementCity"
+                            type="text"
+                            error={errors.agreementCity?.message}
+                            className="border-b  border-[#472A08] text-[#472A08] placeholder:text-md focus:outline-none lg:w-[20rem] max-w-full lg:max-w-[18rem]"
+                          />
+                        </div>
                       </div>
-                      <div>
+                      <div className="flex flex-col mt-5 lg:mt-0">
                         <p>Reception Place</p>
-                        <Input
-                          placeholder="Street Name, Building, No. House"
-                          register={register}
-                          name="receptionAddress"
-                          type="text"
-                          error={errors.receptionAddress?.message}
-                          className="border-b px-5 border-[#472A08] text-[#472A08] placeholder:text-md focus:outline-none w-[20rem]"
-                        />
+                        <div>
+                          <Input
+                            placeholder="Street Name, Building, No. House"
+                            register={register}
+                            name="receptionAddress"
+                            type="text"
+                            error={errors.receptionAddress?.message}
+                            className="border-b  border-[#472A08] text-[#472A08] placeholder:text-md focus:outline-none lg:w-[20rem] max-w-full lg:max-w-[18rem]"
+                          />
+                        </div>
+                        <div>
+                          <Input
+                            placeholder="Hall"
+                            register={register}
+                            name="receptionHall"
+                            type="text"
+                            error={errors.receptionHall?.message}
+                            className="border-b  border-[#472A08] text-[#472A08] placeholder:text-md focus:outline-none lg:w-[20rem] max-w-full lg:max-w-[18rem]"
+                          />
+                        </div>
 
-                        <Input
-                          placeholder="Hall"
-                          register={register}
-                          name="receptionHall"
-                          type="text"
-                          error={errors.receptionHall?.message}
-                          className="border-b px-5 border-[#472A08] text-[#472A08] placeholder:text-md focus:outline-none w-[20rem]"
-                        />
-                        <Input
-                          placeholder="City"
-                          register={register}
-                          name="receptionCity"
-                          type="text"
-                          error={errors.receptionCity?.message}
-                          className="border-b px-5 border-[#472A08] text-[#472A08] placeholder:text-md focus:outline-none w-[20rem]"
-                        />
+                        <div>
+                          <Input
+                            placeholder="City"
+                            register={register}
+                            name="receptionCity"
+                            type="text"
+                            error={errors.receptionCity?.message}
+                            className="border-b  border-[#472A08] text-[#472A08] placeholder:text-md focus:outline-none lg:w-[20rem] max-w-full lg:max-w-[18rem]"
+                          />
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -455,7 +481,7 @@ function CreateInvitation() {
                   </p>
                   <TextArea
                     register={register}
-                    className=" rounded-xl"
+                    className=" rounded-xl max-w-[18rem] lg:max-w-full"
                     name="scriptureQuotes"
                     id="scriptureQuotes"
                     cols={50}
@@ -485,14 +511,14 @@ function CreateInvitation() {
             {currentStep === 4 && (
               <div className="flex flex-col max-w-md ">
                 <div className="flex flex-col gap-2">
-                  <h2 className="text-4xl font-bold">Review Your Input</h2>
-                  <p className="text-lg mb-5">
+                  <h2 className="text-2xl lg:text-4xl font-bold">Review Your Input</h2>
+                  <p className="lg:text-lg mb-5">
                     Please review the data you've entered
                   </p>
                   <Table formValues={weddings} />
                 </div>
 
-                <div className="flex flex-col gap-1 ">
+                <div className="flex flex-col gap-1 mb-10">
                   <Button
                     type="submit"
                     label="Submit"
