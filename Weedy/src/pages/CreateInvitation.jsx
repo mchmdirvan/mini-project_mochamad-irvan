@@ -194,7 +194,9 @@ function CreateInvitation() {
         text: "Well Done! Your Invitation is Deleted",
         showCancelButton: false,
       });
+      reset();
       fetchData();
+      navigate(`/dashboard/${user}`);
     } catch (error) {
       console.log(error.toString());
     }
