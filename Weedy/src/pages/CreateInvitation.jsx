@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/no-unescaped-entities */
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Bars3Icon } from "@heroicons/react/24/outline";
 import { zodResolver } from "@hookform/resolvers/zod";
 import React, { useState, useEffect } from "react";
@@ -20,8 +20,6 @@ import Table from "../components/Table";
 
 function CreateInvitation() {
   useTitle("Create Invitation | Weedy");
-  const navigate = useNavigate();
-  // const location = useLocation();
 
   const [isDrawerOpen, setDrawerOpen] = useState(false);
   const toggleDrawer = () => {
@@ -31,8 +29,7 @@ function CreateInvitation() {
   const user = getDataFromLocalStorage("user") || "";
   const [currentStep, setCurrentStep] = useState(1);
   const [weddings, setWeddings] = useState([]);
-
-  // const { data } = location.state || {};
+  const navigate = useNavigate();
 
   function getDataFromLocalStorage(key) {
     const data = localStorage.getItem(key);
@@ -104,7 +101,7 @@ function CreateInvitation() {
     formState: { errors, isSubmitting },
     handleSubmit,
     getValues,
-    // setValue,
+    setValue,
     register,
     reset,
   } = useForm({
@@ -114,24 +111,24 @@ function CreateInvitation() {
     },
   });
 
-  // useEffect(() => {
-  //   if (data) {
-  //     fetchData();
-  //     setValue("brideName", data.brideName);
-  //     setValue("groomName", data.groomName);
-  //     setValue("brideBio", data.brideBio);
-  //     setValue("groomBio", data.groomBio);
-  //     setValue("agreementAddress", data.agreementAddress);
-  //     setValue("receptionAddress", data.receptionAddress);
-  //     setValue("agreementHall", data.agreementHall);
-  //     setValue("receptionHall", data.receptionHall);
-  //     setValue("agreementCity", data.agreementCity);
-  //     setValue("receptionCity", data.receptionCity);
-  //     setValue("agreementDate", data.agreementDate);
-  //     setValue("receptionDate", data.receptionDate);
-  //     setValue("scriptureQuotes", data.scriptureQuotes);
-  //   }
-  // }, [data, setValue]);
+  useEffect(() => {
+    if (weddings.length > 0) {
+      const weddingData = weddings[0];
+      setValue("brideName", weddingData.brideName);
+      setValue("groomName", weddingData.groomName);
+      setValue("brideBio", weddingData.brideBio);
+      setValue("groomBio", weddingData.groomBio);
+      setValue("agreementDate", weddingData.agreementDate);
+      setValue("receptionDate", weddingData.receptionDate);
+      setValue("agreementAddress", weddingData.agreementAddress);
+      setValue("receptionAddress", weddingData.receptionAddress);
+      setValue("agreementHall", weddingData.agreementHall);
+      setValue("receptionHall", weddingData.receptionHall);
+      setValue("agreementCity", weddingData.agreementCity);
+      setValue("receptionCity", weddingData.receptionCity);
+      setValue("scriptureQuotes", weddingData.scriptureQuotes);
+    }
+  }, [weddings]);
 
   useEffect(() => {
     fetchData();
@@ -139,10 +136,8 @@ function CreateInvitation() {
 
   async function fetchData() {
     try {
-      console.log("fetchData called");
       const result = await getWeddings();
       setWeddings(result);
-      console.log(result);
     } catch (error) {
       console.log(error.toString());
     }
