@@ -8,12 +8,16 @@ import Swal from "../utils/swal";
 
 import BackgroundSchedule from "../assets/view-bg-wedding.webp";
 import FloralImage from "../assets/view-floral.webp";
+import IconRing from "../assets/view-icon-ring.webp";
+import IconBird from "../assets/view-icon-bird.webp";
 import ModalImage from "../assets/view-modal.webp";
 import BrideImage from "../assets/view-bride.webp";
 import GroomImage from "../assets/view-groom.webp";
 import HeroImage from "../assets/view-hero.webp";
-import IconRing from "../assets/view-icon-ring.webp";
-import IconBird from "../assets/view-icon-bird.webp";
+import GalleryImage1 from "../assets/view-gallery-1.webp";
+import GalleryImage2 from "../assets/view-gallery-2.webp";
+import GalleryImage3 from "../assets/view-gallery-3.webp";
+import GalleryImage4 from "../assets/view-gallery-4.webp";
 
 import Navbar from "../components/NavbarInvitation";
 import Button from "../components/Button";
@@ -226,6 +230,33 @@ export default function ViewIntitation() {
               label="Save The Date"
               className="bg-white hover:text-white"
             />
+          </section>
+
+          {/* Gallery Section */}
+          <section className="flex flex-col gap-10 items-center py-20 h-[100vh] ">
+            <p className=" font-parisienne text-[#9F6F53] text-5xl">
+              Our Moments
+            </p>
+            <div className="carousel rounded-box max-w-[100vw]">
+              <div className="carousel-item ">
+                <img src={GalleryImage1} className="max-w-2xl object-cover" />
+              </div>
+              <div className="carousel-item">
+                <img src={GalleryImage2} className="max-w-2xl object-cover" />
+              </div>
+              <div className="carousel-item">
+                <img src={GalleryImage3} className="max-w-2xl object-cover" />
+              </div>
+              <div className="carousel-item">
+                <img src={GalleryImage4} className="max-w-2xl object-cover" />
+              </div>
+              <div className="carousel-item">
+                <img src={GalleryImage1} className="max-w-2xl object-cover" />
+              </div>
+              <div className="carousel-item">
+                <img src={HeroImage} className="max-w-2xl object-cover" />
+              </div>
+            </div>
           </section>
         </div>
       )}
