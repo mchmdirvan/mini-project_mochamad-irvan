@@ -24,7 +24,7 @@ export default function NavbarInvitation({ weddings }) {
     <div
       className={`${
         scrolling
-          ? "fixed w-full z-10  transition-all duration-500 bg-white"
+          ? "fixed w-full z-10  transition-all duration-500 bg-[#837C61]"
           : "absolute w-full z-10 transition-all duration-500"
       }`}
     >
@@ -52,7 +52,7 @@ export default function NavbarInvitation({ weddings }) {
                       href="#"
                       className={`${
                         scrolling
-                          ? "text-[#472A08] hover:text-[#9E7676]"
+                          ? "text-white hover:text-[#9E7676]"
                           : "text-white hover:text-g"
                       }  `}
                     >
@@ -70,7 +70,7 @@ export default function NavbarInvitation({ weddings }) {
                       <ul
                         className={`${
                           scrolling
-                            ? "text-[#472A08]  font-semibold"
+                            ? "text-white  font-semibold"
                             : "text-white"
                         } font-[Outfit] items-center rounded-md px-3 py-2 text-base flex gap-10`}
                       >
@@ -103,7 +103,7 @@ export default function NavbarInvitation({ weddings }) {
 
             <Disclosure.Panel className=" md:hidden">
               <div className="px-2">
-                <ul className="flex flex-col gap-2 bg-white text-[#472A08] font-[Outfit] font-semibold rounded-md px-3 py-5">
+                <ul className="flex flex-col gap-2 bg-white text-white font-[Outfit] font-semibold rounded-md px-3 py-5">
                   <li>
                     <a href="#home" className="hover:text-[#9E7676]">
                       Bride & Groom
