@@ -23,7 +23,7 @@ export default function ViewIntitation() {
   const title =
     weddings === null
       ? "Weedy"
-      : `The Wedding of ${weddings[0].brideName} & ${weddings[0].groomName}`;
+      : `The Wedding of ${weddings[0].brideFirstName} & ${weddings[0].groomFirstName}`;
 
   const [showModal, setShowModal] = useState(true);
   const { to } = useParams();
@@ -76,7 +76,7 @@ export default function ViewIntitation() {
                   <div className="border border-[#E2D9C9] w-[20rem]"></div>
                   <p className="text-xl">The Wedding Ceremony of</p>
                   <h1 className=" font-parisienne text-6xl text-[#9F6F53]">
-                    {weddings[0].brideName} & {weddings[0].groomName}
+                    {weddings[0].brideFirstName} & {weddings[0].groomFirstName}
                   </h1>
                   <Button
                     label="Open now"
@@ -103,7 +103,7 @@ export default function ViewIntitation() {
                 The Wedding Of
               </h1>
               <p className="font-parisienne text-8xl">
-                {weddings[0].brideName} & {weddings[0].groomName}
+                {weddings[0].brideFirstName} & {weddings[0].groomFirstName}
               </p>
             </div>
           </header>
@@ -118,10 +118,13 @@ export default function ViewIntitation() {
               <div className="flex flex-col gap-5 justify-center items-center">
                 <img src={BrideImage} className=" rounded-full w-[15rem]" />
                 <p className="text-2xl font-pt-serif text-[#837C61]">
-                  {weddings[0].brideName}
+                  {weddings[0].brideFullName}
                 </p>
                 <div className="border border-[#E2D9C9] w-[20rem]"></div>
                 <p className=" font-pt-serif">{weddings[0].brideBio}</p>
+                <p className="text-5xl pt-2 font-parisienne text-[#C9AD91] ">
+                  {weddings[0].brideFirstName}
+                </p>
               </div>
 
               <div className="flex justify-center items-center">
@@ -133,10 +136,13 @@ export default function ViewIntitation() {
               <div className="flex flex-col gap-5 justify-center items-center">
                 <img src={GroomImage} className=" rounded-full w-[15rem]" />
                 <p className="text-2xl font-pt-serif text-[#837C61]">
-                  {weddings[0].groomName}
+                  {weddings[0].groomFullName}
                 </p>
                 <div className="border border-[#E2D9C9] w-[20rem]"></div>
                 <p className=" font-pt-serif">{weddings[0].brideBio}</p>
+                <p className="text-5xl pt-2 font-parisienne text-[#C9AD91] ">
+                  {weddings[0].groomFirstName}
+                </p>
               </div>
             </div>
             <img src={FloralImage} className="mt-auto w-[25rem]" />
@@ -149,7 +155,6 @@ export default function ViewIntitation() {
               style={{ backgroundImage: `url(${BackgroundSchedule})` }}
             >
               <div className="flex justify-center gap-10 items-center bg-opacity-80 h-[92vh]">
-
                 <div className="flex flex-col items-center justify-center bg-white py-20 px-10 rounded-2xl gap-2 w-[40rem] font-pt-serif">
                   <h1 className=" font-parisienne text-[#9F6F53] text-4xl">
                     Holy Matrimony
@@ -187,6 +192,40 @@ export default function ViewIntitation() {
                 </div>
               </div>
             </div>
+          </section>
+
+          {/* Countdown Section */}
+          <section className="flex flex-col gap-5  items-center justify-center bg-[#9F6F53] py-10">
+            <div className="grid grid-flow-col gap-5 text-center auto-cols-max">
+              <div className="flex flex-col p-2 bg-white rounded-box">
+                <span className="countdown font-mono text-5xl">
+                  <span style={{ "--value": 15 }}></span>
+                </span>
+                days
+              </div>
+              <div className="flex flex-col p-2 bg-white rounded-box">
+                <span className="countdown font-mono text-5xl">
+                  <span style={{ "--value": 10 }}></span>
+                </span>
+                hours
+              </div>
+              <div className="flex flex-col p-2 bg-white rounded-box">
+                <span className="countdown font-mono text-5xl">
+                  <span style={{ "--value": 24 }}></span>
+                </span>
+                min
+              </div>
+              <div className="flex flex-col p-2 bg-white rounded-box">
+                <span className="countdown font-mono text-5xl">
+                  <span style={{ "--value": 35 }}></span>
+                </span>
+                sec
+              </div>
+            </div>
+            <Button
+              label="Save The Date"
+              className="bg-white hover:text-white"
+            />
           </section>
         </div>
       )}
