@@ -509,9 +509,11 @@ function CreateInvitation() {
 
             {/* STEP 4 */}
             {currentStep === 4 && (
-              <div className="flex flex-col max-w-md ">
-                <div className="flex flex-col gap-2">
-                  <h2 className="text-2xl lg:text-4xl font-bold">Review Your Input</h2>
+              <div className="flex flex-col">
+                <div className="flex flex-col gap-2 items-center ">
+                  <h2 className="text-2xl lg:text-4xl font-bold  ">
+                    Review Your Input
+                  </h2>
                   <p className="lg:text-lg mb-5">
                     Please review the data you've entered
                   </p>
