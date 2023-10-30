@@ -46,8 +46,18 @@ function CreateInvitation() {
   if (currentStep === 1) {
     weddingSchema = z.object({
       id: z.number().optional(),
-      brideName: z.string().min(1, { message: "Bride's Name is Required" }),
-      groomName: z.string().min(1, { message: "Groom's Name is Required" }),
+      brideFirstName: z
+        .string()
+        .min(1, { message: "Bride's First Name is Required" }),
+      groomFirstName: z
+        .string()
+        .min(1, { message: "Groom's First Name is Required" }),
+      brideFullName: z
+        .string()
+        .min(1, { message: "Bride's Full Name is Required" }),
+      groomFullName: z
+        .string()
+        .min(1, { message: "Groom's Full Name is Required" }),
       brideBio: z.string().min(1, { message: "Bride's Bio is Required" }),
       groomBio: z.string().min(1, { message: "Groom's Bio is Required" }),
     });
@@ -109,8 +119,10 @@ function CreateInvitation() {
   useEffect(() => {
     if (weddings.length > 0) {
       const weddingData = weddings[0];
-      setValue("brideName", weddingData.brideName);
-      setValue("groomName", weddingData.groomName);
+      setValue("brideFirstName", weddingData.brideFirstName);
+      setValue("groomFirstName", weddingData.groomFirstName);
+      setValue("brideFullName", weddingData.brideFullName);
+      setValue("groomFullName", weddingData.groomFullName);
       setValue("brideBio", weddingData.brideBio);
       setValue("groomBio", weddingData.groomBio);
       setValue("agreementDate", weddingData.agreementDate);
@@ -276,21 +288,43 @@ function CreateInvitation() {
                     <div className="flex gap-10">
                       <div>
                         <Input
-                          placeholder="Bride's Name"
+                          placeholder="Bride's First Name"
                           register={register}
-                          name="brideName"
+                          name="brideFirstName"
                           type="text"
-                          error={errors.brideName?.message}
+                          error={errors.brideFirstName?.message}
                           className="border-b border-[#472A08] text-[#472A08] placeholder:text-md focus:outline-none lg:w-[20rem] max-w-[8rem] lg:max-w-[18rem]"
                         />
                       </div>
                       <div>
                         <Input
-                          placeholder="Groom's Name"
+                          placeholder="Groom's First Name"
                           register={register}
-                          name="groomName"
+                          name="groomFirstName"
                           type="text"
-                          error={errors.groomName?.message}
+                          error={errors.groomFirstName?.message}
+                          className="border-b border-[#472A08] text-[#472A08] placeholder:text-md focus:outline-none lg:w-[20rem] max-w-[8rem] lg:max-w-[18rem]"
+                        />
+                      </div>
+                    </div>
+                    <div className="flex gap-10">
+                      <div>
+                        <Input
+                          placeholder="Bride's Full Name"
+                          register={register}
+                          name="brideFullName"
+                          type="text"
+                          error={errors.brideFullName?.message}
+                          className="border-b border-[#472A08] text-[#472A08] placeholder:text-md focus:outline-none lg:w-[20rem] max-w-[8rem] lg:max-w-[18rem]"
+                        />
+                      </div>
+                      <div>
+                        <Input
+                          placeholder="Groom's Full Name"
+                          register={register}
+                          name="groomFullName"
+                          type="text"
+                          error={errors.groomFullName?.message}
                           className="border-b border-[#472A08] text-[#472A08] placeholder:text-md focus:outline-none lg:w-[20rem] max-w-[8rem] lg:max-w-[18rem]"
                         />
                       </div>
@@ -307,7 +341,7 @@ function CreateInvitation() {
                         name="brideBio"
                         type="text"
                         error={errors.brideBio?.message}
-                        className=" border rounded-md  text-[#472A08] placeholder:text-sm lg:placeholder:text-md focus:outline-none lg:w-[20rem] max-w-[8rem] lg:max-w-[18rem] "
+                        className=" border rounded-md  text-[#472A08] placeholder:text-sm text-sm focus:outline-none lg:w-[20rem] max-w-[8rem] lg:max-w-[18rem] "
                       />
                       <TextArea
                         rows={3}
@@ -316,7 +350,7 @@ function CreateInvitation() {
                         name="groomBio"
                         type="text"
                         error={errors.groomBio?.message}
-                        className="border rounded-md text-[#472A08] placeholder:text-sm lg:placeholder:text-md focus:outline-none lg:w-[20rem] max-w-[8rem] lg:max-w-[18rem] "
+                        className="border rounded-md text-[#472A08] placeholder:text-sm text-sm focus:outline-none lg:w-[20rem] max-w-[8rem] lg:max-w-[18rem] "
                       />
                     </div>
                   </div>

@@ -4,8 +4,10 @@ import React from "react";
 
 function Table({ formValues=[] }) {
   const reviewData = [
-    { label: "Bride's Name", value: formValues.brideName },
-    { label: "Groom's Name", value: formValues.groomName },
+    { label: "Bride's First Name", value: formValues.brideFirstName },
+    { label: "Groom's First Name", value: formValues.groomFirstName },
+    { label: "Bride's Full Name", value: formValues.brideFullName },
+    { label: "Groom's Full Name", value: formValues.groomFullName },
     { label: "Bride's Bio", value: formValues.brideBio },
     { label: "Groom's Bio", value: formValues.groomBio },
     { label: "Agreement Date", value: formValues.agreementDate },
