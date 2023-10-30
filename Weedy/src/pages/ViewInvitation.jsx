@@ -8,6 +8,7 @@ import Swal from "../utils/swal";
 
 import ViewModalImage from "../assets/view-modal.webp";
 import ViewHeroImage from "../assets/view-hero.webp";
+import Navbar from "../components/NavbarInvitation";
 import Button from "../components/Button";
 
 export default function ViewIntitation() {
@@ -65,7 +66,7 @@ export default function ViewIntitation() {
                   <p>You are warmly invited to attend</p>
                   <div className="border border-[#E2D9C9] w-[20rem]"></div>
                   <p className="text-xl">The Wedding Ceremony of</p>
-                  <h1 className=" font-parisienne text-6xl text-brown-a text-[#9F6F53]">
+                  <h1 className=" font-parisienne text-6xl text-[#9F6F53]">
                     {weddings[0].brideName} & {weddings[0].groomName}
                   </h1>
                   <Button
@@ -79,7 +80,37 @@ export default function ViewIntitation() {
           </>
         )
       ) : (
-        <div>abc</div>
+        <div className="h-[200vh]">
+          <Navbar weddings={weddings} />
+          <header id="home" className="relative flex justify-center">
+            <img
+              src={ViewHeroImage}
+              alt="Wedding Cover"
+              className="w-[100vw] h-[100vh] brightness-50 object-cover object-center"
+            />
+            <div className="absolute flex flex-col gap-8 items-center mt-60 md:mt-80 lg:mt-[18rem] text-white">
+              <h1 className=" font-pt-serif text-white items-center text-center text-3xl">
+                The Wedding Of
+              </h1>
+              <p className="font-parisienne text-8xl">
+                {weddings[0].brideName} & {weddings[0].groomName}
+              </p>
+            </div>
+          </header>
+          <section>
+            <p>The Groom and The Bride</p>
+            <div className="flex">
+              <div className="flex flex-col">
+                <div>abc</div>
+                <div>def</div>
+              </div>
+              <div className="flex flex-col">
+                <div>abc</div>
+                <div>def</div>
+              </div>
+            </div>
+          </section>
+        </div>
       )}
     </div>
   );
