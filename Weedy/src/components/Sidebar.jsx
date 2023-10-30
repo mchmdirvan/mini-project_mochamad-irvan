@@ -73,7 +73,7 @@ export default function Sidebar() {
                 </a>
               </li>
               <li>
-                <a onClick={() => navigate(`/weedy-invitation/${user}`)}>View Invitation</a>
+                <a onClick={() => navigate(`/weedy-invitation/${user}/to/irvan`)}>View Invitation</a>
               </li>
               <Button
                 label="Sign out"
