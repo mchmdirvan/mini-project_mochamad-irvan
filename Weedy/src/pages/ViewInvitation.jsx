@@ -6,8 +6,12 @@ import { getWeddings } from "../utils/apis/weddings/api";
 import { useTitle } from "../utils/hooks/customHooks";
 import Swal from "../utils/swal";
 
-import ViewModalImage from "../assets/view-modal.webp";
-import ViewHeroImage from "../assets/view-hero.webp";
+import FloralImage from "../assets/view-floral.webp";
+import ModalImage from "../assets/view-modal.webp";
+import BrideImage from "../assets/view-bride.webp";
+import GroomImage from "../assets/view-groom.webp";
+import HeroImage from "../assets/view-hero.webp";
+
 import Navbar from "../components/NavbarInvitation";
 import Button from "../components/Button";
 
@@ -51,18 +55,20 @@ export default function ViewIntitation() {
             <div className="hero">
               <div className="">
                 <img
-                  src={ViewHeroImage}
+                  src={HeroImage}
                   className="w-full h-full object-cover brightness-25"
                 />
               </div>
 
               <div className="flex text-center z-10">
                 <div className=" rounded-xl">
-                  <img src={ViewModalImage} className=" rounded-xl w-[25rem]" />
+                  <img src={ModalImage} className=" rounded-xl w-[25rem]" />
                 </div>
 
-                <div className="flex flex-col gap-3 items-center justify-center bg-white w-[35rem] font-pt-serif text-gray-700 ">
-                  <p className="capitalize text-2xl">Dear {to},</p>
+                <div className="flex flex-col gap-5 items-center justify-center bg-white w-[35rem] font-pt-serif text-gray-700 ">
+                  <p className=" mt-32 capitalize text-2xl text-black">
+                    Dear {to},
+                  </p>
                   <p>You are warmly invited to attend</p>
                   <div className="border border-[#E2D9C9] w-[20rem]"></div>
                   <p className="text-xl">The Wedding Ceremony of</p>
@@ -72,8 +78,9 @@ export default function ViewIntitation() {
                   <Button
                     label="Open now"
                     onClick={() => setShowModal(false)}
-                    className="border-[#9F6F53] text-[#9F6F53] px-16"
+                    className="border-[#9F6F53] text-[#9F6F53] px-16 hover:text-white"
                   />
+                  <img src={FloralImage} className="mt-auto w-[25rem]" />
                 </div>
               </div>
             </div>
@@ -84,7 +91,7 @@ export default function ViewIntitation() {
           <Navbar weddings={weddings} />
           <header id="home" className="relative flex justify-center">
             <img
-              src={ViewHeroImage}
+              src={HeroImage}
               alt="Wedding Cover"
               className="w-[100vw] h-[100vh] brightness-50 object-cover object-center"
             />
@@ -97,19 +104,43 @@ export default function ViewIntitation() {
               </p>
             </div>
           </header>
-          <section>
-            <p>The Groom and The Bride</p>
-            <div className="flex">
-              <div className="flex flex-col">
-                <div>abc</div>
-                <div>def</div>
+
+          {/* Bride & Groom Section */}
+          <section className="flex flex-col gap-10 items-center pt-20 h-[100vh] ">
+            <p className=" font-parisienne text-[#9F6F53] text-5xl">
+              The Groom and The Bride
+            </p>
+
+            <div className="flex gap-5">
+              <div className="flex flex-col gap-5 justify-center items-center">
+                <img src={BrideImage} className=" rounded-full w-[15rem]" />
+                <p className="text-2xl font-pt-serif text-[#837C61]">
+                  {weddings[0].brideName}
+                </p>
+                <div className="border border-[#E2D9C9] w-[20rem]"></div>
+                <p className=" font-pt-serif">{weddings[0].brideBio}</p>
               </div>
-              <div className="flex flex-col">
-                <div>abc</div>
-                <div>def</div>
+
+              <div className="flex justify-center items-center">
+                <p className=" font-parisienne text-[10rem] text-[#C9AD91]">
+                  &
+                </p>
+              </div>
+
+              <div className="flex flex-col gap-5 justify-center items-center">
+                <img src={GroomImage} className=" rounded-full w-[15rem]" />
+                <p className="text-2xl font-pt-serif text-[#837C61]">
+                  {weddings[0].groomName}
+                </p>
+                <div className="border border-[#E2D9C9] w-[20rem]"></div>
+                <p className=" font-pt-serif">{weddings[0].brideBio}</p>
               </div>
             </div>
+            <img src={FloralImage} className="mt-auto w-[25rem]" />
           </section>
+
+          {/* Wedding Section */}
+          <section></section>
         </div>
       )}
     </div>
