@@ -1,18 +1,26 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 import { getWeddings } from "../utils/apis/weddings/api";
 import { useTitle } from "../utils/hooks/customHooks";
 import Swal from "../utils/swal";
 
+import ViewModalImage from "../assets/view-modal.webp";
+import ViewHeroImage from "../assets/view-hero.webp";
+import Button from "../components/Button";
+
 export default function ViewIntitation() {
   const [weddings, setWeddings] = useState(null);
   const title =
     weddings === null
-      ? "The Wedding of"
+      ? "Weedy"
       : `The Wedding of ${weddings[0].brideName} & ${weddings[0].groomName}`;
-  useTitle(title);
 
+  const [showModal, setShowModal] = useState(true);
+  const { to } = useParams();
+
+  useTitle(title);
   useEffect(() => {
     fetchData();
   }, []);
@@ -32,12 +40,46 @@ export default function ViewIntitation() {
 
   return (
     <div>
-      {weddings === null ? (
-        <p>Loading...</p>
+      {showModal ? (
+        weddings === null ? (
+          <div className="flex justify-center items-center h-screen">
+            <span className=" loading loading-infinity loading-lg"></span>
+          </div>
+        ) : (
+          <>
+            <div className="hero">
+              <div className="">
+                <img
+                  src={ViewHeroImage}
+                  className="w-full h-full object-cover brightness-25"
+                />
+              </div>
+
+              <div className="flex text-center z-10">
+                <div className=" rounded-xl">
+                  <img src={ViewModalImage} className=" rounded-xl w-[25rem]" />
+                </div>
+
+                <div className="flex flex-col gap-3 items-center justify-center bg-white w-[35rem] font-pt-serif text-gray-700 ">
+                  <p className="capitalize text-2xl">Dear {to},</p>
+                  <p>You are warmly invited to attend</p>
+                  <div className="border border-[#E2D9C9] w-[20rem]"></div>
+                  <p className="text-xl">The Wedding Ceremony of</p>
+                  <h1 className=" font-parisienne text-6xl text-brown-a text-[#9F6F53]">
+                    {weddings[0].brideName} & {weddings[0].groomName}
+                  </h1>
+                  <Button
+                    label="Open now"
+                    onClick={() => setShowModal(false)}
+                    className="border-[#9F6F53] text-[#9F6F53] px-16"
+                  />
+                </div>
+              </div>
+            </div>
+          </>
+        )
       ) : (
-        <div>
-          <p>Username: {weddings[0].username}</p>
-        </div>
+        <div>abc</div>
       )}
     </div>
   );
