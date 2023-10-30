@@ -49,6 +49,10 @@ function Router() {
       element: <ViewInvitation />,
     },
     {
+      path: "/weedy-invitation/:username/to/:to",
+      element: <ViewInvitation />,
+    },
+    {
       path: "*",
       element: <NotFound />,
     },
