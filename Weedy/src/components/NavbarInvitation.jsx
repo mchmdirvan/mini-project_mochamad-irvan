@@ -75,22 +75,22 @@ export default function NavbarInvitation({ weddings }) {
                         } font-[Outfit] items-center rounded-md px-3 py-2 text-base flex gap-10`}
                       >
                         <li>
-                          <a href="#home" className=" hover:text-gray-200">
+                          <a href="#brideAndGroom" className=" hover:text-gray-200">
                             Bride & Groom
                           </a>
                         </li>
                         <li>
-                          <a href="#features" className=" hover:text-gray-200">
+                          <a href="#wedding" className=" hover:text-gray-200">
                             Wedding
                           </a>
                         </li>
                         <li>
-                          <a href="#pricing" className=" hover:text-gray-200">
+                          <a href="#ourMoments" className=" hover:text-gray-200">
                             Our Moments
                           </a>
                         </li>
                         <li>
-                          <a href="#contact" className=" hover:text-gray-200">
+                          <a href="rsvp" className=" hover:text-gray-200">
                             RSVP
                           </a>
                         </li>
@@ -105,22 +105,22 @@ export default function NavbarInvitation({ weddings }) {
               <div className="px-2">
                 <ul className="flex flex-col gap-2 bg-white text-white font-[Outfit] font-semibold rounded-md px-3 py-5">
                   <li>
-                    <a href="#home" className=" hover:text-gray-200">
+                    <a href="#brideAndGroom" className=" hover:text-gray-200">
                       Bride & Groom
                     </a>
                   </li>
                   <li>
-                    <a href="#features" className=" hover:text-gray-200">
+                    <a href="#wedding" className=" hover:text-gray-200">
                       Wedding
                     </a>
                   </li>
                   <li>
-                    <a href="#pricing" className=" hover:text-gray-200">
+                    <a href="#ourMoments" className=" hover:text-gray-200">
                       Our Moments
                     </a>
                   </li>
                   <li>
-                    <a href="#contact" className=" hover:text-gray-200">
+                    <a href="#rsvp" className=" hover:text-gray-200">
                       RSVP
                     </a>
                   </li>
