@@ -7,6 +7,10 @@ import { useTitle } from "../utils/hooks/customHooks";
 import Swal from "../utils/swal";
 
 import BackgroundSchedule from "../assets/view-bg-wedding.webp";
+import GalleryImage1 from "../assets/view-gallery-1.webp";
+import GalleryImage2 from "../assets/view-gallery-2.webp";
+import GalleryImage3 from "../assets/view-gallery-3.webp";
+import GalleryImage4 from "../assets/view-gallery-4.webp";
 import FloralImage from "../assets/view-floral.webp";
 import IconRing from "../assets/view-icon-ring.webp";
 import IconBird from "../assets/view-icon-bird.webp";
@@ -14,10 +18,7 @@ import ModalImage from "../assets/view-modal.webp";
 import BrideImage from "../assets/view-bride.webp";
 import GroomImage from "../assets/view-groom.webp";
 import HeroImage from "../assets/view-hero.webp";
-import GalleryImage1 from "../assets/view-gallery-1.webp";
-import GalleryImage2 from "../assets/view-gallery-2.webp";
-import GalleryImage3 from "../assets/view-gallery-3.webp";
-import GalleryImage4 from "../assets/view-gallery-4.webp";
+import IconGift from '../assets/icon-gift.webp'
 
 import Navbar from "../components/NavbarInvitation";
 import Button from "../components/Button";
@@ -233,28 +234,75 @@ export default function ViewIntitation() {
           </section>
 
           {/* Gallery Section */}
-          <section className="flex flex-col gap-10 items-center py-20 h-[100vh] ">
+          <section className="flex flex-col gap-10 items-center py-20 h-[92vh] ">
             <p className=" font-parisienne text-[#9F6F53] text-5xl">
               Our Moments
             </p>
-            <div className="carousel rounded-box max-w-[100vw]">
+            <div className="carousel rounded-box max-w-[92vw]">
               <div className="carousel-item ">
-                <img src={GalleryImage1} className="max-w-2xl object-cover" />
+                <img src={GalleryImage1} className="max-w-xl object-cover" />
               </div>
               <div className="carousel-item">
-                <img src={GalleryImage2} className="max-w-2xl object-cover" />
+                <img src={GalleryImage2} className="max-w-xl object-cover" />
               </div>
               <div className="carousel-item">
-                <img src={GalleryImage3} className="max-w-2xl object-cover" />
+                <img src={GalleryImage3} className="max-w-xl object-cover" />
               </div>
               <div className="carousel-item">
-                <img src={GalleryImage4} className="max-w-2xl object-cover" />
+                <img src={GalleryImage4} className="max-w-xl object-cover" />
               </div>
               <div className="carousel-item">
-                <img src={GalleryImage1} className="max-w-2xl object-cover" />
+                <img src={GalleryImage1} className="max-w-xl object-cover" />
               </div>
               <div className="carousel-item">
-                <img src={HeroImage} className="max-w-2xl object-cover" />
+                <img src={HeroImage} className="max-w-xl object-cover" />
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <div
+              className="bg-cover bg-center h-[50vh]"
+              style={{ backgroundImage: `url(${BackgroundSchedule})` }}
+            >
+              <div className="flex  bg-opacity-80 ">
+                <div className="flex gap-10 justify-center items-center rounded-lg bg-white mx-auto my-10 py-10 w-[90vw]">
+                  <div className="flex flex-col items-center justify-center gap-5 ms-[13rem] w-11/12">
+                    <p className=" font-parisienne text-center text-[#9F6F53] text-5xl">
+                      Wedding Gift
+                    </p>
+                    <p className=" font-pt-serif max-w-sm text-lg text-center">
+                      For family and friends who want to send gift, you can send
+                      it through this button below.
+                    </p>
+                    <Button
+                      label="Send Gift"
+                      className="border-[#C9AD91] text-[#C9AD91]"
+                      onClick={() =>
+                        document.getElementById("my_modal_2").showModal()
+                      }
+                    />
+                    {/* Modal Section */}
+                    <dialog id="my_modal_2" className="modal">
+                      <div className="modal-box flex flex-col items-center gap-10 ">
+                        <p className=" font-parisienne text-center text-[#9F6F53] text-5xl">
+                          Wedding Gift
+                        </p>
+                        <p className=" font-pt-serif max-w-sm text-lg text-center">
+                          You can send the wedding gift in the following ways.
+                        </p>
+                        <p>BCA : {weddings[0].brideFullName} - 1234567</p>
+                      </div>
+                      <form method="dialog" className="modal-backdrop">
+                        <button>close</button>
+                      </form>
+                    </dialog>
+                  </div>
+
+                  <div>
+                    <img src={IconGift} className="w-32 me-20" />
+                  </div>
+                </div>
               </div>
             </div>
           </section>
