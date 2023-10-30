@@ -6,11 +6,14 @@ import { getWeddings } from "../utils/apis/weddings/api";
 import { useTitle } from "../utils/hooks/customHooks";
 import Swal from "../utils/swal";
 
+import BackgroundSchedule from "../assets/view-bg-wedding.webp";
 import FloralImage from "../assets/view-floral.webp";
 import ModalImage from "../assets/view-modal.webp";
 import BrideImage from "../assets/view-bride.webp";
 import GroomImage from "../assets/view-groom.webp";
 import HeroImage from "../assets/view-hero.webp";
+import IconRing from "../assets/view-icon-ring.webp";
+import IconBird from "../assets/view-icon-bird.webp";
 
 import Navbar from "../components/NavbarInvitation";
 import Button from "../components/Button";
@@ -140,7 +143,51 @@ export default function ViewIntitation() {
           </section>
 
           {/* Wedding Section */}
-          <section></section>
+          <section>
+            <div
+              className="bg-cover bg-center h-[92vh]"
+              style={{ backgroundImage: `url(${BackgroundSchedule})` }}
+            >
+              <div className="flex justify-center gap-10 items-center bg-opacity-80 h-[92vh]">
+
+                <div className="flex flex-col items-center justify-center bg-white py-20 px-10 rounded-2xl gap-2 w-[40rem] font-pt-serif">
+                  <h1 className=" font-parisienne text-[#9F6F53] text-4xl">
+                    Holy Matrimony
+                  </h1>
+                  <img src={IconRing} className="w-40" />
+                  <p>{weddings[0].agreementDate}</p>
+                  <div className="border border-[#E2D9C9] w-[20rem]"></div>
+                  <p>Location</p>
+                  <p className="text-[#9F6F53] text-2xl">
+                    {weddings[0].agreementHall}
+                  </p>
+                  <p className="text-center">{weddings[0].agreementAddress}</p>
+                  <Button
+                    label="Open Maps"
+                    className="text-[#9F6F53] border-[#9F6F53] hover:text-white"
+                  />
+                </div>
+
+                <div className="flex flex-col items-center justify-center bg-white py-20 px-10 rounded-2xl gap-2 w-[40rem] font-pt-serif">
+                  <h1 className=" font-parisienne text-[#9F6F53] text-4xl">
+                    Reception
+                  </h1>
+                  <img src={IconBird} className="w-40" />
+                  <p>{weddings[0].receptionDate}</p>
+                  <div className="border border-[#E2D9C9] w-[20rem]"></div>
+                  <p>Location</p>
+                  <p className="text-[#9F6F53] text-2xl">
+                    {weddings[0].receptionHall}
+                  </p>
+                  <p className="text-center">{weddings[0].receptionAddress}</p>
+                  <Button
+                    label="Open Maps"
+                    className="text-[#9F6F53] border-[#9F6F53] hover:text-white"
+                  />
+                </div>
+              </div>
+            </div>
+          </section>
         </div>
       )}
     </div>
