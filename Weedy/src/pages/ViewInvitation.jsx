@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 import { getWeddings } from "../utils/apis/weddings/api";
 import { useTitle } from "../utils/hooks/customHooks";
@@ -18,7 +18,7 @@ import ModalImage from "../assets/view-modal.webp";
 import BrideImage from "../assets/view-bride.webp";
 import GroomImage from "../assets/view-groom.webp";
 import HeroImage from "../assets/view-hero.webp";
-import IconGift from '../assets/icon-gift.webp'
+import IconGift from "../assets/icon-gift.webp";
 
 import Navbar from "../components/NavbarInvitation";
 import Button from "../components/Button";
@@ -31,6 +31,7 @@ export default function ViewIntitation() {
       : `The Wedding of ${weddings[0].brideFirstName} & ${weddings[0].groomFirstName}`;
 
   const [showModal, setShowModal] = useState(true);
+  const navigate = useNavigate();
   const { to } = useParams();
 
   useTitle(title);
@@ -306,6 +307,25 @@ export default function ViewIntitation() {
               </div>
             </div>
           </section>
+
+          {/* Footer */}
+          <section className="flex flex-col items-center bg-[#837C61] py-10">
+            <p className="font-parisienne text-white text-5xl">
+              {weddings[0].brideFirstName} & {weddings[0].groomFirstName}
+            </p>
+            <p className="font-pt-serif text-white">Thank You!</p>
+          </section>
+
+          <footer className="flex flex-col justify-center items-center p-10 ">
+            <p className="font-bold">Made with ❤️ by</p>
+            <a
+              className=" font-niconne text-5xl my-2 cursor-pointer hover:text-gray-500"
+              onClick={() => navigate("/")}
+            >
+              weedy
+            </a>
+            <p>Copyright © 2023 - All right reserved</p>
+          </footer>
         </div>
       )}
     </div>
