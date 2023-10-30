@@ -61,7 +61,7 @@ export default function ViewIntitation() {
           </div>
         ) : (
           <>
-            <div className="hero">
+            <div id="home" className="hero">
               <div className="">
                 <img
                   src={HeroImage}
@@ -115,7 +115,7 @@ export default function ViewIntitation() {
           </header>
 
           {/* Bride & Groom Section */}
-          <section className="flex flex-col gap-10 items-center pt-20 h-[100vh] ">
+          <section id="brideAndGroom" className="flex flex-col gap-10 items-center pt-20 h-[100vh] ">
             <p className=" font-parisienne text-[#9F6F53] text-5xl">
               The Groom and The Bride
             </p>
@@ -155,7 +155,7 @@ export default function ViewIntitation() {
           </section>
 
           {/* Wedding Section */}
-          <section>
+          <section id="wedding">
             <div
               className="bg-cover bg-center h-[92vh]"
               style={{ backgroundImage: `url(${BackgroundSchedule})` }}
@@ -201,7 +201,7 @@ export default function ViewIntitation() {
           </section>
 
           {/* Countdown Section */}
-          <section className="flex flex-col gap-5  items-center justify-center bg-[#9F6F53] py-10">
+          <section id="countdown" className="flex flex-col gap-5  items-center justify-center bg-[#9F6F53] py-10">
             <div className="grid grid-flow-col gap-5 text-center auto-cols-max">
               <div className="flex flex-col p-2 bg-white rounded-box">
                 <span className="countdown font-mono text-5xl">
@@ -235,7 +235,7 @@ export default function ViewIntitation() {
           </section>
 
           {/* Gallery Section */}
-          <section className="flex flex-col gap-10 items-center py-20 h-[92vh] ">
+          <section id="ourMoments" className="flex flex-col gap-10 items-center py-20 h-[92vh] ">
             <p className=" font-parisienne text-[#9F6F53] text-5xl">
               Our Moments
             </p>
@@ -261,7 +261,7 @@ export default function ViewIntitation() {
             </div>
           </section>
 
-          <section>
+          <section id="weddingGift">
             <div
               className="bg-cover bg-center h-[50vh]"
               style={{ backgroundImage: `url(${BackgroundSchedule})` }}
