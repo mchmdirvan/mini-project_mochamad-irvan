@@ -9,9 +9,9 @@ export default {
       },
       fontFamily: {
         "pt-serif": ['"PT Serif"', "serif"],
-        outfit: ["Outfit"],
-        niconne: ["Niconne"],
-        parisienne: ["Parisienne"],
+        "outfit": ["Outfit"],
+        "niconne": ["Niconne"],
+        "parisienne": ["Parisienne"],
       },
     },
   },
