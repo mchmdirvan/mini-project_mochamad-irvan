@@ -123,14 +123,15 @@ export default function ViewIntitation() {
           {/* Bride & Groom Section */}
           <section
             id="brideAndGroom"
-            className="animate__animated animate__fadeInUp animate__delay-1s flex flex-col gap-10 items-center pt-20 lg:h-[100vh] "
+            className=" flex flex-col gap-10 items-center pt-20 lg:h-[100vh] "
           >
-            <p className=" font-parisienne text-[#9F6F53] text-2xl lg:text-5xl">
+            <p className=" animate__animated animate__fadeInUp animate__delay-1s font-parisienne text-[#9F6F53] text-2xl lg:text-5xl">
               The Groom and The Bride
             </p>
 
             <div className="flex flex-col lg:flex-row gap-5">
-              <div className="flex flex-col gap-5 justify-center items-center">
+              
+              <div className="animate__animated animate__fadeInLeft animate__delay-1s flex flex-col gap-5 justify-center items-center">
                 <img src={BrideImage} className=" rounded-full w-[15rem]" />
                 <p className="text-2xl font-pt-serif text-[#837C61]">
                   {weddings[0].brideFullName}
@@ -148,7 +149,7 @@ export default function ViewIntitation() {
                 </p>
               </div>
 
-              <div className="flex flex-col gap-5 justify-center items-center">
+              <div className="animate__animated animate__fadeInRight animate__delay-1s flex flex-col gap-5 justify-center items-center">
                 <img src={GroomImage} className=" rounded-full w-[15rem]" />
                 <p className="text-2xl font-pt-serif text-[#837C61]">
                   {weddings[0].groomFullName}
@@ -170,7 +171,7 @@ export default function ViewIntitation() {
               style={{ backgroundImage: `url(${BackgroundSchedule})` }}
             >
               <div className="flex flex-col lg:flex-row justify-center gap-10 items-center bg-opacity-80 lg:h-[92vh]">
-                <div className=" mt-5 flex flex-col items-center justify-center bg-white lg:py-20 lg:px-10 rounded-2xl gap-2 w-[40rem] font-pt-serif max-w-[20rem] lg:max-w-full py-10 px-10">
+                <div className="animate__animated animate__fadeInUp animate__delay-3s mt-5 flex flex-col items-center justify-center bg-white lg:py-20 lg:px-10 rounded-2xl gap-2 w-[40rem] font-pt-serif max-w-[20rem] lg:max-w-full py-10 px-10">
                   <h1 className=" font-parisienne text-[#9F6F53] text-4xl text-center">
                     Holy Matrimony
                   </h1>
@@ -188,7 +189,7 @@ export default function ViewIntitation() {
                   />
                 </div>
 
-                <div className="mt-5 mb-5 flex flex-col items-center justify-center bg-white lg:py-20 lg:px-10 rounded-2xl gap-2 w-[40rem] font-pt-serif max-w-[20rem]  lg:max-w-full py-10 px-10">
+                <div className="animate__animated animate__fadeInUp animate__delay-3s mt-5 mb-5 flex flex-col items-center justify-center bg-white lg:py-20 lg:px-10 rounded-2xl gap-2 w-[40rem] font-pt-serif max-w-[20rem]  lg:max-w-full py-10 px-10">
                   <h1 className=" font-parisienne text-[#9F6F53] text-4xl">
                     Reception
                   </h1>
