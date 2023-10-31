@@ -3,6 +3,7 @@
 import { TypeAnimation } from "react-type-animation";
 import { useNavigate } from "react-router-dom";
 import React from "react";
+import 'animate.css';
 
 import { getDataFromLocalStorage } from "../utils/localStorageFunction";
 import ContactImage from "../assets/contact-section.webp";
@@ -27,7 +28,7 @@ export default function LandingPage() {
           className="w-[100vw] h-[100vh] brightness-50 object-cover object-bottom"
         />
         <div className="absolute flex flex-col items-center mt-60 md:mt-80 lg:mt-40">
-          <h1 className=" text-sm sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold font-[Outfit] text-white">
+          <h1 className="animate__animated animate__fadeIn text-sm sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold font-[Outfit] text-white">
             Make Your Wedding Unforgettable with{" "}
             <span className="font-[Niconne] text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-normal">
               weedy
@@ -51,7 +52,7 @@ export default function LandingPage() {
           </p>
           <Button
             label="let's go!"
-            className="font-[Niconne] text-md sm:text-xl md:text-2xl text-[#F8F0E5]"
+            className="animate__animated animate__pulse animate__infinite	infinite font-[Niconne] text-md sm:text-xl md:text-2xl text-[#F8F0E5]"
             onClick={()=> navigate(`/dashboard/${user}`)}
           />
         </div>
@@ -62,7 +63,7 @@ export default function LandingPage() {
         id="features"
         className="bg-[#9E7676] flex flex-col sm:flex-row font-[Outfit]"
       >
-        <div className="flex flex-col md:w-1/2 py-10 md:py-20 md:px-5 lg:ps-10 items-center md:items-start xl:px-32">
+        <div className=" animate__animated animate__fadeInLeft animate__delay-1s flex flex-col md:w-1/2 py-10 md:py-20 md:px-5 lg:ps-10 items-center md:items-start xl:px-32">
           <h2 className="text-white text-xl sm:text-2xl md:text-4xl lg:text-5xl font-semibold max-w-md md:max-w-[20rem] lg:max-w-[30rem]">
             Do You Have a{" "}
             <span className="underline decoration-2	underline-offset-4">
@@ -99,7 +100,7 @@ export default function LandingPage() {
 
         <div className="sm:border-x-2 sm:border-white"></div>
 
-        <div className="flex flex-col justify-center md:w-1/2 md:px-10 pb-10 items-center md:items-start px-5 sm:text-start sm:max-w-[16rem] md:max-w-lg text-center xl:px-32 xl:max-w-3xl">
+        <div className=" animate__animated animate__fadeInRight animate__delay-1s flex flex-col justify-center md:w-1/2 md:px-10 pb-10 items-center md:items-start px-5 sm:text-start sm:max-w-[16rem] md:max-w-lg text-center xl:px-32 xl:max-w-3xl">
           <h2
             className="text-white sm:text-lg
           md:text-3xl  lg:text-4xl font-semibold text-xl mb-2 "
@@ -118,8 +119,8 @@ export default function LandingPage() {
       </section>
 
       {/* Reason Section */}
-      <section className="bg-[#F8F0E5] flex flex-col sm:flex-row font-[Outfit]">
-        <div className="flex flex-col justify-center items-center md:items-start py-5 px-10 sm:w-1/2 md:ps-20">
+      <section className="  bg-[#F8F0E5] flex flex-col sm:flex-row font-[Outfit]">
+        <div className="animate__animated animate__fadeInLeft animate__delay-2s flex flex-col justify-center items-center md:items-start py-5 px-10 sm:w-1/2 md:ps-20">
           <h2 className="text-[#472A08] text-3xl sm:text-xl md:text-4xl lg:text-5xl font-semibold">
             <span className="underline decoration-2	underline-offset-4">
               Why
@@ -134,7 +135,7 @@ export default function LandingPage() {
           </p>
         </div>
 
-        <div className="md:w-1/2 pb-10">
+        <div className="animate__animated animate__fadeInRight animate__delay-2s md:w-1/2 pb-10">
           <div className="flex flex-wrap mt-5 gap-5 justify-center lg:max-w-xl">
             <div className="flex flex-col bg-[#9E7676] text-[#F8F0E5] border border-black rounded-xl px-7 py-5 lg:py-10 gap-2 max-w-[9rem] md:max-w-[9rem] lg:max-w-[17rem]  hover:ring-2 hover:ring-[#482A08]">
               <p className="font-extrabold text-xl lg:text-3xl text-white">
@@ -180,7 +181,7 @@ export default function LandingPage() {
         id="pricing"
         className="bg-[#9E7676] flex flex-col font-[Outfit] justify-center items-center py-10"
       >
-        <p className=" px-5 text-sm font-semibold md:text-2xl text-white text-center">
+        <p className="animate__animated animate__fadeInUp animate__delay-3s px-5 text-sm font-semibold md:text-2xl text-white text-center">
           Price list of Digital Wedding Invitations by{" "}
           <span className="font-[Niconne] text-2xl md:text-4xl font-normal">
             weedy
@@ -188,7 +189,7 @@ export default function LandingPage() {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-2 lg:gap-20 items-center sm:px-3 md:px-5">
-          <div className="flex flex-col items-end py-10 ">
+          <div className="animate__animated animate__fadeInUp animate__delay-3s flex flex-col items-end py-10 ">
             <div className="flex flex-col bg-[#F8F0E5] border border-[#594545] rounded-xl items-center text-[#472A08] px-10 md:px-10 py-10 w-[21rem] lg:w-[25rem] sm:w-[18rem] sm:h-[29rem] h-[25rem] hover:ring-white hover:ring ">
               <p className="line-through font-light pt-5">350.000 IDR</p>
               <h2 className="font-bold text-3xl lg:text-4xl  xl:text-5xl">
@@ -208,7 +209,7 @@ export default function LandingPage() {
             <Button label="Order Now" className="text-[#F8F0E5]" />
           </div>
 
-          <div className="flex flex-col items-end max-w-[21rem] py-10">
+          <div className="animate__animated animate__fadeInUp animate__delay-3s flex flex-col items-end max-w-[21rem] py-10">
             <div className="flex  flex-col  bg-[#F8F0E5] border border-[#594545] rounded-xl items-center text-[#472A08] px-10 md:px-10 py-10 lg:h-[29rem] hover:ring hover:ring-white sm:w-[18rem] sm:h-[29rem] lg:w-[25rem]">
               <p className="text-center text-sm sm:text-[0.7rem] lg:text-md pb-2">
                 Get a digital wedding invitation for free by supporting us on
@@ -235,8 +236,8 @@ export default function LandingPage() {
       </section>
 
       {/* Plan Section */}
-      <section className="flex flex-col items-center justify-center bg-[#F8F0E5] text-[#472A08] font-[Outfit] py-12 px-5">
-        <h2 className="font-bold text-2xl md:text-3xl lg:text-4xl">
+      <section className=" flex flex-col items-center justify-center bg-[#F8F0E5] text-[#472A08] font-[Outfit] py-12 px-5">
+        <h2 className="animate__animated animate__fadeInUp animate__delay-4s font-bold text-2xl md:text-3xl lg:text-4xl">
           Your{" "}
           <span className="underline decoration-2	underline-offset-4">Plan</span>{" "}
           Your{" "}
@@ -244,7 +245,7 @@ export default function LandingPage() {
             Choice
           </span>
         </h2>
-        <p className=" text-center text-lg lg:text-xl">
+        <p className="animate__animated animate__fadeInUp animate__delay-4s text-center text-lg lg:text-xl">
           Make your wedding even more special with our website invitations
         </p>
       </section>
@@ -252,7 +253,7 @@ export default function LandingPage() {
       {/* Contact Section */}
       <section id="contact">
         <div className="flex bg-[#9E7676] items-center justify-center  px-12 md:px-24 py-20 gap-5">
-          <div className="flex flex-col">
+          <div className="animate__animated animate__fadeInUp animate__delay-4s flex flex-col">
             <h2 className="font-bold text-2xl md:text-3xl lg:text-5xl text-white">
               <span className="underline decoration-2	underline-offset-4">
                 Meeting
