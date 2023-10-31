@@ -109,4 +109,89 @@ function TextArea({
   );
 }
 
-export { Input, TextArea };
+/**
+ * Select component for forms
+ *
+ * @param {{
+ * label : string
+ * className : string
+ * name : string
+ * id : string
+ * error : string
+ * placeholder : string
+ * register: function
+ * option: map
+ * }}  props
+ */
+
+function Select({ label, placeholder, id, error, options, register, name }) {
+  return (
+    <div className="flex flex-col mb-4">
+      <label
+        className="text-black dark:text-white tracking-wider mb-3"
+        htmlFor={id}
+      >
+        {label}
+      </label>
+      <select
+        className=""
+        defaultValue=""
+        {...(register ? register(name) : {})}
+      >
+        <option disabled value="">
+          {placeholder}
+        </option>
+        {options.map((option) => (
+          <option key={option} value={option}>
+            {option}
+          </option>
+        ))}
+      </select>
+      {error && <div className=" text-red-500">{error}</div>}
+    </div>
+  );
+}
+
+/**
+ * Radio component for forms
+ *
+ * @param {{
+ * label : string
+ * className : string
+ * name : string
+ * id : string
+ * error : string
+ * register: function
+ * option: map
+ * }}  props
+ */
+function RadioGroup(props) {
+  const { label, error, options, register, name } = props;
+
+  return (
+    <div className="flex flex-col mb-4" aria-label={props["aria-label"]}>
+      <label className="text-black dark:text-white tracking-wider mb-3">
+        {label}
+      </label>
+      {options.map((option) => (
+        <label
+          className="text-black dark:text-white tracking-wider"
+          htmlFor={option}
+          key={option}
+        >
+          <input
+            className="mr-4"
+            type="radio"
+            value={option}
+            id={option}
+            {...(register ? register(name) : {})}
+          />
+          {option}
+        </label>
+      ))}
+      {error && <div className=" text-red-500">{error}</div>}
+    </div>
+  );
+}
+
+export { Input, TextArea, Select, RadioGroup};
