@@ -1,6 +1,8 @@
 /* eslint-disable no-unused-vars */
-import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import 'animate.css';
+
 
 import { getWeddings } from "../utils/apis/weddings/api";
 import { useTitle } from "../utils/hooks/customHooks";
@@ -70,7 +72,7 @@ export default function ViewIntitation() {
                 />
               </div>
 
-              <div className="flex lg:flex-row flex-col text-center z-10">
+              <div className=" animate__animated animate__fadeIn flex lg:flex-row flex-col text-center z-10">
                 <div className=" rounded-xl">
                   <img src={ModalImage} className=" rounded-t-xl lg:rounded-l-xl max-h-[12rem] lg:max-h-full object-cover object-top w-full lg:w-[25rem]" />
                 </div>
@@ -89,7 +91,7 @@ export default function ViewIntitation() {
                   <Button
                     label="Open now"
                     onClick={() => setShowModal(false)}
-                    className="border-[#9F6F53] text-[#9F6F53] px-16 hover:text-white mb-5"
+                    className="animate__animated animate__pulse animate__infinite	infinite border-[#9F6F53] text-[#9F6F53] px-16 hover:text-white mb-5"
                   />
                   <img src={FloralImage} className="mt-auto hidden lg:block lg:w-[25rem]" />
                 </div>
@@ -108,7 +110,7 @@ export default function ViewIntitation() {
               alt="Wedding Cover"
               className="w-[100vw] h-[100vh] brightness-50 object-cover object-center"
             />
-            <div className="absolute flex flex-col gap-2 lg:gap-8 items-center mt-60 md:mt-80 lg:mt-[18rem] text-white">
+            <div className="animate__animated animate__fadeIn absolute flex flex-col gap-2 lg:gap-8 items-center mt-60 md:mt-80 lg:mt-[18rem] text-white">
               <h1 className=" font-pt-serif text-white items-center text-center text-xl lg:text-3xl">
                 The Wedding Of
               </h1>
@@ -121,7 +123,7 @@ export default function ViewIntitation() {
           {/* Bride & Groom Section */}
           <section
             id="brideAndGroom"
-            className="flex flex-col gap-10 items-center pt-20 lg:h-[100vh] "
+            className="animate__animated animate__fadeInUp animate__delay-1s flex flex-col gap-10 items-center pt-20 lg:h-[100vh] "
           >
             <p className=" font-parisienne text-[#9F6F53] text-2xl lg:text-5xl">
               The Groom and The Bride
