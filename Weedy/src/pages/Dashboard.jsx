@@ -2,6 +2,7 @@
 import { Link, useParams, useNavigate } from "react-router-dom";
 import { Bars3Icon } from "@heroicons/react/24/outline";
 import React, { useState } from "react";
+import "animate.css";
 
 import DashboardCreate from "../assets/dashboard-create.webp";
 import DashboardImage from "../assets/dashboard-image.webp";
@@ -50,7 +51,7 @@ export default function Dashboard() {
         <div className="flex flex-col py-10 font-[Outfit] items-center">
           <div className="flex flex-col px-10">
             <div className="flex flex-row  ">
-              <div className="flex flex-col justify-center">
+              <div className="animate__animated animate__fadeIn flex flex-col justify-center">
                 <p className="text-sm lg:text-xl capitalize">Hi, {user}!</p>
                 <h1 className="text-lg lg:text-4xl mt-5 font-bold max-w-lg lg:max-w-xl lg:leading-normal leading-7">
                   It’s time to craft your amazing digital wedding invitation.{" "}
@@ -66,14 +67,14 @@ export default function Dashboard() {
             </div>
             <Button
               label="Let’s get started!"
-              className=" border-black hover:text-white w-full"
+              className=" animate__animated animate__pulse animate__infinite	infinite animate__delay-1s border-black hover:text-white w-full"
               onClick={() => navigate(`/create-invitation`)}
             />
           </div>
 
           {/* Navigation */}
           {/* Navigation to View */}
-          <div className={`flex gap-2 mt-5`}>
+          <div className="animate__animated animate__fadeIn animate__delay-1s flex gap-2 mt-5">
             <div className="relative">
               <img
                 src={DashboardView}
@@ -93,7 +94,7 @@ export default function Dashboard() {
                 <img
                   src={DashboardCreate}
                   alt=""
-                  className="rounded-xl max-h-[7rem] w-[14rem] object-cover object-top border border-black sm:w-[19rem] sm:max-h-[10rem] lg:w-[27rem] lg:max-h-[11rem] hover:border-blue-400 hover:scale-105 transition-all"
+                  className="rounded-xl max-h-[7rem] w-[100%] object-cover object-top border border-black sm:w-[19rem] sm:max-h-[10rem] lg:w-[27rem] lg:max-h-[11rem] hover:border-blue-400 hover:scale-105 transition-all"
                   onClick={() => navigate(`/create-invitation`)}
                 />
                 <Button
@@ -108,7 +109,7 @@ export default function Dashboard() {
                   <img
                     src={DashboradEdit}
                     alt=""
-                    className="rounded-xl h-[9rem] max-w-[7rem] object-cover border border-black sm:max-w-[10rem] lg:max-w-[20rem] lg:w-[16rem] lg:h-[10rem] hover:border-blue-400 hover:scale-105 transition-all"
+                    className="rounded-xl h-[9rem] max-w-[7rem] w-[100%] object-cover border border-black sm:max-w-[10rem] lg:max-w-[20rem] lg:w-[16rem] lg:h-[10rem] hover:border-blue-400 hover:scale-105 transition-all"
                     onClick={() =>
                       navigate(`/edit-invitation/${userID}`, {
                         state: { data: userID },
@@ -131,8 +132,8 @@ export default function Dashboard() {
                   <img
                     src={DashboardAI}
                     alt=""
-                    className="rounded-xl h-[9rem] max-w-[7rem] object-cover border border-black sm:max-w-[9rem] lg:max-w-[10rem] lg:h-[10rem] hover:border-blue-400 hover:scale-105 transition-all"
-                  />
+                    className="rounded-xl h-[9rem] max-w-[7rem] w-[100%] object-cover border border-black sm:max-w-[9rem] lg:max-w-[10rem] lg:h-[10rem] hover:border-blue-400 hover:scale-105 transition-all"
+                    />
                   <Button
                     label="AI Services"
                     className="absolute bottom-[1rem] left-2  bg-white rounded-md border-black hover:text-white px-2 text-[0.7rem] lg:bottom-[2rem] lg:text-sm lg:px-10]"

@@ -4,6 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import React, { useState } from "react";
+import "animate.css";
 
 import { saveDataToLocalStorage } from "../../utils/localStorageFunction";
 import { userLogin, loginSchema } from "../../utils/apis/auth";
@@ -55,15 +56,16 @@ function Login() {
           <img
             src={LoginImage}
             alt="Login Image"
-            className=" h-[100vh] object-cover"
+            className=" animate__animated animate__fadeIn h-full max-h-[100vh] object-cover"
+            onLoad={() => {}}
           />
-          <h1 className="absolute inset-x-0 bottom-24 text-center text-white text-4xl font-bold">
+          <h1 className=" animate__animated animate__fadeInDown absolute inset-x-0 bottom-24 text-center text-white text-4xl font-bold">
             Welcome Back, <br /> We missed you!
           </h1>
         </div>
 
-        <div className="flex flex-col text-[#472A08] gap-10 justify-center px-10 py-20 w-3/2 mx-auto">
-          <div className="flex flex-col gap-2">
+        <div className="animate__animated animate__fadeInRight flex flex-col text-[#472A08] gap-10 justify-center px-10 py-20 w-3/2 mx-auto">
+          <div className=" flex flex-col gap-2">
             <h1 className="font-bold text-5xl">Sign In</h1>
             <p className="text-sm md:text-xl font-light">
               Welcome back! Please login to your account
@@ -71,7 +73,7 @@ function Login() {
           </div>
 
           <form
-            className="flex flex-col gap-10"
+            className="flex flex-col gap-10 "
             onSubmit={handleSubmit(handleLogin)}
           >
             <div>
@@ -80,7 +82,7 @@ function Login() {
                 name="username"
                 type="text"
                 error={errors.username?.message}
-                className="border-b border-[#472A08] text-[#472A08] placeholder:text-[#472A08] w-full placeholder:text-xl focus:outline-none"
+                className=" border-b border-[#472A08] text-[#472A08] placeholder:text-[#472A08] w-full placeholder:text-xl focus:outline-none"
                 placeholder="Enter your Username"
               />
             </div>
@@ -90,7 +92,7 @@ function Login() {
                 name="password"
                 type="password"
                 error={errors.password?.message}
-                className="border-b border-[#472A08] text-[#472A08] placeholder:text-[#472A08] w-full placeholder:text-xl focus:outline-none"
+                className=" border-b border-[#472A08] text-[#472A08] placeholder:text-[#472A08] w-full placeholder:text-xl focus:outline-none"
                 placeholder="Enter your Password"
               />
             </div>

@@ -45,7 +45,7 @@ export default function Sidebar() {
           <div className="menu p-4 w-80 min-h-full bg-[#F8F7FC]  ">
             {/* Sidebar content here */}
             <div className="  flex justify-center items-center  ">
-              <img className=" h-20" src={Logo} alt="Your Company" />
+              <img className="h-full max-h-20" src={Logo} alt="Your Company" />
               <Link
                 className=" text-black hover:text-[#594545] font-[Niconne] text-5xl"
                 to="/"
@@ -55,10 +55,15 @@ export default function Sidebar() {
             </div>
 
             <div className="flex flex-col justify-center items-center my-10 ">
-              <img src={ProfileImage} alt="photo profile" className="w-20" />
+              <img
+                src={ProfileImage}
+                alt="photo profile"
+                className="h-full w-20"
+              />
               <p className="font-semibold my-2 text-2xl capitalize">{user}</p>
             </div>
-            <ul className="flex flex-col mx-auto gap-5 text-lg">
+
+            <ul className=" flex flex-col mx-auto gap-5 text-lg">
               <li>
                 <a onClick={() => navigate(`/dashboard/${user}`)}>Dashboard</a>
               </li>
@@ -73,7 +78,11 @@ export default function Sidebar() {
                 </a>
               </li>
               <li>
-                <a onClick={() => navigate(`/weedy-invitation/${user}/to/irvan`)}>View Invitation</a>
+                <a
+                  onClick={() => navigate(`/weedy-invitation/${user}/to/irvan`)}
+                >
+                  View Invitation
+                </a>
               </li>
               <Button
                 label="Sign out"
