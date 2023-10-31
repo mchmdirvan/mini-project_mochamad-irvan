@@ -49,7 +49,8 @@ export default function Dashboard() {
 
         {/* Pages */}
         <div className="flex flex-col py-10 font-[Outfit] items-center">
-          <div className="flex flex-col px-10">
+
+          <div className="flex flex-col px-10 h-full">
             <div className="flex flex-row  ">
               <div className="animate__animated animate__fadeIn flex flex-col justify-center">
                 <p className="text-sm lg:text-xl capitalize">Hi, {user}!</p>
@@ -74,7 +75,7 @@ export default function Dashboard() {
 
           {/* Navigation */}
           {/* Navigation to View */}
-          <div className="animate__animated animate__fadeIn animate__delay-1s flex gap-2 mt-5">
+          <div className="animate__animated animate__fadeIn  flex gap-2 mt-5 h-full">
             <div className="relative">
               <img
                 src={DashboardView}
