@@ -23,7 +23,7 @@ import FormImage from "../assets/dashboard-image.webp";
 import { useTitle } from "../utils/hooks/customHooks";
 import Swal from "../utils/swal";
 
-import { Input, TextArea } from "../components/Form";
+import { Input, TextArea } from "../components/Input";
 import Sidebar from "../components/Sidebar";
 import Button from "../components/Button";
 import Table from "../components/Table";

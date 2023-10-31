@@ -11,7 +11,7 @@ import { userLogin, loginSchema } from "../../utils/apis/auth";
 import { useToken } from "../../utils/context/token-context";
 import { useTitle } from "../../utils/hooks/customHooks";
 import LoginImage from "../../assets/login.webp";
-import { Input } from "../../components/Form";
+import { Input } from "../../components/Input";
 import Button from "../../components/Button";
 import Swal from "../../utils/swal";
 
