@@ -9,11 +9,14 @@ export default {
       },
       fontFamily: {
         "pt-serif": ['"PT Serif"', "serif"],
-        "outfit": ["Outfit"],
-        "niconne": ["Niconne"],
-        "parisienne": ["Parisienne"],
+        outfit: ["Outfit"],
+        niconne: ["Niconne"],
+        parisienne: ["Parisienne"],
       },
     },
   },
-  plugins: [require("daisyui")],
+  plugins: [
+    require("daisyui"),
+    require("tailwind-scrollbar")({ nocompatible: true }),
+  ],
 };
