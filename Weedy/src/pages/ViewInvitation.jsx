@@ -1,8 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { useParams, useNavigate } from "react-router-dom";
 import React, { useEffect, useState } from "react";
-import 'animate.css';
-
+import "animate.css";
 
 import { getWeddings } from "../utils/apis/weddings/api";
 import { useTitle } from "../utils/hooks/customHooks";
@@ -74,14 +73,19 @@ export default function ViewIntitation() {
 
               <div className=" animate__animated animate__fadeIn flex lg:flex-row flex-col text-center z-10">
                 <div className=" rounded-xl">
-                  <img src={ModalImage} className=" rounded-t-xl lg:rounded-l-xl max-h-[12rem] lg:max-h-full object-cover object-top w-full lg:w-[25rem]" />
+                  <img
+                    src={ModalImage}
+                    className=" rounded-t-xl lg:rounded-l-xl max-h-[12rem] lg:max-h-full object-cover object-top w-full lg:w-[25rem]"
+                  />
                 </div>
 
                 <div className=" px-12 flex flex-col gap-2 lg:gap-5 items-center justify-center bg-white lg:w-[35rem] font-pt-serif text-gray-700 rounded-b-xl lg:rounded-r-lg ">
                   <p className=" mt-5 text-sm lg:mt-32 capitalize lg:text-2xl text-black">
                     Dear {to},
                   </p>
-                  <p className="text-sm lg:text-md">You are warmly invited to attend</p>
+                  <p className="text-sm lg:text-md">
+                    You are warmly invited to attend
+                  </p>
 
                   <div className="border border-[#E2D9C9] w-[13rem] lg:w-[20rem]"></div>
                   <p className=" text-sm lg:text-xl">The Wedding Ceremony of</p>
@@ -93,7 +97,10 @@ export default function ViewIntitation() {
                     onClick={() => setShowModal(false)}
                     className="animate__animated animate__pulse animate__infinite	infinite border-[#9F6F53] text-[#9F6F53] px-16 hover:text-white mb-5"
                   />
-                  <img src={FloralImage} className="mt-auto hidden lg:block lg:w-[25rem]" />
+                  <img
+                    src={FloralImage}
+                    className="mt-auto hidden lg:block lg:w-[25rem]"
+                  />
                 </div>
               </div>
             </div>
@@ -130,7 +137,6 @@ export default function ViewIntitation() {
             </p>
 
             <div className="flex flex-col lg:flex-row gap-5">
-              
               <div className="animate__animated animate__fadeInLeft animate__delay-1s flex flex-col gap-5 justify-center items-center">
                 <img src={BrideImage} className=" rounded-full w-[15rem]" />
                 <p className="text-2xl font-pt-serif text-[#837C61]">
@@ -325,14 +331,18 @@ export default function ViewIntitation() {
             </div>
           </section>
 
-          {/* Footer */}
-          <section className="flex flex-col items-center bg-[#837C61] py-10">
-            <p className="font-parisienne text-white text-3xl lg:text-5xl">
+          {/* Qoutes Section */}
+
+          <section className="flex flex-col items-center gap-2 lg:gap-5 bg-[#837C61] py-10">
+            <p className=" font-outfit lg:text-xl text-center px-10 lg:max-w-xl text-white mb-5">`{weddings[0].scriptureQuotes}`</p>
+            <div className="border border-[#E2D9C9] w-[13rem]  lg:w-[20rem]"></div>
+            <p className="font-parisienne text-white text-3xl lg:text-5xl mt-5">
               {weddings[0].brideFirstName} & {weddings[0].groomFirstName}
             </p>
             <p className="font-pt-serif text-white">Thank You!</p>
           </section>
 
+          {/* Footer */}
           <footer className="flex flex-col justify-center items-center p-10 ">
             <p className="font-bold">Made with ❤️ by</p>
             <a
