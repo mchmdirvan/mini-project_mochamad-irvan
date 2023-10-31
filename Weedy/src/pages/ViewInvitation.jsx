@@ -5,6 +5,8 @@ import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import "animate.css";
 
+import { createRsvp, getRsvp } from "../utils/apis/rsvp/api";
+
 import { getWeddings } from "../utils/apis/weddings/api";
 import { useTitle } from "../utils/hooks/customHooks";
 import { rsvpSchema } from "../utils/apis/rsvp";
@@ -29,15 +31,15 @@ import { Input, TextArea, Select, RadioGroup } from "../components/Input";
 import Button from "../components/Button";
 
 export default function ViewIntitation() {
+  const [showModal, setShowModal] = useState(true);
   const [weddings, setWeddings] = useState(null);
+  const [message, setMessage] = useState([]);
+  const navigate = useNavigate();
+  const { to } = useParams();
   const title =
     weddings === null
       ? "Weedy"
       : `The Wedding of ${weddings[0].brideFirstName} & ${weddings[0].groomFirstName}`;
-
-  const [showModal, setShowModal] = useState(true);
-  const navigate = useNavigate();
-  const { to } = useParams();
 
   const {
     formState: { errors, isSubmitting },
@@ -53,14 +55,39 @@ export default function ViewIntitation() {
     },
   });
 
-  const onSubmit = (data) => {
-    console.log(data);
-  };
-
   useTitle(title);
+
   useEffect(() => {
     fetchData();
   }, []);
+
+  useEffect(() => {
+    fetchMessage();
+  }, []);
+
+  async function fetchMessage() {
+    try {
+      const result = await getRsvp();
+      setMessage(result);
+    } catch (error) {
+      console.log(error.toString());
+    }
+  }
+
+  async function onSubmit(data) {
+    try {
+      await createRsvp(data);
+      Swal.fire({
+        title: "Success",
+        text: "Well Done! Your RSVP is Set",
+        showCancelButton: false,
+      });
+      reset();
+      fetchMessage();
+    } catch (error) {
+      console.log(error.toString());
+    }
+  }
 
   async function fetchData() {
     try {
@@ -415,6 +442,18 @@ export default function ViewIntitation() {
                 className="border-black hover:text-white"
               />
             </form>
+
+            <div className="border border-[#E2D9C9] w-[20vw] mt-10"></div>
+
+            <div className="flex flex-col mb-10 px-10 py-10 max-h-[50vh] overflow-auto w-[40vw]  rounded-2xl scrollbar-thin scrollbar-thumb-rounded-full scrollbar-track-rounded-full  scrollbar-track-slate-200 scrollbar-thumb-slate-950 overflow-y-scroll ">
+              {message.map((key, index) => (
+                <div className="font-outfit" key={index}>
+                  <p className=" text-[#C9AD91] text-2xl">{key.fullName}</p>
+                  <p className="w-[30vw]"> {key.message}</p>
+                  <div className="border border-[#E2D9C9] w-[30vw] my-2"></div>
+                </div>
+              ))}
+            </div>
           </section>
 
           {/* Qoutes Section */}
