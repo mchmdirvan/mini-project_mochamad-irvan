@@ -334,7 +334,7 @@ export default function ViewIntitation() {
           {/* Qoutes Section */}
 
           <section className="flex flex-col items-center gap-2 lg:gap-5 bg-[#837C61] py-10">
-            <p className=" font-outfit lg:text-xl text-center px-10 lg:max-w-xl text-white mb-5">`{weddings[0].scriptureQuotes}`</p>
+            <p className=" font-outfit lg:text-xl text-center px-10 lg:max-w-6xl text-white mb-5">`{weddings[0].scriptureQuotes}`</p>
             <div className="border border-[#E2D9C9] w-[13rem]  lg:w-[20rem]"></div>
             <p className="font-parisienne text-white text-3xl lg:text-5xl mt-5">
               {weddings[0].brideFirstName} & {weddings[0].groomFirstName}
