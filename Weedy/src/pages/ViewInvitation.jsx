@@ -1,10 +1,13 @@
 /* eslint-disable no-unused-vars */
 import { useParams, useNavigate } from "react-router-dom";
+import { zodResolver } from "@hookform/resolvers/zod";
 import React, { useEffect, useState } from "react";
+import { useForm } from "react-hook-form";
 import "animate.css";
 
 import { getWeddings } from "../utils/apis/weddings/api";
 import { useTitle } from "../utils/hooks/customHooks";
+import { rsvpSchema } from "../utils/apis/rsvp";
 import Swal from "../utils/swal";
 
 import BackgroundSchedule from "../assets/view-bg-wedding.webp";
@@ -22,6 +25,7 @@ import HeroImage from "../assets/view-hero.webp";
 import IconGift from "../assets/icon-gift.webp";
 
 import Navbar from "../components/NavbarInvitation";
+import { Input, TextArea, Select, RadioGroup } from "../components/Input";
 import Button from "../components/Button";
 
 export default function ViewIntitation() {
@@ -34,6 +38,24 @@ export default function ViewIntitation() {
   const [showModal, setShowModal] = useState(true);
   const navigate = useNavigate();
   const { to } = useParams();
+
+  const {
+    formState: { errors, isSubmitting },
+    handleSubmit,
+    getValues,
+    setValue,
+    register,
+    reset,
+  } = useForm({
+    resolver: zodResolver(rsvpSchema),
+    defaultValues: {
+      isAttend: "",
+    },
+  });
+
+  const onSubmit = (data) => {
+    console.log(data);
+  };
 
   useTitle(title);
   useEffect(() => {
@@ -62,8 +84,8 @@ export default function ViewIntitation() {
           </div>
         ) : (
           <>
+            {/* Modal Pages */}
             <div id="home" className="hero">
-              {/* Modal Pages */}
               <div className="">
                 <img
                   src={HeroImage}
@@ -177,7 +199,7 @@ export default function ViewIntitation() {
               style={{ backgroundImage: `url(${BackgroundSchedule})` }}
             >
               <div className="flex flex-col lg:flex-row justify-center gap-10 items-center bg-opacity-80 lg:h-[92vh]">
-                <div className="animate__animated animate__fadeInUp animate__delay-3s mt-5 flex flex-col items-center justify-center bg-white lg:py-20 lg:px-10 rounded-2xl gap-2 w-[40rem] font-pt-serif max-w-[20rem] lg:max-w-full py-10 px-10">
+                <div className="animate__animated animate__fadeInUp animate__delay-2s mt-5 flex flex-col items-center justify-center bg-white lg:py-20 lg:px-10 rounded-2xl gap-2 w-[40rem] font-pt-serif max-w-[20rem] lg:max-w-full py-10 px-10">
                   <h1 className=" font-parisienne text-[#9F6F53] text-4xl text-center">
                     Holy Matrimony
                   </h1>
@@ -195,7 +217,7 @@ export default function ViewIntitation() {
                   />
                 </div>
 
-                <div className="animate__animated animate__fadeInUp animate__delay-3s mt-5 mb-5 flex flex-col items-center justify-center bg-white lg:py-20 lg:px-10 rounded-2xl gap-2 w-[40rem] font-pt-serif max-w-[20rem]  lg:max-w-full py-10 px-10">
+                <div className="animate__animated animate__fadeInUp animate__delay-2s mt-5 mb-5 flex flex-col items-center justify-center bg-white lg:py-20 lg:px-10 rounded-2xl gap-2 w-[40rem] font-pt-serif max-w-[20rem]  lg:max-w-full py-10 px-10">
                   <h1 className=" font-parisienne text-[#9F6F53] text-4xl">
                     Reception
                   </h1>
@@ -331,10 +353,75 @@ export default function ViewIntitation() {
             </div>
           </section>
 
-          {/* Qoutes Section */}
+          {/* RSVP */}
+          <section className="flex flex-col items-center my-10 ">
+            <p className=" font-parisienne text-center text-[#9F6F53] text-5xl">
+              Rsvp
+            </p>
+            <p>Please kindly RSVP your attendance</p>
 
+            <form
+              className="flex flex-col font-outfit w-96 "
+              onSubmit={handleSubmit(onSubmit)}
+            >
+              <Input
+                placeholder="Full Name"
+                register={register}
+                name="fullName"
+                type="text"
+                error={errors.fullName?.message}
+                className="border-b border-[#472A08] text-[#472A08] placeholder:text-md focus:outline-none"
+              />
+              <Input
+                placeholder="Email"
+                register={register}
+                name="email"
+                type="email"
+                error={errors.email?.message}
+                className="border-b border-[#472A08] text-[#472A08] placeholder:text-md focus:outline-none "
+              />
+              <Input
+                placeholder="Phone Number"
+                register={register}
+                name="phoneNumber"
+                type="number"
+                error={errors.phoneNumber?.message}
+                className="border-b border-[#472A08] text-[#472A08] placeholder:text-md focus:outline-none "
+              />
+
+              <RadioGroup
+                name="isAttend"
+                options={["Attend", "Not Attend"]}
+                register={register}
+                error={errors.isAttend?.message}
+              />
+              <Select
+                name="totalPersons"
+                options={[1, 2, 3, 4]}
+                placeholder="Total Persons"
+                register={register}
+                error={errors.totalPersons?.message}
+              />
+              <TextArea
+                placeholder="Your prays and greetings"
+                rows={5}
+                register={register}
+                name="message"
+                error={errors.message?.message}
+                className=" border rounded-md  text-[#472A08] placeholder:text-sm text-sm focus:outline-none w-full "
+              />
+              <Button
+                label="Submit"
+                className="border-black hover:text-white"
+              />
+            </form>
+          </section>
+
+          {/* Qoutes Section */}
           <section className="flex flex-col items-center gap-2 lg:gap-5 bg-[#837C61] py-10">
-            <p className=" font-outfit lg:text-xl text-center px-10 lg:max-w-6xl text-white mb-5">`{weddings[0].scriptureQuotes}`</p>
+            <p className=" font-outfit lg:text-xl text-center px-10 lg:max-w-6xl text-white mb-5">
+              `{weddings[0].scriptureQuotes}`
+            </p>
             <div className="border border-[#E2D9C9] w-[13rem]  lg:w-[20rem]"></div>
             <p className="font-parisienne text-white text-3xl lg:text-5xl mt-5">
               {weddings[0].brideFirstName} & {weddings[0].groomFirstName}
