@@ -127,18 +127,19 @@ function TextArea({
 function Select({ label, placeholder, id, error, options, register, name }) {
   return (
     <div className="flex flex-col mb-4">
-      <label
-        className="text-black dark:text-white tracking-wider mb-3"
-        htmlFor={id}
-      >
+      <label className="mb-3" htmlFor={id}>
         {label}
       </label>
       <select
-        className=""
+        className={` ${
+          error
+            ? "border border-[#C70039] text-[#C70039] placeholder:text-[#C70039]"
+            : "border border-[#472A08] text-[#472A08] placeholder:text-[#472A08]"
+        } border rounded-xl px-10 text-md transition duration-300 ease-in-out"`}
         defaultValue=""
         {...(register ? register(name) : {})}
       >
-        <option disabled value="">
+        <option hidden value="">
           {placeholder}
         </option>
         {options.map((option) => (
@@ -169,18 +170,24 @@ function RadioGroup(props) {
   const { label, error, options, register, name } = props;
 
   return (
-    <div className="flex flex-col mb-4" aria-label={props["aria-label"]}>
-      <label className="text-black dark:text-white tracking-wider mb-3">
-        {label}
-      </label>
+    <div className="flex flex-col my-6" aria-label={props["aria-label"]}>
+      <label className="">{label}</label>
       {options.map((option) => (
         <label
-          className="text-black dark:text-white tracking-wider"
+          className={` ${
+            error
+              ? " text-[#C70039]  "
+              : " text-[#472A08]  "
+          } flex gap-2 mt-2 transition duration-300 ease-in-out"`}
           htmlFor={option}
           key={option}
         >
           <input
-            className="mr-4"
+            className={` ${
+              error
+                ? "border border-[#C70039] text-[#C70039] placeholder:text-[#C70039] radio radio-error"
+                : "border border-[#472A08] text-[#472A08] placeholder:text-[#472A08] radio"
+            } transition duration-300 ease-in-out"`}
             type="radio"
             value={option}
             id={option}
@@ -194,4 +201,4 @@ function RadioGroup(props) {
   );
 }
 
-export { Input, TextArea, Select, RadioGroup};
+export { Input, TextArea, Select, RadioGroup };
