@@ -3,7 +3,7 @@ import { SiYoutube, SiInstagram, SiTiktok } from "react-icons/si";
 import React from "react";
 
 import Logo from "../assets/logo.webp";
-import { Input } from "./Form";
+import { Input } from "./Input";
 import Button from "./Button";
 
 export default function Footer() {
