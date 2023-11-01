@@ -7,6 +7,7 @@ import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import dayjs from "dayjs";
 import * as z from "zod";
+import "animate.css";
 
 import {
   saveDataToLocalStorage,
@@ -225,7 +226,7 @@ function CreateInvitation() {
       <div className="drawer">
         {/* Sidebar and Drawer */}
         <Sidebar />
-        <div className=" drawer-content">
+        <div className="animate__animated animate__fadeInRight drawer-content ">
           <div className="flex justify-between px-10 py-5 font-[Outfit] lg:hidden items-center">
             <p className="lg:hidden text-xl">
               Dashboard |{" "}

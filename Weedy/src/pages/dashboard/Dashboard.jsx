@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { Link, useParams, useNavigate } from "react-router-dom";
+import { Link,  useNavigate } from "react-router-dom";
 import { Bars3Icon } from "@heroicons/react/24/outline";
 import React, { useState } from "react";
 import "animate.css";
@@ -48,7 +48,7 @@ export default function Dashboard() {
         </div>
 
         {/* Pages */}
-        <div className="flex flex-col py-10 font-[Outfit] items-center">
+        <div className=" animate__animated animate__fadeInRight flex flex-col py-10 font-[Outfit] items-center">
           <div className="flex flex-col px-10 h-full">
             <div className="flex flex-row  ">
               <div className="animate__animated animate__fadeIn flex flex-col justify-center">
