@@ -194,7 +194,7 @@ export default function ViewIntitation() {
                 <p className=" font-pt-serif">{weddings[0].brideBio}</p>
                 <a
                   href={weddings[0].brideContact}
-                  className="text-5xl pt-2 font-parisienne text-[#C9AD91] "
+                  className=" hover:text-[#0095F6] text-5xl pt-2 font-parisienne text-[#C9AD91] "
                 >
                   {weddings[0].brideFirstName}
                 </a>
@@ -215,7 +215,7 @@ export default function ViewIntitation() {
                 <p className=" font-pt-serif">{weddings[0].brideBio}</p>
                 <a
                   href={weddings[0].groomContact}
-                  className="text-5xl pt-2 font-parisienne text-[#C9AD91] "
+                  className=" hover:text-[#0095F6] text-5xl pt-2 font-parisienne text-[#C9AD91] "
                 >
                   {weddings[0].groomFirstName}
                 </a>
@@ -380,6 +380,36 @@ export default function ViewIntitation() {
                   <div className="hidden lg:block">
                     <img src={IconGift} className=" w-32 me-20" />
                   </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Story Section */}
+          <section className="bg-[#837C61] py-10">
+            <h1 className=" font-parisienne text-center text-white  text-4xl lg:text-5xl mb-10">
+              Our Love Stories
+            </h1>
+            <div className="flex items-center justify-center gap-10 ">
+              <div className="flex flex-col gap-5">
+                <img src={GalleryImage1} className="w-[20vw] rounded-xl hidden lg:block" />
+                <img src={GalleryImage2} className="w-[20vw] rounded-xl hidden lg:block" />
+              </div>
+
+              <div className="border h-[50vh]"></div>
+
+              <div className="flex flex-col gap-5 font-outfit text-white  max-w-sm pe-10">
+                <div>
+                  <h1 className="font-semibold text-2xl lg:text-4xl">First Meet</h1>
+                  <p>{weddings[0].firstMeetStory}</p>
+                </div>
+                <div>
+                  <h1 className="font-semibold text-2xl lg:text-4xl">Love Stories</h1>
+                  <p>{weddings[0].loveStory}</p>
+                </div>
+                <div>
+                  <h1 className="font-semibold text-2xl lg:text-4xl">Decission to Marry</h1>
+                  <p>{weddings[0].decideToMarryStory}</p>
                 </div>
               </div>
             </div>

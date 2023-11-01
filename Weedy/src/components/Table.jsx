@@ -20,8 +20,8 @@ function Table({ formValues=[] }) {
     { label: "Reception Place", value: formValues.receptionAddress },
     { label: "Reception Hall", value: formValues.receptionHall },
     { label: "Reception City", value: formValues.receptionCity },
-    { label: "First Meet Stories", value: formValues.firstloveStory },
-    { label: "Love Stories", value: formValues.firstMeetStory },
+    { label: "First Meet Stories", value: formValues.firstMeetStory },
+    { label: "Love Stories", value: formValues.loveStory },
     { label: "Decide to Marry Stories", value: formValues.decideToMarryStory },
     { label: "Scripture Quotes", value: formValues.scriptureQuotes },
   ];
