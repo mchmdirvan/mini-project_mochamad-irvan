@@ -35,15 +35,15 @@ function Router() {
     },
     {
       path: "/dashboard/:username",
-      element: token === "" ? <Navigate to="/login" /> : <Dashboard />,
+      element: token === "" ? <Navigate to="/" /> : <Dashboard />,
     },
     {
       path: "/create-invitation",
-      element: token === "" ? <Navigate to="/login" /> : <CreateInvitation />,
+      element: token === "" ? <Navigate to="/" /> : <CreateInvitation />,
     },
     {
       path: "/edit-invitation/:id",
-      element: token === "" ? <Navigate to="/login" /> : <CreateInvitation />,
+      element: token === "" ? <Navigate to="/" /> : <CreateInvitation />,
     },
     {
       path: "/weedy-invitation/:username",

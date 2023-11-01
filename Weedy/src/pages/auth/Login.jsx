@@ -57,8 +57,8 @@ function Login() {
             src={LoginImage}
             alt="Login Image"
             className=" animate__animated animate__fadeIn h-full max-h-[100vh] object-cover"
-            onLoad={() => {}}
           />
+
           <h1 className=" animate__animated animate__fadeInDown absolute inset-x-0 bottom-24 text-center text-white text-4xl font-bold">
             Welcome Back, <br /> We missed you!
           </h1>
@@ -111,8 +111,6 @@ function Login() {
               </a>
             </p>
           </form>
-
-          <div className="flex flex-col gap-2 items-center"></div>
         </div>
       </div>
     </>
