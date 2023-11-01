@@ -82,8 +82,8 @@ export default function IndexOpenAI() {
 
   return (
     <>
-      <div className="w-full h-[90vh] py-4 px-8 flex flex-col text-black">
-        <div className="flex flex-col items-center justify-center font-outfit text-center my-10 gap-2">
+      <div className="w-full h-[100vh] py-4 px-8 flex flex-col bg-white text-black">
+        <div className="flex flex-col items-center justify-center font-outfit text-center py-10 gap-2">
           <p className="text-2xl font-semibold">AI Services</p>
           <p className="max-w-[80vw]">
             We offer an AI-powered service to assist you in creating digital
@@ -126,7 +126,7 @@ export default function IndexOpenAI() {
           <Input
             placeholder="Can you help me to create message? She is my friend since elementary school, I'm happy she will be married!"
             onChange={(event) => setPrompt(event.target.value)}
-            className="w-[80vw] border-b py-4"
+            className="w-[80vw] border-b py-4 bg-white"
             name="insertPrompt"
             id="insertPrompt"
             ariaLabel="insert-prompt"
