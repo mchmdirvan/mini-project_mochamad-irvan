@@ -58,7 +58,7 @@ export default function Sidebar() {
               <img
                 src={ProfileImage}
                 alt="photo profile"
-                className="h-full w-20"
+                className="h-full rounded-full w-20"
               />
               <p className="font-semibold my-2 text-2xl capitalize">{user}</p>
             </div>
