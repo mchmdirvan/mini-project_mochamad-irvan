@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/no-unescaped-entities */
 import { Link, useNavigate } from "react-router-dom";
@@ -277,7 +278,7 @@ function CreateInvitation() {
               onClick={toggleDrawer}
             >
               <Bars3Icon
-                className="bg-white block h-8 w-8 bg-white"
+                className="bg-white block h-8 w-8 "
                 aria-hidden="true"
               />
             </label>
