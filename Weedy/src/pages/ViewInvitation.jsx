@@ -44,8 +44,6 @@ export default function ViewIntitation() {
   const {
     formState: { errors, isSubmitting },
     handleSubmit,
-    getValues,
-    setValue,
     register,
     reset,
   } = useForm({
@@ -156,7 +154,7 @@ export default function ViewIntitation() {
           </>
         )
       ) : (
-        <div className="h-[200vh]">
+        <div>
           <Navbar weddings={weddings} />
 
           {/* Hero Section */}
@@ -440,11 +438,13 @@ export default function ViewIntitation() {
               <Button
                 label="Submit"
                 className="border-black hover:text-white"
+                disabled={isSubmitting}
               />
             </form>
 
             <div className="border border-[#E2D9C9] w-[20vw] mt-10"></div>
 
+            {/* Message Section */}
             <div className="flex flex-col mb-10 px-10 py-10 max-h-[50vh] overflow-auto w-[40vw]  rounded-2xl scrollbar-thin scrollbar-thumb-rounded-full scrollbar-track-rounded-full  scrollbar-track-slate-200 scrollbar-thumb-slate-950 overflow-y-scroll ">
               {message.map((key, index) => (
                 <div className="font-outfit" key={index}>
