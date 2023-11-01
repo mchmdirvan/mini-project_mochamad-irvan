@@ -3,6 +3,8 @@ import { useParams, useNavigate } from "react-router-dom";
 import { zodResolver } from "@hookform/resolvers/zod";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
+import dayjs from "dayjs";
+import "dayjs/locale/en"; 
 import "animate.css";
 
 import { createRsvp, getRsvp } from "../../utils/apis/rsvp/api";
@@ -32,6 +34,8 @@ import Navbar from "../../components/NavbarInvitation";
 import Button from "../../components/Button";
 
 export default function ViewIntitation() {
+  dayjs.locale("en");
+
   const [showModal, setShowModal] = useState(true);
   const [weddings, setWeddings] = useState(null);
   const [message, setMessage] = useState([]);
@@ -235,40 +239,50 @@ export default function ViewIntitation() {
           {/* Wedding Section */}
           <section id="wedding">
             <div
-              className="bg-cover bg-center lg:h-[92vh]"
+              className="bg-cover bg-center lg:h-[95vh]"
               style={{ backgroundImage: `url(${BackgroundSchedule})` }}
             >
-              <div className="flex flex-col lg:flex-row justify-center gap-10 items-center bg-opacity-80 lg:h-[92vh]">
+              <div className="flex flex-col lg:flex-row justify-center gap-10 bg-opacity-80">
                 <div className="animate__animated animate__fadeInUp animate__delay-2s mt-5 flex flex-col items-center justify-center bg-white lg:py-20 lg:px-10 rounded-2xl gap-2 w-[40rem] font-pt-serif max-w-[20rem] lg:max-w-full py-10 px-10">
                   <h1 className=" font-parisienne text-[#9F6F53] text-4xl text-center">
                     Holy Matrimony
                   </h1>
-                  <img src={IconRing} className="w-40" />
-                  <p>{weddings[0].agreementDate}</p>
+                  <img src={IconRing} className="w-40 my-5" />
+                  <p className="text-[#837C61] lg:text-xl text-md">
+                    {dayjs(weddings[0].agreementDate).locale('en').format(
+                      "dddd , DD MMMM YYYY"
+                    )}
+                  </p>
+                  <p className="text-[#837C61] lg:text-xl text-md">{dayjs(weddings[0].agreementDate).format("HH:mm")}</p>
                   <div className="border border-[#E2D9C9] w-[20rem]"></div>
                   <p>Location</p>
                   <p className="text-[#9F6F53] text-2xl">
                     {weddings[0].agreementHall}
                   </p>
-                  <p className="text-center">{weddings[0].agreementAddress}</p>
+                  <p className="text-center text-sm">{weddings[0].agreementAddress}</p>
                   <Button
                     label="Open Maps"
                     className="text-[#9F6F53] border-[#9F6F53] hover:text-white"
                   />
                 </div>
 
-                <div className="animate__animated animate__fadeInUp animate__delay-2s mt-5 mb-5 flex flex-col items-center justify-center bg-white lg:py-20 lg:px-10 rounded-2xl gap-2 w-[40rem] font-pt-serif max-w-[20rem]  lg:max-w-full py-10 px-10">
+                <div className="animate__animated animate__fadeInUp animate__delay-2s mt-5 flex flex-col items-center justify-center bg-white lg:py-20 lg:px-10 rounded-2xl gap-2 w-[40rem] font-pt-serif max-w-[20rem]  lg:max-w-full py-10 px-10">
                   <h1 className=" font-parisienne text-[#9F6F53] text-4xl">
                     Reception
                   </h1>
-                  <img src={IconBird} className="w-40" />
-                  <p>{weddings[0].receptionDate}</p>
+                  <img src={IconBird} className="w-40 my-5" />
+                  <p className="text-[#837C61] lg:text-xl text-md">
+                    {dayjs(weddings[0].receptionDate).locale('en').format(
+                      "dddd , DD MMMM YYYY"
+                    )}
+                  </p>
+                  <p className="text-[#837C61] lg:text-xl text-md">{dayjs(weddings[0].receptionDate).format("HH:mm")}</p>
                   <div className="border border-[#E2D9C9] w-[20rem]"></div>
                   <p>Location</p>
                   <p className="text-[#9F6F53] text-2xl">
                     {weddings[0].receptionHall}
                   </p>
-                  <p className="text-center">{weddings[0].receptionAddress}</p>
+                  <p className="text-center text-sm">{weddings[0].receptionAddress}</p>
                   <Button
                     label="Open Maps"
                     className="text-[#9F6F53] border-[#9F6F53] hover:text-white"
