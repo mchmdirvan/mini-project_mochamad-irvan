@@ -31,8 +31,8 @@ function Table({ formValues=[] }) {
       <tbody>
         {reviewData.map((item) => (
           <tr key={item.label}>
-            <td>{item.label}</td>
-            <td>{item.value}</td>
+            <td className="bg-white">{item.label}</td>
+            <td className="bg-white">{item.value}</td>
           </tr>
         ))}
       </tbody>

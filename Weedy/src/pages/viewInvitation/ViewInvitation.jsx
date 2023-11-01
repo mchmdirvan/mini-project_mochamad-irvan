@@ -163,7 +163,7 @@ export default function ViewIntitation() {
           </>
         )
       ) : (
-        <div>
+        <div className="text-black bg-white">
           <Navbar weddings={weddings} />
 
           {/* Hero Section */}
@@ -186,7 +186,7 @@ export default function ViewIntitation() {
           {/* Bride & Groom Section */}
           <section
             id="brideAndGroom"
-            className=" flex flex-col gap-10 items-center pt-20 lg:h-[100vh] "
+            className="bg-white flex flex-col gap-10 items-center pt-20 lg:h-[100vh] "
           >
             <p className=" animate__animated animate__fadeInUp animate__delay-1s font-parisienne text-[#9F6F53] text-2xl lg:text-5xl">
               The Groom and The Bride
@@ -318,7 +318,7 @@ export default function ViewIntitation() {
           {/* Gallery Section */}
           <section
             id="ourMoments"
-            className="flex flex-col gap-10 items-center py-20 h-[92vh] "
+            className="bg-white flex flex-col gap-10 items-center py-20 h-[92vh] "
           >
             <p className=" font-parisienne text-[#9F6F53] text-5xl">
               Our Moments
@@ -400,23 +400,35 @@ export default function ViewIntitation() {
             </h1>
             <div className="flex items-center justify-center gap-10 ">
               <div className="flex flex-col gap-5">
-                <img src={GalleryImage1} className="w-[20vw] rounded-xl hidden lg:block" />
-                <img src={GalleryImage2} className="w-[20vw] rounded-xl hidden lg:block" />
+                <img
+                  src={GalleryImage1}
+                  className="w-[20vw] rounded-xl hidden lg:block"
+                />
+                <img
+                  src={GalleryImage2}
+                  className="w-[20vw] rounded-xl hidden lg:block"
+                />
               </div>
 
               <div className="border h-[50vh]"></div>
 
               <div className="flex flex-col gap-5 font-outfit text-white  max-w-sm pe-10">
                 <div>
-                  <h1 className="font-semibold text-2xl lg:text-4xl">First Meet</h1>
+                  <h1 className="font-semibold text-2xl lg:text-4xl">
+                    First Meet
+                  </h1>
                   <p>{weddings[0].firstMeetStory}</p>
                 </div>
                 <div>
-                  <h1 className="font-semibold text-2xl lg:text-4xl">Love Stories</h1>
+                  <h1 className="font-semibold text-2xl lg:text-4xl">
+                    Love Stories
+                  </h1>
                   <p>{weddings[0].loveStory}</p>
                 </div>
                 <div>
-                  <h1 className="font-semibold text-2xl lg:text-4xl">Decission to Marry</h1>
+                  <h1 className="font-semibold text-2xl lg:text-4xl">
+                    Decission to Marry
+                  </h1>
                   <p>{weddings[0].decideToMarryStory}</p>
                 </div>
               </div>
@@ -424,7 +436,7 @@ export default function ViewIntitation() {
           </section>
 
           {/* RSVP */}
-          <section className="flex flex-col items-center my-10 ">
+          <section className="bg-white flex flex-col items-center py-10 ">
             <p className=" font-parisienne text-center text-[#9F6F53] text-5xl">
               Rsvp
             </p>
@@ -440,7 +452,7 @@ export default function ViewIntitation() {
                 name="fullName"
                 type="text"
                 error={errors.fullName?.message}
-                className="border-b border-[#472A08] text-[#472A08] placeholder:text-md focus:outline-none"
+                className="bg-white border-b border-[#472A08] text-[#472A08] placeholder:text-md focus:outline-none"
               />
               <Input
                 placeholder="Email"
@@ -448,7 +460,7 @@ export default function ViewIntitation() {
                 name="email"
                 type="email"
                 error={errors.email?.message}
-                className="border-b border-[#472A08] text-[#472A08] placeholder:text-md focus:outline-none "
+                className="bg-white border-b border-[#472A08] text-[#472A08] placeholder:text-md focus:outline-none "
               />
               <Input
                 placeholder="Phone Number"
@@ -456,7 +468,7 @@ export default function ViewIntitation() {
                 name="phoneNumber"
                 type="number"
                 error={errors.phoneNumber?.message}
-                className="border-b border-[#472A08] text-[#472A08] placeholder:text-md focus:outline-none "
+                className="bg-white border-b border-[#472A08] text-[#472A08] placeholder:text-md focus:outline-none "
               />
 
               <RadioGroup
@@ -478,7 +490,7 @@ export default function ViewIntitation() {
                 register={register}
                 name="message"
                 error={errors.message?.message}
-                className=" border rounded-md  text-[#472A08] placeholder:text-sm text-sm focus:outline-none w-full "
+                className=" bg-white border rounded-md  text-[#472A08] placeholder:text-sm text-sm focus:outline-none w-full "
               />
               <Button
                 label="Submit"

@@ -42,7 +42,7 @@ export default function Sidebar() {
             className="drawer-overlay"
           ></label>
 
-          <div className="menu p-4 w-80 min-h-full bg-[#F8F7FC]  ">
+          <div className="menu p-4 w-80 min-h-full bg-[#F8F7FC] text-black  ">
             {/* Sidebar content here */}
             <div className="  flex justify-center items-center  ">
               <img className="h-full max-h-20" src={Logo} alt="Your Company" />

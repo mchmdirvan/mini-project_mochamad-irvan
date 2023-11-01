@@ -135,7 +135,7 @@ function Select({ label, placeholder, id, error, options, register, name }) {
           error
             ? "border border-[#C70039] text-[#C70039] placeholder:text-[#C70039]"
             : "border border-[#472A08] text-[#472A08] placeholder:text-[#472A08]"
-        } border rounded-xl px-10 text-md transition duration-300 ease-in-out"`}
+        } border rounded-xl px-10 text-md transition duration-300 ease-in-out bg-white`}
         defaultValue=""
         {...(register ? register(name) : {})}
       >
@@ -175,9 +175,7 @@ function RadioGroup(props) {
       {options.map((option) => (
         <label
           className={` ${
-            error
-              ? " text-[#C70039]  "
-              : " text-[#472A08]  "
+            error ? " text-[#C70039]  " : " text-[#472A08]  "
           } flex gap-2 mt-2 transition duration-300 ease-in-out"`}
           htmlFor={option}
           key={option}
@@ -187,7 +185,7 @@ function RadioGroup(props) {
               error
                 ? "border border-[#C70039] text-[#C70039] placeholder:text-[#C70039] radio radio-error"
                 : "border border-[#472A08] text-[#472A08] placeholder:text-[#472A08] radio"
-            } transition duration-300 ease-in-out"`}
+            } transition duration-300 ease-in-out "`}
             type="radio"
             value={option}
             id={option}

@@ -263,7 +263,7 @@ function CreateInvitation() {
       <div className="drawer">
         {/* Sidebar and Drawer */}
         <Sidebar />
-        <div className="animate__animated animate__fadeInRight drawer-content ">
+        <div className="animate__animated animate__fadeInRight drawer-content bg-white text-black ">
           <div className="flex justify-between px-10 py-5 font-[Outfit] lg:hidden items-center">
             <p className="lg:hidden text-xl">
               Dashboard |{" "}
@@ -277,7 +277,7 @@ function CreateInvitation() {
               onClick={toggleDrawer}
             >
               <Bars3Icon
-                className="block h-8 w-8 bg-white"
+                className="bg-white block h-8 w-8 bg-white"
                 aria-hidden="true"
               />
             </label>
@@ -303,7 +303,7 @@ function CreateInvitation() {
           </ul>
 
           <form
-            className="form font-[Outfit] px-10 lg:px-32"
+            className="form font-[Outfit] px-10 lg:px-32 "
             onSubmit={handleSubmit(userID === "" ? onSubmit : onSubmitEdit)}
           >
             {/* STEP 1 */}
@@ -334,7 +334,7 @@ function CreateInvitation() {
                           name="brideFirstName"
                           type="text"
                           error={errors.brideFirstName?.message}
-                          className="border-b border-[#472A08] text-[#472A08] placeholder:text-md focus:outline-none lg:w-[20rem] max-w-[8rem] lg:max-w-[18rem]"
+                          className="bg-white border-b border-[#472A08] text-[#472A08] placeholder:text-md focus:outline-none lg:w-[20rem] max-w-[8rem] lg:max-w-[18rem] "
                         />
                       </div>
                       <div>
@@ -344,7 +344,7 @@ function CreateInvitation() {
                           name="groomFirstName"
                           type="text"
                           error={errors.groomFirstName?.message}
-                          className="border-b border-[#472A08] text-[#472A08] placeholder:text-md focus:outline-none lg:w-[20rem] max-w-[8rem] lg:max-w-[18rem]"
+                          className="bg-white border-b border-[#472A08] text-[#472A08] placeholder:text-md focus:outline-none lg:w-[20rem] max-w-[8rem] lg:max-w-[18rem]"
                         />
                       </div>
                     </div>
@@ -357,7 +357,7 @@ function CreateInvitation() {
                           name="brideFullName"
                           type="text"
                           error={errors.brideFullName?.message}
-                          className="border-b border-[#472A08] text-[#472A08] placeholder:text-md focus:outline-none lg:w-[20rem] max-w-[8rem] lg:max-w-[18rem]"
+                          className="bg-white border-b border-[#472A08] text-[#472A08] placeholder:text-md focus:outline-none lg:w-[20rem] max-w-[8rem] lg:max-w-[18rem]"
                         />
                       </div>
                       <div>
@@ -367,7 +367,7 @@ function CreateInvitation() {
                           name="groomFullName"
                           type="text"
                           error={errors.groomFullName?.message}
-                          className="border-b border-[#472A08] text-[#472A08] placeholder:text-md focus:outline-none lg:w-[20rem] max-w-[8rem] lg:max-w-[18rem]"
+                          className="bg-white border-b border-[#472A08] text-[#472A08] placeholder:text-md focus:outline-none lg:w-[20rem] max-w-[8rem] lg:max-w-[18rem]"
                         />
                       </div>
                     </div>
@@ -383,7 +383,7 @@ function CreateInvitation() {
                         name="brideBio"
                         type="text"
                         error={errors.brideBio?.message}
-                        className=" border rounded-md  text-[#472A08] placeholder:text-sm text-sm focus:outline-none lg:w-[20rem] max-w-[8rem] lg:max-w-[18rem] "
+                        className=" bg-white border rounded-md  text-[#472A08] placeholder:text-sm text-sm focus:outline-none lg:w-[20rem] max-w-[8rem] lg:max-w-[18rem] "
                       />
                       <TextArea
                         rows={3}
@@ -392,7 +392,7 @@ function CreateInvitation() {
                         name="groomBio"
                         type="text"
                         error={errors.groomBio?.message}
-                        className="border rounded-md text-[#472A08] placeholder:text-sm text-sm focus:outline-none lg:w-[20rem] max-w-[8rem] lg:max-w-[18rem] "
+                        className="bg-white border rounded-md text-[#472A08] placeholder:text-sm text-sm focus:outline-none lg:w-[20rem] max-w-[8rem] lg:max-w-[18rem] "
                       />
                     </div>
                   </div>
@@ -406,7 +406,7 @@ function CreateInvitation() {
                           name="brideContact"
                           type="text"
                           error={errors.brideContact?.message}
-                          className="border-b border-[#472A08] text-[#472A08] placeholder:text-md focus:outline-none lg:w-[20rem] max-w-[8rem] lg:max-w-[18rem]"
+                          className="bg-white border-b border-[#472A08] text-[#472A08] placeholder:text-md focus:outline-none lg:w-[20rem] max-w-[8rem] lg:max-w-[18rem]"
                         />
                       </div>
                       <div>
@@ -416,7 +416,7 @@ function CreateInvitation() {
                           name="groomContact"
                           type="text"
                           error={errors.groomContact?.message}
-                          className="border-b border-[#472A08] text-[#472A08] placeholder:text-md focus:outline-none lg:w-[20rem] max-w-[8rem] lg:max-w-[18rem]"
+                          className="bg-white border-b border-[#472A08] text-[#472A08] placeholder:text-md focus:outline-none lg:w-[20rem] max-w-[8rem] lg:max-w-[18rem]"
                         />
                       </div>
                     </div>
@@ -425,7 +425,7 @@ function CreateInvitation() {
                     <Button
                       type="submit"
                       label="Next"
-                      className="border-black hover:text-white "
+                      className=" border-black hover:text-white "
                     />
                   </div>
                 </div>
@@ -463,7 +463,7 @@ function CreateInvitation() {
                           name="agreementDate"
                           type="datetime-local"
                           error={errors.agreementDate?.message}
-                          className="border rounded-full px-5 border-[#472A08] text-[#472A08] placeholder:text-md focus:outline-none lg:w-[20rem] max-w-full lg:max-w-[18rem]"
+                          className="bg-white border rounded-full px-5 border-[#472A08] text-[#472A08] placeholder:text-md focus:outline-none lg:w-[20rem] max-w-full lg:max-w-[18rem]"
                         />
                       </div>
                       <div>
@@ -473,7 +473,7 @@ function CreateInvitation() {
                           name="receptionDate"
                           type="datetime-local"
                           error={errors.receptionDate?.message}
-                          className="border rounded-full px-5 border-[#472A08] text-[#472A08] placeholder:text-md focus:outline-none lg:w-[20rem] max-w-full lg:max-w-[18rem]"
+                          className="bg-white border rounded-full px-5 border-[#472A08] text-[#472A08] placeholder:text-md focus:outline-none lg:w-[20rem] max-w-full lg:max-w-[18rem]"
                         />
                       </div>
                     </div>
@@ -492,7 +492,7 @@ function CreateInvitation() {
                             name="agreementAddress"
                             type="text"
                             error={errors.agreementAddress?.message}
-                            className="border-b  border-[#472A08] text-[#472A08] placeholder:text-md focus:outline-none lg:w-[20rem] max-w-full lg:max-w-[18rem]"
+                            className="bg-white border-b  border-[#472A08] text-[#472A08] placeholder:text-md focus:outline-none lg:w-[20rem] max-w-full lg:max-w-[18rem]"
                           />
                         </div>
                         <div>
@@ -502,7 +502,7 @@ function CreateInvitation() {
                             name="agreementHall"
                             type="text"
                             error={errors.agreementHall?.message}
-                            className="border-b  border-[#472A08] text-[#472A08] placeholder:text-md focus:outline-none lg:w-[20rem] max-w-full lg:max-w-[18rem]"
+                            className="bg-white border-b  border-[#472A08] text-[#472A08] placeholder:text-md focus:outline-none lg:w-[20rem] max-w-full lg:max-w-[18rem]"
                           />
                         </div>
                         <div>
@@ -512,7 +512,7 @@ function CreateInvitation() {
                             name="agreementCity"
                             type="text"
                             error={errors.agreementCity?.message}
-                            className="border-b  border-[#472A08] text-[#472A08] placeholder:text-md focus:outline-none lg:w-[20rem] max-w-full lg:max-w-[18rem]"
+                            className="bg-white border-b  border-[#472A08] text-[#472A08] placeholder:text-md focus:outline-none lg:w-[20rem] max-w-full lg:max-w-[18rem]"
                           />
                         </div>
                       </div>
@@ -525,7 +525,7 @@ function CreateInvitation() {
                             name="receptionAddress"
                             type="text"
                             error={errors.receptionAddress?.message}
-                            className="border-b  border-[#472A08] text-[#472A08] placeholder:text-md focus:outline-none lg:w-[20rem] max-w-full lg:max-w-[18rem]"
+                            className="bg-white border-b  border-[#472A08] text-[#472A08] placeholder:text-md focus:outline-none lg:w-[20rem] max-w-full lg:max-w-[18rem]"
                           />
                         </div>
                         <div>
@@ -535,7 +535,7 @@ function CreateInvitation() {
                             name="receptionHall"
                             type="text"
                             error={errors.receptionHall?.message}
-                            className="border-b  border-[#472A08] text-[#472A08] placeholder:text-md focus:outline-none lg:w-[20rem] max-w-full lg:max-w-[18rem]"
+                            className="bg-white border-b  border-[#472A08] text-[#472A08] placeholder:text-md focus:outline-none lg:w-[20rem] max-w-full lg:max-w-[18rem]"
                           />
                         </div>
 
@@ -546,7 +546,7 @@ function CreateInvitation() {
                             name="receptionCity"
                             type="text"
                             error={errors.receptionCity?.message}
-                            className="border-b  border-[#472A08] text-[#472A08] placeholder:text-md focus:outline-none lg:w-[20rem] max-w-full lg:max-w-[18rem]"
+                            className="bg-white border-b  border-[#472A08] text-[#472A08] placeholder:text-md focus:outline-none lg:w-[20rem] max-w-full lg:max-w-[18rem]"
                           />
                         </div>
                       </div>
@@ -557,14 +557,14 @@ function CreateInvitation() {
                     <Button
                       type="button"
                       label="Back"
-                      className="border-black hover:text-white "
+                      className="bg-white border-black hover:text-white "
                       onClick={onBack}
                     />
 
                     <Button
                       type="submit"
                       label="Next"
-                      className="border-black hover:text-white "
+                      className="bg-white border-black hover:text-white "
                     />
                   </div>
                 </div>
@@ -583,7 +583,7 @@ function CreateInvitation() {
                   <TextArea
                     register={register}
                     placeholder="Tell us your beautiful love story, starting with how you first met with your husband or wife."
-                    className=" rounded-xl max-w-[18rem] lg:max-w-full placeholder:text-gray-400"
+                    className="bg-white rounded-xl max-w-[18rem] lg:max-w-full placeholder:text-gray-400"
                     name="firstMeetStory"
                     id="firstMeetStory"
                     cols={50}
@@ -593,7 +593,7 @@ function CreateInvitation() {
                   <TextArea
                     register={register}
                     placeholder="Then, tell us all about the incredible journey you've been on together, full of memorable moments and adventures."
-                    className=" rounded-xl max-w-[18rem] lg:max-w-full placeholder:text-gray-400"
+                    className="bg-white rounded-xl max-w-[18rem] lg:max-w-full placeholder:text-gray-400"
                     name="loveStory"
                     id="loveStory"
                     cols={50}
@@ -603,7 +603,7 @@ function CreateInvitation() {
                   <TextArea
                     register={register}
                     placeholder="Lastly, let us in on the special details of how you both decided to take the big step and get married."
-                    className=" rounded-xl max-w-[18rem] lg:max-w-full placeholder:text-gray-400"
+                    className="bg-white rounded-xl max-w-[18rem] lg:max-w-full placeholder:text-gray-400"
                     name="decideToMarryStory"
                     id="decideToMarryStory"
                     cols={50}
@@ -616,14 +616,14 @@ function CreateInvitation() {
                   <Button
                     type="button"
                     label="Back"
-                    className="border-black hover:text-white "
+                    className="bg-white border-black hover:text-white "
                     onClick={onBack}
                   />
 
                   <Button
                     type="submit"
                     label="Next"
-                    className="border-black hover:text-white "
+                    className="bg-white border-black hover:text-white "
                   />
                 </div>
               </div>
@@ -640,7 +640,7 @@ function CreateInvitation() {
                   </p>
                   <TextArea
                     register={register}
-                    className=" rounded-xl max-w-[18rem] lg:max-w-full"
+                    className=" bg-white rounded-xl max-w-[18rem] lg:max-w-full"
                     name="scriptureQuotes"
                     id="scriptureQuotes"
                     cols={50}
@@ -653,14 +653,14 @@ function CreateInvitation() {
                   <Button
                     type="button"
                     label="Back"
-                    className="border-black hover:text-white "
+                    className="bg-white border-black hover:text-white "
                     onClick={onBack}
                   />
 
                   <Button
                     type="submit"
                     label="Next"
-                    className="border-black hover:text-white "
+                    className="bg-white border-black hover:text-white "
                   />
                 </div>
               </div>
@@ -683,14 +683,14 @@ function CreateInvitation() {
                   <Button
                     type="submit"
                     label="Submit"
-                    className="border-black hover:text-white "
+                    className="bg-white border-black hover:text-white "
                     disabled={isSubmitting}
                   />
                   <div className="flex flex-row gap-2">
                     <Button
                       type="button"
                       label="Edit"
-                      className="border-black hover:text-white w-full "
+                      className="bg-white border-black hover:text-white w-full "
                       onClick={onBack}
                     />
 
@@ -700,7 +700,7 @@ function CreateInvitation() {
                       <Button
                         type="button"
                         label="Delete"
-                        className="border-black hover:text-white w-full "
+                        className="bg-white border-black hover:text-white w-full "
                         onClick={onClickDelete}
                       />
                     )}

@@ -30,7 +30,7 @@ export default function Dashboard() {
     <div className="drawer">
       {/* Drawer and Sidebar*/}
       <Sidebar />
-      <div className=" drawer-content">
+      <div className=" drawer-content bg-white text-black">
         <div className="flex justify-between px-10 py-5 font-[Outfit] lg:hidden items-center">
           <p className="lg:hidden text-xl">
             Dashboard |{" "}
@@ -48,7 +48,7 @@ export default function Dashboard() {
         </div>
 
         {/* Pages */}
-        <div className=" animate__animated animate__fadeInRight flex flex-col py-10 font-[Outfit] items-center">
+        <div className=" animate__animated animate__fadeInRight flex flex-col py-10 font-[Outfit] items-center ">
           <div className="flex flex-col px-10 h-full">
             <div className="flex flex-row  ">
               <div className="animate__animated animate__fadeIn flex flex-col justify-center">
