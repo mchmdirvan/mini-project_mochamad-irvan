@@ -31,7 +31,6 @@ import { Input, TextArea, Select, RadioGroup } from "../../components/Input";
 import Navbar from "../../components/NavbarInvitation";
 import Button from "../../components/Button";
 
-
 export default function ViewIntitation() {
   const [showModal, setShowModal] = useState(true);
   const [weddings, setWeddings] = useState(null);
@@ -193,9 +192,12 @@ export default function ViewIntitation() {
                 </p>
                 <div className="border border-[#E2D9C9] w-[20rem]"></div>
                 <p className=" font-pt-serif">{weddings[0].brideBio}</p>
-                <p className="text-5xl pt-2 font-parisienne text-[#C9AD91] ">
+                <a
+                  href={weddings[0].brideContact}
+                  className="text-5xl pt-2 font-parisienne text-[#C9AD91] "
+                >
                   {weddings[0].brideFirstName}
-                </p>
+                </a>
               </div>
 
               <div className="flex justify-center items-center">
@@ -211,9 +213,12 @@ export default function ViewIntitation() {
                 </p>
                 <div className="border border-[#E2D9C9] w-[20rem]"></div>
                 <p className=" font-pt-serif">{weddings[0].brideBio}</p>
-                <p className="text-5xl pt-2 font-parisienne text-[#C9AD91] ">
+                <a
+                  href={weddings[0].groomContact}
+                  className="text-5xl pt-2 font-parisienne text-[#C9AD91] "
+                >
                   {weddings[0].groomFirstName}
-                </p>
+                </a>
               </div>
             </div>
             <img src={FloralImage} className="mt-auto w-[25rem]" />

@@ -60,7 +60,9 @@ function CreateInvitation() {
         .string()
         .min(1, { message: "Groom's Full Name is Required" }),
       brideBio: z.string().min(1, { message: "Bride's Bio is Required" }),
-      groomBio: z.string().min(1, { message: "Groom's Bio is Required" }),
+      groomBio: z.string().min(1, { message: "Bride's Bio is Required" }),
+      brideContact: z.string().min(1, { message: "Bride's Contact is Required" }),
+      groomContact: z.string().min(1, { message: "Groom's Contact is Required" }),
     });
   } else if (currentStep === 2) {
     weddingSchema = z.object({
@@ -154,7 +156,7 @@ function CreateInvitation() {
   async function onSubmit() {
     const weddings = getValues();
     setWeddings(weddings);
-    if (currentStep < 4) {
+    if (currentStep < 5) {
       setCurrentStep(currentStep + 1);
     } else {
       try {
@@ -179,7 +181,7 @@ function CreateInvitation() {
   async function onSubmitEdit(data) {
     const weddings = getValues();
     setWeddings(weddings);
-    if (currentStep < 4) {
+    if (currentStep < 5) {
       setCurrentStep(currentStep + 1);
     } else {
       try {
@@ -255,9 +257,12 @@ function CreateInvitation() {
               Schedule
             </li>
             <li className={`step ${currentStep >= 3 ? "step-primary" : ""}`}>
-              Message
+              Story
             </li>
             <li className={`step ${currentStep >= 4 ? "step-primary" : ""}`}>
+              Message
+            </li>
+            <li className={`step ${currentStep >= 5 ? "step-primary" : ""}`}>
               Finish
             </li>
           </ul>
@@ -269,7 +274,7 @@ function CreateInvitation() {
             {/* STEP 1 */}
             {currentStep === 1 && (
               <div className="flex">
-                <div className="flex flex-col lg:gap-2 mt-5 lg:mt-10 items-start">
+                <div className="flex flex-col lg:gap-2 mt-5 lg:mt-1 items-start">
                   <h2 className=" text-2xl lg:text-4xl font-bold">
                     Let's Get Started
                   </h2>
@@ -284,7 +289,7 @@ function CreateInvitation() {
                     className=" hidden disabled"
                   />
 
-                  <div className="flex flex-col lg:lg:mt-2">
+                  <div className="flex flex-col">
                     <p>Couple Information</p>
                     <div className="flex gap-10">
                       <div>
@@ -308,6 +313,7 @@ function CreateInvitation() {
                         />
                       </div>
                     </div>
+
                     <div className="flex gap-10">
                       <div>
                         <Input
@@ -353,6 +359,31 @@ function CreateInvitation() {
                         error={errors.groomBio?.message}
                         className="border rounded-md text-[#472A08] placeholder:text-sm text-sm focus:outline-none lg:w-[20rem] max-w-[8rem] lg:max-w-[18rem] "
                       />
+                    </div>
+                  </div>
+                  <div className="flex flex-col lg:lg:mt-2">
+                    <p>Couple Instagram</p>
+                    <div className="flex gap-10">
+                      <div>
+                        <Input
+                          placeholder="https://www.instagram.com/john/"
+                          register={register}
+                          name="brideContact"
+                          type="text"
+                          error={errors.brideContact?.message}
+                          className="border-b border-[#472A08] text-[#472A08] placeholder:text-md focus:outline-none lg:w-[20rem] max-w-[8rem] lg:max-w-[18rem]"
+                        />
+                      </div>
+                      <div>
+                        <Input
+                          placeholder="https://www.instagram.com/emily/"
+                          register={register}
+                          name="groomContact"
+                          type="text"
+                          error={errors.groomContact?.message}
+                          className="border-b border-[#472A08] text-[#472A08] placeholder:text-md focus:outline-none lg:w-[20rem] max-w-[8rem] lg:max-w-[18rem]"
+                        />
+                      </div>
                     </div>
                   </div>
                   <div className="self-end">
@@ -505,8 +536,8 @@ function CreateInvitation() {
               </div>
             )}
 
-            {/* STEP 3 */}
-            {currentStep === 3 && (
+            {/* STEP 4 */}
+            {currentStep === 4 && (
               <div className="flex flex-col max-w-md ">
                 <div className="flex flex-col gap-2">
                   <h2 className="text-4xl font-bold">Quotes Message</h2>
@@ -542,8 +573,8 @@ function CreateInvitation() {
               </div>
             )}
 
-            {/* STEP 4 */}
-            {currentStep === 4 && (
+            {/* STEP 5 */}
+            {currentStep === 5 && (
               <div className="flex flex-col">
                 <div className="flex flex-col gap-2 items-center ">
                   <h2 className="text-2xl lg:text-4xl font-bold  ">
