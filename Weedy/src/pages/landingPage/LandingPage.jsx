@@ -5,13 +5,13 @@ import { useNavigate } from "react-router-dom";
 import React from "react";
 import 'animate.css';
 
-import { getDataFromLocalStorage } from "../utils/localStorageFunction";
-import ContactImage from "../assets/contact-section.webp";
-import { useTitle } from "../utils/hooks/customHooks";
-import HeroImage from "../assets/hero-section.webp";
-import Navbar from "../components/Navbar";
-import Button from "../components/Button";
-import Footer from "../components/Footer";
+import { getDataFromLocalStorage } from "../../utils/localStorageFunction";
+import ContactImage from "../../assets/contact-section.webp";
+import { useTitle } from "../../utils/hooks/customHooks";
+import HeroImage from "../../assets/hero-section.webp";
+import Navbar from "../../components/Navbar";
+import Button from "../../components/Button";
+import Footer from "../../components/Footer";
 
 export default function LandingPage() {
   useTitle("Weedy: Digital Wedding Invitation");

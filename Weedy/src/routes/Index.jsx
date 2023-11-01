@@ -9,11 +9,11 @@ import { useEffect } from "react";
 import { useToken } from "../utils/context/token-context";
 import { setAxiosConfig } from "../utils/apis/axiosWithConfig";
 
-import ViewInvitation from "../pages/ViewInvitation";
-import CreateInvitation from "../pages/CreateInvitation";
-import LandingPage from "../pages/LandingPage";
-import Dashboard from "../pages/Dashboard";
-import NotFound from "../pages/NotFound";
+import CreateInvitation from "../pages/createInvitation/CreateInvitation";
+import ViewInvitation from "../pages/viewInvitation/ViewInvitation";
+import LandingPage from "../pages/landingPage/LandingPage";
+import Dashboard from "../pages/dashboard/Dashboard";
+import NotFound from "../pages/notFound/NotFound";
 import Login from "../pages/auth/Login";
 
 function Router() {

@@ -2,8 +2,8 @@
 import { useNavigate } from "react-router-dom";
 import React from "react";
 
-import NotFoundImage from "../assets/not-found.webp";
-import Button from "../components/Button";
+import NotFoundImage from "../../assets/not-found.webp";
+import Button from "../../components/Button";
 
 export default function NotFound() {
   const navigate = useNavigate();

@@ -4,16 +4,16 @@ import { Bars3Icon } from "@heroicons/react/24/outline";
 import React, { useState } from "react";
 import "animate.css";
 
-import DashboardCreate from "../assets/dashboard-create.webp";
-import DashboardImage from "../assets/dashboard-image.webp";
-import DashboradEdit from "../assets/dashboard-edit.webp";
-import DashboardView from "../assets/dashboard-view.webp";
-import DashboardAI from "../assets/dashboard-ai.webp";
+import DashboardCreate from "../../assets/dashboard-create.webp";
+import DashboardImage from "../../assets/dashboard-image.webp";
+import DashboradEdit from "../../assets/dashboard-edit.webp";
+import DashboardView from "../../assets/dashboard-view.webp";
+import DashboardAI from "../../assets/dashboard-ai.webp";
 
-import { getDataFromLocalStorage } from "../utils/localStorageFunction";
-import { useTitle } from "../utils/hooks/customHooks";
-import Sidebar from "../components/Sidebar";
-import Button from "../components/Button";
+import { getDataFromLocalStorage } from "../../utils/localStorageFunction";
+import { useTitle } from "../../utils/hooks/customHooks";
+import Sidebar from "../../components/Sidebar";
+import Button from "../../components/Button";
 
 export default function Dashboard() {
   useTitle("Dashboard | Weedy");
@@ -49,7 +49,6 @@ export default function Dashboard() {
 
         {/* Pages */}
         <div className="flex flex-col py-10 font-[Outfit] items-center">
-
           <div className="flex flex-col px-10 h-full">
             <div className="flex flex-row  ">
               <div className="animate__animated animate__fadeIn flex flex-col justify-center">
@@ -111,20 +110,12 @@ export default function Dashboard() {
                     src={DashboradEdit}
                     alt=""
                     className="rounded-xl h-[9rem] max-w-[7rem] w-[100%] object-cover border border-black sm:max-w-[10rem] lg:max-w-[20rem] lg:w-[16rem] lg:h-[10rem] hover:border-blue-400 hover:scale-105 transition-all"
-                    onClick={() =>
-                      navigate(`/edit-invitation/${userID}`, {
-                        state: { data: userID },
-                      })
-                    }
+                    onClick={() => navigate(`/edit-invitation/${userID}`)}
                   />
                   <Button
                     label="Edit Invitation"
                     className="absolute bottom-[1rem] left-2  bg-white rounded-md border-black hover:text-white px-2 text-[0.7rem] lg:bottom-[2rem] lg:text-sm lg:px-10]"
-                    onClick={() =>
-                      navigate(`/edit-invitation/${userID}`, {
-                        state: { data: userID },
-                      })
-                    }
+                    onClick={() => navigate(`/edit-invitation/${userID}`)}
                   />
                 </div>
 
@@ -134,7 +125,7 @@ export default function Dashboard() {
                     src={DashboardAI}
                     alt=""
                     className="rounded-xl h-[9rem] max-w-[7rem] w-[100%] object-cover border border-black sm:max-w-[9rem] lg:max-w-[10rem] lg:h-[10rem] hover:border-blue-400 hover:scale-105 transition-all"
-                    />
+                  />
                   <Button
                     label="AI Services"
                     className="absolute bottom-[1rem] left-2  bg-white rounded-md border-black hover:text-white px-2 text-[0.7rem] lg:bottom-[2rem] lg:text-sm lg:px-10]"

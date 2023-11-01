@@ -11,22 +11,22 @@ import * as z from "zod";
 import {
   saveDataToLocalStorage,
   getDataFromLocalStorage,
-} from "../utils/localStorageFunction";
+} from "../../utils/localStorageFunction";
 import {
   createWedding,
   getWeddings,
   updateWeddings,
   deleteWeddings,
-} from "../utils/apis/weddings/api";
+} from "../../utils/apis/weddings/api";
 
-import FormImage from "../assets/dashboard-image.webp";
-import { useTitle } from "../utils/hooks/customHooks";
-import Swal from "../utils/swal";
+import { useTitle } from "../../utils/hooks/customHooks";
+import FormImage from "../../assets/dashboard-image.webp";
+import Swal from "../../utils/swal";
 
-import { Input, TextArea } from "../components/Input";
-import Sidebar from "../components/Sidebar";
-import Button from "../components/Button";
-import Table from "../components/Table";
+import { Input, TextArea } from "../../components/Input";
+import Sidebar from "../../components/Sidebar";
+import Button from "../../components/Button";
+import Table from "../../components/Table";
 
 function CreateInvitation() {
   useTitle("Create Invitation | Weedy");

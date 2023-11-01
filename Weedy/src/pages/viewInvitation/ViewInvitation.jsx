@@ -5,30 +5,30 @@ import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import "animate.css";
 
-import { createRsvp, getRsvp } from "../utils/apis/rsvp/api";
+import { createRsvp, getRsvp } from "../../utils/apis/rsvp/api";
 
-import { getWeddings } from "../utils/apis/weddings/api";
-import { useTitle } from "../utils/hooks/customHooks";
-import { rsvpSchema } from "../utils/apis/rsvp";
-import Swal from "../utils/swal";
+import { getWeddings } from "../../utils/apis/weddings/api";
+import { useTitle } from "../../utils/hooks/customHooks";
+import { rsvpSchema } from "../../utils/apis/rsvp";
+import Swal from "../../utils/swal";
 
-import BackgroundSchedule from "../assets/view-bg-wedding.webp";
-import GalleryImage1 from "../assets/view-gallery-1.webp";
-import GalleryImage2 from "../assets/view-gallery-2.webp";
-import GalleryImage3 from "../assets/view-gallery-3.webp";
-import GalleryImage4 from "../assets/view-gallery-4.webp";
-import FloralImage from "../assets/view-floral.webp";
-import IconRing from "../assets/view-icon-ring.webp";
-import IconBird from "../assets/view-icon-bird.webp";
-import ModalImage from "../assets/view-modal.webp";
-import BrideImage from "../assets/view-bride.webp";
-import GroomImage from "../assets/view-groom.webp";
-import HeroImage from "../assets/view-hero.webp";
-import IconGift from "../assets/icon-gift.webp";
+import BackgroundSchedule from "../../assets/view-bg-wedding.webp";
+import GalleryImage1 from "../../assets/view-gallery-1.webp";
+import GalleryImage2 from "../../assets/view-gallery-2.webp";
+import GalleryImage3 from "../../assets/view-gallery-3.webp";
+import GalleryImage4 from "../../assets/view-gallery-4.webp";
+import FloralImage from "../../assets/view-floral.webp";
+import IconRing from "../../assets/view-icon-ring.webp";
+import IconBird from "../../assets/view-icon-bird.webp";
+import ModalImage from "../../assets/view-modal.webp";
+import BrideImage from "../../assets/view-bride.webp";
+import GroomImage from "../../assets/view-groom.webp";
+import HeroImage from "../../assets/view-hero.webp";
+import IconGift from "../../assets/icon-gift.webp";
 
-import Navbar from "../components/NavbarInvitation";
-import { Input, TextArea, Select, RadioGroup } from "../components/Input";
-import Button from "../components/Button";
+import Navbar from "../../components/NavbarInvitation";
+import { Input, TextArea, Select, RadioGroup } from "../../components/Input";
+import Button from "../../components/Button";
 
 export default function ViewIntitation() {
   const [showModal, setShowModal] = useState(true);
