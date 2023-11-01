@@ -1,15 +1,13 @@
-import { getDataFromLocalStorage } from "../../localStorageFunction";
 import axiosWithConfig from "../axiosWithConfig";
 import Swal from "../../swal";
 
-export const createRsvp = async (data) => {
-  const userID = getDataFromLocalStorage("userID") || "";
+export const createRsvp = async (data, id) => {
   try {
     const newData = {
       ...data,
     };
     const response = await axiosWithConfig.post(
-      `/weddings/${userID}/rsvp`,
+      `/weddings/${id}/rsvp`,
       newData
     );
     return response.data;
@@ -22,10 +20,9 @@ export const createRsvp = async (data) => {
   }
 };
 
-export const getRsvp = async () => {
-  const userID = getDataFromLocalStorage("userID") || "";
+export const getRsvp = async (id) => {
   try {
-    const response = await axiosWithConfig.get(`/weddings/${userID}/rsvp`);
+    const response = await axiosWithConfig.get(`/weddings/${id}/rsvp`);
     return response.data;
   } catch (error) {
     Swal.fire({

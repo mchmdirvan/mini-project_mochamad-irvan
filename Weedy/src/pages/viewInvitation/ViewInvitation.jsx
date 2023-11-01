@@ -4,12 +4,12 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import dayjs from "dayjs";
-import "dayjs/locale/en"; 
+import "dayjs/locale/en";
 import "animate.css";
 
 import { createRsvp, getRsvp } from "../../utils/apis/rsvp/api";
 
-import { getWeddings } from "../../utils/apis/weddings/api";
+import { getDetailWeddings } from "../../utils/apis/weddings/api";
 import { useTitle } from "../../utils/hooks/customHooks";
 import { rsvpSchema } from "../../utils/apis/rsvp";
 import Swal from "../../utils/swal";
@@ -41,10 +41,11 @@ export default function ViewIntitation() {
   const [message, setMessage] = useState([]);
   const navigate = useNavigate();
   const { to } = useParams();
+  const params = useParams();
   const title =
     weddings === null
       ? "Weedy"
-      : `The Wedding of ${weddings[0].brideFirstName} & ${weddings[0].groomFirstName}`;
+      : `The Wedding of ${weddings.brideFirstName} & ${weddings.groomFirstName}`;
 
   const {
     formState: { errors, isSubmitting },
@@ -70,7 +71,7 @@ export default function ViewIntitation() {
 
   async function fetchMessage() {
     try {
-      const result = await getRsvp();
+      const result = await getRsvp(+params.id);
       setMessage(result);
     } catch (error) {
       Swal.fire({
@@ -83,7 +84,7 @@ export default function ViewIntitation() {
 
   async function onSubmit(data) {
     try {
-      await createRsvp(data);
+      await createRsvp(data, +params.id);
       Swal.fire({
         title: "Success",
         text: "Well Done! Your RSVP is Set",
@@ -102,7 +103,7 @@ export default function ViewIntitation() {
 
   async function fetchData() {
     try {
-      const result = await getWeddings();
+      const result = await getDetailWeddings(+params.id);
       setWeddings(result);
     } catch (error) {
       Swal.fire({
@@ -150,7 +151,7 @@ export default function ViewIntitation() {
                   <div className="border border-[#E2D9C9] w-[13rem] lg:w-[20rem]"></div>
                   <p className=" text-sm lg:text-xl">The Wedding Ceremony of</p>
                   <h1 className=" font-parisienne text-2xl lg:text-6xl text-[#9F6F53]">
-                    {weddings[0].brideFirstName} & {weddings[0].groomFirstName}
+                    {weddings.brideFirstName} & {weddings.groomFirstName}
                   </h1>
                   <Button
                     label="Open now"
@@ -182,7 +183,7 @@ export default function ViewIntitation() {
                 The Wedding Of
               </h1>
               <p className="font-parisienne text-5xl lg:text-8xl">
-                {weddings[0].brideFirstName} & {weddings[0].groomFirstName}
+                {weddings.brideFirstName} & {weddings.groomFirstName}
               </p>
             </div>
           </header>
@@ -200,15 +201,15 @@ export default function ViewIntitation() {
               <div className="animate__animated animate__fadeInLeft animate__delay-1s flex flex-col gap-5 justify-center items-center">
                 <img src={BrideImage} className=" rounded-full w-[15rem]" />
                 <p className="text-2xl font-pt-serif text-[#837C61]">
-                  {weddings[0].brideFullName}
+                  {weddings.brideFullName}
                 </p>
                 <div className="border border-[#E2D9C9] w-[20rem]"></div>
-                <p className=" font-pt-serif">{weddings[0].brideBio}</p>
+                <p className=" font-pt-serif">{weddings.brideBio}</p>
                 <a
-                  href={weddings[0].brideContact}
+                  href={weddings.brideContact}
                   className=" hover:text-[#0095F6] text-5xl pt-2 font-parisienne text-[#C9AD91] "
                 >
-                  {weddings[0].brideFirstName}
+                  {weddings.brideFirstName}
                 </a>
               </div>
 
@@ -221,15 +222,15 @@ export default function ViewIntitation() {
               <div className="animate__animated animate__fadeInRight animate__delay-1s flex flex-col gap-5 justify-center items-center">
                 <img src={GroomImage} className=" rounded-full w-[15rem]" />
                 <p className="text-2xl font-pt-serif text-[#837C61]">
-                  {weddings[0].groomFullName}
+                  {weddings.groomFullName}
                 </p>
                 <div className="border border-[#E2D9C9] w-[20rem]"></div>
-                <p className=" font-pt-serif">{weddings[0].brideBio}</p>
+                <p className=" font-pt-serif">{weddings.brideBio}</p>
                 <a
-                  href={weddings[0].groomContact}
+                  href={weddings.groomContact}
                   className=" hover:text-[#0095F6] text-5xl pt-2 font-parisienne text-[#C9AD91] "
                 >
-                  {weddings[0].groomFirstName}
+                  {weddings.groomFirstName}
                 </a>
               </div>
             </div>
@@ -249,17 +250,21 @@ export default function ViewIntitation() {
                   </h1>
                   <img src={IconRing} className="w-40 my-5" />
                   <p className="text-[#837C61] lg:text-xl text-md">
-                    {dayjs(weddings[0].agreementDate).locale('en').format(
-                      "dddd , DD MMMM YYYY"
-                    )}
+                    {dayjs(weddings.agreementDate)
+                      .locale("en")
+                      .format("dddd , DD MMMM YYYY")}
                   </p>
-                  <p className="text-[#837C61] lg:text-xl text-md">{dayjs(weddings[0].agreementDate).format("HH:mm")}</p>
+                  <p className="text-[#837C61] lg:text-xl text-md">
+                    {dayjs(weddings.agreementDate).format("HH:mm")}
+                  </p>
                   <div className="border border-[#E2D9C9] w-[20rem]"></div>
                   <p>Location</p>
                   <p className="text-[#9F6F53] text-2xl">
-                    {weddings[0].agreementHall}
+                    {weddings.agreementHall}
                   </p>
-                  <p className="text-center text-sm">{weddings[0].agreementAddress}</p>
+                  <p className="text-center text-sm">
+                    {weddings.agreementAddress}
+                  </p>
                   <Button
                     label="Open Maps"
                     className="text-[#9F6F53] border-[#9F6F53] hover:text-white"
@@ -272,17 +277,21 @@ export default function ViewIntitation() {
                   </h1>
                   <img src={IconBird} className="w-40 my-5" />
                   <p className="text-[#837C61] lg:text-xl text-md">
-                    {dayjs(weddings[0].receptionDate).locale('en').format(
-                      "dddd , DD MMMM YYYY"
-                    )}
+                    {dayjs(weddings.receptionDate)
+                      .locale("en")
+                      .format("dddd , DD MMMM YYYY")}
                   </p>
-                  <p className="text-[#837C61] lg:text-xl text-md">{dayjs(weddings[0].receptionDate).format("HH:mm")}</p>
+                  <p className="text-[#837C61] lg:text-xl text-md">
+                    {dayjs(weddings.receptionDate).format("HH:mm")}
+                  </p>
                   <div className="border border-[#E2D9C9] w-[20rem]"></div>
                   <p>Location</p>
                   <p className="text-[#9F6F53] text-2xl">
-                    {weddings[0].receptionHall}
+                    {weddings.receptionHall}
                   </p>
-                  <p className="text-center text-sm">{weddings[0].receptionAddress}</p>
+                  <p className="text-center text-sm">
+                    {weddings.receptionAddress}
+                  </p>
                   <Button
                     label="Open Maps"
                     className="text-[#9F6F53] border-[#9F6F53] hover:text-white"
@@ -391,7 +400,7 @@ export default function ViewIntitation() {
                         <p className=" font-pt-serif max-w-sm text-lg text-center">
                           You can send the wedding gift in the following ways.
                         </p>
-                        <p>BCA : {weddings[0].brideFullName} - 1234567</p>
+                        <p>BCA : {weddings.brideFullName} - 1234567</p>
                       </div>
                       <form method="dialog" className="modal-backdrop">
                         <button>close</button>
@@ -431,19 +440,19 @@ export default function ViewIntitation() {
                   <h1 className="font-semibold text-2xl lg:text-4xl">
                     First Meet
                   </h1>
-                  <p>{weddings[0].firstMeetStory}</p>
+                  <p>{weddings.firstMeetStory}</p>
                 </div>
                 <div>
                   <h1 className="font-semibold text-2xl lg:text-4xl">
                     Love Stories
                   </h1>
-                  <p>{weddings[0].loveStory}</p>
+                  <p>{weddings.loveStory}</p>
                 </div>
                 <div>
                   <h1 className="font-semibold text-2xl lg:text-4xl">
                     Decission to Marry
                   </h1>
-                  <p>{weddings[0].decideToMarryStory}</p>
+                  <p>{weddings.decideToMarryStory}</p>
                 </div>
               </div>
             </div>
@@ -530,11 +539,11 @@ export default function ViewIntitation() {
           {/* Qoutes Section */}
           <section className="flex flex-col items-center gap-2 lg:gap-5 bg-[#837C61] py-10">
             <p className=" font-outfit lg:text-xl text-center px-10 lg:max-w-6xl text-white mb-5">
-              `{weddings[0].scriptureQuotes}`
+              `{weddings.scriptureQuotes}`
             </p>
             <div className="border border-[#E2D9C9] w-[13rem]  lg:w-[20rem]"></div>
             <p className="font-parisienne text-white text-3xl lg:text-5xl mt-5">
-              {weddings[0].brideFirstName} & {weddings[0].groomFirstName}
+              {weddings.brideFirstName} & {weddings.groomFirstName}
             </p>
             <p className="font-pt-serif text-white">Thank You!</p>
           </section>

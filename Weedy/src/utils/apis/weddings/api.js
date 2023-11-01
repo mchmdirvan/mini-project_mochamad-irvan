@@ -64,3 +64,16 @@ export const deleteWeddings = async () => {
     });
   }
 };
+
+export const getDetailWeddings = async (id) => {
+  try {
+    const response = await axiosWithConfig.get(`/weddings/` + id);
+    return response.data;
+  } catch (error) {
+    Swal.fire({
+      title: "Error",
+      text: "An error occurred while getting data wedding. Please contact our support team for assistance.",
+      showCancelButton: false,
+    });
+  }
+};

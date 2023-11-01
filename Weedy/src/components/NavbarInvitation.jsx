@@ -56,7 +56,7 @@ export default function NavbarInvitation({ weddings }) {
                           : "text-white "
                       }  `}
                     >
-                      {weddings[0].brideFirstName} & {weddings[0].groomFirstName} by Weedy
+                      {weddings.brideFirstName} & {weddings.groomFirstName} by Weedy
                     </a>
                   </div>
                 </div>

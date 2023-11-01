@@ -50,7 +50,7 @@ function Router() {
       element: <ViewInvitation />,
     },
     {
-      path: "/weedy-invitation/:username/to/:to",
+      path: "/weedy-invitation/:username/:id/to/:to",
       element: <ViewInvitation />,
     },
     {
