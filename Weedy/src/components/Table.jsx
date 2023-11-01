@@ -10,6 +10,8 @@ function Table({ formValues=[] }) {
     { label: "Groom's Full Name", value: formValues.groomFullName },
     { label: "Bride's Bio", value: formValues.brideBio },
     { label: "Groom's Bio", value: formValues.groomBio },
+    { label: "Bride's Contact", value: formValues.brideContact },
+    { label: "Groom's Contact", value: formValues.groomContact },
     { label: "Agreement Date", value: formValues.agreementDate },
     { label: "Reception Date", value: formValues.receptionDate },
     { label: "Agreement Place", value: formValues.agreementAddress },
@@ -18,6 +20,9 @@ function Table({ formValues=[] }) {
     { label: "Reception Place", value: formValues.receptionAddress },
     { label: "Reception Hall", value: formValues.receptionHall },
     { label: "Reception City", value: formValues.receptionCity },
+    { label: "First Meet Stories", value: formValues.firstloveStory },
+    { label: "Love Stories", value: formValues.firstMeetStory },
+    { label: "Decide to Marry Stories", value: formValues.decideToMarryStory },
     { label: "Scripture Quotes", value: formValues.scriptureQuotes },
   ];
 

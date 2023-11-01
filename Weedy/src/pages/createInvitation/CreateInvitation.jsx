@@ -61,8 +61,12 @@ function CreateInvitation() {
         .min(1, { message: "Groom's Full Name is Required" }),
       brideBio: z.string().min(1, { message: "Bride's Bio is Required" }),
       groomBio: z.string().min(1, { message: "Bride's Bio is Required" }),
-      brideContact: z.string().min(1, { message: "Bride's Contact is Required" }),
-      groomContact: z.string().min(1, { message: "Groom's Contact is Required" }),
+      brideContact: z
+        .string()
+        .min(1, { message: "Bride's Contact is Required" }),
+      groomContact: z
+        .string()
+        .min(1, { message: "Groom's Contact is Required" }),
     });
   } else if (currentStep === 2) {
     weddingSchema = z.object({
@@ -97,11 +101,23 @@ function CreateInvitation() {
     });
   } else if (currentStep === 3) {
     weddingSchema = z.object({
+      firstMeetStory: z
+        .string()
+        .min(1, { message: "First Meet Stories is Required" }),
+      loveStory: z
+        .string()
+        .min(1, { message: "Love Stories is Required" }),
+      decideToMarryStory: z
+        .string()
+        .min(1, { message: "Decide to Marry Stories is Required" }),
+    });
+  } else if (currentStep === 4) {
+    weddingSchema = z.object({
       scriptureQuotes: z
         .string()
         .min(1, { message: "Scripture Quotes is Required" }),
     });
-  } else if (currentStep === 4) {
+  } else if (currentStep === 5) {
     weddingSchema = z.object({});
   }
 
@@ -128,6 +144,8 @@ function CreateInvitation() {
       setValue("groomFullName", weddingData.groomFullName);
       setValue("brideBio", weddingData.brideBio);
       setValue("groomBio", weddingData.groomBio);
+      setValue("brideContact", weddingData.brideContact);
+      setValue("groomContact", weddingData.groomContact);
       setValue("agreementDate", weddingData.agreementDate);
       setValue("receptionDate", weddingData.receptionDate);
       setValue("agreementAddress", weddingData.agreementAddress);
@@ -136,6 +154,9 @@ function CreateInvitation() {
       setValue("receptionHall", weddingData.receptionHall);
       setValue("agreementCity", weddingData.agreementCity);
       setValue("receptionCity", weddingData.receptionCity);
+      setValue("firstMeetStory", weddingData.firstMeetStory);
+      setValue("loveStory", weddingData.loveStory);
+      setValue("decideToMarryStory", weddingData.decideToMarryStory);
       setValue("scriptureQuotes", weddingData.scriptureQuotes);
     }
   }, [weddings]);
@@ -532,6 +553,64 @@ function CreateInvitation() {
                       className="border-black hover:text-white "
                     />
                   </div>
+                </div>
+              </div>
+            )}
+
+            {/* STEP 3 */}
+            {currentStep === 3 && (
+              <div className="flex flex-col ">
+                <div className="flex flex-col gap-2 items-center">
+                  <h2 className="text-4xl font-bold">Couple Stories</h2>
+                  <p className="text-sm text-center">
+                    Share your love story: How you first met, your journey
+                    together, and the decision to marry.
+                  </p>
+                  <TextArea
+                    register={register}
+                    placeholder="Tell us your beautiful love story, starting with how you first met with your husband or wife."
+                    className=" rounded-xl max-w-[18rem] lg:max-w-full placeholder:text-gray-400"
+                    name="firstMeetStory"
+                    id="firstMeetStory"
+                    cols={50}
+                    rows={4}
+                    error={errors.firstMeetStory?.message}
+                  />
+                  <TextArea
+                    register={register}
+                    placeholder="Then, tell us all about the incredible journey you've been on together, full of memorable moments and adventures."
+                    className=" rounded-xl max-w-[18rem] lg:max-w-full placeholder:text-gray-400"
+                    name="loveStory"
+                    id="loveStory"
+                    cols={50}
+                    rows={4}
+                    error={errors.loveStory?.message}
+                  />
+                  <TextArea
+                    register={register}
+                    placeholder="Lastly, let us in on the special details of how you both decided to take the big step and get married."
+                    className=" rounded-xl max-w-[18rem] lg:max-w-full placeholder:text-gray-400"
+                    name="decideToMarryStory"
+                    id="decideToMarryStory"
+                    cols={50}
+                    rows={4}
+                    error={errors.decideToMarryStory?.message}
+                  />
+                </div>
+
+                <div className="flex gap-5 justify-center">
+                  <Button
+                    type="button"
+                    label="Back"
+                    className="border-black hover:text-white "
+                    onClick={onBack}
+                  />
+
+                  <Button
+                    type="submit"
+                    label="Next"
+                    className="border-black hover:text-white "
+                  />
                 </div>
               </div>
             )}
