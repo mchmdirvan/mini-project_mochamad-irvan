@@ -14,6 +14,7 @@ import ViewInvitation from "../pages/viewInvitation/ViewInvitation";
 import LandingPage from "../pages/landingPage/LandingPage";
 import Dashboard from "../pages/dashboard/Dashboard";
 import NotFound from "../pages/notFound/NotFound";
+import OpenAI from "../pages/openAI/OpenAI"
 import Login from "../pages/auth/Login";
 
 function Router() {
@@ -51,6 +52,10 @@ function Router() {
     {
       path: "/weedy-invitation/:username/to/:to",
       element: <ViewInvitation />,
+    },
+    {
+      path: "/ai-services",
+      element: <OpenAI />,
     },
     {
       path: "*",
