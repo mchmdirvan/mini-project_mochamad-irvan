@@ -125,10 +125,12 @@ export default function Dashboard() {
                     src={DashboardAI}
                     alt=""
                     className="rounded-xl h-[9rem] max-w-[7rem] w-[100%] object-cover border border-black sm:max-w-[9rem] lg:max-w-[10rem] lg:h-[10rem] hover:border-blue-400 hover:scale-105 transition-all"
+                    onClick={() => navigate("/ai-services")}
                   />
                   <Button
                     label="AI Services"
                     className="absolute bottom-[1rem] left-2  bg-white rounded-md border-black hover:text-white px-2 text-[0.7rem] lg:bottom-[2rem] lg:text-sm lg:px-10]"
+                    onClick={() => navigate("/ai-services")}
                   />
                 </div>
               </div>
