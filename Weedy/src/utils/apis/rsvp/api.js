@@ -1,5 +1,6 @@
-import axiosWithConfig from "../axiosWithConfig";
 import { getDataFromLocalStorage } from "../../localStorageFunction";
+import axiosWithConfig from "../axiosWithConfig";
+import Swal from "../../swal";
 
 export const createRsvp = async (data) => {
   const userID = getDataFromLocalStorage("userID") || "";
@@ -13,7 +14,11 @@ export const createRsvp = async (data) => {
     );
     return response.data;
   } catch (error) {
-    throw Error("Failed to create a new rsvp data");
+    Swal.fire({
+      title: "Error",
+      text: "An error occurred while creating data RSVP. Please contact our support team for assistance.",
+      showCancelButton: false,
+    });
   }
 };
 
@@ -23,6 +28,10 @@ export const getRsvp = async () => {
     const response = await axiosWithConfig.get(`/weddings/${userID}/rsvp`);
     return response.data;
   } catch (error) {
-    throw Error("Failed to get rsvp data");
+    Swal.fire({
+      title: "Error",
+      text: "An error occurred while getting data RSVP. Please contact our support team for assistance.",
+      showCancelButton: false,
+    });
   }
 };
