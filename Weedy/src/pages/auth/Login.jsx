@@ -52,19 +52,19 @@ function Login() {
   return (
     <>
       <div className="flex font-[Outfit]">
-        <div className="relative hidden md:flex">
+        <div className="relative hidden md:flex animate__animated animate__fadeInLeft ">
           <img
             src={LoginImage}
             alt="Login Image"
-            className=" animate__animated animate__fadeIn h-full max-h-[100vh] object-cover"
+            className="  h-full max-h-[100vh] object-cover"
           />
 
-          <h1 className=" animate__animated animate__fadeInDown absolute inset-x-0 bottom-24 text-center text-white text-4xl font-bold">
+          <h1 className="  absolute inset-x-0 bottom-24 text-center text-white text-4xl font-bold">
             Welcome Back, <br /> We missed you!
           </h1>
         </div>
 
-        <div className="animate__animated animate__fadeInRight flex flex-col text-[#472A08] gap-10 justify-center px-10 py-20 w-3/2 mx-auto">
+        <div className="animate__animated animate__fadeInRight animate__animated animate__fadeInLeft flex flex-col text-[#472A08] gap-10 justify-center px-10 py-20 w-3/2 mx-auto">
           <div className=" flex flex-col gap-2">
             <h1 className="font-bold text-5xl">Sign In</h1>
             <p className="text-sm md:text-xl font-light">
