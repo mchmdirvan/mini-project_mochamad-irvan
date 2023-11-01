@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
-import { Link,  useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Bars3Icon } from "@heroicons/react/24/outline";
-import React, { useState } from "react";
+import React, { useState, Suspense } from "react";
 import "animate.css";
 
 import DashboardCreate from "../../assets/dashboard-create.webp";
@@ -74,68 +74,70 @@ export default function Dashboard() {
 
           {/* Navigation */}
           {/* Navigation to View */}
-          <div className="animate__animated animate__fadeIn  flex gap-2 mt-5 h-full">
-            <div className="relative">
-              <img
-                src={DashboardView}
-                alt=""
-                className="rounded-xl h-[17rem] max-w-[7rem] object-cover object-left border border-black sm:max-w-[14rem] sm:h-[20rem] sm:object-center lg:max-w-[13rem] lg:h-[22rem] hover:border-blue-400 hover:scale-105 transition-all"
-                onClick={() => navigate(`/weedy-invitation/${user}/to/irvan`)}
-              />
-              <Button
-                label="View Invitation"
-                className="absolute bottom-[1rem] left-2  bg-white rounded-md border-black hover:text-white px-2 text-[0.7rem] lg:bottom-[2rem] lg:text-sm lg:px-10"
-                onClick={() => navigate(`/weedy-invitation/${user}/to/irvan`)}
-              />
-            </div>
-            <div className="flex flex-col gap-3">
-              {/* Navigation to Create */}
+          <Suspense fallback={<div>loading</div>}>
+            <div className="animate__animated animate__fadeIn  flex gap-2 mt-5 h-full">
               <div className="relative">
                 <img
-                  src={DashboardCreate}
+                  src={DashboardView}
                   alt=""
-                  className="rounded-xl max-h-[7rem] w-[100%] object-cover object-top border border-black sm:w-[19rem] sm:max-h-[10rem] lg:w-[27rem] lg:max-h-[11rem] hover:border-blue-400 hover:scale-105 transition-all"
-                  onClick={() => navigate(`/create-invitation`)}
+                  className="rounded-xl h-[17rem] max-w-[7rem] object-cover object-left border border-black sm:max-w-[14rem] sm:h-[20rem] sm:object-center lg:max-w-[13rem] lg:h-[22rem] hover:border-blue-400 hover:scale-105 transition-all"
+                  onClick={() => navigate(`/weedy-invitation/${user}/to/irvan`)}
                 />
                 <Button
-                  label="Create Invitation"
-                  className="absolute bottom-[1rem] left-2  bg-white rounded-md border-black hover:text-white px-2 text-[0.7rem] lg:bottom-[2rem] lg:text-sm lg:px-10]"
-                  onClick={() => navigate(`/create-invitation`)}
+                  label="View Invitation"
+                  className="absolute bottom-[1rem] left-2  bg-white rounded-md border-black hover:text-white px-2 text-[0.7rem] lg:bottom-[2rem] lg:text-sm lg:px-10"
+                  onClick={() => navigate(`/weedy-invitation/${user}/to/irvan`)}
                 />
               </div>
-              <div className="flex gap-2">
-                {/* Navigation to Edit */}
+              <div className="flex flex-col gap-3">
+                {/* Navigation to Create */}
                 <div className="relative">
                   <img
-                    src={DashboradEdit}
+                    src={DashboardCreate}
                     alt=""
-                    className="rounded-xl h-[9rem] max-w-[7rem] w-[100%] object-cover border border-black sm:max-w-[10rem] lg:max-w-[20rem] lg:w-[16rem] lg:h-[10rem] hover:border-blue-400 hover:scale-105 transition-all"
-                    onClick={() => navigate(`/edit-invitation/${userID}`)}
+                    className="rounded-xl max-h-[7rem] w-[100%] object-cover object-top border border-black sm:w-[19rem] sm:max-h-[10rem] lg:w-[27rem] lg:max-h-[11rem] hover:border-blue-400 hover:scale-105 transition-all"
+                    onClick={() => navigate(`/create-invitation`)}
                   />
                   <Button
-                    label="Edit Invitation"
+                    label="Create Invitation"
                     className="absolute bottom-[1rem] left-2  bg-white rounded-md border-black hover:text-white px-2 text-[0.7rem] lg:bottom-[2rem] lg:text-sm lg:px-10]"
-                    onClick={() => navigate(`/edit-invitation/${userID}`)}
+                    onClick={() => navigate(`/create-invitation`)}
                   />
                 </div>
+                <div className="flex gap-2">
+                  {/* Navigation to Edit */}
+                  <div className="relative">
+                    <img
+                      src={DashboradEdit}
+                      alt=""
+                      className="rounded-xl h-[9rem] max-w-[7rem] w-[100%] object-cover border border-black sm:max-w-[10rem] lg:max-w-[20rem] lg:w-[16rem] lg:h-[10rem] hover:border-blue-400 hover:scale-105 transition-all"
+                      onClick={() => navigate(`/edit-invitation/${userID}`)}
+                    />
+                    <Button
+                      label="Edit Invitation"
+                      className="absolute bottom-[1rem] left-2  bg-white rounded-md border-black hover:text-white px-2 text-[0.7rem] lg:bottom-[2rem] lg:text-sm lg:px-10]"
+                      onClick={() => navigate(`/edit-invitation/${userID}`)}
+                    />
+                  </div>
 
-                {/* Navigation to AI */}
-                <div className="relative">
-                  <img
-                    src={DashboardAI}
-                    alt=""
-                    className="rounded-xl h-[9rem] max-w-[7rem] w-[100%] object-cover border border-black sm:max-w-[9rem] lg:max-w-[10rem] lg:h-[10rem] hover:border-blue-400 hover:scale-105 transition-all"
-                    onClick={() => navigate("/ai-services")}
-                  />
-                  <Button
-                    label="AI Services"
-                    className="absolute bottom-[1rem] left-2  bg-white rounded-md border-black hover:text-white px-2 text-[0.7rem] lg:bottom-[2rem] lg:text-sm lg:px-10]"
-                    onClick={() => navigate("/ai-services")}
-                  />
+                  {/* Navigation to AI */}
+                  <div className="relative">
+                    <img
+                      src={DashboardAI}
+                      alt=""
+                      className="rounded-xl h-[9rem] max-w-[7rem] w-[100%] object-cover border border-black sm:max-w-[9rem] lg:max-w-[10rem] lg:h-[10rem] hover:border-blue-400 hover:scale-105 transition-all"
+                      onClick={() => navigate("/ai-services")}
+                    />
+                    <Button
+                      label="AI Services"
+                      className="absolute bottom-[1rem] left-2  bg-white rounded-md border-black hover:text-white px-2 text-[0.7rem] lg:bottom-[2rem] lg:text-sm lg:px-10]"
+                      onClick={() => navigate("/ai-services")}
+                    />
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          </Suspense>
         </div>
       </div>
     </div>
