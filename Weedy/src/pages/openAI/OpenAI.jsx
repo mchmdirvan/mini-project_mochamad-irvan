@@ -2,12 +2,12 @@
 import { useState, useEffect } from "react";
 import OpenAI from "openai";
 import React from "react";
+import "animate.css";
 
 import { useTitle } from "../../utils/hooks/customHooks";
 import { Input } from "../../components/Input";
 import Button from "../../components/Button";
 import openAILogo from "../../assets/openai.webp";
-import ProfileImage from "../../assets/profile-image.webp";
 
 const configuration = new OpenAI({
   apiKey: import.meta.env.VITE_OPENAI_API_KEY,
@@ -89,7 +89,7 @@ export default function IndexOpenAI() {
         <div className="grow flex flex-col overflow-auto">
           {results.map((result) => (
             <div
-              className={`chat ${
+              className={`chat animate__animated animate__fadeInUp ${
                 result.message.role === "assistant" ? "chat-start" : "chat-end"
               }`}
               key={result.message.content}
@@ -115,9 +115,9 @@ export default function IndexOpenAI() {
           className="flex items-center justify-center gap-3"
         >
           <Input
-            placeholder="She is my friend since elementary school, I'm happy she/he will be married!"
+            placeholder="Can you help me to create message? She is my friend since elementary school, I'm happy she will be married!"
             onChange={(event) => setPrompt(event.target.value)}
-            className="w-[80vw] border-b"
+            className="w-[80vw] border-b py-4"
             name="insertPrompt"
             id="insertPrompt"
             ariaLabel="insert-prompt"
