@@ -388,7 +388,7 @@ export default function ViewIntitation() {
             <p>Please kindly RSVP your attendance</p>
 
             <form
-              className="flex flex-col font-outfit w-96 "
+              className="flex flex-col font-outfit lg:w-96 "
               onSubmit={handleSubmit(onSubmit)}
             >
               <Input
@@ -447,12 +447,12 @@ export default function ViewIntitation() {
             <div className="border border-[#E2D9C9] w-[20vw] mt-10"></div>
 
             {/* Message Section */}
-            <div className="flex flex-col mb-10 px-10 py-10 max-h-[50vh] overflow-auto w-[40vw]  rounded-2xl scrollbar-thin scrollbar-thumb-rounded-full scrollbar-track-rounded-full  scrollbar-track-slate-200 scrollbar-thumb-slate-950 overflow-y-scroll ">
+            <div className="flex flex-col mb-10 px-10 py-10 max-h-[50vh] overflow-auto lg:w-[40vw]  rounded-2xl scrollbar-thin scrollbar-thumb-rounded-full scrollbar-track-rounded-full  scrollbar-track-slate-200 scrollbar-thumb-slate-950 overflow-y-scroll ">
               {message.map((key, index) => (
                 <div className="font-outfit" key={index}>
                   <p className=" text-[#C9AD91] text-2xl">{key.fullName}</p>
-                  <p className="w-[30vw]"> {key.message}</p>
-                  <div className="border border-[#E2D9C9] w-[30vw] my-2"></div>
+                  <p className="lg:w-[30vw]"> {key.message}</p>
+                  <div className="border border-[#E2D9C9] lg:w-[30vw] my-2"></div>
                 </div>
               ))}
             </div>
@@ -482,7 +482,7 @@ export default function ViewIntitation() {
             <p>Copyright © 2023 - All right reserved</p>
           </footer>
 
-          {/* Modal OpenAI */}
+          {/* OpenAI Toggle */}
           <div>
             <img
               src={OpenAILogo}
