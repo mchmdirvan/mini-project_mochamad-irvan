@@ -25,10 +25,12 @@ import BrideImage from "../../assets/view-bride.webp";
 import GroomImage from "../../assets/view-groom.webp";
 import HeroImage from "../../assets/view-hero.webp";
 import IconGift from "../../assets/icon-gift.webp";
+import OpenAILogo from "../../assets/openai.webp";
 
-import Navbar from "../../components/NavbarInvitation";
 import { Input, TextArea, Select, RadioGroup } from "../../components/Input";
+import Navbar from "../../components/NavbarInvitation";
 import Button from "../../components/Button";
+
 
 export default function ViewIntitation() {
   const [showModal, setShowModal] = useState(true);
@@ -479,6 +481,15 @@ export default function ViewIntitation() {
             </a>
             <p>Copyright © 2023 - All right reserved</p>
           </footer>
+
+          {/* Modal OpenAI */}
+          <div>
+            <img
+              src={OpenAILogo}
+              onClick={() => navigate("/ai-services")}
+              className="animate__animated animate__pulse animate__infinite	infinite fixed bottom-14 right-14  w-10 z-10 rounded-full "
+            />
+          </div>
         </div>
       )}
     </div>
