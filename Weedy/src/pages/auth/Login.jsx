@@ -43,7 +43,7 @@ function Login() {
     } catch (error) {
       Swal.fire({
         title: "Error",
-        text: error.message,
+        text: "An error occurred",
         showCancelButton: false,
       });
     }

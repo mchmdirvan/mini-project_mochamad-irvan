@@ -69,7 +69,11 @@ export default function ViewIntitation() {
       const result = await getRsvp();
       setMessage(result);
     } catch (error) {
-      console.log(error.toString());
+      Swal.fire({
+        title: "Error",
+        text: "An error occurred while fetching data rsvp. Please contact our support team for assistance.",
+        showCancelButton: false,
+      });
     }
   }
 
@@ -84,7 +88,11 @@ export default function ViewIntitation() {
       reset();
       fetchMessage();
     } catch (error) {
-      console.log(error.toString());
+      Swal.fire({
+        title: "Error",
+        text: "An error occurred while create rsvp data. Please contact our support team for assistance.",
+        showCancelButton: false,
+      });
     }
   }
 
@@ -95,7 +103,7 @@ export default function ViewIntitation() {
     } catch (error) {
       Swal.fire({
         title: "Error",
-        text: "Failed to fetch wedding data",
+        text: "An error occurred while fetching data wedding. Please contact our support team for assistance.",
         showCancelButton: false,
       });
     }

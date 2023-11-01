@@ -104,9 +104,7 @@ function CreateInvitation() {
       firstMeetStory: z
         .string()
         .min(1, { message: "First Meet Stories is Required" }),
-      loveStory: z
-        .string()
-        .min(1, { message: "Love Stories is Required" }),
+      loveStory: z.string().min(1, { message: "Love Stories is Required" }),
       decideToMarryStory: z
         .string()
         .min(1, { message: "Decide to Marry Stories is Required" }),
@@ -170,7 +168,11 @@ function CreateInvitation() {
       const result = await getWeddings();
       setWeddings(result);
     } catch (error) {
-      console.log(error.toString());
+      Swal.fire({
+        title: "Error",
+        text: " An error occurred while fetching data. Please try again.",
+        showCancelButton: false,
+      });
     }
   }
 
@@ -194,7 +196,11 @@ function CreateInvitation() {
         setWeddings([]);
         navigate(`/dashboard/${user}`);
       } catch (error) {
-        console.log(error.toString());
+        Swal.fire({
+          title: "Error",
+          text: " An error occurred while submitting data. Please contact our support team for assistance.",
+          showCancelButton: false,
+        });
       }
     }
   }
@@ -216,7 +222,11 @@ function CreateInvitation() {
         fetchData();
         navigate(`/dashboard/${user}`);
       } catch (error) {
-        console.log(error.toString());
+        Swal.fire({
+          title: "Error",
+          text: " An error occurred while editting data. Please contact our support team for assistance.",
+          showCancelButton: false,
+        });
       }
     }
   }
@@ -234,7 +244,11 @@ function CreateInvitation() {
       fetchData();
       navigate(`/dashboard/${user}`);
     } catch (error) {
-      console.log(error.toString());
+      Swal.fire({
+        title: "Error",
+        text: " An error occurred while deleting data. Please contact our support team for assistance.",
+        showCancelButton: false,
+      });
     }
   }
 

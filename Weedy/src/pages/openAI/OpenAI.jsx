@@ -5,9 +5,10 @@ import React from "react";
 import "animate.css";
 
 import { useTitle } from "../../utils/hooks/customHooks";
+import openAILogo from "../../assets/openai.webp";
 import { Input } from "../../components/Input";
 import Button from "../../components/Button";
-import openAILogo from "../../assets/openai.webp";
+import Swal from "../../utils/swal";
 
 const configuration = new OpenAI({
   apiKey: import.meta.env.VITE_OPENAI_API_KEY,
@@ -39,7 +40,11 @@ export default function IndexOpenAI() {
       });
       setResults(response.choices);
     } catch (error) {
-      console.log(error);
+      Swal.fire({
+        title: "Error",
+        text: "An error occurred while fetching data. Please contact our support team for assistance.",
+        showCancelButton: false,
+      });
     } finally {
       setIsLoading(false);
     }
@@ -64,7 +69,11 @@ export default function IndexOpenAI() {
       const choice = response.choices[0];
       setResults([...newData, choice]);
     } catch (error) {
-      console.log(error);
+      Swal.fire({
+        title: "Error",
+        text: "An error occurred while submitting data. Please contact our support team for assistance.",
+        showCancelButton: false,
+      });
     } finally {
       setIsLoading(false);
       setPrompt("");
