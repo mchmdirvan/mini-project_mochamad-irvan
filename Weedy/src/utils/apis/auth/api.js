@@ -3,6 +3,7 @@ export const userLogin = async (data) => {
     const dummyUsers = [
       { username: "admin", password: "password123" },
       { username: "irvan", password: "password" },
+      { username: "dedi", password: "password" },
     ];
 
     setTimeout(() => {
