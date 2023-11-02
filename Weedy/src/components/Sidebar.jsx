@@ -79,7 +79,7 @@ export default function Sidebar() {
               </li>
               <li>
                 <a
-                  onClick={() => navigate(`/weedy-invitation/${user}/to/irvan`)}
+                  onClick={() => navigate(`/weedy-invitation/${user}/${userID}/to/irvan`)}
                 >
                   View Invitation
                 </a>

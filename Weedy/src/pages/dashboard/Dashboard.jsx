@@ -81,12 +81,12 @@ export default function Dashboard() {
                   src={DashboardView}
                   alt=""
                   className="rounded-xl h-[17rem] max-w-[7rem] object-cover object-left border border-black sm:max-w-[14rem] sm:h-[20rem] sm:object-center lg:max-w-[13rem] lg:h-[22rem] hover:border-blue-400 hover:scale-105 transition-all"
-                  onClick={() => navigate(`/weedy-invitation/${user}/to/irvan`)}
+                  onClick={() => navigate(`/weedy-invitation/${user}/${userID}/to/irvan`)}
                 />
                 <Button
                   label="View Invitation"
                   className="absolute bottom-[1rem] left-2  bg-white rounded-md border-black hover:text-white px-2 text-[0.7rem] lg:bottom-[2rem] lg:text-sm lg:px-10"
-                  onClick={() => navigate(`/weedy-invitation/${user}/to/irvan`)}
+                  onClick={() => navigate(`/weedy-invitation/${user}/${userID}/to/irvan`)}
                 />
               </div>
               <div className="flex flex-col gap-3">
