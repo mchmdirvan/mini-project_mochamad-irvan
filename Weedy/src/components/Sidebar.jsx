@@ -73,7 +73,7 @@ export default function Sidebar() {
                 </a>
               </li>
               <li>
-                <a onClick={() => navigate(`/edit-invitation/${userID}`)}>
+                <a onClick={() => navigate(`/edit-invitation`)}>
                   Edit Invitation
                 </a>
               </li>

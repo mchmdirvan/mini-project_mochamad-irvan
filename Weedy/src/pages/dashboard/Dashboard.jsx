@@ -111,12 +111,12 @@ export default function Dashboard() {
                       src={DashboradEdit}
                       alt=""
                       className="rounded-xl h-[9rem] max-w-[7rem] w-[100%] object-cover border border-black sm:max-w-[10rem] lg:max-w-[20rem] lg:w-[16rem] lg:h-[10rem] hover:border-blue-400 hover:scale-105 transition-all"
-                      onClick={() => navigate(`/edit-invitation/${userID}`)}
+                      onClick={() => navigate(`/edit-invitation`)}
                     />
                     <Button
                       label="Edit Invitation"
                       className="absolute bottom-[1rem] left-2  bg-white rounded-md border-black hover:text-white px-2 text-[0.7rem] lg:bottom-[2rem] lg:text-sm lg:px-10]"
-                      onClick={() => navigate(`/edit-invitation/${userID}`)}
+                      onClick={() => navigate(`/edit-invitation`)}
                     />
                   </div>
 
