@@ -234,10 +234,9 @@ function CreateInvitation() {
     }
   }
 
-  async function onClickDelete() {
+  async function onClickDelete(id) {
     try {
-      await deleteWeddings(userID);
-      localStorage.removeItem("userID");
+      await deleteWeddings(id);
       Swal.fire({
         title: "Success",
         text: "Well Done! Your Invitation is Deleted",
@@ -704,7 +703,7 @@ function CreateInvitation() {
                         type="button"
                         label="Delete"
                         className="bg-white border-black hover:text-white w-full "
-                        onClick={onClickDelete}
+                        onClick={()=>onClickDelete(selectedId)}
                       />
                     )}
                   </div>

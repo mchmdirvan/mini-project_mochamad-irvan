@@ -47,10 +47,9 @@ export const updateWeddings = async (weddingData) => {
   }
 };
 
-export const deleteWeddings = async () => {
-  const userID = getDataFromLocalStorage("userID") || "";
+export const deleteWeddings = async (id) => {
   try {
-    const response = await axiosWithConfig.delete(`/weddings/${userID}`);
+    const response = await axiosWithConfig.delete(`/weddings/${id}`);
 
     return response.data;
   } catch (error) {
