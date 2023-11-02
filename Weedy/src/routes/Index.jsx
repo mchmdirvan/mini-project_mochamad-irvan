@@ -42,7 +42,7 @@ function Router() {
       element: token === "" ? <Navigate to="/" /> : <CreateInvitation />,
     },
     {
-      path: "/edit-invitation/:id",
+      path: "/edit-invitation",
       element: token === "" ? <Navigate to="/" /> : <CreateInvitation />,
     },
     {
