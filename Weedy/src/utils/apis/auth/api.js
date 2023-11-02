@@ -1,23 +1,18 @@
 export const userLogin = async (data) => {
   return new Promise((resolve, reject) => {
-    const dummyUser = { username: "admin", password: "password123" };
+    const dummyUsers = [
+      { username: "admin", password: "password123" },
+      { username: "irvan", password: "password" },
+    ];
 
     setTimeout(() => {
-      if (
-        data.username === dummyUser.username &&
-        data.password === dummyUser.password
-      ) {
+      const user = dummyUsers.find(
+        (user) =>
+          user.username === data.username && user.password === data.password
+      );
+
+      if (user) {
         resolve({ message: "Login Success", payload: data });
-      } else if (
-        data.username === dummyUser.username &&
-        data.password !== dummyUser.password
-      ) {
-        reject({ message: "Invalid password", payload: null });
-      } else if (
-        data.username !== dummyUser.username &&
-        data.password === dummyUser.password
-      ) {
-        reject({ message: "Invalid username", payload: null });
       } else {
         reject({ message: "Invalid username or password", payload: null });
       }
