@@ -435,7 +435,7 @@ export default function ViewIntitation() {
 
               <div className="border h-[50vh]"></div>
 
-              <div className="flex flex-col gap-5 font-outfit text-white  max-w-sm pe-10">
+              <div className="flex flex-col gap-5 lg:gap-12 font-outfit text-white  max-w-sm pe-10">
                 <div>
                   <h1 className="font-semibold text-2xl lg:text-4xl">
                     First Meet
