@@ -32,13 +32,10 @@ export const getWeddings = async () => {
   }
 };
 
-export const updateWeddings = async (data) => {
-  const userID = getDataFromLocalStorage("userID") || "";
+export const updateWeddings = async (weddingData) => {
+  const { id, ...newData } = weddingData;
   try {
-    const newData = {
-      ...data,
-    };
-    const response = await axiosWithConfig.put(`/weddings/${userID}`, newData);
+    const response = await axiosWithConfig.put(`/weddings/${id}`, newData);
 
     return response.data;
   } catch (error) {

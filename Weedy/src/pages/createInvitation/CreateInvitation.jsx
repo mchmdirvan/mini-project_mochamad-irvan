@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/no-unescaped-entities */
 import { Link, useNavigate } from "react-router-dom";
@@ -38,13 +37,14 @@ function CreateInvitation() {
     setDrawerOpen(!isDrawerOpen);
   };
 
-  const user = getDataFromLocalStorage("user") || "";
   const userID = getDataFromLocalStorage("userID") || "";
+  const user = getDataFromLocalStorage("user") || "";
   const [currentStep, setCurrentStep] = useState(1);
+  const [selectedId, setSelectedId] = useState(0);
   const [weddings, setWeddings] = useState([]);
   const navigate = useNavigate();
-
   let weddingSchema;
+
   if (currentStep === 1) {
     weddingSchema = z.object({
       id: z.number().optional(),
@@ -137,6 +137,7 @@ function CreateInvitation() {
   useEffect(() => {
     if (weddings.length > 0) {
       const weddingData = weddings[0];
+      setSelectedId(weddingData.id);
       setValue("brideFirstName", weddingData.brideFirstName);
       setValue("groomFirstName", weddingData.groomFirstName);
       setValue("brideFullName", weddingData.brideFullName);
@@ -206,14 +207,14 @@ function CreateInvitation() {
     }
   }
 
-  async function onSubmitEdit(data) {
+  async function onSubmitEdit() {
     const weddings = getValues();
     setWeddings(weddings);
     if (currentStep < 5) {
       setCurrentStep(currentStep + 1);
     } else {
       try {
-        await updateWeddings({ ...data, userID });
+        await updateWeddings({ ...weddings, id: selectedId });
         Swal.fire({
           title: "Success",
           text: "Well Done! Your Invitation is Updated",
@@ -221,6 +222,7 @@ function CreateInvitation() {
         });
         reset();
         fetchData();
+        setSelectedId(0);
         navigate(`/dashboard/${user}`);
       } catch (error) {
         Swal.fire({
@@ -305,7 +307,7 @@ function CreateInvitation() {
 
           <form
             className="form font-[Outfit] px-10 lg:px-32 "
-            onSubmit={handleSubmit(userID === "" ? onSubmit : onSubmitEdit)}
+            onSubmit={handleSubmit(selectedId == 0 ? onSubmit : onSubmitEdit)}
           >
             {/* STEP 1 */}
             {currentStep === 1 && (
@@ -695,7 +697,7 @@ function CreateInvitation() {
                       onClick={onBack}
                     />
 
-                    {userID === "" ? (
+                    {selectedId == 0 ? (
                       ""
                     ) : (
                       <Button
