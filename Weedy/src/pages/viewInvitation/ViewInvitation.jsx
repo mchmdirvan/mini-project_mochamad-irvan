@@ -44,8 +44,6 @@ export default function ViewIntitation() {
 
   const queryParams = new URLSearchParams(location.search);
   const to = queryParams.get("to");
-  // const bride = queryParams.get("bride");
-  // const groom = queryParams.get("groom");
 
   const params = useParams();
   const title =
@@ -111,14 +109,6 @@ export default function ViewIntitation() {
     try {
       const result = await getDetailWeddings(+params.id);
       setWeddings(result);
-      // if (!bride || !groom) {
-      //   navigate("/");
-      // } else if (
-      //   bride !== result.brideFirstName ||
-      //   groom !== result.groomFirstName
-      // ) {
-      //   navigate("/");
-      // }
     } catch (error) {
       Swal.fire({
         title: "Error",
@@ -155,8 +145,8 @@ export default function ViewIntitation() {
                 </div>
 
                 <div className=" px-12 flex flex-col gap-2 lg:gap-5 items-center justify-center bg-white lg:w-[35rem] font-pt-serif text-gray-700 rounded-b-xl lg:rounded-r-lg ">
-                  <p className=" mt-5 text-sm lg:mt-32 capitalize lg:text-2xl text-black">
-                    Dear {to},
+                  <p className="mt-5 text-sm lg:mt-32 capitalize lg:text-2xl text-black">
+                    {to ? `Dear ${to},` : "Hello!"}
                   </p>
                   <p className="text-sm lg:text-md">
                     You are warmly invited to attend
