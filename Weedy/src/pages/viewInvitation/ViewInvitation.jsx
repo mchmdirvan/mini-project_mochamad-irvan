@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, useLocation } from "react-router-dom";
 import { zodResolver } from "@hookform/resolvers/zod";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
@@ -40,7 +40,13 @@ export default function ViewIntitation() {
   const [weddings, setWeddings] = useState(null);
   const [message, setMessage] = useState([]);
   const navigate = useNavigate();
-  const { to } = useParams();
+  const location = useLocation();
+
+  const queryParams = new URLSearchParams(location.search);
+  const to = queryParams.get("to");
+  // const bride = queryParams.get("bride");
+  // const groom = queryParams.get("groom");
+
   const params = useParams();
   const title =
     weddings === null
@@ -105,6 +111,14 @@ export default function ViewIntitation() {
     try {
       const result = await getDetailWeddings(+params.id);
       setWeddings(result);
+      // if (!bride || !groom) {
+      //   navigate("/");
+      // } else if (
+      //   bride !== result.brideFirstName ||
+      //   groom !== result.groomFirstName
+      // ) {
+      //   navigate("/");
+      // }
     } catch (error) {
       Swal.fire({
         title: "Error",

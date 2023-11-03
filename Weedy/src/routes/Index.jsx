@@ -51,11 +51,7 @@ function Router() {
       element: token === "" ? <Navigate to="/" /> : <CreateInvitation />,
     },
     {
-      path: "/weedy-invitation/:username",
-      element: <ViewInvitation />,
-    },
-    {
-      path: "/weedy-invitation/:username/:id/to/:to",
+      path: "/invitation/:id",
       element: <ViewInvitation />,
     },
     {
