@@ -15,6 +15,7 @@ import LandingPage from "../pages/landingPage/LandingPage";
 import Dashboard from "../pages/dashboard/Dashboard";
 import NotFound from "../pages/notFound/NotFound";
 import OpenAI from "../pages/openAI/OpenAI"
+import SignUp from "../pages/auth/SignUp"
 import Login from "../pages/auth/Login";
 
 function Router() {
@@ -32,6 +33,10 @@ function Router() {
     {
       path: "/login",
       element: token !== "" ? <Navigate to="/" /> : <Login />,
+    },
+    {
+      path: "/sign-up",
+      element: token !== "" ? <Navigate to="/" /> : <SignUp />,
     },
     {
       path: "/dashboard/:username",
