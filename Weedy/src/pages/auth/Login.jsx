@@ -106,7 +106,7 @@ function Login() {
             />
             <p className="self-center">
               Don't have an account yet?{" "}
-              <a href="#" className="underline">
+              <a href="/sign-up" className="underline">
                 Sign Up
               </a>
             </p>
