@@ -244,11 +244,11 @@ export default function ViewIntitation() {
           {/* Wedding Section */}
           <section id="wedding">
             <div
-              className="bg-cover bg-center lg:h-[95vh]"
+              className="bg-cover bg-center"
               style={{ backgroundImage: `url(${BackgroundSchedule})` }}
             >
-              <div className="flex flex-col lg:flex-row justify-center gap-10 bg-opacity-80">
-                <div className="animate__animated animate__fadeInUp animate__delay-2s mt-5 flex flex-col items-center justify-center bg-white lg:py-20 lg:px-10 rounded-2xl gap-2 w-[40rem] font-pt-serif max-w-[20rem] lg:max-w-full py-10 px-10">
+              <div className="flex flex-col lg:flex-row justify-center gap-10 py-10 bg-opacity-80">
+                <div className="animate__animated animate__fadeInUp animate__delay-2s mt-5 flex flex-col items-center justify-center bg-white lg:py-20 lg:px-10 rounded-2xl gap-2 w-[35rem] font-pt-serif max-w-[20rem] lg:max-w-full py-10 px-10">
                   <h1 className=" font-parisienne text-[#9F6F53] text-4xl text-center">
                     Holy Matrimony
                   </h1>
@@ -275,7 +275,7 @@ export default function ViewIntitation() {
                   />
                 </div>
 
-                <div className="animate__animated animate__fadeInUp animate__delay-2s mt-5 flex flex-col items-center justify-center bg-white lg:py-20 lg:px-10 rounded-2xl gap-2 w-[40rem] font-pt-serif max-w-[20rem]  lg:max-w-full py-10 px-10">
+                <div className="animate__animated animate__fadeInUp animate__delay-2s mt-5 flex flex-col items-center justify-center bg-white lg:py-20 lg:px-10 rounded-2xl gap-2 w-[35rem] font-pt-serif max-w-[20rem]  lg:max-w-full py-10 px-10">
                   <h1 className=" font-parisienne text-[#9F6F53] text-4xl">
                     Reception
                   </h1>
