@@ -105,7 +105,7 @@ export default function Dashboard() {
                   className="rounded-xl h-[17rem] max-w-[7rem] object-cover object-left border border-black sm:max-w-[14rem] sm:h-[20rem] sm:object-center lg:max-w-[13rem] lg:h-[22rem] hover:border-blue-400 hover:scale-105 transition-all"
                   onClick={() =>
                     navigate(
-                      `/invitation/${weddings[0].selectedTheme}/${weddings[0].id}?to/irvan`
+                      `/invitation/${weddings[0].selectedTheme}/${weddings[0].id}?to=irvan`
                     )
                   }
                 />
@@ -114,7 +114,7 @@ export default function Dashboard() {
                   className="absolute bottom-[1rem] left-2  bg-white rounded-md border-black hover:text-white px-2 text-[0.7rem] lg:bottom-[2rem] lg:text-sm lg:px-10"
                   onClick={() =>
                     navigate(
-                      `/invitation/${weddings[0].selectedTheme}/${weddings[0].id}?to/irvan`
+                      `/invitation/${weddings[0].selectedTheme}/${weddings[0].id}?to=irvan`
                     )
                   }
                 />
