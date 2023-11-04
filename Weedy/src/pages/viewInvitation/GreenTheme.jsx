@@ -14,12 +14,13 @@ import { useTitle } from "../../utils/hooks/customHooks";
 import { rsvpSchema } from "../../utils/apis/rsvp";
 import Swal from "../../utils/swal";
 
-import BackgroundSchedule from "../../assets/view-bg-wedding.webp";
+import BackgroundSchedule from "../../assets/view-bg-green.webp";
 import GalleryImage1 from "../../assets/view-gallery-1.webp";
 import GalleryImage2 from "../../assets/view-gallery-2.webp";
 import GalleryImage3 from "../../assets/view-gallery-3.webp";
 import GalleryImage4 from "../../assets/view-gallery-4.webp";
-import FloralImage from "../../assets/view-floral.webp";
+import GreenImage from "../../assets/view-green.webp";
+import GreenImage2 from "../../assets/view-green-2.webp";
 import IconRing from "../../assets/view-icon-ring.webp";
 import IconBird from "../../assets/view-icon-bird.webp";
 import ModalImage from "../../assets/view-modal.webp";
@@ -145,15 +146,17 @@ export default function ViewIntitation() {
                 </div>
 
                 <div className=" px-12 flex flex-col gap-2 lg:gap-5 items-center justify-center bg-white lg:w-[35rem] font-pt-serif text-gray-700 rounded-b-xl lg:rounded-r-lg ">
-                  <p className="mt-5 text-sm lg:mt-32 capitalize lg:text-2xl text-black">
+                  <p className="mt-5 text-sm lg:mt-32 capitalize lg:text-2xl text-[#343D2A]">
                     {to ? `Dear ${to},` : "Hello!"}
                   </p>
-                  <p className="text-sm lg:text-md">
+                  <p className="text-[#666D4B] text-sm lg:text-md">
                     You are warmly invited to attend
                   </p>
 
                   <div className="border border-[#E2D9C9] w-[13rem] lg:w-[20rem]"></div>
-                  <p className=" text-sm lg:text-xl">The Wedding Ceremony of</p>
+                  <p className=" text-sm lg:text-xl text-[#666D4B]">
+                    The Wedding Ceremony of
+                  </p>
                   <h1 className=" font-parisienne text-2xl lg:text-6xl text-[#9F6F53]">
                     {weddings.brideFirstName} & {weddings.groomFirstName}
                   </h1>
@@ -163,8 +166,8 @@ export default function ViewIntitation() {
                     className="animate__animated animate__pulse animate__infinite	infinite border-[#9F6F53] text-[#9F6F53] px-16 hover:text-white mb-5"
                   />
                   <img
-                    src={FloralImage}
-                    className="mt-auto hidden lg:block lg:w-[25rem]"
+                    src={GreenImage}
+                    className="mt-auto hidden lg:block lg:w-[25rem] "
                   />
                 </div>
               </div>
@@ -192,13 +195,21 @@ export default function ViewIntitation() {
             </div>
           </header>
 
+          {/* Qoutes Section */}
+          <section className="flex flex-col items-center gap-2 lg:gap-5 py-10">
+            <img src={GreenImage2} className="w-[40vw]" />
+            <p className=" font-outfit lg:text-xl text-center px-10 lg:max-w-6xl text-[#666D4B] mb-5">
+              `{weddings.scriptureQuotes}`
+            </p>
+            <div className="border border-[#E2D9C9] w-[13rem]  lg:w-[20rem]"></div>
+          </section>
           {/* Bride & Groom Section */}
           <section
             id="brideAndGroom"
             className="bg-white flex flex-col gap-10 items-center pt-20 lg:h-[100vh] "
           >
             <p className=" animate__animated animate__fadeInUp animate__delay-1s font-parisienne text-[#9F6F53] text-2xl lg:text-5xl">
-              The Groom and The Bride
+              The Bride and The Groom
             </p>
 
             <div className="flex flex-col lg:flex-row gap-5">
@@ -208,7 +219,9 @@ export default function ViewIntitation() {
                   {weddings.brideFullName}
                 </p>
                 <div className="border border-[#E2D9C9] w-[20rem]"></div>
-                <p className=" font-pt-serif">{weddings.brideBio}</p>
+                <p className=" font-pt-serif text-[#666D4B]">
+                  {weddings.brideBio}
+                </p>
                 <a
                   href={weddings.brideContact}
                   className=" hover:text-[#0095F6] text-5xl pt-2 font-parisienne text-[#C9AD91] "
@@ -229,7 +242,9 @@ export default function ViewIntitation() {
                   {weddings.groomFullName}
                 </p>
                 <div className="border border-[#E2D9C9] w-[20rem]"></div>
-                <p className=" font-pt-serif">{weddings.brideBio}</p>
+                <p className=" font-pt-serif text-[#666D4B]">
+                  {weddings.brideBio}
+                </p>
                 <a
                   href={weddings.groomContact}
                   className=" hover:text-[#0095F6] text-5xl pt-2 font-parisienne text-[#C9AD91] "
@@ -238,7 +253,7 @@ export default function ViewIntitation() {
                 </a>
               </div>
             </div>
-            <img src={FloralImage} className="mt-auto w-[25rem]" />
+            <img src={GreenImage} className="mt-auto w-[50vw]" />
           </section>
 
           {/* Wedding Section */}
@@ -308,7 +323,7 @@ export default function ViewIntitation() {
           {/* Countdown Section */}
           <section
             id="countdown"
-            className="flex flex-col gap-5  items-center justify-center bg-[#9F6F53] py-10"
+            className="flex flex-col gap-5  items-center justify-center bg-[#C2C5AA] py-10"
           >
             <div className="grid grid-flow-col gap-5 text-center auto-cols-max">
               <div className="flex flex-col p-2 bg-white rounded-box">
@@ -347,7 +362,7 @@ export default function ViewIntitation() {
             id="ourMoments"
             className="bg-white flex flex-col gap-10 items-center py-20 h-[92vh] "
           >
-            <p className=" font-parisienne text-[#9F6F53] text-5xl">
+            <p className=" font-parisienne text-[#666D4B] text-5xl">
               Our Moments
             </p>
             <div className="carousel rounded-box max-w-[92vw]">
@@ -381,10 +396,10 @@ export default function ViewIntitation() {
               <div className="flex  bg-opacity-80 ">
                 <div className="flex gap-10 justify-center items-center rounded-lg bg-white mx-auto my-10 py-10 px-10 w-[90vw]">
                   <div className="flex flex-col items-center justify-center gap-5 lg:ms-[13rem] w-11/12">
-                    <p className=" font-parisienne text-center text-[#9F6F53] text-5xl">
+                    <p className=" font-parisienne text-center text-[#666D4B] text-5xl">
                       Wedding Gift
                     </p>
-                    <p className=" font-pt-serif max-w-sm text-lg text-center">
+                    <p className=" font-pt-serif max-w-sm text-lg text-center text-[#666D4B]">
                       For family and friends who want to send gift, you can send
                       it through this button below.
                     </p>
@@ -421,8 +436,8 @@ export default function ViewIntitation() {
           </section>
 
           {/* Story Section */}
-          <section className="bg-[#837C61] py-10">
-            <h1 className=" font-parisienne text-center text-white  text-4xl lg:text-5xl mb-10">
+          <section className="bg-[#C2C5AA] text-[#666D4B] py-10">
+            <h1 className=" font-parisienne text-center   text-4xl lg:text-5xl mb-10">
               Our Love Stories
             </h1>
             <div className="flex items-center justify-center gap-10 ">
@@ -439,24 +454,24 @@ export default function ViewIntitation() {
 
               <div className="border h-[50vh]"></div>
 
-              <div className="flex flex-col gap-5 lg:gap-12 font-outfit text-white  max-w-sm pe-10">
+              <div className="flex flex-col gap-5 lg:gap-12 font-outfit text-[#666D4B]  max-w-sm pe-10">
                 <div>
                   <h1 className="font-semibold text-2xl lg:text-4xl">
                     First Meet
                   </h1>
-                  <p>{weddings.firstMeetStory}</p>
+                  <p className="text-black">{weddings.firstMeetStory}</p>
                 </div>
                 <div>
                   <h1 className="font-semibold text-2xl lg:text-4xl">
                     Love Stories
                   </h1>
-                  <p>{weddings.loveStory}</p>
+                  <p className="text-black">{weddings.loveStory}</p>
                 </div>
                 <div>
                   <h1 className="font-semibold text-2xl lg:text-4xl">
                     Decission to Marry
                   </h1>
-                  <p>{weddings.decideToMarryStory}</p>
+                  <p className="text-black">{weddings.decideToMarryStory}</p>
                 </div>
               </div>
             </div>
@@ -464,7 +479,7 @@ export default function ViewIntitation() {
 
           {/* RSVP */}
           <section className="bg-white flex flex-col items-center py-10 ">
-            <p className=" font-parisienne text-center text-[#9F6F53] text-5xl">
+            <p className=" font-parisienne text-center text-[#666D4B] text-5xl">
               Rsvp
             </p>
             <p>Please kindly RSVP your attendance</p>
@@ -503,6 +518,7 @@ export default function ViewIntitation() {
                 options={["Attend", "Not Attend"]}
                 register={register}
                 error={errors.isAttend?.message}
+                className="text-[#472A08]"
               />
               <Select
                 name="totalPersons"
@@ -533,19 +549,14 @@ export default function ViewIntitation() {
               {message.map((key, index) => (
                 <div className="font-outfit" key={index}>
                   <p className=" text-[#C9AD91] text-2xl">{key.fullName}</p>
-                  <p className="lg:w-[30vw]"> {key.message}</p>
+                  <p className="lg:w-[30vw] text-[#666D4B]"> {key.message}</p>
                   <div className="border border-[#E2D9C9] lg:w-[30vw] my-2"></div>
                 </div>
               ))}
             </div>
           </section>
 
-          {/* Qoutes Section */}
-          <section className="flex flex-col items-center gap-2 lg:gap-5 bg-[#837C61] py-10">
-            <p className=" font-outfit lg:text-xl text-center px-10 lg:max-w-6xl text-white mb-5">
-              `{weddings.scriptureQuotes}`
-            </p>
-            <div className="border border-[#E2D9C9] w-[13rem]  lg:w-[20rem]"></div>
+          <section className="flex flex-col items-center justify-center bg-[#383c2c] py-10">
             <p className="font-parisienne text-white text-3xl lg:text-5xl mt-5">
               {weddings.brideFirstName} & {weddings.groomFirstName}
             </p>
