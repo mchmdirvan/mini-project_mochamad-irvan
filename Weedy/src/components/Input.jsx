@@ -167,7 +167,7 @@ function Select({ label, placeholder, id, error, options, register, name }) {
  * }}  props
  */
 function RadioGroup(props) {
-  const { label, error, options, register, name } = props;
+  const { label, error, options, register, name, className } = props;
 
   return (
     <div className="flex flex-col my-6" aria-label={props["aria-label"]}>
@@ -175,8 +175,8 @@ function RadioGroup(props) {
       {options.map((option) => (
         <label
           className={` ${
-            error ? " text-[#C70039]  " : " text-[#472A08]  "
-          } flex gap-2 mt-2 transition duration-300 ease-in-out"`}
+            error ? " text-[#C70039]  " : " "
+          } ${className} flex gap-2 mt-2 transition duration-300 ease-in-out  "`}
           htmlFor={option}
           key={option}
         >
@@ -184,8 +184,8 @@ function RadioGroup(props) {
             className={` ${
               error
                 ? "border border-[#C70039] text-[#C70039] placeholder:text-[#C70039] radio radio-error"
-                : "border border-[#472A08] text-[#472A08] placeholder:text-[#472A08] radio"
-            } transition duration-300 ease-in-out "`}
+                : " radio"
+            } ${className} transition duration-300 ease-in-out  "`}
             type="radio"
             value={option}
             id={option}
