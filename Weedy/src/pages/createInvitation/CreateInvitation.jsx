@@ -9,10 +9,7 @@ import dayjs from "dayjs";
 import * as z from "zod";
 import "animate.css";
 
-import {
-  saveDataToLocalStorage,
-  getDataFromLocalStorage,
-} from "../../utils/localStorageFunction";
+import { getDataFromLocalStorage } from "../../utils/localStorageFunction";
 import {
   createWedding,
   getWeddings,
@@ -39,12 +36,10 @@ function CreateInvitation() {
     setDrawerOpen(!isDrawerOpen);
   };
 
-  const userID = getDataFromLocalStorage("userID") || "";
   const user = getDataFromLocalStorage("user") || "";
   const [currentStep, setCurrentStep] = useState(1);
   const [selectedId, setSelectedId] = useState(0);
   const [weddings, setWeddings] = useState([]);
-
   const navigate = useNavigate();
   let weddingSchema;
 
@@ -194,10 +189,8 @@ function CreateInvitation() {
       setCurrentStep(currentStep + 1);
     } else {
       try {
-        const { id, selectedTheme } = await createWedding(weddings);
-        const numericId = parseInt(id);
-        saveDataToLocalStorage("userID", numericId);
-        saveDataToLocalStorage("userTheme", selectedTheme);
+        await createWedding(weddings);
+
         Swal.fire({
           title: "Success",
           text: "Well Done! Your Invitation is Set",
@@ -218,18 +211,17 @@ function CreateInvitation() {
   }
 
   async function onSubmitEdit() {
-    localStorage.removeItem("userTheme");
     const weddings = getValues();
     setWeddings(weddings);
     if (currentStep < 6) {
       setCurrentStep(currentStep + 1);
     } else {
       try {
-        const { selectedTheme } = await updateWeddings({
+        await updateWeddings({
           ...weddings,
           id: selectedId,
         });
-        saveDataToLocalStorage("userTheme", selectedTheme);
+
         Swal.fire({
           title: "Success",
           text: "Well Done! Your Invitation is Updated",
@@ -250,8 +242,6 @@ function CreateInvitation() {
   }
 
   async function onClickDelete(id) {
-    localStorage.removeItem("userID");
-    localStorage.removeItem("userTheme");
     try {
       await deleteWeddings(id);
       Swal.fire({

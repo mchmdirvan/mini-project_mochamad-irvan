@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { Link, useNavigate } from "react-router-dom";
 import { Bars3Icon } from "@heroicons/react/24/outline";
-import React, { useState, Suspense } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import "animate.css";
 
 import DashboardCreate from "../../assets/dashboard-create.webp";
@@ -11,9 +11,11 @@ import DashboardView from "../../assets/dashboard-view.webp";
 import DashboardAI from "../../assets/dashboard-ai.webp";
 
 import { getDataFromLocalStorage } from "../../utils/localStorageFunction";
+import { getWeddings } from "../../utils/apis/weddings/api";
 import { useTitle } from "../../utils/hooks/customHooks";
 import Sidebar from "../../components/Sidebar";
 import Button from "../../components/Button";
+import Swal from "../../utils/swal";
 
 export default function Dashboard() {
   useTitle("Dashboard | Weedy");
@@ -23,9 +25,27 @@ export default function Dashboard() {
     setDrawerOpen(!isDrawerOpen);
   };
 
+  const [weddings, setWeddings] = useState(null);
+
   const user = getDataFromLocalStorage("user") || "";
-  const userID = getDataFromLocalStorage("userID") || "";
-  const userTheme = getDataFromLocalStorage("userTheme") || "";
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  async function fetchData() {
+    try {
+      const result = await getWeddings();
+      setWeddings(result);
+      console.log(result)
+    } catch (error) {
+      Swal.fire({
+        title: "Error",
+        text: "An error occurred while fetching data wedding. Please contact our support team for assistance.",
+        showCancelButton: false,
+      });
+    }
+  }
 
   return (
     <div className="drawer">
@@ -82,12 +102,20 @@ export default function Dashboard() {
                   src={DashboardView}
                   alt=""
                   className="rounded-xl h-[17rem] max-w-[7rem] object-cover object-left border border-black sm:max-w-[14rem] sm:h-[20rem] sm:object-center lg:max-w-[13rem] lg:h-[22rem] hover:border-blue-400 hover:scale-105 transition-all"
-                  onClick={() => navigate(`/invitation/${userTheme}/${userID}?to/irvan`)}
+                  onClick={() =>
+                    navigate(
+                      `/invitation/${weddings[0].selectedTheme}/${weddings[0].id}?to/irvan`
+                    )
+                  }
                 />
                 <Button
                   label="View Invitation"
                   className="absolute bottom-[1rem] left-2  bg-white rounded-md border-black hover:text-white px-2 text-[0.7rem] lg:bottom-[2rem] lg:text-sm lg:px-10"
-                  onClick={() => navigate(`/invitation/${userTheme}/${userID}?to/irvan`)}
+                  onClick={() =>
+                    navigate(
+                      `/invitation/${weddings[0].selectedTheme}/${weddings[0].id}?to/irvan`
+                    )
+                  }
                 />
               </div>
               <div className="flex flex-col gap-3">
