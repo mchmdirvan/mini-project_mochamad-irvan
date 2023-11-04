@@ -45,11 +45,6 @@ function CreateInvitation() {
   const [selectedId, setSelectedId] = useState(0);
   const [weddings, setWeddings] = useState([]);
 
-  // const [selectedTheme, setSelectedTheme] = useState(null);
-  // const handleThemeSelection = (theme) => {
-  //   setSelectedTheme(theme);
-  // };
-
   const navigate = useNavigate();
   let weddingSchema;
 
@@ -197,8 +192,6 @@ function CreateInvitation() {
     setWeddings(weddings);
     if (currentStep < 6) {
       setCurrentStep(currentStep + 1);
-      console.log(weddings);
-      // console.log(selectedTheme);
     } else {
       try {
         const { id, selectedTheme } = await createWedding(weddings);
@@ -232,7 +225,10 @@ function CreateInvitation() {
       setCurrentStep(currentStep + 1);
     } else {
       try {
-        const { selectedTheme } = await updateWeddings({ ...weddings, id: selectedId });
+        const { selectedTheme } = await updateWeddings({
+          ...weddings,
+          id: selectedId,
+        });
         saveDataToLocalStorage("userTheme", selectedTheme);
         Swal.fire({
           title: "Success",
@@ -307,34 +303,36 @@ function CreateInvitation() {
           </div>
 
           {/* Pages Content */}
-          <ul className="steps w-full py-5 lg:py-10 px-10 font-[Outfit] font-semibold">
-            <li className={`step ${currentStep >= 1 ? "step-primary" : ""}`}>
-              Start
-            </li>
-            <li className={`step ${currentStep >= 2 ? "step-primary" : ""}`}>
-              Schedule
-            </li>
-            <li className={`step ${currentStep >= 3 ? "step-primary" : ""}`}>
-              Story
-            </li>
-            <li className={`step ${currentStep >= 4 ? "step-primary" : ""}`}>
-              Message
-            </li>
-            <li className={`step ${currentStep >= 5 ? "step-primary" : ""}`}>
-              Theme
-            </li>
-            <li className={`step ${currentStep >= 6 ? "step-primary" : ""}`}>
-              Finish
-            </li>
-          </ul>
+          <div className="flex justify-center">
+            <ul className="steps lg:w-full w-[50vw] py-5 px-2 lg:py-10 lg:px-10 font-[Outfit] font-semibold">
+              <li className={`step ${currentStep >= 1 ? "step-primary" : ""}`}>
+                Start
+              </li>
+              <li className={`step ${currentStep >= 2 ? "step-primary" : ""}`}>
+                Schedule
+              </li>
+              <li className={`step ${currentStep >= 3 ? "step-primary" : ""}`}>
+                Story
+              </li>
+              <li className={`step ${currentStep >= 4 ? "step-primary" : ""}`}>
+                Message
+              </li>
+              <li className={`step ${currentStep >= 5 ? "step-primary" : ""}`}>
+                Theme
+              </li>
+              <li className={`step ${currentStep >= 6 ? "step-primary" : ""}`}>
+                Finish
+              </li>
+            </ul>
+          </div>
 
           <form
-            className="form font-[Outfit] px-10 lg:px-32 "
+            className="form font-[Outfit] px-10 lg:px-32  "
             onSubmit={handleSubmit(selectedId == 0 ? onSubmit : onSubmitEdit)}
           >
             {/* STEP 1 */}
             {currentStep === 1 && (
-              <div className="flex">
+              <div className="flex ">
                 <div className="flex flex-col lg:gap-2 mt-5 lg:mt-1 items-start">
                   <h2 className=" text-2xl lg:text-4xl font-bold">
                     Let's Get Started
@@ -704,7 +702,10 @@ function CreateInvitation() {
 
                 <div className="flex gap-10 mt-2">
                   <div className="flex flex-col gap-2 border-2 border-black rounded-xl">
-                    <img src={ThemeFloral} className="w-[15vw] rounded-t-lg" />
+                    <img
+                      src={ThemeFloral}
+                      className="lg:w-[15vw] rounded-t-lg"
+                    />
                     <p className=" font-outfit font-bold text-2xl text-center">
                       Floral
                     </p>
@@ -719,23 +720,16 @@ function CreateInvitation() {
                         options={["floral-theme"]}
                         register={register}
                         error={errors.selectedTheme?.message}
-                        className=" radio-secondary text-secondary"
+                        className=" radio-secondary text-secondary text-sm"
                       />
-                      {/* <Button
-                        label="Set This Theme"
-                        className={`${
-                          selectedTheme === "Floral Theme"
-                            ? "bg-red-400 text-white hover:bg-black "
-                            : " text-red-400 border-red-400 hover:bg-black hover:text-white"
-                        } px-4`}
-                        onClick={() => handleThemeSelection("Floral Theme")}
-                        name="theme"
-                      /> */}
                     </div>
                   </div>
 
                   <div className="flex flex-col gap-2 border-2 border-black rounded-xl">
-                    <img src={ThemeGreen} className="w-[15vw] rounded-t-lg" />
+                    <img
+                      src={ThemeGreen}
+                      className="lg:w-[15vw] rounded-t-lg"
+                    />
                     <p className=" font-outfit font-bold text-2xl text-center">
                       Green
                     </p>
@@ -750,17 +744,8 @@ function CreateInvitation() {
                         options={["green-theme"]}
                         register={register}
                         error={errors.selectedTheme?.message}
-                        className=" radio-secondary text-secondary"
+                        className=" radio-secondary text-secondary text-sm"
                       />
-                      {/* <Button
-                        label="Set This Theme"
-                        className={`${
-                          selectedTheme === "Green Theme"
-                            ? "bg-red-400 text-white hover:bg-black"
-                            : " text-red-400 border-red-400 hover:bg-black hover:text-white"
-                        } px-4 `}
-                        onClick={() => handleThemeSelection("Green Theme")}
-                      /> */}
                     </div>
                   </div>
                 </div>
