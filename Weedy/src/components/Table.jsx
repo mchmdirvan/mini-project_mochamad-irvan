@@ -23,6 +23,7 @@ function Table({ formValues=[] }) {
     { label: "First Meet Stories", value: formValues.firstMeetStory },
     { label: "Love Stories", value: formValues.loveStory },
     { label: "Decide to Marry Stories", value: formValues.decideToMarryStory },
+    { label: "Selected Theme", value: formValues.selectedTheme },
     { label: "Scripture Quotes", value: formValues.scriptureQuotes },
   ];
 
