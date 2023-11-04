@@ -19,15 +19,16 @@ import Swal from "../../utils/swal";
 
 export default function Dashboard() {
   useTitle("Dashboard | Weedy");
-  const navigate = useNavigate();
+
   const [isDrawerOpen, setDrawerOpen] = useState(false);
+  const user = getDataFromLocalStorage("user") || "";
+  const [weddings, setWeddings] = useState(null);
+  const navigate = useNavigate();
+
   const toggleDrawer = () => {
     setDrawerOpen(!isDrawerOpen);
   };
 
-  const [weddings, setWeddings] = useState(null);
-
-  const user = getDataFromLocalStorage("user") || "";
 
   useEffect(() => {
     fetchData();
