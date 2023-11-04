@@ -20,11 +20,13 @@ import {
   deleteWeddings,
 } from "../../utils/apis/weddings/api";
 
-import { useTitle } from "../../utils/hooks/customHooks";
 import FormImage from "../../assets/dashboard-image.webp";
+import { useTitle } from "../../utils/hooks/customHooks";
+import ThemeFloral from "../../assets/theme-floral.webp";
+import ThemeGreen from "../../assets/theme-green.webp";
 import Swal from "../../utils/swal";
 
-import { Input, TextArea } from "../../components/Input";
+import { Input, TextArea, RadioGroup } from "../../components/Input";
 import Sidebar from "../../components/Sidebar";
 import Button from "../../components/Button";
 import Table from "../../components/Table";
@@ -42,6 +44,12 @@ function CreateInvitation() {
   const [currentStep, setCurrentStep] = useState(1);
   const [selectedId, setSelectedId] = useState(0);
   const [weddings, setWeddings] = useState([]);
+
+  // const [selectedTheme, setSelectedTheme] = useState(null);
+  // const handleThemeSelection = (theme) => {
+  //   setSelectedTheme(theme);
+  // };
+
   const navigate = useNavigate();
   let weddingSchema;
 
@@ -117,6 +125,10 @@ function CreateInvitation() {
         .min(1, { message: "Scripture Quotes is Required" }),
     });
   } else if (currentStep === 5) {
+    weddingSchema = z.object({
+      selectedTheme: z.string().min(1, { message: "Theme is Required" }),
+    });
+  } else if (currentStep === 6) {
     weddingSchema = z.object({});
   }
 
@@ -131,6 +143,7 @@ function CreateInvitation() {
     resolver: zodResolver(weddingSchema),
     defaultValues: {
       username: user,
+      selectedTheme: "",
     },
   });
 
@@ -157,6 +170,7 @@ function CreateInvitation() {
       setValue("firstMeetStory", weddingData.firstMeetStory);
       setValue("loveStory", weddingData.loveStory);
       setValue("decideToMarryStory", weddingData.decideToMarryStory);
+      setValue("selectedTheme", weddingData.selectedTheme);
       setValue("scriptureQuotes", weddingData.scriptureQuotes);
     }
   }, [weddings]);
@@ -181,13 +195,16 @@ function CreateInvitation() {
   async function onSubmit() {
     const weddings = getValues();
     setWeddings(weddings);
-    if (currentStep < 5) {
+    if (currentStep < 6) {
       setCurrentStep(currentStep + 1);
+      console.log(weddings);
+      // console.log(selectedTheme);
     } else {
       try {
-        const { id } = await createWedding(weddings);
+        const { id, selectedTheme } = await createWedding(weddings);
         const numericId = parseInt(id);
         saveDataToLocalStorage("userID", numericId);
+        saveDataToLocalStorage("userTheme", selectedTheme);
         Swal.fire({
           title: "Success",
           text: "Well Done! Your Invitation is Set",
@@ -208,13 +225,15 @@ function CreateInvitation() {
   }
 
   async function onSubmitEdit() {
+    localStorage.removeItem("userTheme");
     const weddings = getValues();
     setWeddings(weddings);
-    if (currentStep < 5) {
+    if (currentStep < 6) {
       setCurrentStep(currentStep + 1);
     } else {
       try {
-        await updateWeddings({ ...weddings, id: selectedId });
+        const { selectedTheme } = await updateWeddings({ ...weddings, id: selectedId });
+        saveDataToLocalStorage("userTheme", selectedTheme);
         Swal.fire({
           title: "Success",
           text: "Well Done! Your Invitation is Updated",
@@ -235,6 +254,8 @@ function CreateInvitation() {
   }
 
   async function onClickDelete(id) {
+    localStorage.removeItem("userID");
+    localStorage.removeItem("userTheme");
     try {
       await deleteWeddings(id);
       Swal.fire({
@@ -300,6 +321,9 @@ function CreateInvitation() {
               Message
             </li>
             <li className={`step ${currentStep >= 5 ? "step-primary" : ""}`}>
+              Theme
+            </li>
+            <li className={`step ${currentStep >= 6 ? "step-primary" : ""}`}>
               Finish
             </li>
           </ul>
@@ -444,7 +468,7 @@ function CreateInvitation() {
             {/* STEP 2 */}
             {currentStep === 2 && (
               <div className="flex">
-                <div className="flex flex-col lg:gap-2 lg:mt-10">
+                <div className="flex flex-col lg:gap-2 lg:mt-2">
                   <h2 className="text-xl lg:text-4xl font-bold">
                     The Schedule Details
                   </h2>
@@ -576,9 +600,9 @@ function CreateInvitation() {
             {/* STEP 3 */}
             {currentStep === 3 && (
               <div className="flex flex-col ">
-                <div className="flex flex-col gap-2 items-center">
+                <div className="flex flex-col gap-2">
                   <h2 className="text-4xl font-bold">Couple Stories</h2>
-                  <p className="text-sm text-center">
+                  <p className="text-sm">
                     Share your love story: How you first met, your journey
                     together, and the decision to marry.
                   </p>
@@ -588,7 +612,7 @@ function CreateInvitation() {
                     className="bg-white rounded-xl max-w-[18rem] lg:max-w-full placeholder:text-gray-400"
                     name="firstMeetStory"
                     id="firstMeetStory"
-                    cols={50}
+                    cols={70}
                     rows={4}
                     error={errors.firstMeetStory?.message}
                   />
@@ -598,7 +622,7 @@ function CreateInvitation() {
                     className="bg-white rounded-xl max-w-[18rem] lg:max-w-full placeholder:text-gray-400"
                     name="loveStory"
                     id="loveStory"
-                    cols={50}
+                    cols={70}
                     rows={4}
                     error={errors.loveStory?.message}
                   />
@@ -608,7 +632,7 @@ function CreateInvitation() {
                     className="bg-white rounded-xl max-w-[18rem] lg:max-w-full placeholder:text-gray-400"
                     name="decideToMarryStory"
                     id="decideToMarryStory"
-                    cols={50}
+                    cols={70}
                     rows={4}
                     error={errors.decideToMarryStory?.message}
                   />
@@ -633,10 +657,10 @@ function CreateInvitation() {
 
             {/* STEP 4 */}
             {currentStep === 4 && (
-              <div className="flex flex-col max-w-md ">
+              <div className="flex flex-col  max-w-xl ">
                 <div className="flex flex-col gap-2">
                   <h2 className="text-4xl font-bold">Quotes Message</h2>
-                  <p className="text-sm max-w-sm">
+                  <p className="text-sm max-w-xl">
                     You can add a meaningful message from your holy book,
                     whether it's from the Quran or other religious texts.
                   </p>
@@ -645,8 +669,8 @@ function CreateInvitation() {
                     className=" bg-white rounded-xl max-w-[18rem] lg:max-w-full"
                     name="scriptureQuotes"
                     id="scriptureQuotes"
-                    cols={50}
-                    rows={5}
+                    cols={70}
+                    rows={14}
                     error={errors.scriptureQuotes?.message}
                   />
                 </div>
@@ -668,8 +692,98 @@ function CreateInvitation() {
               </div>
             )}
 
-            {/* STEP 5 */}
             {currentStep === 5 && (
+              <div className="flex flex-col  max-w-xl ">
+                <div className="flex flex-col gap-2">
+                  <h2 className="text-4xl font-bold">Select Your Themes</h2>
+                  <p className="text-sm max-w-xl">
+                    We offer a variety of themes that might be suitable for your
+                    needs.
+                  </p>
+                </div>
+
+                <div className="flex gap-10 mt-2">
+                  <div className="flex flex-col gap-2 border-2 border-black rounded-xl">
+                    <img src={ThemeFloral} className="w-[15vw] rounded-t-lg" />
+                    <p className=" font-outfit font-bold text-2xl text-center">
+                      Floral
+                    </p>
+                    <div className="flex justify-center gap-2">
+                      <div className="px-4 py-4 bg-[#C9AD91] rounded-full"></div>
+                      <div className="px-4 py-4 bg-[#9F6F53] rounded-full"></div>
+                      <div className="px-4 py-4 bg-[#837C61] rounded-full"></div>
+                    </div>
+                    <div className="flex justify-center pb-5">
+                      <RadioGroup
+                        name="selectedTheme"
+                        options={["floral-theme"]}
+                        register={register}
+                        error={errors.selectedTheme?.message}
+                        className=" radio-secondary text-secondary"
+                      />
+                      {/* <Button
+                        label="Set This Theme"
+                        className={`${
+                          selectedTheme === "Floral Theme"
+                            ? "bg-red-400 text-white hover:bg-black "
+                            : " text-red-400 border-red-400 hover:bg-black hover:text-white"
+                        } px-4`}
+                        onClick={() => handleThemeSelection("Floral Theme")}
+                        name="theme"
+                      /> */}
+                    </div>
+                  </div>
+
+                  <div className="flex flex-col gap-2 border-2 border-black rounded-xl">
+                    <img src={ThemeGreen} className="w-[15vw] rounded-t-lg" />
+                    <p className=" font-outfit font-bold text-2xl text-center">
+                      Green
+                    </p>
+                    <div className="flex justify-center gap-2">
+                      <div className="px-4 py-4 bg-[#C9AD91] rounded-full"></div>
+                      <div className="px-4 py-4 bg-[#666D4B] rounded-full"></div>
+                      <div className="px-4 py-4 bg-[#C2C5AA] rounded-full"></div>
+                    </div>
+                    <div className="flex justify-center pb-5">
+                      <RadioGroup
+                        name="selectedTheme"
+                        options={["green-theme"]}
+                        register={register}
+                        error={errors.selectedTheme?.message}
+                        className=" radio-secondary text-secondary"
+                      />
+                      {/* <Button
+                        label="Set This Theme"
+                        className={`${
+                          selectedTheme === "Green Theme"
+                            ? "bg-red-400 text-white hover:bg-black"
+                            : " text-red-400 border-red-400 hover:bg-black hover:text-white"
+                        } px-4 `}
+                        onClick={() => handleThemeSelection("Green Theme")}
+                      /> */}
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex gap-5 self-end">
+                  <Button
+                    type="button"
+                    label="Back"
+                    className="bg-white border-black hover:text-white "
+                    onClick={onBack}
+                  />
+
+                  <Button
+                    type="submit"
+                    label="Next"
+                    className="bg-white border-black hover:text-white "
+                  />
+                </div>
+              </div>
+            )}
+
+            {/* STEP 6 */}
+            {currentStep === 6 && (
               <div className="flex flex-col">
                 <div className="flex flex-col gap-2 items-center ">
                   <h2 className="text-2xl lg:text-4xl font-bold  ">
@@ -703,7 +817,7 @@ function CreateInvitation() {
                         type="button"
                         label="Delete"
                         className="bg-white border-black hover:text-white w-full "
-                        onClick={()=>onClickDelete(selectedId)}
+                        onClick={() => onClickDelete(selectedId)}
                       />
                     )}
                   </div>
