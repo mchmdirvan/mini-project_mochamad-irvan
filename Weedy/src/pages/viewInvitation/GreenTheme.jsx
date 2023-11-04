@@ -203,10 +203,11 @@ export default function ViewIntitation() {
             </p>
             <div className="border border-[#E2D9C9] w-[13rem]  lg:w-[20rem]"></div>
           </section>
+
           {/* Bride & Groom Section */}
           <section
             id="brideAndGroom"
-            className="bg-white flex flex-col gap-10 items-center pt-20 lg:h-[100vh] "
+            className="bg-white flex flex-col gap-10 items-center pt-20  "
           >
             <p className=" animate__animated animate__fadeInUp animate__delay-1s font-parisienne text-[#9F6F53] text-2xl lg:text-5xl">
               The Bride and The Groom
