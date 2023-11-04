@@ -16,6 +16,7 @@ export default function Sidebar() {
 
   const user = getDataFromLocalStorage("user") || "";
   const userID = getDataFromLocalStorage("userID") || "";
+  const userTheme = getDataFromLocalStorage("userTheme") || "";
 
   function handleLogout() {
     localStorage.removeItem("user");
@@ -79,7 +80,7 @@ export default function Sidebar() {
               </li>
               <li>
                 <a
-                  onClick={() => navigate(`/invitation/${userID}?to/irvan`)}
+                  onClick={() => navigate(`/invitation/${userTheme}/${userID}?to/irvan`)}
                 >
                   View Invitation
                 </a>
