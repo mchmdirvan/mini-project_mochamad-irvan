@@ -10,7 +10,7 @@ import { useToken } from "../utils/context/token-context";
 import { setAxiosConfig } from "../utils/apis/axiosWithConfig";
 
 import CreateInvitation from "../pages/createInvitation/CreateInvitation";
-import ViewInvitation from "../pages/viewInvitation/ViewInvitation";
+import ViewInvitation from "../pages/viewInvitation";
 import LandingPage from "../pages/landingPage/LandingPage";
 import Dashboard from "../pages/dashboard/Dashboard";
 import NotFound from "../pages/notFound/NotFound";
@@ -51,7 +51,7 @@ function Router() {
       element: token === "" ? <Navigate to="/" /> : <CreateInvitation />,
     },
     {
-      path: "/invitation/:id",
+      path: "/invitation/:theme/:id",
       element: <ViewInvitation />,
     },
     {
