@@ -80,9 +80,9 @@ export default function Sidebar() {
               </li>
               <li>
                 <a
-                  onClick={() => navigate(`/invitation/${userTheme}/${userID}?to/irvan`)}
+                  onClick={() => navigate(`/ai-services`)}
                 >
-                  View Invitation
+                  Ask AI
                 </a>
               </li>
               <Button
