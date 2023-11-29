@@ -6,8 +6,9 @@ import {
 } from "react-router-dom";
 import { useEffect } from "react";
 
-import { useToken } from "../utils/context/token-context";
+import { getDataFromLocalStorage } from "../utils/localStorageFunction";
 import { setAxiosConfig } from "../utils/apis/axiosWithConfig";
+import { useToken } from "../utils/context/token-context";
 
 import CreateInvitation from "../pages/createInvitation/CreateInvitation";
 import ViewInvitation from "../pages/viewInvitation/Index";
@@ -19,6 +20,7 @@ import SignUp from "../pages/auth/SignUp"
 import Login from "../pages/auth/Login";
 
 function Router() {
+  const user = getDataFromLocalStorage("user") || "";
   const { token } = useToken();
 
   useEffect(() => {
@@ -32,7 +34,7 @@ function Router() {
     },
     {
       path: "/login",
-      element: token !== "" ? <Navigate to="/" /> : <Login />,
+      element: token !== "" ? <Navigate to={`/dashboard/${user}`} /> : <Login />,
     },
     {
       path: "/sign-up",
