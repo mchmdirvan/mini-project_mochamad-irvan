@@ -53,7 +53,7 @@ export default function LandingPage() {
           <Button
             label="let's go!"
             className="animate__animated animate__pulse animate__infinite	infinite font-[Niconne] text-md sm:text-xl md:text-2xl text-[#F8F0E5]"
-            onClick={()=> navigate(`/dashboard/${user}`)}
+            onClick={()=> navigate(`/login`)}
           />
         </div>
       </header>
