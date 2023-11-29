@@ -3,7 +3,9 @@
 
 💓 **Weedy: Wedding E-Invitation Do Yourself**
 
-This project is a mini-project developed during the Alterra Academy Front-end with ReactJS course. The application serves as a digital solution for wedding invitations, designed to address the growing need for easily shareable wedding invitations in today's digital era.The application is deployed on [Vercel](https://weedyidn.vercel.app/).
+This project is a mini-project developed during the Alterra Academy Front-end with ReactJS course. The application serves as a digital solution for wedding invitations, designed to address the growing need for easily shareable wedding invitations in today's digital era. The application is deployed on [Vercel](https://weedyidn.vercel.app/). Feel free to explore by logging in with the credentials:
+- **Username:** admin
+- **Password:** password123
 
 ### 🌟 Background:
 
