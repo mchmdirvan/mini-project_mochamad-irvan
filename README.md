@@ -3,7 +3,7 @@
 
 💓 **Weedy: Wedding E-Invitation Do Yourself**
 
-This project is a mini-project developed during the Alterra Academy Front-end with ReactJS course. The application serves as a digital solution for wedding invitations, designed to address the growing need for easily shareable wedding invitations in today's digital era. The application is deployed on [Vercel](https://weedyidn.vercel.app/). Feel free to explore by logging in with the credentials:
+This project is a mini-project developed during the Alterra Academy Front-end with ReactJS course within a duration of 2 weeks. The application serves as a digital solution for wedding invitations, designed to address the growing need for easily shareable wedding invitations in today's digital era. The application is deployed on [Vercel](https://weedyidn.vercel.app/). Feel free to explore by logging in with the credentials:
 - **Username:** admin
 - **Password:** password123
 
@@ -24,12 +24,12 @@ The project drew inspiration from:
 - [Katsudoto](https://katsudoto.id/)
 - [YesIdo](https://www.sayyesido.com/e-invitations)
 
-### 🎨 Design Approach:
+## 🎨 Design Approach:
 
 The design process employed the ATM method, which stands for "Amati, Tiru, Modifikasi" (Observe, Imitate, Modify). This UI/UX design method, commonly used in the industry, facilitated the creation of responsive and visually appealing designs using Figma. [Here's the link to the Weedy design I created on Figma](https://www.figma.com/file/jMBzc4iIBLjwRcB5A1FL15/Prototype?node-id=0%3A1).
 
 
-### 🚀 MVP Features:
+## 🚀 MVP Features:
 
 - **Landing Page**
 - **Manage Data Weddings Pages (CRUD):** Bride Name, Groom Name, Instagram Couple, Date & Hour, Location, Love Story, Quotes
@@ -154,6 +154,6 @@ Weedy
 
 ```
 
-### 🎬 Presentation
+## 🎬 Presentation
 [Link to Presentation](https://www.canva.com/design/DAFy--urj90/fxPbptE0v7sW2VaApCBeaA/view?utm_content=DAFy--urj90&utm_campaign=designshare&utm_medium=link&utm_source=editor)
 
