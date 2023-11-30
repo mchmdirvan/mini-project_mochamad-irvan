@@ -26,10 +26,10 @@ The project drew inspiration from:
 
 ## 🎨 Design Approach:
 
-The design process employed the ATM method, which stands for "Amati, Tiru, Modifikasi" (Observe, Imitate, Modify). This UI/UX design method, commonly used in the industry, facilitated the creation of responsive and visually appealing designs using Figma. [Here's the link to the Weedy design I created on Figma](https://www.figma.com/file/jMBzc4iIBLjwRcB5A1FL15/Prototype?node-id=0%3A1).
+The design process employed the ATM method, which stands for "Amati, Tiru, Modifikasi" (Observe, Imitate, Modify). This UI/UX design method, commonly used in the industry, facilitated the creation of responsive and visually appealing designs using Figma. [Here's the link to the Weedy design I created on Figma](https://www.figma.com/file/btGWwXMzh2lUm9Kq7Ly5Ct/Weedy?type=design&node-id=0%3A1&mode=design&t=XttArMR7jsdEBQxV-1).
 
 
-## 🚀 MVP Features:
+
 
 - **Landing Page**
 - **Manage Data Weddings Pages (CRUD):** Bride Name, Groom Name, Instagram Couple, Date & Hour, Location, Love Story, Quotes
