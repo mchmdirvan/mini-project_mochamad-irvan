@@ -41,6 +41,7 @@ function Login() {
 
       navigate(`/dashboard/${username}`);
     } catch (error) {
+      console.error("Error during login:", error);
       Swal.fire({
         title: "Error",
         text: "An error occurred",
