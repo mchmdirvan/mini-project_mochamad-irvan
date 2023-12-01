@@ -1,19 +1,32 @@
+import { getDataFromLocalStorage } from "../../localStorageFunction";
+
 export const userLogin = async (data) => {
   return new Promise((resolve, reject) => {
-    const dummyUsers = [
-      { username: "admin", password: "password123" },
-      { username: "irvan", password: "password" },
-      { username: "dedi", password: "password" },
-    ];
+    const dummyUsers = { username: "admin", password: "password123" };
+    const storedUser = getDataFromLocalStorage("username");
+    const storedPassword = getDataFromLocalStorage("password");
 
     setTimeout(() => {
-      const user = dummyUsers.find(
-        (user) =>
-          user.username === data.username && user.password === data.password
-      );
-
-      if (user) {
+      if (
+        data.username === dummyUsers.username &&
+        data.password === dummyUsers.password
+      ) {
         resolve({ message: "Login Success", payload: data });
+      } else if (
+        data.username === storedUser &&
+        data.password === storedPassword
+      ) {
+        resolve({ message: "Login Success", payload: data });
+      } else if (
+        data.username === dummyUsers.username &&
+        data.password !== dummyUsers.password
+      ) {
+        reject({ message: "Invalid password", payload: null });
+      } else if (
+        data.username !== dummyUsers.username &&
+        data.password === dummyUsers.password
+      ) {
+        reject({ message: "Invalid username", payload: null });
       } else {
         reject({ message: "Invalid username or password", payload: null });
       }
@@ -22,8 +35,9 @@ export const userLogin = async (data) => {
 };
 
 export const userRegister = async (data) => {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     const dummyUser = { username: "admin", password: "password123" };
+  
 
     setTimeout(() => {
       if (
@@ -32,7 +46,7 @@ export const userRegister = async (data) => {
       ) {
         resolve({ message: "Register Success", payload: data });
       } else {
-        reject({ message: "Username already exist", payload: null });
+        resolve({ message: "Register Success", payload: data });
       }
     }, 1000);
   });
