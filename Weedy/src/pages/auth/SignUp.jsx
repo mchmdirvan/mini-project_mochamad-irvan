@@ -7,8 +7,7 @@ import React, { useState } from "react";
 import "animate.css";
 
 import { saveDataToLocalStorage } from "../../utils/localStorageFunction";
-import { userLogin, registerSchema } from "../../utils/apis/auth";
-import { useToken } from "../../utils/context/token-context";
+import { userRegister, registerSchema } from "../../utils/apis/auth";
 import { useTitle } from "../../utils/hooks/customHooks";
 import LoginImage from "../../assets/login.webp";
 import { Input } from "../../components/Input";
@@ -19,7 +18,7 @@ function SignUp() {
   useTitle("Sign Up | Weedy");
 
   const [username, setUsername] = useState("");
-  const { changeToken } = useToken();
+  const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
   const {
@@ -30,22 +29,24 @@ function SignUp() {
     resolver: zodResolver(registerSchema),
   });
 
-  async function handleLogin(data) {
+  async function handleSignUp(data) {
     try {
-      const result = await userLogin(data);
-      changeToken(JSON.stringify(result.payload));
+      const result = await userRegister(data);
 
-      const { username } = data;
+      const { username, password } = data;
       setUsername(username);
-      saveDataToLocalStorage("user", username);
+      setPassword(password);
+      saveDataToLocalStorage("username", username);
+      saveDataToLocalStorage("password", password);
 
-      navigate(`/dashboard/${username}`);
-    } catch (error) {
+      navigate("/login");
       Swal.fire({
-        title: "Error",
-        text: "An error occurred",
+        title: "Succsess",
+        text: "Registration Successfull",
         showCancelButton: false,
       });
+    } catch (error) {
+      console.error("Error during registration:", error);
     }
   }
 
@@ -60,7 +61,8 @@ function SignUp() {
           />
 
           <h1 className="  absolute inset-x-0 bottom-24 text-center text-white text-4xl font-bold">
-            Welcome! <br />Execited you're here!
+            Welcome! <br />
+            Execited you're here!
           </h1>
         </div>
 
@@ -74,16 +76,16 @@ function SignUp() {
 
           <form
             className="flex flex-col gap-10 "
-            onSubmit={handleSubmit(handleLogin)}
+            onSubmit={handleSubmit(handleSignUp)}
           >
             <div>
               <Input
                 register={register}
-                name="email"
-                type="email"
-                error={errors.email?.message}
+                name="username"
+                type="text"
+                error={errors.username?.message}
                 className=" border-b border-[#472A08] text-[#472A08] placeholder:text-[#472A08] w-full placeholder:text-xl focus:outline-none"
-                placeholder="Enter your email"
+                placeholder="Enter your username"
               />
             </div>
             <div>
