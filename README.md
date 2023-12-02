@@ -1,4 +1,7 @@
 ![App Screenshot](/screenshots/screenshots.png)
+
+[Deployment](https://weedyidn.vercel.app/) | [Figma](https://www.figma.com/file/btGWwXMzh2lUm9Kq7Ly5Ct/Weedy?type=design&node-id=0%3A1&mode=design&t=XttArMR7jsdEBQxV-1) | [Presentation](https://www.canva.com/design/DAFy--urj90/fxPbptE0v7sW2VaApCBeaA/view?utm_content=DAFy--urj90&utm_campaign=designshare&utm_medium=link&utm_source=editor)
+
 ## 📖 About This Project
 
 💓 **Weedy: Wedding E-Invitation Do Yourself**
@@ -26,7 +29,7 @@ The project drew inspiration from:
 
 ## 🎨 Design Approach:
 
-The design process employed the ATM method, which stands for "Amati, Tiru, Modifikasi" (Observe, Imitate, Modify). This UI/UX design method, commonly used in the industry, facilitated the creation of responsive and visually appealing designs using Figma. [Here's the link to the Weedy design I created on Figma](https://www.figma.com/file/btGWwXMzh2lUm9Kq7Ly5Ct/Weedy?type=design&node-id=0%3A1&mode=design&t=XttArMR7jsdEBQxV-1).
+The design process employed the ATM method, which stands for "Amati, Tiru, Modifikasi" (Observe, Imitate, Modify). This UI/UX design method, commonly used in the industry, facilitated the creation of responsive and visually appealing designs using Figma. Here's the link to the Weedy design I created on [Figma](https://www.figma.com/file/btGWwXMzh2lUm9Kq7Ly5Ct/Weedy?type=design&node-id=0%3A1&mode=design&t=XttArMR7jsdEBQxV-1).
 
 
 
